@@ -3,7 +3,7 @@ const path = require('path');
 
 module.exports = {
   entry: {
-    app: './src/index.js',
+    app: './src/index.tsx',
   },
   output: {
     path: path.resolve(__dirname, 'dist'),
@@ -14,6 +14,11 @@ module.exports = {
       {
         test: /\.(js|jsx)$/,
         use: ['babel-loader'],
+        exclude: /node_modules/,
+      },
+      {
+        test: /\.(ts|tsx)?$/,
+        use: 'ts-loader',
         exclude: /node_modules/,
       },
       {
@@ -36,6 +41,9 @@ module.exports = {
         include: /\.module\.css$/,
       },
     ],
+  },
+  resolve: {
+    extensions: ['.tsx', '.ts', '.js'],
   },
   devServer: {
     static: './dist',
