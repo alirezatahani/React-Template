@@ -1,39 +1,25 @@
-import * as React from 'react';
 import styled from 'styled-components';
+import { Col } from '../content/col/col_types';
+import { devices } from '../utils/constants';
+import { calculateWidth } from '../utils/utils';
 
-interface ColProps {
-  span?: number;
-  sm?: number;
-  md?: number;
-  lg?: number;
-  xl?: number;
-  xxl?: number;
-}
+export const StyledCol = styled.div<Col>`
+  width: ${({ span, xs }) =>
+    span ? calculateWidth(span) : calculateWidth(xs)};
 
-const sizes = {
-  mobile: '576px',
-  laptop: '768px',
-  desktop: '1200px',
-};
-
-export const devices = {
-  mobile: `(min-width: ${sizes.mobile})`,
-  laptop: `(min-width: ${sizes.laptop})`,
-  desktop: `(min-width: ${sizes.desktop})`,
-};
-
-const calculateWidth = (num: number) => `${(num * 100) / 12}%`;
-
-export const StyledCol = styled.div<ColProps>`
-  border: solid 2px blue;
-
-  @media ${devices.mobile} {
-    width: ${({ sm }) => sm && calculateWidth(sm)};
+  @media ${devices.xs} {
+    width: ${({ xs }) => calculateWidth(xs)};
   }
-  @media ${devices.laptop} {
-    width: ${({ md }) => md && calculateWidth(md)};
+  @media ${devices.sm} {
+    width: ${({ sm }) => calculateWidth(sm)};
   }
-  @media ${devices.desktop} {
-    width: ${({ lg }) => lg && calculateWidth(lg)};
+  @media ${devices.md} {
+    width: ${({ md }) => calculateWidth(md)};
+  }
+  @media ${devices.lg} {
+    width: ${({ lg }) => calculateWidth(lg)};
+  }
+  @media ${devices.xl} {
+    width: ${({ xl }) => calculateWidth(xl)};
   }
 `;
