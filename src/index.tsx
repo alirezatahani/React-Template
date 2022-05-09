@@ -1,5 +1,7 @@
 import * as ReactDOM from 'react-dom';
 import * as React from 'react';
+import { createRoot } from 'react-dom/client';
+
 import Row from './components/grid/content/row/Row';
 import Col from './components/grid/content/col/Col';
 import GlobalStyle from './global/Global';
@@ -65,4 +67,7 @@ const App: React.FC = () => {
   );
 };
 
-ReactDOM.render(<App />, document.getElementById('app'));
+const container = document.getElementById('app');
+const root = createRoot(container);
+
+root.render(<App />);
