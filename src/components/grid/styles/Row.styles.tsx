@@ -15,24 +15,19 @@ export const FlexRow = styled.div<RowStyleProps>`
   margin-top: ${({ rowSpace }) => rowSpace && `${rowSpace * -1}rem`};
 
   @media ${devices.xs} {
-    ${({ columnSpace }) =>
-      columnSpace && calculateGutterMargin(columnSpace.xs)};
+    ${({ columnSpace }) => calculateGutterMargin(columnSpace.xs)};
   }
   @media ${devices.sm} {
-    ${({ columnSpace }) =>
-      columnSpace && calculateGutterMargin(columnSpace.sm)};
+    ${({ columnSpace }) => calculateGutterMargin(columnSpace.sm)};
   }
   @media ${devices.md} {
-    ${({ columnSpace }) =>
-      columnSpace && calculateGutterMargin(columnSpace.md)};
+    ${({ columnSpace }) => calculateGutterMargin(columnSpace.md)};
   }
   @media ${devices.lg} {
-    ${({ columnSpace }) =>
-      columnSpace && calculateGutterMargin(columnSpace.lg)};
+    ${({ columnSpace }) => calculateGutterMargin(columnSpace.lg)};
   }
   @media ${devices.xl} {
-    ${({ columnSpace }) =>
-      columnSpace && calculateGutterMargin(columnSpace.xl)};
+    ${({ columnSpace }) => calculateGutterMargin(columnSpace.xl)};
   }
 
   > * {
