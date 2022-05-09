@@ -1,4 +1,4 @@
-import * as ReactDOM from 'react-dom';
+import { createRoot } from 'react-dom/client';
 import * as React from 'react';
 import Row from './components/grid/content/Row';
 import Col from './components/grid/content/Col';
@@ -43,5 +43,7 @@ const App: React.FC = () => {
     </>
   );
 };
+const container = document.getElementById('app');
+const root = createRoot(container);
 
-ReactDOM.render(<App />, document.getElementById('app'));
+root.render(<App />);
