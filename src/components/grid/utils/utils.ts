@@ -1,4 +1,4 @@
-const calculateWidth = (num: number) => `${(num * 100) / 12}%`;
+const calculateWidth = (num: number) => `width: ${(num * 100) / 12}%`;
 
 const calculateGutterPadding = (value: number) => {
   return `${value * 0.5}rem`;
