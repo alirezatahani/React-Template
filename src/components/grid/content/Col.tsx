@@ -10,7 +10,7 @@ type Props = {
   xxl?: number;
 };
 
-const Col: React.FC<Props> = ({
+export const Col: React.FC<Props> = ({
   sm,
   md,
   lg,
@@ -26,4 +26,3 @@ const Col: React.FC<Props> = ({
   );
 };
 
-export default Col;
