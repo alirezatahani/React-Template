@@ -1,12 +1,11 @@
 import styled from 'styled-components';
 import { devices } from '../utils/constants';
 import { RowStyleProps } from '../content/row/row_types';
-import { calculateRowMargin, calculateGutterPadding } from '../utils/utils';
+import { calculateRowMargin } from '../utils/utils';
 
 export const FlexRow = styled.div<RowStyleProps>`
   display: flex;
   flex-wrap: wrap;
-
   ${({ spacing }) => {
     if (typeof spacing === 'number') {
       return `
@@ -16,19 +15,19 @@ export const FlexRow = styled.div<RowStyleProps>`
     } else {
       return `
         @media ${devices.xs} {
-          ${spacing.xs && calculateRowMargin(spacing.xs)}
+          ${(spacing.xs && calculateRowMargin(spacing.xs)) || ''}
         }
         @media ${devices.sm} {
-          ${spacing.sm && calculateRowMargin(spacing.sm)}
+          ${(spacing.sm && calculateRowMargin(spacing.sm)) || ''}
         }
         @media ${devices.md} {
-          ${spacing.md && calculateRowMargin(spacing.md)}
+          ${(spacing.md && calculateRowMargin(spacing.md)) || ''}
         }
         @media ${devices.lg} {
-         ${spacing.lg && calculateRowMargin(spacing.lg)}
+         ${(spacing.lg && calculateRowMargin(spacing.lg)) || ''}
         }
         @media ${devices.xl} {
-         ${spacing.xl && calculateRowMargin(spacing.xl)}
+         ${(spacing.xl && calculateRowMargin(spacing.xl)) || ''}
         }
       `;
     }

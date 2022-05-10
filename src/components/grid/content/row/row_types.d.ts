@@ -1,4 +1,4 @@
-import { ColumnSpace } from '../col/col_types';
+import * as React from 'react';
 
 type RowProps = {
   children: React.ReactNode;
@@ -11,6 +11,6 @@ type Spacing = {
   lg?: number;
   xl?: number;
 };
-type RowStyleProps = {
+export type RowStyleProps = {
   spacing?: number | Spacing;
 };

@@ -1,9 +1,15 @@
-const calculateWidth = (num: number) => `flex: 0 1 ${(num * 100) / 12}%`;
+const calculateWidth = (num: number) =>
+  num
+    ? `
+flex: 0 0 ${(num * 100) / 12}%;
+max-width: ${(num * 100) / 12}%;
+`
+    : '';
 
-const calculateGutterPadding = (value: number) => {
+const calculateColPadding = (value: number) => {
   return `
-  padding-left:${value * 0.5}rem;
-  padding-right:${value * 0.5}rem;
+  padding-left:${value}px;
+  padding-top:${value}px;
   `;
 };
 const calculateRowMargin = (value: number) => {
@@ -13,4 +19,4 @@ const calculateRowMargin = (value: number) => {
   `;
 };
 
-export { calculateWidth, calculateGutterPadding, calculateRowMargin };
+export { calculateWidth, calculateColPadding, calculateRowMargin };
