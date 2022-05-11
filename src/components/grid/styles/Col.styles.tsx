@@ -14,18 +14,18 @@ export const StyledCol = styled.div<ColProps>`
       @media ${devices.xs} {
         ${calculateColPadding(spacing.xs)};
         }
-  @media ${devices.sm} {
+    @media ${devices.sm} {
     ${calculateColPadding(spacing.sm)};
-  }
-  @media ${devices.md} {
+    }
+    @media ${devices.md} {
     ${calculateColPadding(spacing.md)};
-  }
-  @media ${devices.lg} {
+   }
+    @media ${devices.lg} {
     ${calculateColPadding(spacing.lg)};
-  }
-  @media ${devices.xl} {
+    }
+    @media ${devices.xl} {
     ${calculateColPadding(spacing.xl)};
-  }
+     }
       `;
     }
   }}
