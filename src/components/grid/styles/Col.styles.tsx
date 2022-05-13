@@ -6,43 +6,32 @@ import { calculateColPadding, calculateWidth } from '../utils/utils';
 export const StyledCol = styled.div<ColProps>`
   ${({ span, xs }) => (span ? calculateWidth(span) : calculateWidth(xs))};
 
-  ${({ spacing }) => {
+  ${({ spacing, xs, sm, md, lg, xl }) => {
     if (typeof spacing === 'number') {
       return `${calculateColPadding(spacing)};`;
     } else {
       return `
       @media ${devices.xs} {
         ${calculateColPadding(spacing.xs)};
-        }
-    @media ${devices.sm} {
-    ${calculateColPadding(spacing.sm)};
-    }
-    @media ${devices.md} {
-    ${calculateColPadding(spacing.md)};
-   }
-    @media ${devices.lg} {
-    ${calculateColPadding(spacing.lg)};
-    }
-    @media ${devices.xl} {
-    ${calculateColPadding(spacing.xl)};
+        ${calculateWidth(xs)};
+      }
+      @media ${devices.sm} {
+        ${calculateColPadding(spacing.sm)};
+        ${calculateWidth(sm)};
+      }
+      @media ${devices.md} {
+        ${calculateColPadding(spacing.md)};
+        ${calculateWidth(md)};
+      }
+      @media ${devices.lg} {
+        ${calculateColPadding(spacing.lg)};
+        ${calculateWidth(lg)};
+      }
+      @media ${devices.xl} {
+        ${calculateColPadding(spacing.xl)};
+        ${calculateWidth(xl)};
      }
       `;
     }
   }}
-
-  @media ${devices.xs} {
-    ${({ xs }) => calculateWidth(xs)};
-  }
-  @media ${devices.sm} {
-    ${({ sm }) => calculateWidth(sm)};
-  }
-  @media ${devices.md} {
-    ${({ md }) => calculateWidth(md)};
-  }
-  @media ${devices.lg} {
-    ${({ lg }) => calculateWidth(lg)};
-  }
-  @media ${devices.xl} {
-    ${({ xl }) => calculateWidth(xl)};
-  }
 `;
