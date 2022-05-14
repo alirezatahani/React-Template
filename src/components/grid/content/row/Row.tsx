@@ -11,7 +11,7 @@ const Row: React.FC<RowProps> = ({ children, spacing }: RowProps) => {
       : child;
   });
   return (
-    <div style={{ overflow: 'hidden' }}>
+    <div>
       <FlexRow spacing={spacing}>{childrenWithProps}</FlexRow>
     </div>
   );
