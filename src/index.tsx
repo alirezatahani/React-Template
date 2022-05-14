@@ -18,6 +18,44 @@ const App: React.FC = () => {
         <Row>
           <Col span={6}>
             <Input
+              leftAddon="https://"
+              rightAddon=".com"
+              variant="outlined"
+              size="lg"
+              placeholder="Warning outlined"
+            />
+          </Col>
+          <Col span={6}>
+            <Input
+              leftAddon="LeftAddon"
+              variant="outlined"
+              size="lg"
+              placeholder="Warning outlined"
+            />
+          </Col>
+          <Col span={6}>
+            <Input
+              rightAddon=".com"
+              variant="filled"
+              size="lg"
+              placeholder="Warning outlined"
+            />
+          </Col>
+          <Col span={6}>
+            <Input
+              leftAddon="LeftAddon"
+              rightAddon="RightAddon"
+              variant="standard"
+              size="lg"
+              placeholder="Warning outlined"
+            />
+          </Col>
+        </Row>
+
+        <Input variant="outlined" size="lg" placeholder="Warning outlined" />
+        <Row>
+          <Col span={6}>
+            <Input
               onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
                 setFnameVal(e.target.value)
               }
