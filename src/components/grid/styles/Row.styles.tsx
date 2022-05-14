@@ -7,11 +7,13 @@ export const FlexRow = styled.div<RowStyleProps>`
   display: flex;
   flex-wrap: wrap;
   ${({ spacing }) => {
-    if (!spacing) return '';
+    if (!spacing)
+      return `
+${calculateRowMargin(8)};
+      `;
     if (typeof spacing === 'number') {
       return `
-        margin-left: -${spacing}px;
-        margin-right: -${spacing}px;
+${calculateRowMargin(spacing)};
       `;
     } else {
       return `
