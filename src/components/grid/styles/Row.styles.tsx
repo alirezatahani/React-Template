@@ -7,6 +7,7 @@ export const FlexRow = styled.div<RowStyleProps>`
   display: flex;
   flex-wrap: wrap;
   ${({ spacing }) => {
+    if (!spacing) return '';
     if (typeof spacing === 'number') {
       return `
         margin-left: -${spacing}px;
