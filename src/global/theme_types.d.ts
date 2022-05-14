@@ -9,6 +9,8 @@ type InputTypes = {
   borderWidth: string;
   borderColor: string;
   filledBackground: string;
+  addonBg: string;
+  addonTextColor: string;
 };
 
 export type ThemeTypes = {

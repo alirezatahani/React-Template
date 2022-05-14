@@ -17,6 +17,8 @@ const INPUTS = {
   borderWidth: '1px',
   borderColor: 'rgba(0, 0, 0, 0.16)',
   filledBackground: '#eee',
+  addonBg: '#3f444e',
+  addonTextColor: '#fff',
 };
 
 const theme = {
