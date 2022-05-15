@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { createRoot } from 'react-dom/client';
 import { ThemeProvider } from 'styled-components';
+import Button from './components/button/content/Button';
 import { Row, Col } from './components/grid/Index';
 import { Input } from './components/input/index';
 import { GlobalStyle, theme } from './global/Global';
@@ -15,6 +16,71 @@ const App: React.FC = () => {
     <ThemeProvider theme={theme}>
       <>
         <GlobalStyle />
+        <Row>
+          <Col span={4}>
+            Size: sm
+            <div>
+              <Button kind="primary" size="sm">
+                Salam
+              </Button>
+              <Button kind="warning" size="sm">
+                Salam
+              </Button>
+              <Button shape="round" kind="warning" size="sm">
+                Salam
+              </Button>
+              <Button kind="danger" size="sm">
+                Salam
+              </Button>
+              <Button block kind="primary" size="sm">
+                block btn
+              </Button>
+              <Button size="sm">Salam</Button>
+            </div>
+          </Col>
+          <Col span={4}>
+            Size: md or default
+            <div>
+              <Button kind="primary" size="md">
+                Salam
+              </Button>
+              <Button kind="warning" size="md">
+                Salam
+              </Button>
+              <Button kind="danger" size="md">
+                Salam
+              </Button>
+              <Button shape="round" kind="danger" size="md">
+                Salam
+              </Button>
+              <Button block shape="round" kind="warning" size="md">
+                block btn
+              </Button>
+              <Button size="md">Salam</Button>
+            </div>
+          </Col>
+          <Col span={4}>
+            Size: Lg
+            <div>
+              <Button kind="primary" size="lg">
+                Salam
+              </Button>
+              <Button kind="warning" size="lg">
+                Salam
+              </Button>
+              <Button kind="danger" size="lg">
+                Salam
+              </Button>
+              <Button shape="round" kind="primary" size="lg">
+                Salam
+              </Button>
+              <Button block shape="round" kind="danger" size="lg">
+                block btn
+              </Button>
+              <Button size="lg">Salam</Button>
+            </div>
+          </Col>
+        </Row>
         <Row>
           <Col span={6}>
             <Input

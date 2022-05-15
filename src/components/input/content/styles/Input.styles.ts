@@ -44,7 +44,6 @@ export const InputRightAddon = styled.span<InputAddonProps>`
   white-space: nowrap;
   border-bottom-right-radius: 0;
   padding-inline: 10px;
-  /* padding: 5px 11px; */
   ${({ size }) => handleInputSize(size)}
   background-color: ${({ theme }) => theme.input.addonBg};
   color: ${({ theme }) => theme.input.addonTextColor};
