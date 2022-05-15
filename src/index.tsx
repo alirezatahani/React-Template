@@ -3,6 +3,7 @@ import { createRoot } from 'react-dom/client';
 import { ThemeProvider } from 'styled-components';
 import { Row, Col } from './components/grid/Index';
 import { Input } from './components/input/index';
+import { Toggle } from './components/toggle/index';
 import { GlobalStyle, theme } from './global/Global';
 
 const App: React.FC = () => {
@@ -113,6 +114,49 @@ const App: React.FC = () => {
               variant="filled"
               size="lg"
               placeholder="Success Filled"
+            />
+          </Col>
+        </Row>
+        <Row>
+          <Col span={3}>
+            <h3>Default (Primary)</h3>
+            <Toggle />
+          </Col>
+          <Col span={3}>
+            <h3>Success</h3>
+            <Toggle theme="success" />
+          </Col>
+          <Col span={3}>
+            <h3>Warning</h3>
+            <Toggle theme="warning" />
+          </Col>
+          <Col span={3}>
+            <h3>Danger</h3>
+            <Toggle theme="danger" />
+          </Col>
+        </Row>
+        <Row>
+          <Col span={3}>
+            <h3>Small</h3>
+            <Toggle size={48} />
+          </Col>
+          <Col span={3}>
+            <h3>Medium</h3>
+            <Toggle size={64} />
+          </Col>
+          <Col span={3}>
+            <h3>Big</h3>
+            <Toggle size={88} />
+          </Col>
+        </Row>
+        <Row>
+          <Col span={3}>
+            <h3>With Callback</h3>
+            <Toggle
+              size={48}
+              onChange={(checked: Boolean) =>
+                alert(`Toggle ${checked ? 'Checked' : 'Unchecked'}`)
+              }
             />
           </Col>
         </Row>
