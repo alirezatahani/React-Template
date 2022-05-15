@@ -31,6 +31,18 @@ export const StyledButton = styled.button<ButtonProps>`
     shape === 'round' ? theme.borderRadiusRound : theme.borderRadius};
   transition: all 200ms linear;
 
+  &[disabled] {
+    color: rgba(0, 0, 0, 0.3);
+    border-color: #ccc;
+    background: rgba(0, 0, 0, 0.08);
+    text-shadow: none;
+    box-shadow: none;
+    cursor: not-allowed;
+  }
+  &[disabled]:hover {
+    border-color: #ccc;
+  }
+
   &:hover {
     transition: all 200ms linear;
     color: ${({ theme, kind }) =>

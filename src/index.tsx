@@ -41,7 +41,7 @@ const App: React.FC = () => {
           <Col span={4}>
             Size: md or default
             <div>
-              <Button kind="primary" size="md">
+              <Button disabled kind="primary" size="md">
                 Salam
               </Button>
               <Button kind="warning" size="md">

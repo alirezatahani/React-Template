@@ -7,4 +7,5 @@ export type ButtonProps = {
   kind?: string;
   shape?: string;
   block?: boolean;
+  disabled?: boolean;
 };
