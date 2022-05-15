@@ -9,8 +9,6 @@ const App: React.FC = () => {
   const [fnameVal, setFnameVal] = React.useState<string>('');
   const [lnameVal, setLnameVal] = React.useState<string>('');
 
-  console.log(fnameVal, lnameVal);
-
   return (
     <ThemeProvider theme={theme}>
       <>
