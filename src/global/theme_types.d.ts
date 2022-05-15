@@ -14,16 +14,28 @@ type InputTypes = {
   addonBg: string;
   addonTextColor: string;
 };
-type ButtonTypes = {
-  buttonHeightSm: string;
-  buttonHeightMd: string;
-  buttonHeightLg: string;
-  buttonPaddingSm: string;
-  buttonPaddingMd: string;
-  buttonPaddingLg: string;
-  buttonFontSm: string;
-  buttonFontMd: string;
-  buttonFontLg: string;
+
+type sizeBtn = {
+  height: string;
+  padding: string;
+  fontSize: string;
+};
+
+type btnKindProps = {
+  background: string;
+  border: string;
+  color: string;
+};
+
+export type ButtonTypes = {
+  sm: sizeBtn;
+  md: sizeBtn;
+  lg: sizeBtn;
+  primary: btnKindProps;
+  success: btnKindProps;
+  warning: btnKindProps;
+  danger: btnKindProps;
+  default: btnKindProps;
   buttonFocusOutline: string;
   borderColor: string;
   filledBackground: string;
@@ -34,4 +46,5 @@ export type ThemeTypes = {
   input: InputTypes;
   button: ButtonTypes;
   borderRadius: string;
+  borderRadiusRound: string;
 };
