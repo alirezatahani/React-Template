@@ -1,5 +1,4 @@
 import { createGlobalStyle } from 'styled-components';
-import { ThemeTypes, ButtonTypes } from './theme_types';
 
 const GlobalStyle = createGlobalStyle`
   * {
