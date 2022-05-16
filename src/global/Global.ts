@@ -6,15 +6,6 @@ const GlobalStyle = createGlobalStyle`
     box-sizing: border-box;
   }
 `;
-const COLOR = {
-  primary: '#1562dc',
-  success: '#00ca62',
-  danger: '#ff6446',
-  warning: '#ffc500',
-  default: 'transparent',
-  black: 'rgba(0, 0, 0, 0.80)',
-  white: '#fff',
-};
 
 const INPUT = {
   borderWidth: '1px',
@@ -24,50 +15,6 @@ const INPUT = {
   addonTextColor: '#fff',
 };
 
-const BUTTON: ButtonTypes = {
-  sm: { height: '1.8rem', padding: '1px 14px', fontSize: '14px' },
-  md: { height: '2.2rem', padding: '5px 19px', fontSize: '16px' },
-  lg: { height: '2.6rem', padding: '6px 29px', fontSize: '17px' },
-
-  // primary: {
-  //   background: `${COLOR.primary}`,
-  //   border: `solid 1px ${COLOR.primary}`,
-  //   color: `${COLOR.white}`,
-  // },
-  // warning: {
-  //   background: `${COLOR.warning}`,
-  //   border: `solid 1px ${COLOR.warning}`,
-  //   color: `${COLOR.white}`,
-  // },
-  // danger: {
-  //   background: `${COLOR.danger}`,
-  //   border: `solid 1px ${COLOR.danger}`,
-  //   color: `${COLOR.white}`,
-  // },
-  // success: {
-  //   background: `${COLOR.success}`,
-  //   border: `solid 1px ${COLOR.success}`,
-  //   color: `${COLOR.white}`,
-  // },
-  // default: {
-  //   background: `${COLOR.default}`,
-  //   border: `solid 1px rgba(0, 0, 0, 0.16)`,
-  //   color: `${COLOR.black}`,
-  // },
-
-  buttonFocusOutline: '#155ed2',
-  borderColor: 'rgba(0, 0, 0, 0.16)',
-  filledBackground: '#eee',
-};
-
-// const theme: ThemeTypes = {
-//   colors: COLOR,
-//   input: INPUT,
-//   button: BUTTON,
-//   borderRadius: '6px',
-//   borderRadiusRound: '50px',
-// };
-
 const theme = {
   palette: {
     background: { paper: '#fff' },
@@ -76,12 +23,19 @@ const theme = {
       white: '#FFFFFF',
     },
     primary: {
-      main: '#365c65',
-      '100': '#C6DDE2',
-      '300': '#87ACB6',
-      '500': '#568793',
-      '700': '#3C636C',
-      '800': '#2F4F57',
+      main: '#1562dc',
+    },
+    secondary: {
+      main: '#434343',
+    },
+    success: {
+      main: '#00ca62',
+    },
+    danger: {
+      main: '#ff6446',
+    },
+    warning: {
+      main: '#ffc500',
     },
   },
   typography: {
@@ -183,20 +137,28 @@ const theme = {
   },
   sizes: {
     sm: {
-      height: 36,
+      height: 28,
       padding: 8,
     },
     md: {
-      height: 40,
+      height: 34,
       padding: 10,
     },
     lg: {
-      height: 44,
+      height: 40,
       padding: 12,
     },
   },
   general: {
     borderRadious: 50,
+    disabled: {
+      color: '#0000004d',
+      borderColor: '#ccc',
+      backgroundColor: '#0000002d',
+      textShadow: 'none',
+      boxShadow: 'none',
+      cursor: 'not-allowed',
+    },
   },
 };
 export { GlobalStyle, theme };

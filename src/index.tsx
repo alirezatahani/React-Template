@@ -16,9 +16,8 @@ const App: React.FC = () => {
         <GlobalStyle />
         <Row>
           <Col span={4}>
-            Size: sm
             <div>
-              <Button variant="text" size="sm" rounded>
+              <Button color="warning" variant="text" size="sm" rounded>
                 Salam
               </Button>
               <Button variant="text" size="md" rounded>
@@ -28,23 +27,23 @@ const App: React.FC = () => {
                 Salam
               </Button>
 
-              <Button block variant="filled" size="sm">
+              <Button block color="danger" variant="filled" size="lg">
                 Salam
               </Button>
               <Button block disabled variant="filled" size="md">
-                block btn
+                disabled btn
               </Button>
               <Button block variant="filled" size="lg">
                 Salam
               </Button>
 
-              <Button variant="outlined" size="sm">
-                Salam
+              <Button color="secondary" variant="outlined" size="sm">
+                Salam2
               </Button>
-              <Button variant="outlined" size="md">
+              <Button rounded color="success" variant="filled" size="md">
                 block btn
               </Button>
-              <Button variant="outlined" size="lg">
+              <Button disabled color="success" variant="outlined" size="lg">
                 Salam
               </Button>
             </div>

@@ -8,29 +8,27 @@ export const StyledButton = styled.button<ButtonProps>(
     ...theme.typography.button,
     width: block ? '100%' : 'auto',
     borderRadius: rounded ? 50 : 8,
+
     border:
-      variant === 'text' ? 'none' : `1px solid ${theme.palette.primary.main}`,
+      variant === 'text' ? 'none' : `1px solid ${theme.palette[color].main}`,
+
     backgroundColor:
       variant === 'filled'
-        ? theme.palette.primary.main
+        ? theme.palette[color].main
         : theme.palette.common.white,
+
     color:
       variant === 'filled'
         ? theme.palette.common.white
-        : theme.palette.primary.main,
+        : theme.palette[color].main,
 
     display: 'inline-flex',
     alignItems: 'center',
     justifyContent: 'center',
     cursor: 'pointer',
 
-    ['&:[disabled]']: {
-      color: 'rgba(0, 0, 0, 0.3)',
-      borderColor: '#ccc',
-      backgroundColor: 'rgba(0, 0, 0, 0.08)',
-      textShadow: 'none',
-      boxShadow: 'none',
-      cursor: 'not-allowed',
+    ['&:disabled']: {
+      ...theme.general.disabled,
     },
     // ['&:hover']{
     //   transition: "all 200ms linear"
@@ -55,15 +53,6 @@ export const StyledButton = styled.button<ButtonProps>(
 // export const StyledButton = styled.button<ButtonProps>`
 
 //   shape === 'round' ? theme.borderRadiusRound : theme.borderRadius};
-
-// justify-content: center;
-// align-items: center;
-// white-space: nowrap;
-// touch-action: manipulation;
-// margin-right: 8px;
-// margin-bottom: 12px;
-// display: inline-flex;
-// cursor: pointer;
 
 // &[disabled]:hover {
 //   border-color: #ccc;

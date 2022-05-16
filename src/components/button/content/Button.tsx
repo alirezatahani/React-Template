@@ -9,6 +9,7 @@ const Button: React.FC<ButtonProps> = ({ children, ...rest }: ButtonProps) => {
 Button.defaultProps = {
   size: 'md',
   variant: 'filled',
+  color: 'primary',
   rounded: false,
   block: false,
   disabled: false,
