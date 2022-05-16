@@ -5,16 +5,19 @@ import {
   ToggleSliderProps,
 } from '../toggle/toggle_types';
 import {
-  handleTheme,
+  getSize,
+  colorName,
+  getVariantColor,
   calculateContainerHeight,
   calculateSliderSize,
+  calculateIndent,
 } from '../../utils/utils';
 
 export const ToggleContainer = styled.label<ToggleContainerProps>`
   position: relative;
   display: inline-block;
-  width: ${({ size }) => size + 'px'};
-  height: ${({ size, indent }) => calculateContainerHeight(size, indent)};
+  width: ${({ size }) => getSize(size) + 'px'};
+  height: ${({ size }) => calculateContainerHeight(size) + 'px'};
 `;
 
 export const ToggleInput = styled.input.attrs({
@@ -25,12 +28,12 @@ export const ToggleInput = styled.input.attrs({
   height: 0;
 
   &:checked + .toggle__slider {
-    background-color: ${({ theme }) => handleTheme(theme)};
+    background-color: ${({ variant }) => getVariantColor(variant)};
   }
 
   &:checked + .toggle__slider::before {
     transform: translateX(
-      ${({ size, indent }) => calculateSliderSize(size, indent)}
+      ${({ sliderSize }) => calculateSliderSize(sliderSize) + 'px'}
     );
   }
 `;
@@ -47,16 +50,15 @@ export const ToggleSlider = styled.span.attrs({
   background-color: #ccc;
   -webkit-transition: 0.4s;
   transition: 0.4s;
-  border-radius: ${({ size, indent }) =>
-    calculateContainerHeight(size, indent)};
+  border-radius: ${({ size }) => calculateContainerHeight(size) + 'px'};
 
   &::before {
     position: absolute;
     content: '';
-    height: ${({ size, indent }) => calculateSliderSize(size, indent)};
-    width: ${({ size, indent }) => calculateSliderSize(size, indent)};
-    left: ${({ indent }) => indent + 'px'};
-    bottom: ${({ indent }) => indent + 'px'};
+    height: ${({ size }) => calculateSliderSize(size) + 'px'};
+    width: ${({ size }) => calculateSliderSize(size) + 'px'};
+    left: ${({ size }) => calculateIndent(size) + 'px'};
+    bottom: ${({ size }) => calculateIndent(size) + 'px'};
     background-color: white;
     -webkit-transition: 0.4s;
     transition: 0.4s;

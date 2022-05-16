@@ -1,27 +1,41 @@
 import { theme } from '../../../global/Global';
 
-export const handleTheme = (themeName: string): string => {
-  if (!isThemeValid(themeName)) {
-    throw new Error(
-      `Toggle theme must be one of [${Object.keys(theme.colors).join(', ')}]`
-    );
-  }
-  return theme.colors[themeName];
+const { primary, secondary, success, warning, danger } = theme.palette;
+
+const colors = {
+  primary: primary.main,
+  secondary: secondary.main,
+  success: success.main,
+  warning: warning.main,
+  danger: danger.main,
 };
 
-function isThemeValid(
-  themeName: string
-): themeName is keyof typeof theme.colors {
-  return themeName in theme.colors;
-}
+export type colorName = keyof typeof colors;
 
-export const calculateContainerHeight = (
-  size: number,
-  indent: number
-): string => {
-  return size / 2 + indent + 'px';
+const sizes = {
+  sm: 40,
+  md: 60,
+  lg: 80,
 };
 
-export const calculateSliderSize = (size: number, indent: number): string => {
-  return size / 2 - indent + 'px';
+type SizeName = keyof typeof sizes;
+
+export const getVariantColor = (variant: colorName): string => {
+  return colors[variant];
+};
+
+export const getSize = (size: SizeName): number => {
+  return sizes[size];
+};
+
+export const calculateContainerHeight = (size: SizeName): number => {
+  return sizes[size] / 2 + calculateIndent(size);
+};
+
+export const calculateSliderSize = (size: SizeName): number => {
+  return sizes[size] / 2 - calculateIndent(size);
+};
+
+export const calculateIndent = (size: SizeName): number => {
+  return Math.ceil(sizes[size] * 0.06); // indent => 6% of size
 };

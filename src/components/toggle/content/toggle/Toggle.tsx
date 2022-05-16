@@ -7,22 +7,22 @@ import {
 } from '../styles/toggle.styles';
 
 function Toggle({
-  theme = 'primary',
-  size = 40,
-  indent = 4,
+  variant = 'primary',
+  size = 'sm',
   onChange = () => {},
+  value = null,
 }: ToggleProps) {
   return (
-    <ToggleContainer size={size} indent={indent}>
+    <ToggleContainer size={size}>
       <ToggleInput
-        theme={theme}
-        size={size}
-        indent={indent}
+        variant={variant}
+        sliderSize={size}
+        checked={value}
         onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
-          onChange(e.currentTarget.checked)
+          onChange(e.currentTarget.checked, e)
         }
       />
-      <ToggleSlider size={size} indent={indent} />
+      <ToggleSlider size={size} />
     </ToggleContainer>
   );
 }

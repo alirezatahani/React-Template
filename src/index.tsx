@@ -2,6 +2,7 @@ import * as React from 'react';
 import { createRoot } from 'react-dom/client';
 import { ThemeProvider } from 'styled-components';
 import { Input, Col, Row, Button } from './components';
+import { Toggle } from './components/toggle';
 import { GlobalStyle, theme } from './global/Global';
 
 const App: React.FC = () => {
@@ -88,6 +89,17 @@ const App: React.FC = () => {
               <Button size="lg">Salam</Button>
             </div>
           </Col> */}
+        </Row>
+        <Row>
+          <Col span={4}>
+            <Toggle
+              variant="success"
+              size="lg"
+              onChange={(checked: boolean, e: React.ChangeEvent) =>
+                console.log(checked, e)
+              }
+            />
+          </Col>
         </Row>
         {/*<Row>
           <Col span={6}>

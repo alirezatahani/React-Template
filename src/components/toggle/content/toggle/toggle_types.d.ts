@@ -1,22 +1,19 @@
 export type ToggleProps = {
-  theme?: string;
-  size?: number;
-  indent?: number;
+  variant?: 'primary' | 'secondary' | 'success' | 'danger' | 'warning';
+  size?: 'sm' | 'md' | 'lg';
+  value?: boolean;
   onChange?: Function;
 };
 
 export type ToggleContainerProps = {
-  size?: number;
-  indent?: number;
+  size: 'sm' | 'md' | 'lg';
 };
 
 export type ToggleInputProps = {
-  theme?: string;
-  size?: number;
-  indent?: number;
+  variant?: 'primary' | 'secondary' | 'success' | 'danger' | 'warning';
+  sliderSize?: 'sm' | 'md' | 'lg';
 };
 
 export type ToggleSliderProps = {
-  size?: number;
-  indent?: number;
+  size: 'sm' | 'md' | 'lg';
 };
