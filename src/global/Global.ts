@@ -51,7 +51,13 @@ const theme = {
       lineHeight: '24px',
       letterSpacing: '0.15px',
     },
-
+    input: {
+      fontWeight: 500,
+      fontStyle: 'normal',
+      fontSize: 14,
+      lineHeight: '24px',
+      letterSpacing: '0.5px',
+    },
     button: {
       color: 'white',
       fontWeight: 500,
@@ -154,7 +160,8 @@ const theme = {
     },
   },
   general: {
-    borderRadious: 50,
+    borderRadius: 50,
+    transition: 'all 200ms linear',
   },
 };
 export { GlobalStyle, theme };

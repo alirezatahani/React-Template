@@ -46,87 +46,97 @@ const App: React.FC = () => {
               </Button>
             </div>
           </Col>
-          {/* <Col span={4}>
-            Size: md or default
-            <div>
-              <Button disabled kind="primary" size="md">
-                Salam
-              </Button>
-              <Button kind="warning" size="md">
-                Salam
-              </Button>
-              <Button kind="danger" size="md">
-                Salam
-              </Button>
-              <Button shape="round" kind="danger" size="md">
-                Salam
-              </Button>
-              <Button block shape="round" kind="warning" size="md">
-                block btn
-              </Button>
-              <Button size="md">Salam</Button>
-            </div>
+        </Row>
+        <Row>
+          <Col span={4}>
+            <Input
+              scale="sm"
+              status="danger"
+              name="site"
+              variant="filled"
+              label="salam"
+              placeholder="place"
+              disabled
+            />
           </Col>
           <Col span={4}>
-            Size: Lg
-            <div>
-              <Button kind="primary" size="lg">
-                Salam
-              </Button>
-              <Button kind="warning" size="lg">
-                Salam
-              </Button>
-              <Button kind="danger" size="lg">
-                Salam
-              </Button>
-              <Button shape="round" kind="primary" size="lg">
-                Salam
-              </Button>
-              <Button block shape="round" kind="danger" size="lg">
-                block btn
-              </Button>
-              <Button size="lg">Salam</Button>
-            </div>
-          </Col> */}
+            <Input rounded scale="md" label="salam" placeholder="place" />
+          </Col>
+          <Col span={4}>
+            <Input status="danger" disabled scale="lg" placeholder="place" />
+          </Col>
         </Row>
-        {/*<Row>
-          <Col span={6}>
+        <Row>
+          <Col span={4}>
             <Input
               leftAddon="https://"
+              name="site"
               rightAddon=".com"
-              variant="outlined"
-              size="lg"
-              placeholder="Warning outlined"
+              scale="sm"
+              label="sa"
+              placeholder="place"
             />
           </Col>
-          <Col span={6}>
+          <Col span={4}>
             <Input
-              leftAddon="LeftAddon"
-              variant="outlined"
-              size="lg"
-              placeholder="Warning outlined"
-            />
-          </Col>
-          <Col span={6}>
-            <Input
-              rightAddon=".com"
-              variant="filled"
-              size="lg"
-              placeholder="Warning outlined"
-            />
-          </Col>
-          <Col span={6}>
-            <Input
-              leftAddon="LeftAddon"
-              rightAddon="RightAddon"
+              scale="md"
               variant="standard"
-              size="lg"
-              placeholder="Warning outlined"
+              status="success"
+              label="salam"
+              placeholder="place"
+            />
+            <Input
+              scale="md"
+              variant="standard"
+              label="asdasds"
+              placeholder="place"
+            />
+          </Col>
+          <Col span={4}>
+            <Input
+              leftAddon="salamasdassaa"
+              status="danger"
+              scale="lg"
+              placeholder="place"
             />
           </Col>
         </Row>
+        <Col span={6}>
+          <Input
+            leftAddon="https://"
+            rightAddon=".com"
+            variant="outlined"
+            scale="lg"
+            placeholder="Warning outlined"
+          />
+        </Col>
+        <Col span={6}>
+          <Input
+            leftAddon="LeftAddon"
+            variant="outlined"
+            scale="lg"
+            placeholder="Warning outlined"
+          />
+        </Col>
+        <Col span={6}>
+          <Input
+            rightAddon=".com"
+            variant="filled"
+            scale="lg"
+            placeholder="Warning outlined"
+          />
+        </Col>
+        <Col span={6}>
+          <Input
+            leftAddon="LeftAddon"
+            rightAddon="RightAddon"
+            variant="standard"
+            scale="lg"
+            placeholder="Warning outlined"
+          />
+        </Col>
 
-        <Input variant="outlined" size="lg" placeholder="Warning outlined" />
+        <Input variant="outlined" scale="lg" placeholder="Warning outlined" />
         <Row>
           <Col span={6}>
             <Input
@@ -155,21 +165,21 @@ const App: React.FC = () => {
         </Row>
         <Row>
           <Col span={4}>
-            <Input variant="standard" size="lg" placeholder="Standard" />
+            <Input variant="standard" scale="lg" placeholder="Standard" />
           </Col>
           <Col span={4}>
-            <Input variant="outlined" size="lg" placeholder="outlined" />
+            <Input variant="outlined" scale="lg" placeholder="outlined" />
           </Col>
           <Col span={4}>
-            <Input variant="filled" size="lg" placeholder="filled" />
+            <Input variant="filled" scale="lg" placeholder="filled" />
           </Col>
         </Row>
         <Row>
           <Col span={4}>
             <Input
-              status="error"
+              status="danger"
               variant="standard"
-              size="lg"
+              scale="lg"
               placeholder="Error Standard"
             />
           </Col>
@@ -177,7 +187,7 @@ const App: React.FC = () => {
             <Input
               status="warning"
               variant="outlined"
-              size="lg"
+              scale="lg"
               placeholder="Warning outlined"
             />
           </Col>
@@ -185,11 +195,11 @@ const App: React.FC = () => {
             <Input
               status="success"
               variant="filled"
-              size="lg"
+              scale="lg"
               placeholder="Success Filled"
             />
           </Col>
-        </Row> */}
+        </Row>
       </>
     </ThemeProvider>
   );

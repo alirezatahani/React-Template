@@ -1,84 +1,105 @@
-import styled, { css } from 'styled-components';
+import styled from 'styled-components';
 import {
-  handleInputFocus,
-  handleInputSize,
-  handleInputStatus,
-  handleInputVariant,
-} from '../utils/utils';
-import {
-  InputProps,
   InputAddonProps,
   InputContainerProps,
+  InputLabelProps,
+  InputProps,
 } from '../content/input/input_types';
 
-export const InputContainer = styled.div<InputContainerProps>`
-  margin: 0 0 20px;
-  display: ${({ hasAddon }) => (hasAddon ? 'flex' : 'grid')};
-  width: 100%;
-  label {
-    padding-left: 5px;
-    padding-bottom: 10px !important;
-  }
-`;
+export const StyledInput = styled.input<InputProps>(
+  ({ theme, status, scale, rounded, variant }) => ({
+    ...theme.sizes[scale],
+    ...theme.typography.input,
+    outline: 'none',
+    paddingLeft: 11,
+    width: '100%',
 
-export const InputLeftAddon = styled.span<InputAddonProps>`
-  width: auto;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-top-right-radius: 0;
-  white-space: nowrap;
-  border-bottom-right-radius: 0;
-  padding-inline: 10px;
-  /* padding: 5px 11px; */
-  ${({ size }) => handleInputSize(size)}
-  background-color: #3f444e;
-  color: #fff;
-`;
-export const InputRightAddon = styled.span<InputAddonProps>`
-  width: auto;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-top-right-radius: 0;
-  white-space: nowrap;
-  border-bottom-right-radius: 0;
-  padding-inline: 10px;
-  /* padding: 5px 11px; */
-  ${({ size }) => handleInputSize(size)}
-  background-color: ${({ theme }) => theme.input.addonBg};
-  color: ${({ theme }) => theme.input.addonTextColor};
-`;
+    transition: theme.general.transition,
 
-export const StyledInput = styled.input.attrs((props) => ({
-  type: 'text',
-  size: props.size || 'height: 40px;font-size: 16px;',
-}))<InputProps>`
-  outline: none;
-  padding-left: 11px;
-  width: 100%;
-  transition: all 0.2s ease-in-out;
-  ${({ leftAddon }) =>
-    leftAddon
-      ? css`
-          border-top-left-radius: 0;
-          border-bottom-left-radius: 0;
-        `
-      : css`
-          border-radius: ${({ theme }) => theme.borderRadius};
-        `}
+    background: variant === 'filled' && '#eee',
 
-  ${({ size }) => handleInputSize(size)};
+    border: `${
+      variant === 'outlined' || variant === 'filled'
+        ? `solid 1px ${status ? theme.palette[status].main : '#00000029'}`
+        : `none`
+    }`,
 
-  ${({ status, theme, variant }) => handleInputStatus(status, theme, variant)}
+    borderBottom:
+      variant === 'standard' &&
+      `solid 2px ${status ? theme.palette[status].main : '#00000029'}`,
 
-  ${({ theme, variant }) => handleInputVariant(theme, variant)}
+    borderRadius: rounded ? theme.general.borderRadius : 4,
 
-  &:focus {
-    ${({ theme, variant }) => handleInputFocus(variant, theme)}
-  }
+    ['::placeholder']: {
+      opacity: 0.6,
+    },
 
-  ::placeholder {
-    opacity: 0.6;
-  }
-`;
+    [':disabled']: {
+      ...theme.palette.disabled,
+      border: 'none',
+      cursor: 'not-allowed',
+    },
+    ['&:focus']: {
+      outline: `${
+        variant === 'outlined' || variant === 'filled'
+          ? `solid 2px ${
+              status
+                ? theme.palette[status].main
+                : theme.palette['primary'].main
+            }`
+          : `none`
+      }`,
+
+      borderBottom:
+        variant === 'standard' &&
+        `solid 2px ${
+          status ? theme.palette[status].main : theme.palette['primary'].main
+        }`,
+      outlineOffset: 1,
+    },
+  })
+);
+
+export const InputContainer = styled.div<InputContainerProps>({
+  display: 'flex',
+  justifyContent: 'center',
+  alignItems: 'center',
+  margin: '0 0 20px',
+});
+
+export const InputLabel = styled.span<InputLabelProps>({
+  paddingRight: '20px',
+  whiteSpace: 'nowrap',
+});
+
+export const InputRightAddon = styled.span<InputAddonProps>(
+  ({ theme, scale }) => ({
+    ...theme.sizes[scale],
+    width: 'auto',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    borderTopRightRadius: 0,
+    whiteSpace: 'nowrap',
+    borderBottomRightRadius: 0,
+    backgroundColor: '#3f444e',
+    paddingInline: 10,
+    color: '#fff',
+  })
+);
+
+export const InputLeftAddon = styled.span<InputAddonProps>(
+  ({ theme, scale }) => ({
+    ...theme.sizes[scale],
+    width: 'auto',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    borderTopRightRadius: 0,
+    whiteSpace: 'nowrap',
+    borderBottomRightRadius: 0,
+    backgroundColor: '#3f444e',
+    paddingInline: 10,
+    color: '#fff',
+  })
+);

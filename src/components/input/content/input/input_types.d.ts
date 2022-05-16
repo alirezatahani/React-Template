@@ -5,18 +5,24 @@ export type InputContainerProps = {
 };
 
 export type InputAddonProps = {
-  size: string;
+  scale: string;
 };
+export type InputLabelProps = {
+  htmlFor: string;
+};
+
 export type InputProps = {
   type?: string;
+  label?: string;
   placeholder?: string;
+  scale?: 'sm' | 'md' | 'lg';
+  status?: 'danger' | 'success' | 'warning';
+  variant?: 'outlined' | 'filled' | 'standard';
+  rounded?: boolean;
+  name?: string;
   leftAddon?: string;
   rightAddon?: string;
-  size?: string;
-  label?: string;
-  variant?: string;
-  status?: string;
-  name?: string;
   onChange?: React.ChangeEventHandler;
   value?: string;
+  disabled?: boolean;
 };
