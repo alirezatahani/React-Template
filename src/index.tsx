@@ -1,9 +1,7 @@
 import * as React from 'react';
 import { createRoot } from 'react-dom/client';
 import { ThemeProvider } from 'styled-components';
-import Button from './components/button/content/Button';
-import { Row, Col } from './components/grid/Index';
-import { Input } from './components/input/index';
+import { Input, Col, Row, Button } from './components';
 import { GlobalStyle, theme } from './global/Global';
 
 const App: React.FC = () => {
