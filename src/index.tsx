@@ -18,25 +18,38 @@ const App: React.FC = () => {
           <Col span={4}>
             Size: sm
             <div>
-              <Button kind="primary" size="sm">
+              <Button variant="text" size="sm" rounded>
                 Salam
               </Button>
-              <Button kind="warning" size="sm">
+              <Button variant="text" size="md" rounded>
                 Salam
               </Button>
-              <Button shape="round" kind="warning" size="sm">
+              <Button variant="text" size="lg" rounded>
                 Salam
               </Button>
-              <Button kind="danger" size="sm">
+
+              <Button block variant="filled" size="sm">
                 Salam
               </Button>
-              <Button block kind="primary" size="sm">
+              <Button block disabled variant="filled" size="md">
                 block btn
               </Button>
-              <Button size="sm">Salam</Button>
+              <Button block variant="filled" size="lg">
+                Salam
+              </Button>
+
+              <Button variant="outlined" size="sm">
+                Salam
+              </Button>
+              <Button variant="outlined" size="md">
+                block btn
+              </Button>
+              <Button variant="outlined" size="lg">
+                Salam
+              </Button>
             </div>
           </Col>
-          <Col span={4}>
+          {/* <Col span={4}>
             Size: md or default
             <div>
               <Button disabled kind="primary" size="md">
@@ -77,9 +90,9 @@ const App: React.FC = () => {
               </Button>
               <Button size="lg">Salam</Button>
             </div>
-          </Col>
+          </Col> */}
         </Row>
-        <Row>
+        {/*<Row>
           <Col span={6}>
             <Input
               leftAddon="https://"
@@ -179,7 +192,7 @@ const App: React.FC = () => {
               placeholder="Success Filled"
             />
           </Col>
-        </Row>
+        </Row> */}
       </>
     </ThemeProvider>
   );

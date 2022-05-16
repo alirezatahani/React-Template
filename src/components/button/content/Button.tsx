@@ -2,16 +2,15 @@ import * as React from 'react';
 import { StyledButton } from '../styles/Button.styles';
 import { ButtonProps } from './button_types';
 
-const Button: React.FC<ButtonProps> = ({
-  children,
-  kind = 'default',
-  ...rest
-}: ButtonProps) => {
-  return (
-    <StyledButton kind={kind} {...rest}>
-      {children}
-    </StyledButton>
-  );
+const Button: React.FC<ButtonProps> = ({ children, ...rest }: ButtonProps) => {
+  return <StyledButton {...rest}>{children}</StyledButton>;
 };
 
+Button.defaultProps = {
+  size: 'md',
+  variant: 'filled',
+  rounded: false,
+  block: false,
+  disabled: false,
+};
 export default Button;

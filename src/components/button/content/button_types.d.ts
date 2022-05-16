@@ -3,9 +3,10 @@ import * as React from 'react';
 export type ButtonProps = {
   children: React.ReactNode;
   style?: React.CSSProperties;
-  size?: string;
-  kind?: string;
-  shape?: string;
+  size?: 'sm' | 'md' | 'lg';
+  variant?: 'outlined' | 'text' | 'filled';
+  color?: 'primary' | 'secondary' | string;
+  rounded?: boolean;
   block?: boolean;
   disabled?: boolean;
 };

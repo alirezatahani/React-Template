@@ -31,11 +31,12 @@ export type ButtonTypes = {
   sm: sizeBtn;
   md: sizeBtn;
   lg: sizeBtn;
-  primary: btnKindProps;
-  success: btnKindProps;
-  warning: btnKindProps;
-  danger: btnKindProps;
-  default: btnKindProps;
+
+  // primary: btnKindProps;
+  // success: btnKindProps;
+  // warning: btnKindProps;
+  // danger: btnKindProps;
+  // default: btnKindProps;
   buttonFocusOutline: string;
   borderColor: string;
   filledBackground: string;
