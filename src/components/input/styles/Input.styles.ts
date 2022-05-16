@@ -4,12 +4,12 @@ import {
   handleInputSize,
   handleInputStatus,
   handleInputVariant,
-} from '../../utils/utils';
+} from '../utils/utils';
 import {
   InputProps,
   InputAddonProps,
   InputContainerProps,
-} from '../input/input_types';
+} from '../content/input/input_types';
 
 export const InputContainer = styled.div<InputContainerProps>`
   margin: 0 0 20px;
