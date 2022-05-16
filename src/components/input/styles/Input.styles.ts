@@ -4,12 +4,18 @@ import {
   handleInputSize,
   handleInputStatus,
   handleInputVariant,
-} from '../../utils/utils';
+} from '../utils/utils';
+
+
 import {
   InputProps,
   InputAddonProps,
   InputContainerProps,
-} from '../input/input_types';
+
+} from '../content/input/input_types';
+
+
+
 
 export const InputContainer = styled.div<InputContainerProps>`
   margin: 0 0 20px;
@@ -44,7 +50,6 @@ export const InputRightAddon = styled.span<InputAddonProps>`
   white-space: nowrap;
   border-bottom-right-radius: 0;
   padding-inline: 10px;
-  /* padding: 5px 11px; */
   ${({ size }) => handleInputSize(size)}
   background-color: ${({ theme }) => theme.input.addonBg};
   color: ${({ theme }) => theme.input.addonTextColor};

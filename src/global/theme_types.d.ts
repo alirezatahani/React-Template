@@ -3,6 +3,8 @@ type ColorTypes = {
   success: string;
   danger: string;
   warning: string;
+  black: string;
+  white: string;
 };
 
 type InputTypes = {
@@ -13,8 +15,31 @@ type InputTypes = {
   addonTextColor: string;
 };
 
+type sizeBtn = {
+  height: string;
+  padding: string;
+  fontSize: string;
+};
+
+type btnKindProps = {
+  background: string;
+  border: string;
+  color: string;
+};
+
+export type ButtonTypes = {
+  sm: sizeBtn;
+  md: sizeBtn;
+  lg: sizeBtn;
+  buttonFocusOutline: string;
+  borderColor: string;
+  filledBackground: string;
+};
+
 export type ThemeTypes = {
   colors: ColorTypes;
   input: InputTypes;
+  button: ButtonTypes;
   borderRadius: string;
+  borderRadiusRound: string;
 };

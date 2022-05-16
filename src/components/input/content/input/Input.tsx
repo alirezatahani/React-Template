@@ -4,10 +4,10 @@ import {
   InputContainer,
   InputLeftAddon,
   InputRightAddon,
-} from '../styles/Input.styles';
+} from '../../styles/Input.styles';
 import { InputProps } from './input_types';
 
-const Input = ({
+const Input: React.FC = ({
   type = 'text',
   label,
   variant = 'outlined',

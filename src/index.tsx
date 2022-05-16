@@ -1,22 +1,95 @@
 import * as React from 'react';
 import { createRoot } from 'react-dom/client';
 import { ThemeProvider } from 'styled-components';
-import { Row, Col } from './components/grid/Index';
-import { Input } from './components/input/index';
-import { Toggle } from './components/toggle/index';
+import { Input, Col, Row, Button } from './components';
 import { GlobalStyle, theme } from './global/Global';
 
 const App: React.FC = () => {
   const [fnameVal, setFnameVal] = React.useState<string>('');
   const [lnameVal, setLnameVal] = React.useState<string>('');
 
-  console.log(fnameVal, lnameVal);
-
   return (
     <ThemeProvider theme={theme}>
       <>
         <GlobalStyle />
         <Row>
+          <Col span={4}>
+            <div>
+              <Button color="warning" variant="text" size="sm" rounded>
+                Salam
+              </Button>
+              <Button variant="text" size="md" rounded>
+                Salam
+              </Button>
+              <Button variant="text" size="lg" rounded>
+                Salam
+              </Button>
+
+              <Button block color="danger" variant="filled" size="lg">
+                Salam
+              </Button>
+              <Button block disabled variant="filled" size="md">
+                disabled btn
+              </Button>
+              <Button block variant="filled" size="lg">
+                Salam
+              </Button>
+
+              <Button color="secondary" variant="outlined" size="sm">
+                Salam2
+              </Button>
+              <Button rounded color="success" variant="filled" size="md">
+                block btn
+              </Button>
+              <Button disabled color="success" variant="outlined" size="lg">
+                Salam
+              </Button>
+            </div>
+          </Col>
+          {/* <Col span={4}>
+            Size: md or default
+            <div>
+              <Button disabled kind="primary" size="md">
+                Salam
+              </Button>
+              <Button kind="warning" size="md">
+                Salam
+              </Button>
+              <Button kind="danger" size="md">
+                Salam
+              </Button>
+              <Button shape="round" kind="danger" size="md">
+                Salam
+              </Button>
+              <Button block shape="round" kind="warning" size="md">
+                block btn
+              </Button>
+              <Button size="md">Salam</Button>
+            </div>
+          </Col>
+          <Col span={4}>
+            Size: Lg
+            <div>
+              <Button kind="primary" size="lg">
+                Salam
+              </Button>
+              <Button kind="warning" size="lg">
+                Salam
+              </Button>
+              <Button kind="danger" size="lg">
+                Salam
+              </Button>
+              <Button shape="round" kind="primary" size="lg">
+                Salam
+              </Button>
+              <Button block shape="round" kind="danger" size="lg">
+                block btn
+              </Button>
+              <Button size="lg">Salam</Button>
+            </div>
+          </Col> */}
+        </Row>
+        {/*<Row>
           <Col span={6}>
             <Input
               leftAddon="https://"
@@ -116,50 +189,7 @@ const App: React.FC = () => {
               placeholder="Success Filled"
             />
           </Col>
-        </Row>
-        <Row>
-          <Col span={3}>
-            <h3>Default (Primary)</h3>
-            <Toggle />
-          </Col>
-          <Col span={3}>
-            <h3>Success</h3>
-            <Toggle theme="success" />
-          </Col>
-          <Col span={3}>
-            <h3>Warning</h3>
-            <Toggle theme="warning" />
-          </Col>
-          <Col span={3}>
-            <h3>Danger</h3>
-            <Toggle theme="danger" />
-          </Col>
-        </Row>
-        <Row>
-          <Col span={3}>
-            <h3>Small</h3>
-            <Toggle size={48} />
-          </Col>
-          <Col span={3}>
-            <h3>Medium</h3>
-            <Toggle size={64} />
-          </Col>
-          <Col span={3}>
-            <h3>Big</h3>
-            <Toggle size={88} />
-          </Col>
-        </Row>
-        <Row>
-          <Col span={3}>
-            <h3>With Callback</h3>
-            <Toggle
-              size={48}
-              onChange={(checked: Boolean) =>
-                alert(`Toggle ${checked ? 'Checked' : 'Unchecked'}`)
-              }
-            />
-          </Col>
-        </Row>
+        </Row> */}
       </>
     </ThemeProvider>
   );
