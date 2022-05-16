@@ -15,7 +15,7 @@ export const StyledButton = styled.button<ButtonProps>(
     backgroundColor:
       variant === 'filled'
         ? theme.palette[color].main
-        : theme.palette.common.white,
+        : theme.palette.common.transparent,
 
     color:
       variant === 'filled'
@@ -26,38 +26,32 @@ export const StyledButton = styled.button<ButtonProps>(
     alignItems: 'center',
     justifyContent: 'center',
     cursor: 'pointer',
-
+    transition: 'all 150ms linear',
     ['&:disabled']: {
-      ...theme.general.disabled,
+      ...theme.palette.disabled,
+      borderColor: '#ccc',
+      cursor: 'not-allowed',
     },
-    // ['&:hover']{
-    //   transition: "all 200ms linear"
-    //   color: ${({ theme, kind }) =>
-    // kind === 'default' && theme.colors.primary};
-    //   border-color: ${({ theme }) => theme.colors.primary};
-    //   opacity: 0.85;
-    // }
+    ['&:disabled:hover']: {
+      ...theme.palette.disabled,
+      borderColor: '#ccc',
+      cursor: 'not-allowed',
+    },
 
-    // &:active {
-    //   transition: all 150ms linear;
-    //   opacity: 0.75;
-    // }
+    ['&:hover']: {
+      backgroundColor: variant !== 'text' && theme.palette[color].main,
+      color: variant !== 'text' && theme.palette.common.white,
+      borderColor: theme.palette[color],
+      opacity: 0.85,
+    },
 
-    // &:focus {
-    //   outline: 2px solid ${({ theme }) => theme.button.buttonFocusOutline};
-    //   outline-offset: 1px;
-    // }
+    ['&:active']: {
+      opacity: '0.75',
+    },
+
+    ['&:focus']: {
+      outline: variant !== 'text' && `2px solid ${theme.palette[color].main}`,
+      outlineOffset: 1,
+    },
   })
 );
-
-// export const StyledButton = styled.button<ButtonProps>`
-
-//   shape === 'round' ? theme.borderRadiusRound : theme.borderRadius};
-
-// &[disabled]:hover {
-//   border-color: #ccc;
-// }
-
-// transition: all 200ms linear;
-
-// `;

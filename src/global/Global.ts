@@ -21,6 +21,7 @@ const theme = {
     common: {
       black: '#323232',
       white: '#FFFFFF',
+      transparent: 'transparent',
     },
     primary: {
       main: '#1562dc',
@@ -36,6 +37,10 @@ const theme = {
     },
     warning: {
       main: '#ffc500',
+    },
+    disabled: {
+      color: '#0000004d',
+      backgroundColor: '#0000002d',
     },
   },
   typography: {
@@ -151,14 +156,6 @@ const theme = {
   },
   general: {
     borderRadious: 50,
-    disabled: {
-      color: '#0000004d',
-      borderColor: '#ccc',
-      backgroundColor: '#0000002d',
-      textShadow: 'none',
-      boxShadow: 'none',
-      cursor: 'not-allowed',
-    },
   },
 };
 export { GlobalStyle, theme };
