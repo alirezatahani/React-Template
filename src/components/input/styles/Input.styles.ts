@@ -10,26 +10,23 @@ export const StyledInput = styled.input<InputProps>(
   ({ theme, status, scale, rounded, variant }) => ({
     ...theme.sizes[scale],
     ...theme.typography.input,
+    color: theme.palette.common.black,
     outline: 'none',
     paddingLeft: 11,
     width: '100%',
-
     transition: theme.general.transition,
-
-    background: variant === 'filled' && '#eee',
-
+    background: variant === 'filled' && theme.palette.greyScale['200'],
     border: `${
       variant === 'outlined' || variant === 'filled'
-        ? `solid 1px ${status ? theme.palette[status].main : '#00000029'}`
+        ? `solid 1px ${
+            status ? theme.palette[status].main : theme.palette.greyScale['200']
+          }`
         : `none`
     }`,
-
     borderBottom:
       variant === 'standard' &&
       `solid 2px ${status ? theme.palette[status].main : '#00000029'}`,
-
     borderRadius: rounded ? theme.general.borderRadius : 4,
-
     ['::placeholder']: {
       opacity: 0.6,
     },
@@ -75,6 +72,8 @@ export const InputLabel = styled.span<InputLabelProps>({
 export const InputRightAddon = styled.span<InputAddonProps>(
   ({ theme, scale }) => ({
     ...theme.sizes[scale],
+    backgroundColor: theme.palette.greyScale.main,
+    color: theme.palette.common.white,
     width: 'auto',
     display: 'flex',
     alignItems: 'center',
@@ -82,15 +81,15 @@ export const InputRightAddon = styled.span<InputAddonProps>(
     borderTopRightRadius: 0,
     whiteSpace: 'nowrap',
     borderBottomRightRadius: 0,
-    backgroundColor: '#3f444e',
     paddingInline: 10,
-    color: '#fff',
   })
 );
 
 export const InputLeftAddon = styled.span<InputAddonProps>(
   ({ theme, scale }) => ({
     ...theme.sizes[scale],
+    backgroundColor: theme.palette.greyScale.main,
+    color: theme.palette.common.white,
     width: 'auto',
     display: 'flex',
     alignItems: 'center',
@@ -98,8 +97,6 @@ export const InputLeftAddon = styled.span<InputAddonProps>(
     borderTopRightRadius: 0,
     whiteSpace: 'nowrap',
     borderBottomRightRadius: 0,
-    backgroundColor: '#3f444e',
     paddingInline: 10,
-    color: '#fff',
   })
 );

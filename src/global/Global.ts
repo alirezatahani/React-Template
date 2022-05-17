@@ -5,15 +5,6 @@ const GlobalStyle = createGlobalStyle`
     box-sizing: border-box;
   }
 `;
-
-const INPUT = {
-  borderWidth: '1px',
-  borderColor: 'rgba(0, 0, 0, 0.16)',
-  filledBackground: '#eee',
-  addonBg: '#3f444e',
-  addonTextColor: '#fff',
-};
-
 const theme = {
   palette: {
     background: { paper: '#fff' },
@@ -40,6 +31,13 @@ const theme = {
     disabled: {
       color: '#0000004d',
       backgroundColor: '#0000002d',
+    },
+    greyScale: {
+      main: '#323232',
+      '200': '#ebebeb',
+      '400': '#848484',
+      '600': '#5b5b5b',
+      '800': '#474747',
     },
   },
   typography: {
