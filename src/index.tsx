@@ -2,7 +2,7 @@ import * as React from 'react';
 import { createRoot } from 'react-dom/client';
 import { ThemeProvider } from 'styled-components';
 import { Input, Col, Row, Button } from './components';
-import { Alert, Toast } from './components/alert/content/Alert';
+import Alert from './components/alert/content/Alert';
 import { GlobalStyle, theme } from './global/Global';
 
 const App: React.FC = () => {
@@ -52,71 +52,96 @@ const App: React.FC = () => {
             </div>
           </Col>
         </Row>
-        <br />
-        <br />
-        <button onClick={tog}>Toggle Alert</button>
 
-        <Toast message="Toast ?">
-          <Alert
-            kind="toast"
-            open={test}
-            onClose={() => console.log('salam')}
-            message="this is an alert"
-            type="danger"
-            variant="filled"
-          />
-          <Alert
-            kind="toast"
-            open={test}
-            onClose={() => console.log('salam')}
-            message="this is an alert"
-            type="danger"
-            variant="filled"
-          />
-        </Toast>
+        <br />
 
-        {/* <Row>
-          <Col span={4}>
-            <Alert message="this is an alert" variant="filled" />
-            <Alert type="success" message="this is an alert" variant="filled" />
-            <Alert type="warning" message="this is an alert" variant="filled" />
-            <Alert type="danger" message="this is an alert" variant="filled" />
-          </Col>
-          <Col span={4}>
-            <Alert message="this is an alert" />
-            <Alert type="warning" message="this is an alert" />
-            <Alert type="danger" message="this is an alert" />
-            <Alert type="success" message="this is an alert" />
-          </Col>
-          <Col span={4}>
+        <Row>
+          <Col span={3}>
+            <Alert message="this is an alert" type="info" variant="filled" />
+            <Alert message="this is an alert" type="success" variant="filled" />
+            <Alert message="this is an alert" type="warning" variant="filled" />
+            <Alert message="this is an alert" type="danger" variant="filled" />
             <Alert
-              description="with Description and closable"
               message="this is an alert"
-              closable
-            />
-            <Alert
-              type="warning"
-              description="with Description and closable"
-              message="this is an alert"
-              closable
-            />
-            <Alert
-              type="danger"
+              type="secondary"
               variant="filled"
-              description="with Description and closable"
-              message="this is an alert"
-              closable
             />
+          </Col>
+          <Col span={3}>
+            <Alert message="this is an alert" type="info" variant="outlined" />
             <Alert
+              message="this is an alert"
               type="success"
-              variant="filled"
-              description="with Description and closable"
+              variant="outlined"
+            />
+            <Alert
               message="this is an alert"
-              closable
+              type="warning"
+              variant="outlined"
+            />
+            <Alert
+              message="this is an alert"
+              type="danger"
+              variant="outlined"
+            />
+            <Alert
+              message="this is an alert"
+              type="secondary"
+              variant="outlined"
             />
           </Col>
-        </Row> */}
-
+          <Col span={3}>
+            <Alert
+              closable
+              message="this is an alert"
+              type="info"
+              variant="filled"
+            />
+            <Alert closable message="this is an alert" type="success" />
+            <Alert closable message="this is an alert" type="warning" />
+            <Alert
+              variant="filled"
+              closable
+              message="this is an alert"
+              type="danger"
+            />
+            <Alert closable message="this is an alert" type="secondary" />
+          </Col>
+          <Col span={3}>
+            <Alert
+              closable
+              description="This is a Description"
+              message="this is an alert"
+              type="info"
+              variant="filled"
+            />
+            <Alert
+              description="This is a Description"
+              closable
+              message="this is an alert"
+              type="success"
+            />
+            <Alert
+              description="This is a Description"
+              closable
+              message="this is an alert"
+              type="warning"
+            />
+            <Alert
+              variant="filled"
+              closable
+              message="this is an alert"
+              type="danger"
+              description="This is a Description"
+            />
+            <Alert
+              description="This is a Description"
+              closable
+              message="this is an alert"
+              type="secondary"
+            />
+          </Col>
+        </Row>
         <br />
         <br />
         <Row>
@@ -207,7 +232,6 @@ const App: React.FC = () => {
             placeholder="Warning outlined"
           />
         </Col>
-
         <Input variant="outlined" scale="lg" placeholder="Warning outlined" />
         <Row>
           <Col span={6}>

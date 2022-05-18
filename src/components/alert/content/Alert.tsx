@@ -5,19 +5,23 @@ import {
   AlertDescription,
   AlertContent,
   AlertClose,
-  ToastWrapper,
-  StyledToast,
 } from '../styles/Alert.styles';
-import { AlertProps, ToastProps } from './alert_types';
+import { AlertProps } from './alert_types';
 
-const Alert: React.FC<AlertProps> = ({ ...props }: AlertProps) => {
+const Alert: React.FC<AlertProps> = ({
+  type,
+  variant,
+  ...props
+}: AlertProps) => {
   const [isClose, setIsClose] = React.useState(false);
   return (
     <>
-      <StyledAlert isClose={isClose} {...props}>
+      <StyledAlert variant={variant} type={type} isClose={isClose}>
         <AlertContent>
-          <AlertTitle {...props}>{props.message}</AlertTitle>
-          <AlertDescription {...props}>{props.description}</AlertDescription>
+          <AlertTitle>{props.message}</AlertTitle>
+          {props.description && (
+            <AlertDescription>{props.description}</AlertDescription>
+          )}
         </AlertContent>
         {props.closable && (
           <AlertClose onClick={() => setIsClose(true)}>x</AlertClose>
@@ -27,15 +31,10 @@ const Alert: React.FC<AlertProps> = ({ ...props }: AlertProps) => {
   );
 };
 
-const Toast: React.FC<ToastProps> = ({ children, ...props }: ToastProps) => {
-  return <ToastWrapper {...props}>{children}</ToastWrapper>;
-};
-
 Alert.defaultProps = {
   variant: 'outlined',
   type: 'info',
   closable: false,
-  kind: 'alert',
 };
 
-export { Alert, Toast };
+export default Alert;

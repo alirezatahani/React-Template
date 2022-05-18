@@ -8,7 +8,6 @@ export const StyledButton = styled.button<ButtonProps>(
     ...theme.typography.button,
     width: block ? '100%' : 'auto',
     borderRadius: rounded ? 50 : 8,
-
     border:
       variant === 'text' ? 'none' : `1px solid ${theme.palette[color].main}`,
 
