@@ -3,7 +3,6 @@ import { createGlobalStyle } from 'styled-components';
 const GlobalStyle = createGlobalStyle(({ theme }) => ({
   ['*']: {
     boxSizing: 'border-box',
-    fontFamily: 'Roboto',
   },
 }));
 
@@ -177,7 +176,7 @@ const theme = {
   },
   general: {
     borderRadius: 50,
-    transition: '300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms',
+    transition: 'all 100ms ease-in',
   },
 };
 export { GlobalStyle, theme };

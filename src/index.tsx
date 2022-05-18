@@ -2,14 +2,17 @@ import * as React from 'react';
 import { createRoot } from 'react-dom/client';
 import { ThemeProvider } from 'styled-components';
 import { Input, Col, Row, Button } from './components';
-import Alert from './components/alert/content/Alert';
+import { Alert, Toast } from './components/alert/content/Alert';
 import { GlobalStyle, theme } from './global/Global';
 
 const App: React.FC = () => {
   const [fnameVal, setFnameVal] = React.useState<string>('');
   const [lnameVal, setLnameVal] = React.useState<string>('');
+
   const [test, setTest] = React.useState<boolean>(false);
+
   const tog = () => setTest(!test);
+
   return (
     <ThemeProvider theme={theme}>
       <>
@@ -51,7 +54,28 @@ const App: React.FC = () => {
         </Row>
         <br />
         <br />
-        <Row>
+        <button onClick={tog}>Toggle Alert</button>
+
+        <Toast message="Toast ?">
+          <Alert
+            kind="toast"
+            open={test}
+            onClose={() => console.log('salam')}
+            message="this is an alert"
+            type="danger"
+            variant="filled"
+          />
+          <Alert
+            kind="toast"
+            open={test}
+            onClose={() => console.log('salam')}
+            message="this is an alert"
+            type="danger"
+            variant="filled"
+          />
+        </Toast>
+
+        {/* <Row>
           <Col span={4}>
             <Alert message="this is an alert" variant="filled" />
             <Alert type="success" message="this is an alert" variant="filled" />
@@ -91,7 +115,7 @@ const App: React.FC = () => {
               closable
             />
           </Col>
-        </Row>
+        </Row> */}
 
         <br />
         <br />
