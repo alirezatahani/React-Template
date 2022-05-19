@@ -2,6 +2,7 @@ import * as React from 'react';
 import { createRoot } from 'react-dom/client';
 import { ThemeProvider } from 'styled-components';
 import { Input, Col, Row, Button } from './components';
+import { Badge } from './components/badge';
 import { GlobalStyle, theme } from './global/Global';
 
 const App: React.FC = () => {
@@ -46,6 +47,15 @@ const App: React.FC = () => {
               </Button>
             </div>
           </Col>
+
+          <Badge max={100} badgeContent={1000}>
+            test
+          </Badge>
+          <Badge max={100} badgeContent={10} rounded color="danger"></Badge>
+          <Badge badgeContent={100} color="secondary">
+            <Button>button as a children</Button>
+          </Badge>
+
           {/* <Col span={4}>
             Size: md or default
             <div>
