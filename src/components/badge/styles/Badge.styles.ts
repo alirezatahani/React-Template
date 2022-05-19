@@ -6,13 +6,13 @@ export const ContentBadge = styled.div<BadgeProps>(({}) => ({
 }));
 
 export const StyledBadge = styled.div<BadgeProps>(
-  ({ theme, color, rounded, placement }) => ({
-    borderRadius: rounded ? 50 : 4,
-    color: theme.palette.common.white,
+  ({ theme, color, rounded, placement, variant }) => ({
     backgroundColor: theme.palette[color].main,
-    width: 36,
-    padding: 8,
-    height: 18,
+    width: variant === 'dot' ? 10 : 32,
+    height: variant === 'dot' ? 10 : 18,
+    color: variant === 'dot' ? 'transparent' : theme.palette.common.white,
+    borderRadius: variant === 'dot' || rounded ? 50 : 4,
+    padding: 6,
     textAlign: 'center',
     fontSize: 12,
     fontWeight: 500,

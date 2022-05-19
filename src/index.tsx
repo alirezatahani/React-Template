@@ -55,6 +55,9 @@ const App: React.FC = () => {
           <Badge badgeContent={100} color="secondary">
             <Button>button as a children</Button>
           </Badge>
+          <Badge max={100} badgeContent={10} variant="dot" color="success">
+            variant dot
+          </Badge>
 
           {/* <Col span={4}>
             Size: md or default

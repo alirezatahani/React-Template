@@ -27,5 +27,6 @@ Badge.defaultProps = {
   color: 'primary',
   badgeContent: 0,
   rounded: false,
+  variant: 'standard',
 };
 export default Badge;
