@@ -57,7 +57,19 @@ const App: React.FC = () => {
 
         <Row>
           <Col span={3}>
-            <Alert message="this is an alert" type="info" variant="filled" />
+            <Alert
+              action={
+                <>
+                  <Button color="success">OK</Button>
+                  <Button>undo</Button>
+                </>
+              }
+              message="this is an alert"
+              type="info"
+              variant="filled"
+              closable
+              onClose={() => console.log('onCloseFire')}
+            />
             <Alert message="this is an alert" type="success" variant="filled" />
             <Alert message="this is an alert" type="warning" variant="filled" />
             <Alert message="this is an alert" type="danger" variant="filled" />
@@ -73,6 +85,12 @@ const App: React.FC = () => {
               message="this is an alert"
               type="success"
               variant="outlined"
+              action={
+                <>
+                  <Button color="success">OK</Button>
+                  <Button>undo</Button>
+                </>
+              }
             />
             <Alert
               message="this is an alert"
@@ -117,12 +135,24 @@ const App: React.FC = () => {
             />
             <Alert
               description="This is a Description"
+              action={
+                <>
+                  <Button color="success">OK</Button>
+                  <Button size="sm">undo</Button>
+                </>
+              }
               closable
               message="this is an alert"
               type="success"
             />
             <Alert
               description="This is a Description"
+              action={
+                <>
+                  <Button color="success">OK</Button>
+                  <Button>undo</Button>
+                </>
+              }
               closable
               message="this is an alert"
               type="warning"
@@ -137,8 +167,9 @@ const App: React.FC = () => {
             <Alert
               description="This is a Description"
               closable
-              message="this is an alert"
+              message="Whit OnClose CallBack"
               type="secondary"
+              onClose={() => alert('SALAM')}
             />
           </Col>
         </Row>

@@ -1,25 +1,11 @@
 import styled, { css, keyframes } from 'styled-components';
 import { AlertProps, StyledAlertProps } from '../content/alert_types';
 
-const slideIn = keyframes`
-from {
-    opacity: 0;
-    transform: translateX(calc(100% + 32px));
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-
-`;
-const fadeOut = keyframes`
-to {
-    opacity: 0;
-    
-  }
-
-
-`;
+export const ActionContainer = styled.div(({ theme }) => ({
+  display: 'flex',
+  alignItems: 'center',
+  marginLeft: 'auto',
+}));
 export const AlertTitle = styled.div(({ theme }) => ({
   ...theme.typography.h5,
 }));
@@ -31,14 +17,15 @@ export const AlertContent = styled.div(({}) => ({
   flexDirection: 'column',
   justifyContentL: 'flex-start',
 }));
-export const AlertClose = styled.div(() => ({
-  marginLeft: 'auto',
+export const AlertClose = styled.div<AlertProps>({
+  marginLeft: '8px',
   cursor: 'pointer',
-}));
+});
 
 export const StyledAlert = styled.div<StyledAlertProps>(
-  ({ theme, type, variant, isClose }) => ({
-    display: isClose ? 'none' : 'flex',
+  ({ theme, type, variant, isClosed }) => ({
+    display: isClosed ? 'none' : 'flex',
+    alignItems: 'center',
     marginBottom: 16,
     border: `solid 2px ${
       theme.palette[type === 'info' ? 'primary' : type].main

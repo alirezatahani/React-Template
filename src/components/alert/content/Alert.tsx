@@ -5,27 +5,46 @@ import {
   AlertDescription,
   AlertContent,
   AlertClose,
+  ActionContainer,
 } from '../styles/Alert.styles';
 import { AlertProps } from './alert_types';
 
 const Alert: React.FC<AlertProps> = ({
   type,
   variant,
+  action,
+  onClose,
   ...props
 }: AlertProps) => {
-  const [isClose, setIsClose] = React.useState(false);
+  const [isClosed, setIsClosed] = React.useState(false);
+
+  const handleClose = React.useCallback(() => {
+    setIsClosed(true);
+    onClose && onClose();
+  }, []);
+
   return (
     <>
-      <StyledAlert variant={variant} type={type} isClose={isClose}>
+      <StyledAlert
+        action={action}
+        variant={variant}
+        type={type}
+        isClosed={isClosed}
+      >
         <AlertContent>
           <AlertTitle>{props.message}</AlertTitle>
           {props.description && (
             <AlertDescription>{props.description}</AlertDescription>
           )}
         </AlertContent>
-        {props.closable && (
-          <AlertClose onClick={() => setIsClose(true)}>x</AlertClose>
-        )}
+        <ActionContainer>
+          <div>{action}</div>
+          {props.closable && (
+            <AlertClose onClick={handleClose} {...props}>
+              x
+            </AlertClose>
+          )}
+        </ActionContainer>
       </StyledAlert>
     </>
   );
