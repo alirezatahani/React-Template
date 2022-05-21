@@ -15,9 +15,7 @@ const Input: React.FC<InputProps> = ({ ...props }: InputProps) => {
         <InputLabel htmlFor={props.name}>{props.label}</InputLabel>
       )}
       {props.leftAddon && (
-        <InputLeftAddon scale={props.scale && props.scale}>
-          {props.leftAddon}
-        </InputLeftAddon>
+        <InputLeftAddon scale={props.scale}>{props.leftAddon}</InputLeftAddon>
       )}
       <StyledInput id={props.name} {...props} />
       {props.rightAddon && (

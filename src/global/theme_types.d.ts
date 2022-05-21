@@ -5,20 +5,20 @@ declare module 'styled-components' {
     palette: PaletteTypes;
     typography: TypographyTypes;
     general: GeneralStyleTypes;
-    sizes: SizeProps;
+    sizes: Record<ScreenSize, SizeElems>;
   }
 }
+
+export type ScreenSize = 'sm' | 'md' | 'lg';
+export type SizeElems = {
+  height: number;
+  padding: number;
+};
 
 type SizeProps = {
   sm: SizeElems;
   md: SizeElems;
   lg: SizeElems;
-  [key: string]: any; // change this to what ?
-};
-
-type SizeElems = {
-  height: number;
-  padding: number;
 };
 
 type GeneralStyleTypes = {
