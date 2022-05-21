@@ -70,7 +70,7 @@ export const InputLabel = styled.span<InputLabelProps>({
 });
 
 export const InputRightAddon = styled.span<InputAddonProps>(
-  ({ theme, scale }) => ({
+  ({ theme, scale }: any) => ({
     ...theme.sizes[scale],
     backgroundColor: theme.palette.greyScale.main,
     color: theme.palette.common.white,
@@ -84,6 +84,12 @@ export const InputRightAddon = styled.span<InputAddonProps>(
     paddingInline: 10,
   })
 );
+
+interface Testi {
+  theme: any;
+  scale: any;
+}
+// const dayKey: keyof Schedule = 'monday';
 
 export const InputLeftAddon = styled.span<InputAddonProps>(
   ({ theme, scale }) => ({

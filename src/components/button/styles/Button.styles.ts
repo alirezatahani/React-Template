@@ -1,4 +1,3 @@
-import { ThemeTypes } from 'src/global/theme_types';
 import styled from 'styled-components';
 import { ButtonProps } from '../content/button_types';
 

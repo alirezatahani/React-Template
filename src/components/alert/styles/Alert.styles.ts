@@ -1,11 +1,11 @@
-import styled, { css, keyframes } from 'styled-components';
+import styled from 'styled-components';
 import { AlertProps, StyledAlertProps } from '../content/alert_types';
 
-export const ActionContainer = styled.div(({ theme }) => ({
+export const ActionContainer = styled.div({
   display: 'flex',
   alignItems: 'center',
   marginLeft: 'auto',
-}));
+});
 export const AlertTitle = styled.div(({ theme }) => ({
   ...theme.typography.h5,
 }));
@@ -37,7 +37,7 @@ export const StyledAlert = styled.div<StyledAlertProps>(
     background:
       variant === 'filled'
         ? theme.palette[type === 'info' ? 'primary' : type].main
-        : theme.palette.transparent,
+        : theme.palette.common.transparent,
     padding: '6px 16px',
     borderRadius: 4,
   })

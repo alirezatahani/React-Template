@@ -1,4 +1,6 @@
 import * as React from 'react';
+import { SizeProps } from 'src/global/theme_types';
+import { ThemeProps } from 'styled-components';
 
 export type InputContainerProps = {
   hasAddon?: string;
