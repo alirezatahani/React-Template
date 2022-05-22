@@ -166,6 +166,11 @@ const theme = {
       cursor: 'not-allowed',
       userSelect: 'none',
     },
+    fontStyles: {
+      underline: {
+        fontStyle: 'underline',
+      },
+    },
   },
   sizes: {
     sm: {

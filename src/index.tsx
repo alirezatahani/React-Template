@@ -12,27 +12,38 @@ const App: React.FC = () => {
   const [test, setTest] = React.useState<boolean>(false);
 
   const tog = () => setTest(!test);
-
   return (
     <ThemeProvider theme={theme}>
       <>
         <GlobalStyle />
         <Row>
           <Col span={6}>
-            <Typography variant="h1">Amir(h1)</Typography>
-            <Typography variant="h2">Amir(h2)</Typography>
+            <Typography copyable variant="h1">
+              Amir(h1)
+            </Typography>
+            <Typography
+              italic
+              onClick={() => console.log('sdasd')}
+              variant="h2"
+            >
+              Amir(h2)
+            </Typography>
             <Typography variant="h3">Amir(h3)</Typography>
             <Typography variant="h4">Amir(h4)</Typography>
             <Typography variant="h5">Amir(h5)</Typography>
             <Typography variant="subtitle1">Amir(subtitle1)</Typography>
-            <Typography variant="subtitle2">Amir(subtitle2)</Typography>
-            <Typography variant="body1">Amir(body1)</Typography>
+            <Typography italic variant="subtitle2">
+              Amir(subtitle2)
+            </Typography>
+            <Typography italic variant="body1">
+              Amir(body1)
+            </Typography>
           </Col>
           <Col span={6}>
             <Typography color="primary" variant="h1">
               Amir(h1)
             </Typography>
-            <Typography color="danger" variant="h2">
+            <Typography underline color="danger" variant="h2">
               Amir(h2)
             </Typography>
             <Typography color="warning" variant="h3">
@@ -49,10 +60,10 @@ const App: React.FC = () => {
                 Amir(subtitle1) custom color
               </span>
             </Typography>
-            <Typography disabled color="success" variant="subtitle2">
+            <Typography strong disabled color="success" variant="subtitle2">
               Amir disabled
             </Typography>
-            <Typography color="success" variant="body1">
+            <Typography strong copyable color="success" variant="body1">
               Amir(body1)
             </Typography>
           </Col>

@@ -15,6 +15,11 @@ export type TypographyProps = {
   color?: ColorsType | string;
   style?: CSSProperties;
   disabled?: boolean;
+  copyable?: boolean;
+  underline?: boolean;
+  strong?: boolean;
+  italic?: boolean;
+  onClick?: React.MouseEventHandler;
 };
 export type StyledTypographyProps = {
   variant?:
@@ -28,6 +33,9 @@ export type StyledTypographyProps = {
     | 'subtitle2';
   color?: ColorsType | string;
   disabled?: boolean;
+  underline?: boolean;
+  italic?: boolean;
+  strong?: boolean;
 };
 
 export type VariantsType = {

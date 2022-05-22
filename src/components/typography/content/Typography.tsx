@@ -15,16 +15,33 @@ const variantsMapping: VariantsType = {
 
 const Typography: React.FC<TypographyProps> = ({
   variant,
-  color,
-  disabled,
   children,
+  ...props
 }: TypographyProps) => {
+  const copyRef = React.useRef<null | HTMLParagraphElement>();
+
   const Component: any = variant ? variantsMapping[variant] : 'p';
+
+  const handleCopy = () => {
+    navigator.clipboard.writeText(copyRef.current.innerText);
+  };
   return (
-    <TypographyContainer disabled={disabled} color={color} variant={variant}>
-      <Component>{children}</Component>
+    <TypographyContainer {...props}>
+      <Component ref={copyRef}>
+        {children}
+        {props.copyable && (
+          <img
+            onClick={handleCopy}
+            style={{ width: 12, height: 12, cursor: 'pointer' }}
+            src="https://www.nicepng.com/png/detail/232-2328361_app-copy-app-copy-app-copy-copy-icon.png"
+          />
+        )}
+      </Component>
     </TypographyContainer>
   );
 };
 
+Typography.defaultProps = {
+  strong: false,
+};
 export default Typography;
