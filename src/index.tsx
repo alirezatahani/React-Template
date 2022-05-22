@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { createRoot } from 'react-dom/client';
 import { ThemeProvider } from 'styled-components';
-import { Input, Col, Row, Button } from './components';
+import { Input, Col, Row, Button, Typography } from './components';
 import Alert from './components/alert/content/Alert';
 import { GlobalStyle, theme } from './global/Global';
 
@@ -17,6 +17,21 @@ const App: React.FC = () => {
     <ThemeProvider theme={theme}>
       <>
         <GlobalStyle />
+        <Row>
+          <Col span={6}>
+            <Typography variant="h1">Amir(h1)</Typography>
+            <Typography variant="h2">Amir(h2)</Typography>
+            <Typography variant="h3">Amir(h3)</Typography>
+            <Typography variant="h4">Amir(h4)</Typography>
+            <Typography variant="h5">Amir(h5)</Typography>
+          </Col>
+          <Col span={6}>
+            <Typography variant="subtitle1">Amir(subtitle1)</Typography>
+            <Typography variant="subtitle2">Amir(subtitle2)</Typography>
+
+            <Typography variant="body1">Amir(body1)</Typography>
+          </Col>
+        </Row>
         <Row>
           <Col span={4}>
             <div>

@@ -70,14 +70,14 @@ const theme = {
       letterSpacing: '0.15px',
     },
     input: {
-      fontWeight: 500,
+      fontWeight: 300,
       fontStyle: 'normal',
       fontSize: 14,
       lineHeight: '24px',
       letterSpacing: '0.5px',
     },
     button: {
-      fontWeight: 500,
+      fontWeight: 300,
       fontStyle: 'normal',
       fontSize: 14,
       lineHeight: '24px',
