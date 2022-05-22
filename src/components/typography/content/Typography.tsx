@@ -15,11 +15,13 @@ const variantsMapping: VariantsType = {
 
 const Typography: React.FC<TypographyProps> = ({
   variant,
+  color,
+  disabled,
   children,
 }: TypographyProps) => {
   const Component: any = variant ? variantsMapping[variant] : 'p';
   return (
-    <TypographyContainer variant={variant}>
+    <TypographyContainer disabled={disabled} color={color} variant={variant}>
       <Component>{children}</Component>
     </TypographyContainer>
   );

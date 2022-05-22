@@ -2,7 +2,8 @@ import styled from 'styled-components';
 import { StyledTypographyProps } from '../content/typography_types';
 
 export const TypographyContainer = styled.div<StyledTypographyProps>(
-  ({ theme, variant }) => ({
+  ({ theme, variant, color, disabled }) => ({
+    color: color ? theme.palette[color].main : theme.palette.common.black,
     p: {
       ...theme.typography.body1,
     },
@@ -23,6 +24,10 @@ export const TypographyContainer = styled.div<StyledTypographyProps>(
     },
     h6: {
       ...theme.typography[variant === 'subtitle1' ? 'subtitle1' : 'subtitle2'],
+    },
+
+    '> *': {
+      ...theme.typography[disabled ? 'typographyDisabled' : null],
     },
   })
 );

@@ -24,12 +24,37 @@ const App: React.FC = () => {
             <Typography variant="h3">Amir(h3)</Typography>
             <Typography variant="h4">Amir(h4)</Typography>
             <Typography variant="h5">Amir(h5)</Typography>
-          </Col>
-          <Col span={6}>
             <Typography variant="subtitle1">Amir(subtitle1)</Typography>
             <Typography variant="subtitle2">Amir(subtitle2)</Typography>
-
             <Typography variant="body1">Amir(body1)</Typography>
+          </Col>
+          <Col span={6}>
+            <Typography color="primary" variant="h1">
+              Amir(h1)
+            </Typography>
+            <Typography color="danger" variant="h2">
+              Amir(h2)
+            </Typography>
+            <Typography color="warning" variant="h3">
+              Amir(h3)
+            </Typography>
+            <Typography color="secondary" variant="h4">
+              Amir(h4)
+            </Typography>
+            <Typography color="success" variant="h5">
+              Amir(h5)
+            </Typography>
+            <Typography variant="subtitle1">
+              <span style={{ color: 'cyan' }}>
+                Amir(subtitle1) custom color
+              </span>
+            </Typography>
+            <Typography disabled color="success" variant="subtitle2">
+              Amir disabled
+            </Typography>
+            <Typography color="success" variant="body1">
+              Amir(body1)
+            </Typography>
           </Col>
         </Row>
         <Row>
