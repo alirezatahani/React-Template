@@ -4,6 +4,7 @@ import { ThemeProvider } from 'styled-components';
 import { Input, Col, Row, Button } from './components';
 import { Avatar } from './components/avatar';
 import { Badge } from './components/badge';
+import { ToolTip } from './components/tooltip';
 import { GlobalStyle, theme } from './global/Global';
 
 const App: React.FC = () => {
@@ -105,6 +106,7 @@ const App: React.FC = () => {
           <Avatar text="taha namdar" size="large" />
           <Avatar size="small" />
           <Avatar shape="square" bg="primary" />
+          <ToolTip title="hello">hover me</ToolTip>
         </Row>
         {/*<Row>
           <Col span={6}>
