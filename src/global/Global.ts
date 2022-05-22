@@ -9,7 +9,7 @@ const GlobalStyle = createGlobalStyle(({ theme }) => ({
   },
 }));
 
-const theme: DefaultTheme = {
+const theme = {
   palette: {
     background: { paper: '#fff' },
     common: {
