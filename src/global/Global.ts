@@ -153,7 +153,20 @@ const theme = {
       height: 40,
       padding: 12,
     },
+    small: {
+      width: 26,
+      height: 26,
+    },
+    medium: {
+      width: 40,
+      height: 40,
+    },
+    large: {
+      width: 50,
+      height: 50,
+    },
   },
+
   general: {
     borderRadious: 50,
   },
