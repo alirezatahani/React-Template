@@ -2,11 +2,16 @@ import * as React from 'react';
 import { createRoot } from 'react-dom/client';
 import { ThemeProvider } from 'styled-components';
 import { Input, Col, Row, Button } from './components';
+import Alert from './components/alert/content/Alert';
 import { GlobalStyle, theme } from './global/Global';
 
 const App: React.FC = () => {
   const [fnameVal, setFnameVal] = React.useState<string>('');
   const [lnameVal, setLnameVal] = React.useState<string>('');
+
+  const [test, setTest] = React.useState<boolean>(false);
+
+  const tog = () => setTest(!test);
 
   return (
     <ThemeProvider theme={theme}>
@@ -47,6 +52,129 @@ const App: React.FC = () => {
             </div>
           </Col>
         </Row>
+
+        <br />
+
+        <Row>
+          <Col span={3}>
+            <Alert
+              action={
+                <>
+                  <Button color="success">OK</Button>
+                  <Button>undo</Button>
+                </>
+              }
+              message="this is an alert"
+              type="info"
+              variant="filled"
+              closable
+              onClose={() => console.log('onCloseFire')}
+            />
+            <Alert message="this is an alert" type="success" variant="filled" />
+            <Alert message="this is an alert" type="warning" variant="filled" />
+            <Alert message="this is an alert" type="danger" variant="filled" />
+            <Alert
+              message="this is an alert"
+              type="secondary"
+              variant="filled"
+            />
+          </Col>
+          <Col span={3}>
+            <Alert message="this is an alert" type="info" variant="outlined" />
+            <Alert
+              message="this is an alert"
+              type="success"
+              variant="outlined"
+              action={
+                <>
+                  <Button color="success">OK</Button>
+                  <Button>undo</Button>
+                </>
+              }
+            />
+            <Alert
+              message="this is an alert"
+              type="warning"
+              variant="outlined"
+            />
+            <Alert
+              message="this is an alert"
+              type="danger"
+              variant="outlined"
+            />
+            <Alert
+              message="this is an alert"
+              type="secondary"
+              variant="outlined"
+            />
+          </Col>
+          <Col span={3}>
+            <Alert
+              closable
+              message="this is an alert"
+              type="info"
+              variant="filled"
+            />
+            <Alert closable message="this is an alert" type="success" />
+            <Alert closable message="this is an alert" type="warning" />
+            <Alert
+              variant="filled"
+              closable
+              message="this is an alert"
+              type="danger"
+            />
+            <Alert closable message="this is an alert" type="secondary" />
+          </Col>
+          <Col span={3}>
+            <Alert
+              closable
+              description="This is a Description"
+              message="this is an alert"
+              type="info"
+              variant="filled"
+            />
+            <Alert
+              description="This is a Description"
+              action={
+                <>
+                  <Button color="success">OK</Button>
+                  <Button size="sm">undo</Button>
+                </>
+              }
+              closable
+              message="this is an alert"
+              type="success"
+            />
+            <Alert
+              description="This is a Description"
+              action={
+                <>
+                  <Button color="success">OK</Button>
+                  <Button>undo</Button>
+                </>
+              }
+              closable
+              message="this is an alert"
+              type="warning"
+            />
+            <Alert
+              variant="filled"
+              closable
+              message="this is an alert"
+              type="danger"
+              description="This is a Description"
+            />
+            <Alert
+              description="This is a Description"
+              closable
+              message="Whit OnClose CallBack"
+              type="secondary"
+              onClose={() => alert('SALAM')}
+            />
+          </Col>
+        </Row>
+        <br />
+        <br />
         <Row>
           <Col span={4}>
             <Input
@@ -135,7 +263,6 @@ const App: React.FC = () => {
             placeholder="Warning outlined"
           />
         </Col>
-
         <Input variant="outlined" scale="lg" placeholder="Warning outlined" />
         <Row>
           <Col span={6}>

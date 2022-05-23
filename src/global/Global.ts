@@ -1,10 +1,11 @@
 import { createGlobalStyle } from 'styled-components';
 
-const GlobalStyle = createGlobalStyle`
-  * {
-    box-sizing: border-box;
-  }
-`;
+const GlobalStyle = createGlobalStyle(({ theme }) => ({
+  ['*']: {
+    boxSizing: 'border-box',
+  },
+}));
+
 const theme = {
   palette: {
     background: { paper: '#fff' },
@@ -14,30 +15,46 @@ const theme = {
       transparent: 'transparent',
     },
     primary: {
-      main: '#1562dc',
+      main: '#1292EE',
+      '200': '#D6EDFF',
+      '400': '#57B0FB',
+      '600': '#0077CC',
+      '800': '#034077',
     },
     secondary: {
       main: '#434343',
     },
     success: {
-      main: '#00ca62',
+      main: '#56C288',
+      '200': '#E3fBEE',
+      '400': '#87DBAE',
+      '600': '#39AC6E',
+      '800': '#106236',
     },
     danger: {
-      main: '#ff6446',
+      main: '#dc3545',
+      '200': '#f5c2c7',
+      '400': '#ea868f',
+      '600': '#9a2530',
+      '800': '#58151c',
     },
     warning: {
-      main: '#ffc500',
+      main: '#FFC555',
+      '200': '#FFF2D7',
+      '400': '#FDD88E',
+      '600': '#FAB347',
+      '800': '#CE7129',
     },
     disabled: {
       color: '#0000004d',
       backgroundColor: '#0000002d',
     },
     greyScale: {
-      main: '#323232',
-      '200': '#ebebeb',
-      '400': '#848484',
-      '600': '#5b5b5b',
-      '800': '#474747',
+      main: '#405261',
+      '200': '#F1F3F5',
+      '400': '#556575',
+      '600': '#314351',
+      '800': '#1d2b36',
     },
   },
   typography: {
@@ -159,7 +176,7 @@ const theme = {
   },
   general: {
     borderRadius: 50,
-    transition: 'all 200ms linear',
+    transition: 'all 100ms ease-in',
   },
 };
 export { GlobalStyle, theme };
