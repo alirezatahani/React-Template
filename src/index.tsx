@@ -6,12 +6,6 @@ import Alert from './components/alert/content/Alert';
 import { GlobalStyle, theme } from './global/Global';
 
 const App: React.FC = () => {
-  const [fnameVal, setFnameVal] = React.useState<string>('');
-  const [lnameVal, setLnameVal] = React.useState<string>('');
-
-  const [test, setTest] = React.useState<boolean>(false);
-
-  const tog = () => setTest(!test);
   return (
     <ThemeProvider theme={theme}>
       <>
@@ -21,7 +15,7 @@ const App: React.FC = () => {
             <Typography copyable variant="h1">
               Amir(h1)
             </Typography>
-            <Divider align="center" middle />
+            <Divider align="left" middle />
             <Typography
               italic
               onClick={() => console.log('sdasd')}
@@ -29,7 +23,7 @@ const App: React.FC = () => {
             >
               Amir(h2)
             </Typography>
-            <Divider align="left" middle />
+            <Divider align="center" middle />
             <Typography variant="h3">Amir(h3)</Typography>
             <Divider align="right" middle />
             <Typography variant="h4">Amir(h4)</Typography>
@@ -58,6 +52,9 @@ const App: React.FC = () => {
             <Typography color="success" variant="h5">
               Amir(h5)
             </Typography>
+            <Divider>Center Text</Divider>
+            <Divider orientation="left">Left Text</Divider>
+            <Divider orientation="right">RightText</Divider>
             <Typography variant="subtitle1">
               <span style={{ color: 'cyan' }}>
                 Amir(subtitle1) custom color
@@ -325,26 +322,18 @@ const App: React.FC = () => {
         <Row>
           <Col span={6}>
             <Input
-              onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
-                setFnameVal(e.target.value)
-              }
               name="fname"
               variant="outlined"
               label="First Name"
               placeholder="First Name"
-              value={fnameVal}
             />
           </Col>
           <Col span={6}>
             <Input
-              onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
-                setLnameVal(e.target.value)
-              }
               name="lname"
               variant="outlined"
               label="Last Name"
               placeholder="Last Name"
-              value={lnameVal}
             />
           </Col>
         </Row>
