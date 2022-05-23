@@ -1,20 +1,10 @@
 import { createGlobalStyle } from 'styled-components';
-import { ThemeTypes, ButtonTypes } from './theme_types';
 
 const GlobalStyle = createGlobalStyle`
   * {
     box-sizing: border-box;
   }
 `;
-
-const INPUT = {
-  borderWidth: '1px',
-  borderColor: 'rgba(0, 0, 0, 0.16)',
-  filledBackground: '#eee',
-  addonBg: '#3f444e',
-  addonTextColor: '#fff',
-};
-
 const theme = {
   palette: {
     background: { paper: '#fff' },
@@ -42,6 +32,13 @@ const theme = {
       color: '#0000004d',
       backgroundColor: '#0000002d',
     },
+    greyScale: {
+      main: '#323232',
+      '200': '#ebebeb',
+      '400': '#848484',
+      '600': '#5b5b5b',
+      '800': '#474747',
+    },
   },
   typography: {
     fontFamily: ['Open Sans', 'OpenSans'].join(','),
@@ -52,7 +49,13 @@ const theme = {
       lineHeight: '24px',
       letterSpacing: '0.15px',
     },
-
+    input: {
+      fontWeight: 500,
+      fontStyle: 'normal',
+      fontSize: 14,
+      lineHeight: '24px',
+      letterSpacing: '0.5px',
+    },
     button: {
       color: 'white',
       fontWeight: 500,
@@ -155,7 +158,8 @@ const theme = {
     },
   },
   general: {
-    borderRadious: 50,
+    borderRadius: 50,
+    transition: 'all 200ms linear',
   },
 };
 export { GlobalStyle, theme };

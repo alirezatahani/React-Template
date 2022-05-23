@@ -26,7 +26,7 @@ export const StyledButton = styled.button<ButtonProps>(
     alignItems: 'center',
     justifyContent: 'center',
     cursor: 'pointer',
-    transition: 'all 150ms linear',
+    transition: theme.general.transition,
     ['&:disabled']: {
       ...theme.palette.disabled,
       borderColor: '#ccc',
