@@ -4,6 +4,7 @@ import { BadgeProps } from '../content/badge_types';
 export const BadgeWrapper = styled.div<BadgeProps>(({}) => ({}));
 export const ContentBadge = styled.div<BadgeProps>(({}) => ({
   display: 'flex',
+  position: 'relative',
 }));
 
 const x = {

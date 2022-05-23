@@ -6,8 +6,8 @@ import { Badge } from './components/badge';
 import { GlobalStyle, theme } from './global/Global';
 
 const App: React.FC = () => {
-  const [fnameVal, setFnameVal] = React.useState<string>('');
-  const [lnameVal, setLnameVal] = React.useState<string>('');
+  const [value, setValue] = React.useState(1);
+  const [position, setPosition] = React.useState<string>('topCenter');
 
   return (
     <ThemeProvider theme={theme}>
@@ -42,9 +42,7 @@ const App: React.FC = () => {
               <Button rounded color="success" variant="filled" size="md">
                 block btn
               </Button>
-              <Button disabled color="success" variant="outlined" size="lg">
-                Salam
-              </Button>
+        
             </div>
           </Col> */}
 
@@ -76,7 +74,15 @@ const App: React.FC = () => {
               <p>This is for test</p>
             </Badge>
           </div>
-
+          <Badge
+            placement={position as any}
+            badgeContent={value}
+            color="success"
+          >
+            <p>This is for test 2</p>
+          </Badge>
+          <p onClick={() => setValue(value + 1)}>Salam</p>
+          <p onClick={() => setPosition('topRight')}>Salam</p>
           {/* <Col span={4}>
             Size: md or default
             <div>
