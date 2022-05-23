@@ -6,9 +6,6 @@ import { Badge } from './components/badge';
 import { GlobalStyle, theme } from './global/Global';
 
 const App: React.FC = () => {
-  const [value, setValue] = React.useState(1);
-  const [position, setPosition] = React.useState<string>('topCenter');
-
   return (
     <ThemeProvider theme={theme}>
       <>
@@ -45,7 +42,6 @@ const App: React.FC = () => {
         
             </div>
           </Col> */}
-
           {/* <Badge max={100} badgeContent={1000}>
             test
           </Badge>
@@ -56,7 +52,6 @@ const App: React.FC = () => {
           <Badge max={100} badgeContent={10} variant="dot" color="success">
             variant dot
           </Badge> */}
-
           <div
             style={{
               position: 'absolute',
@@ -64,25 +59,14 @@ const App: React.FC = () => {
               right: '50%',
             }}
           >
-            <Badge
-              placement="topCenter"
-              max={100}
-              badgeContent={10}
-              variant="dot"
-              color="success"
-            >
+            {/* <Badge max={100} badgeContent={10} variant="dot" color="success">
               <p>This is for test</p>
+            </Badge> */}
+            <Badge color="success" placement="topLeft">
+              <p>some txt</p>
             </Badge>
           </div>
-          <Badge
-            placement={position as any}
-            badgeContent={value}
-            color="success"
-          >
-            <p>This is for test 2</p>
-          </Badge>
-          <p onClick={() => setValue(value + 1)}>Salam</p>
-          <p onClick={() => setPosition('topRight')}>Salam</p>
+
           {/* <Col span={4}>
             Size: md or default
             <div>

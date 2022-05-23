@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { BadgeProps } from '../content/badge_types';
+import { position } from '../utils/constants';
 
 export const BadgeWrapper = styled.div<BadgeProps>(({}) => ({}));
 export const ContentBadge = styled.div<BadgeProps>(({}) => ({
@@ -7,25 +8,9 @@ export const ContentBadge = styled.div<BadgeProps>(({}) => ({
   position: 'relative',
 }));
 
-const x = {
-  topRight: {
-    right: '-5px',
-    top: '-5px',
-  },
-  topLeft: {
-    left: '-5px',
-    top: '-5px',
-  },
-  topCenter: {
-    right: '50%',
-    left: '50%',
-    top: '-5px',
-  },
-};
-
 export const StyledBadge = styled.div<BadgeProps>(
   ({ theme, color, rounded, placement, variant }) => ({
-    ...x[placement],
+    ...position[placement],
     backgroundColor: theme.palette[color].main,
     width: variant === 'dot' ? 10 : 32,
     height: variant === 'dot' ? 10 : 18,
