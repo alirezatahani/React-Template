@@ -10,12 +10,12 @@ export const position = {
   topCenter: {
     right: '50%',
     left: '50%',
-    top: '0px',
+    top: '-18px',
   },
   bottomLeft: {
     right: '5px',
-    left: '2px',
-    bottom: '-5px',
+    left: '0px',
+    bottom: '-2px',
   },
   bottomRight: {
     right: '-3px',
@@ -24,10 +24,14 @@ export const position = {
   bottomCenter: {
     right: '50%',
     left: '50%',
-    bottom: '-2px',
+    bottom: '-18px',
   },
   leftCenter: {
-    right: '58px',
-    top: '18px',
+    left: '-32px',
+    top: '40%',
+  },
+  rightCenter: {
+    right: '-32px',
+    top: '40%',
   },
 };

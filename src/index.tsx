@@ -62,8 +62,10 @@ const App: React.FC = () => {
             {/* <Badge max={100} badgeContent={10} variant="dot" color="success">
               <p>This is for test</p>
             </Badge> */}
-            <Badge color="success" placement="topLeft">
-              <p>some txt</p>
+            <Badge color="success" placement="rightCenter">
+              <div
+                style={{ width: 100, height: 100, backgroundColor: 'red' }}
+              ></div>
             </Badge>
           </div>
 

@@ -13,7 +13,8 @@ export type BadgeProps = {
     | 'bottomLeft'
     | 'bottomRight'
     | 'bottomCenter'
-    | 'leftCenter';
+    | 'leftCenter'
+    | 'rightCenter';
 
   variant?: 'dot' | 'standard';
   color?:
