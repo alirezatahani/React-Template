@@ -1,8 +1,11 @@
-import { createGlobalStyle } from 'styled-components';
+import { createGlobalStyle, DefaultTheme } from 'styled-components';
 
 const GlobalStyle = createGlobalStyle(({ theme }) => ({
-  ['*']: {
+  '*': {
     boxSizing: 'border-box',
+    fontFamily: theme.typography.fontFamily,
+    margin: 0,
+    padding: 0,
   },
 }));
 
@@ -58,7 +61,7 @@ const theme = {
     },
   },
   typography: {
-    fontFamily: ['Open Sans', 'OpenSans'].join(','),
+    fontFamily: ['Poppins', 'OpenSans'].join(','),
     body1: {
       fontWeight: 'normal',
       fontStyle: 'normal',
@@ -74,7 +77,6 @@ const theme = {
       letterSpacing: '0.5px',
     },
     button: {
-      color: 'white',
       fontWeight: 500,
       fontStyle: 'normal',
       fontSize: 14,
@@ -174,6 +176,7 @@ const theme = {
       padding: 12,
     },
   },
+
   general: {
     borderRadius: 50,
     transition: 'all 100ms ease-in',

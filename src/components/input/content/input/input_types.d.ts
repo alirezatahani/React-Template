@@ -1,14 +1,16 @@
 import * as React from 'react';
+import { SizeElems } from 'src/global/theme_types';
 
-export type InputContainerProps = {
-  hasAddon?: string;
-};
+type ScreenSize = { sm: SizeElems; md: SizeElems; lg: SizeElems };
 
 export type InputAddonProps = {
-  scale: string;
+  scale: keyof ScreenSize;
 };
 export type InputLabelProps = {
   htmlFor: string;
+};
+export type InputContainerProps = {
+  hasAddon?: string;
 };
 
 export type InputProps = {
