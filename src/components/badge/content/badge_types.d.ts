@@ -6,7 +6,7 @@ export type BadgeProps = {
   max?: number;
   badgeContent?: number;
   rounded?: boolean;
-  placement?: { vertical: string; horizontal: string };
+  placement?: 'topRight' | 'topLeft' | 'topCenter';
   variant?: 'dot' | 'standard';
   color?:
     | 'primary'

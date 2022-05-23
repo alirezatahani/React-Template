@@ -5,6 +5,7 @@ import {
   BadgeWrapper,
 } from '../styles/Badge.styles';
 import { BadgeProps } from './badge_types';
+
 const Badge: React.FC<BadgeProps> = ({ children, ...rest }: BadgeProps) => {
   return (
     <BadgeWrapper>
@@ -26,6 +27,7 @@ const Badge: React.FC<BadgeProps> = ({ children, ...rest }: BadgeProps) => {
 Badge.defaultProps = {
   color: 'primary',
   badgeContent: 0,
+  max: 9,
   rounded: false,
   variant: 'standard',
 };

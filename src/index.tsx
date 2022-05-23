@@ -14,7 +14,7 @@ const App: React.FC = () => {
       <>
         <GlobalStyle />
         <Row>
-          <Col span={4}>
+          {/* <Col span={4}>
             <div>
               <Button color="warning" variant="text" size="sm" rounded>
                 Salam
@@ -46,9 +46,9 @@ const App: React.FC = () => {
                 Salam
               </Button>
             </div>
-          </Col>
+          </Col> */}
 
-          <Badge max={100} badgeContent={1000}>
+          {/* <Badge max={100} badgeContent={1000}>
             test
           </Badge>
           <Badge max={100} badgeContent={10} rounded color="danger"></Badge>
@@ -57,7 +57,25 @@ const App: React.FC = () => {
           </Badge>
           <Badge max={100} badgeContent={10} variant="dot" color="success">
             variant dot
-          </Badge>
+          </Badge> */}
+
+          <div
+            style={{
+              position: 'absolute',
+              top: '50%',
+              right: '50%',
+            }}
+          >
+            <Badge
+              placement="topCenter"
+              max={100}
+              badgeContent={10}
+              variant="dot"
+              color="success"
+            >
+              <p>This is for test</p>
+            </Badge>
+          </div>
 
           {/* <Col span={4}>
             Size: md or default
