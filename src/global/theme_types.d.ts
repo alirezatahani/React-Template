@@ -9,7 +9,15 @@ declare module 'styled-components' {
   }
 }
 
+export type ColorsType =
+  | 'success'
+  | 'warning'
+  | 'primary'
+  | 'danger'
+  | 'secondary';
+
 export type ScreenSize = 'sm' | 'md' | 'lg';
+
 export type SizeElems = {
   height: number;
   padding: number;
@@ -66,6 +74,7 @@ type TypographyTypes = {
   h5: TypographyElement;
   subtitle1: TypographyElement;
   subtitle2: TypographyElement;
+  typographyDisabled: { color: string; cursor: string };
 };
 
 type TypographyElement = {

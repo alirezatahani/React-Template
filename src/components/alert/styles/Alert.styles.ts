@@ -7,10 +7,10 @@ export const ActionContainer = styled.div({
   marginLeft: 'auto',
 });
 export const AlertTitle = styled.div(({ theme }) => ({
-  ...theme.typography.h5,
+  ...theme.typography.subtitle1,
 }));
 export const AlertDescription = styled.div(({ theme }) => ({
-  ...theme.typography.subtitle1,
+  ...theme.typography.subtitle2,
 }));
 export const AlertContent = styled.div(({}) => ({
   display: 'flex',

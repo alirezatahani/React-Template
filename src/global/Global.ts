@@ -70,14 +70,14 @@ const theme = {
       letterSpacing: '0.15px',
     },
     input: {
-      fontWeight: 500,
+      fontWeight: 300,
       fontStyle: 'normal',
       fontSize: 14,
       lineHeight: '24px',
       letterSpacing: '0.5px',
     },
     button: {
-      fontWeight: 500,
+      fontWeight: 300,
       fontStyle: 'normal',
       fontSize: 14,
       lineHeight: '24px',
@@ -112,28 +112,28 @@ const theme = {
       letterSpacing: '0.15px',
     },
     h1: {
-      fontWeight: 300,
+      fontWeight: 500,
       fontStyle: 'normal',
       fontSize: 59,
       lineHeight: '80px',
       letterSpacing: '-0.5px',
     },
     h2: {
-      fontWeight: 'normal',
+      fontWeight: 500,
       fontStyle: 'normal',
       fontSize: 44,
       lineHeight: '64px',
       letterSpacing: '0px',
     },
     h3: {
-      fontWeight: 'normal',
+      fontWeight: 500,
       fontStyle: 'normal',
       fontSize: 33,
       lineHeight: '48px',
       letterSpacing: '0.25px',
     },
     h4: {
-      fontWeight: 'normal',
+      fontWeight: 500,
       fontStyle: 'normal',
       fontSize: 25,
       lineHeight: '40px',
@@ -160,6 +160,16 @@ const theme = {
       fontSize: 14,
       lineHeight: '24px',
       letterSpacing: '0.1px',
+    },
+    typographyDisabled: {
+      color: '#0000004d',
+      cursor: 'not-allowed',
+      userSelect: 'none',
+    },
+    fontStyles: {
+      underline: {
+        fontStyle: 'underline',
+      },
     },
   },
   sizes: {

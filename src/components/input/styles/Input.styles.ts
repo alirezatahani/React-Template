@@ -72,6 +72,7 @@ export const InputLabel = styled.span<InputLabelProps>({
 export const InputRightAddon = styled.span<InputAddonProps>(
   ({ theme, scale }) => ({
     ...theme.sizes[scale],
+    ...theme.typography.input,
     backgroundColor: theme.palette.greyScale.main,
     color: theme.palette.common.white,
     width: 'auto',
@@ -88,6 +89,7 @@ export const InputRightAddon = styled.span<InputAddonProps>(
 export const InputLeftAddon = styled.span<InputAddonProps>(
   ({ theme, scale }) => ({
     ...theme.sizes[scale],
+    ...theme.typography.input,
     backgroundColor: theme.palette.greyScale.main,
     color: theme.palette.common.white,
     width: 'auto',
