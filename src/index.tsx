@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { createRoot } from 'react-dom/client';
 import { ThemeProvider } from 'styled-components';
-import { Input, Col, Row, Button, Typography } from './components';
+import { Input, Col, Row, Button, Typography, Divider } from './components';
 import Alert from './components/alert/content/Alert';
 import { GlobalStyle, theme } from './global/Global';
 
@@ -21,6 +21,7 @@ const App: React.FC = () => {
             <Typography copyable variant="h1">
               Amir(h1)
             </Typography>
+            <Divider align="center" middle />
             <Typography
               italic
               onClick={() => console.log('sdasd')}
@@ -28,7 +29,9 @@ const App: React.FC = () => {
             >
               Amir(h2)
             </Typography>
+            <Divider align="left" middle />
             <Typography variant="h3">Amir(h3)</Typography>
+            <Divider align="right" middle />
             <Typography variant="h4">Amir(h4)</Typography>
             <Typography variant="h5">Amir(h5)</Typography>
             <Typography variant="subtitle1">Amir(subtitle1)</Typography>
@@ -84,19 +87,23 @@ const App: React.FC = () => {
               <Button block color="danger" variant="filled" size="lg">
                 Salam
               </Button>
+              <Divider align="center" middle />
               <Button block disabled variant="filled" size="md">
                 disabled btn
               </Button>
+              <Divider align="center" middle />
               <Button block variant="filled" size="lg">
                 Salam
               </Button>
-
+              <Divider align="center" middle />
               <Button color="secondary" variant="outlined" size="sm">
                 Salam2
               </Button>
+              <Divider align="center" middle />
               <Button rounded color="success" variant="filled" size="md">
                 block btn
               </Button>
+              <Divider align="center" middle />
               <Button disabled color="success" variant="outlined" size="lg">
                 Salam
               </Button>
