@@ -1,19 +1,25 @@
+import { Alert, Button, Input, Typography } from '../../components';
+
 export const MainConfig = {
   button: {
-    component: 'button',
+    name: 'button',
+    component: Button,
     props: { variant: 'outlined' },
     children: 'This is a Button',
   },
   alert: {
-    component: 'alert',
+    name: 'alert',
+    component: Alert,
     props: { message: 'This is a Alert', variant: 'filled' },
   },
   input: {
-    component: 'input',
+    name: 'input',
+    component: Input,
     props: { placeholder: 'Placeholder', variant: 'outlined', rounded: true },
   },
   typography: {
-    component: 'typography',
+    name: 'typography',
+    component: Typography,
     props: {
       variant: 'h1',
     },

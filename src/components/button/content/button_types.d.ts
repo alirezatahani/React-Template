@@ -9,7 +9,7 @@ export type ButtonProps = {
   rounded?: boolean;
   block?: boolean;
   disabled?: boolean;
-  value?: string;
-  onClick?: React.MouseEventHandler;
+  value?: string | number;
+  onClick?: () => void;
 };
 export type StyledButtonProps = {} & ButtonProps;

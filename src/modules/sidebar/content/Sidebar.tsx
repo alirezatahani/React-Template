@@ -7,14 +7,18 @@ type Props = {
   setComponentToRender?: any;
 };
 const Sidebar: React.FC<Props> = ({ setComponentToRender }: Props) => {
-  const handleComponentToRender = (e: any) => {
-    setComponentToRender(e.target.value);
+  const handleComponentToRender = (componentName: string) => {
+    setComponentToRender(componentName);
   };
   return (
     <StyledSidebar>
-      {Object.keys(MainConfig).map((component: string) => (
-        <Button onClick={handleComponentToRender} value={component}>
-          {component}
+      {Object.keys(MainConfig).map((key: string, index: number) => (
+        <Button
+          key={index}
+          onClick={() => handleComponentToRender(key)}
+          value={key}
+        >
+          {key}
         </Button>
       ))}
     </StyledSidebar>

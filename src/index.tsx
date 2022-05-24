@@ -6,19 +6,11 @@ import { GlobalStyle, theme } from './global/Global';
 
 import Sidebar from './modules/sidebar/content/Sidebar';
 import Wrapper from './modules/wrapper/content/Wrapper';
-import { Alert, Button, Input, Typography } from './components';
 import RenderComponent from './modules/render-component/content/RenderComponent';
 import ComponentsArea from './modules/components-area/content/ComponentsArea';
 
 const App: React.FC = () => {
-  const KeysToComponentMap = {
-    button: Button,
-    alert: Alert,
-    typography: Typography,
-    input: Input,
-  };
-
-  const [componentToRender, setComponentToRender] = React.useState<any>(null);
+  const [componentToRender, setComponentToRender] = React.useState<string>('');
 
   return (
     <ThemeProvider theme={theme}>
@@ -28,10 +20,7 @@ const App: React.FC = () => {
 
         {/* Components Area */}
         <ComponentsArea>
-          <RenderComponent
-            KeysToComponentMap={KeysToComponentMap}
-            componentToRender={componentToRender}
-          />
+          <RenderComponent componentToRender={componentToRender} />
         </ComponentsArea>
 
         {/* Props Handling Area */}
