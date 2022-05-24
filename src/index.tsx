@@ -13,6 +13,7 @@ import {
   Avatar,
   Badge,
 } from './components';
+import { Card } from './components/card';
 
 import { GlobalStyle, theme } from './global/Global';
 
@@ -289,6 +290,32 @@ const App: React.FC = () => {
         <Avatar text="taha namdar" size="lg" />
         <Avatar size="sm" />
         <Avatar shape="square" bg="primary" />
+        <br />
+
+        <Row>
+          <Col span={3}>
+            <Card title="title">
+              <Typography italic variant="subtitle2">
+                some text some text some
+              </Typography>
+            </Card>
+          </Col>
+          <Col span={3}>
+            <Card title="title">
+              <Typography italic variant="subtitle2">
+                some text some text some
+              </Typography>
+            </Card>
+          </Col>
+          <Col span={3}>
+            <Card title="title">
+              <Typography italic variant="subtitle2">
+                some text some text some
+              </Typography>
+            </Card>
+          </Col>
+        </Row>
+        <br />
         <Row>
           <Col span={4}>
             <Input
