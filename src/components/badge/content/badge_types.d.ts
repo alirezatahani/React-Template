@@ -6,7 +6,16 @@ export type BadgeProps = {
   max?: number;
   badgeContent?: number;
   rounded?: boolean;
-  placement?: { vertical: string; horizontal: string };
+  placement?:
+    | 'topRight'
+    | 'topLeft'
+    | 'topCenter'
+    | 'bottomLeft'
+    | 'bottomRight'
+    | 'bottomCenter'
+    | 'leftCenter'
+    | 'rightCenter';
+
   variant?: 'dot' | 'standard';
   color?:
     | 'primary'

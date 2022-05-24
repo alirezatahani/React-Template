@@ -3,4 +3,20 @@ import { Row, Col } from './grid/Index';
 import { Input } from './input';
 import { Space } from './space';
 import { Typography } from './typography';
-export { Button, Row, Col, Input, Space, Typography };
+import { Divider } from './divider';
+import { Alert } from './alert';
+import { Badge } from './badge';
+import { Avatar } from './avatar';
+
+export {
+  Button,
+  Row,
+  Col,
+  Input,
+  Space,
+  Typography,
+  Divider,
+  Alert,
+  Badge,
+  Avatar,
+};

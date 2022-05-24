@@ -5,19 +5,26 @@ import {
   BadgeWrapper,
 } from '../styles/Badge.styles';
 import { BadgeProps } from './badge_types';
-const Badge: React.FC<BadgeProps> = ({ children, ...rest }: BadgeProps) => {
+
+const Badge: React.FC<BadgeProps> = ({
+  children,
+  badgeContent,
+  max,
+  ...rest
+}: BadgeProps) => {
+  const calculateContnet = React.useMemo(() => {
+    if (max && max <= badgeContent) {
+      return <div>{max}+</div>;
+    } else {
+      return <div>{badgeContent}</div>;
+    }
+  }, [max, badgeContent]);
+
   return (
     <BadgeWrapper>
       <ContentBadge>
         {children ? children : null}
-
-        <StyledBadge {...rest}>
-          {rest.max && rest.max <= rest.badgeContent ? (
-            <div>{rest.max}+</div>
-          ) : (
-            <div>{rest.badgeContent}</div>
-          )}
-        </StyledBadge>
+        <StyledBadge {...rest}>{calculateContnet}</StyledBadge>
       </ContentBadge>
     </BadgeWrapper>
   );
@@ -26,6 +33,7 @@ const Badge: React.FC<BadgeProps> = ({ children, ...rest }: BadgeProps) => {
 Badge.defaultProps = {
   color: 'primary',
   badgeContent: 0,
+  max: 9,
   rounded: false,
   variant: 'standard',
 };
