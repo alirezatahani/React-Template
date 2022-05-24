@@ -18,6 +18,6 @@ const Avatar: React.FC<AvatarProps> = ({ ...rest }: AvatarProps) => {
 
 Avatar.defaultProps = {
   shape: 'rounded',
-  size: 'medium',
+  size: 'md',
 };
 export default Avatar;

@@ -6,5 +6,17 @@ import { Typography } from './typography';
 import { Divider } from './divider';
 import { Alert } from './alert';
 import { Badge } from './badge';
+import { Avatar } from './avatar';
 
-export { Button, Row, Col, Input, Space, Typography, Divider, Alert, Badge };
+export {
+  Button,
+  Row,
+  Col,
+  Input,
+  Space,
+  Typography,
+  Divider,
+  Alert,
+  Badge,
+  Avatar,
+};

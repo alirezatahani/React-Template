@@ -5,7 +5,7 @@ export type AvatarProps = {
   //   children?: React.ReactNode;
   text?: string;
   alt?: string;
-  size?: number | 'small' | 'medium' | 'large';
+  size?: 'sm' | 'md' | 'lg';
   src?: React.ReactNode | string;
   shape?: 'rounded' | 'square';
   bg?:
