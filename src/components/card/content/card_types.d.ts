@@ -5,5 +5,5 @@ export type CardProps = {
   style?: React.CSSProperties;
   size?: 'default' | 'small' | 'large';
   color?: 'primary' | 'secondary' | string;
-  title: string;
+  title?: string;
 };

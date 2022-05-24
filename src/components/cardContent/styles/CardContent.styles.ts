@@ -6,6 +6,6 @@ export const Title = styled.p<CardContentProps>(({}) => ({
 }));
 
 export const Content = styled.p<CardContentProps>(({}) => ({
-  margin: 20,
+  margin: 14,
   textAlign: 'left',
 }));
