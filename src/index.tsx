@@ -13,6 +13,7 @@ import {
   Badge,
 } from './components';
 import { Card } from './components/card';
+import { CardContent } from './components/cardContent';
 
 import { GlobalStyle, theme } from './global/Global';
 
@@ -291,23 +292,29 @@ const App: React.FC = () => {
         <Row>
           <Col span={3}>
             <Card title="title" size="small">
-              <Typography italic variant="subtitle2">
-                some text some text some
-              </Typography>
+              <CardContent>
+                <Typography italic variant="subtitle2">
+                  some text some text some
+                </Typography>
+              </CardContent>
             </Card>
           </Col>
           <Col span={3}>
             <Card title="title">
-              <Typography italic variant="subtitle2">
-                some text some text some
-              </Typography>
+              <CardContent title="Title">
+                <Typography italic variant="subtitle2">
+                  some text some text some
+                </Typography>
+              </CardContent>
             </Card>
           </Col>
           <Col span={3}>
             <Card title="title" size="large">
-              <Typography italic variant="subtitle2">
-                some text some text some
-              </Typography>
+              <CardContent title="Title">
+                <Typography italic variant="subtitle2">
+                  some text some text some
+                </Typography>
+              </CardContent>
             </Card>
           </Col>
         </Row>
