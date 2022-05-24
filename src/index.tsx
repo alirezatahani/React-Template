@@ -13,6 +13,7 @@ import {
   Avatar,
   Badge,
 } from './components';
+import { Drawer } from './components/drawer';
 
 import { GlobalStyle, theme } from './global/Global';
 
@@ -20,6 +21,7 @@ const App: React.FC = () => {
   return (
     <ThemeProvider theme={theme}>
       <>
+        <Drawer title="Title" />
         <GlobalStyle />
         <Row>
           <Col span={6}>
@@ -266,6 +268,7 @@ const App: React.FC = () => {
           </Badge>
         </div>
         <br />
+
         <Row>
           <Col span={4}>
             <Input
