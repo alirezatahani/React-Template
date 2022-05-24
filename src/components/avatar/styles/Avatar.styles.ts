@@ -1,11 +1,11 @@
 import styled from 'styled-components';
 import { AvatarProps } from '../content/avatar_types';
-
+import { avatarSize } from '../utils/constatns';
 export const AvatarStyled = styled.div<AvatarProps>(
   ({ src, shape, theme, size }) => ({
     backgroundImage: `url(${src})`,
     borderRadius: shape === 'square' ? 4 : 50,
-    ...theme.sizes[size],
+    ...avatarSize[size],
     backgroundColor: theme.palette.secondary.main,
     color: theme.palette.common.white,
     display: 'flex',
@@ -17,7 +17,7 @@ export const AvatarStyled = styled.div<AvatarProps>(
 
 export const AvatarText = styled.div<AvatarProps>(({ shape, theme, size }) => ({
   borderRadius: shape === 'square' ? 4 : 50,
-  ...theme.sizes[size],
+  ...avatarSize[size],
   backgroundColor: theme.palette.primary.main,
   color: theme.palette.common.white,
   display: 'flex',
