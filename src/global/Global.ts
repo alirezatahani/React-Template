@@ -1,19 +1,13 @@
-import { createGlobalStyle } from 'styled-components';
-import { ThemeTypes, ButtonTypes } from './theme_types';
+import { createGlobalStyle, DefaultTheme } from 'styled-components';
 
-const GlobalStyle = createGlobalStyle`
-  * {
-    box-sizing: border-box;
-  }
-`;
-
-const INPUT = {
-  borderWidth: '1px',
-  borderColor: 'rgba(0, 0, 0, 0.16)',
-  filledBackground: '#eee',
-  addonBg: '#3f444e',
-  addonTextColor: '#fff',
-};
+const GlobalStyle = createGlobalStyle(({ theme }) => ({
+  '*': {
+    boxSizing: 'border-box',
+    fontFamily: theme.typography.fontFamily,
+    margin: 0,
+    padding: 0,
+  },
+}));
 
 const theme = {
   palette: {
@@ -24,27 +18,50 @@ const theme = {
       transparent: 'transparent',
     },
     primary: {
-      main: '#1562dc',
+      main: '#1292EE',
+      '200': '#D6EDFF',
+      '400': '#57B0FB',
+      '600': '#0077CC',
+      '800': '#034077',
     },
     secondary: {
       main: '#434343',
     },
     success: {
-      main: '#00ca62',
+      main: '#56C288',
+      '200': '#E3fBEE',
+      '400': '#87DBAE',
+      '600': '#39AC6E',
+      '800': '#106236',
     },
     danger: {
-      main: '#ff6446',
+      main: '#dc3545',
+      '200': '#f5c2c7',
+      '400': '#ea868f',
+      '600': '#9a2530',
+      '800': '#58151c',
     },
     warning: {
-      main: '#ffc500',
+      main: '#FFC555',
+      '200': '#FFF2D7',
+      '400': '#FDD88E',
+      '600': '#FAB347',
+      '800': '#CE7129',
     },
     disabled: {
       color: '#0000004d',
       backgroundColor: '#0000002d',
     },
+    greyScale: {
+      main: '#405261',
+      '200': '#F1F3F5',
+      '400': '#556575',
+      '600': '#314351',
+      '800': '#1d2b36',
+    },
   },
   typography: {
-    fontFamily: ['Open Sans', 'OpenSans'].join(','),
+    fontFamily: ['Poppins', 'OpenSans'].join(','),
     body1: {
       fontWeight: 'normal',
       fontStyle: 'normal',
@@ -52,10 +69,15 @@ const theme = {
       lineHeight: '24px',
       letterSpacing: '0.15px',
     },
-
+    input: {
+      fontWeight: 300,
+      fontStyle: 'normal',
+      fontSize: 14,
+      lineHeight: '24px',
+      letterSpacing: '0.5px',
+    },
     button: {
-      color: 'white',
-      fontWeight: 500,
+      fontWeight: 300,
       fontStyle: 'normal',
       fontSize: 14,
       lineHeight: '24px',
@@ -90,28 +112,28 @@ const theme = {
       letterSpacing: '0.15px',
     },
     h1: {
-      fontWeight: 300,
+      fontWeight: 500,
       fontStyle: 'normal',
       fontSize: 59,
       lineHeight: '80px',
       letterSpacing: '-0.5px',
     },
     h2: {
-      fontWeight: 'normal',
+      fontWeight: 500,
       fontStyle: 'normal',
       fontSize: 44,
       lineHeight: '64px',
       letterSpacing: '0px',
     },
     h3: {
-      fontWeight: 'normal',
+      fontWeight: 500,
       fontStyle: 'normal',
       fontSize: 33,
       lineHeight: '48px',
       letterSpacing: '0.25px',
     },
     h4: {
-      fontWeight: 'normal',
+      fontWeight: 500,
       fontStyle: 'normal',
       fontSize: 25,
       lineHeight: '40px',
@@ -138,6 +160,16 @@ const theme = {
       fontSize: 14,
       lineHeight: '24px',
       letterSpacing: '0.1px',
+    },
+    typographyDisabled: {
+      color: '#0000004d',
+      cursor: 'not-allowed',
+      userSelect: 'none',
+    },
+    fontStyles: {
+      underline: {
+        fontStyle: 'underline',
+      },
     },
   },
   sizes: {
@@ -168,7 +200,8 @@ const theme = {
   },
 
   general: {
-    borderRadious: 50,
+    borderRadius: 50,
+    transition: 'all 100ms ease-in',
   },
 };
 export { GlobalStyle, theme };

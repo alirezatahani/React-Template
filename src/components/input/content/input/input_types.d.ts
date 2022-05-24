@@ -1,22 +1,30 @@
 import * as React from 'react';
+import { SizeElems } from 'src/global/theme_types';
 
+type ScreenSize = { sm: SizeElems; md: SizeElems; lg: SizeElems };
+
+export type InputAddonProps = {
+  scale: keyof ScreenSize;
+};
+export type InputLabelProps = {
+  htmlFor: string;
+};
 export type InputContainerProps = {
   hasAddon?: string;
 };
 
-export type InputAddonProps = {
-  size: string;
-};
 export type InputProps = {
   type?: string;
+  label?: string;
   placeholder?: string;
+  scale?: 'sm' | 'md' | 'lg';
+  status?: 'danger' | 'success' | 'warning';
+  variant?: 'outlined' | 'filled' | 'standard';
+  rounded?: boolean;
+  name?: string;
   leftAddon?: string;
   rightAddon?: string;
-  size?: string;
-  label?: string;
-  variant?: string;
-  status?: string;
-  name?: string;
   onChange?: React.ChangeEventHandler;
   value?: string;
+  disabled?: boolean;
 };
