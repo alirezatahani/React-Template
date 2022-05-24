@@ -1,4 +1,3 @@
-import { ThemeTypes } from 'src/global/theme_types';
 import styled from 'styled-components';
 import { ButtonProps } from '../content/button_types';
 
@@ -8,7 +7,6 @@ export const StyledButton = styled.button<ButtonProps>(
     ...theme.typography.button,
     width: block ? '100%' : 'auto',
     borderRadius: rounded ? 50 : 8,
-
     border:
       variant === 'text' ? 'none' : `1px solid ${theme.palette[color].main}`,
 
@@ -26,7 +24,7 @@ export const StyledButton = styled.button<ButtonProps>(
     alignItems: 'center',
     justifyContent: 'center',
     cursor: 'pointer',
-    transition: 'all 150ms linear',
+    transition: theme.general.transition,
     ['&:disabled']: {
       ...theme.palette.disabled,
       borderColor: '#ccc',

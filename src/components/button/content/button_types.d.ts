@@ -10,3 +10,4 @@ export type ButtonProps = {
   block?: boolean;
   disabled?: boolean;
 };
+export type StyledButtonProps = {} & ButtonProps;

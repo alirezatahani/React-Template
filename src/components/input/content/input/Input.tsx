@@ -4,31 +4,33 @@ import {
   InputContainer,
   InputLeftAddon,
   InputRightAddon,
+  InputLabel,
 } from '../../styles/Input.styles';
 import { InputProps } from './input_types';
 
-const Input: React.FC = ({
-  type = 'text',
-  label,
-  variant = 'outlined',
-  ...props
-}: InputProps) => {
+const Input: React.FC<InputProps> = ({ ...props }: InputProps) => {
   return (
-    <InputContainer hasAddon={props.leftAddon || props.rightAddon}>
-      {label && (
-        <label htmlFor={label} className="input-span">
-          {label}
-        </label>
+    <InputContainer>
+      {props.label && (
+        <InputLabel htmlFor={props.name}>{props.label}</InputLabel>
       )}
       {props.leftAddon && (
-        <InputLeftAddon size={props.size}>{props.leftAddon}</InputLeftAddon>
+        <InputLeftAddon scale={props.scale}>{props.leftAddon}</InputLeftAddon>
       )}
-      <StyledInput id={label} variant={variant} {...props} />
+      <StyledInput id={props.name} {...props} />
       {props.rightAddon && (
-        <InputRightAddon size={props.size}>{props.rightAddon}</InputRightAddon>
+        <InputRightAddon scale={props.scale}>
+          {props.rightAddon}
+        </InputRightAddon>
       )}
     </InputContainer>
   );
+};
+
+Input.defaultProps = {
+  scale: 'md',
+  rounded: false,
+  variant: 'outlined',
 };
 
 export default Input;
