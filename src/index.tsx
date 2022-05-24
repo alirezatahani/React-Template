@@ -294,7 +294,7 @@ const App: React.FC = () => {
 
         <Row>
           <Col span={3}>
-            <Card title="title">
+            <Card title="title" size="small">
               <Typography italic variant="subtitle2">
                 some text some text some
               </Typography>
@@ -308,7 +308,7 @@ const App: React.FC = () => {
             </Card>
           </Col>
           <Col span={3}>
-            <Card title="title">
+            <Card title="title" size="large">
               <Typography italic variant="subtitle2">
                 some text some text some
               </Typography>

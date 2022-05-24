@@ -13,5 +13,7 @@ const Card: React.FC<CardProps> = ({ children, ...rest }: CardProps) => {
   );
 };
 
-Card.defaultProps = {};
+Card.defaultProps = {
+  size: 'default',
+};
 export default Card;

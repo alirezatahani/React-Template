@@ -1,13 +1,12 @@
 import styled from 'styled-components';
 import { CardProps } from '../content/card_types';
-export const Paper = styled.div<CardProps>(({ theme }) => ({
-  width: 300,
-  height: 220,
+import { sizes } from '../utils/constants';
+export const Paper = styled.div<CardProps>(({ theme, size }) => ({
+  ...sizes[size],
   backgroundColor: theme.palette.secondary.main,
   borderRadius: 4,
   overflow: 'hidden',
   overflowWrap: 'anywhere',
-
   position: 'relative',
 }));
 export const Title = styled.p<CardProps>(({}) => ({
