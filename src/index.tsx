@@ -1,8 +1,18 @@
 import * as React from 'react';
 import { createRoot } from 'react-dom/client';
 import { ThemeProvider } from 'styled-components';
-import { Input, Col, Row, Button, Typography, Divider } from './components';
-import Alert from './components/alert/content/Alert';
+
+import {
+  Input,
+  Col,
+  Row,
+  Button,
+  Typography,
+  Divider,
+  Alert,
+  Badge,
+} from './components';
+
 import { GlobalStyle, theme } from './global/Global';
 
 const App: React.FC = () => {
@@ -100,6 +110,7 @@ const App: React.FC = () => {
               <Button rounded color="success" variant="filled" size="md">
                 block btn
               </Button>
+
               <Divider align="center" middle />
               <Button disabled color="success" variant="outlined" size="lg">
                 Salam
@@ -107,9 +118,7 @@ const App: React.FC = () => {
             </div>
           </Col>
         </Row>
-
         <br />
-
         <Row>
           <Col span={3}>
             <Alert
@@ -229,6 +238,32 @@ const App: React.FC = () => {
           </Col>
         </Row>
         <br />
+        {/* <Badge max={100} badgeContent={1000}>
+            test
+          </Badge>
+          <Badge max={100} badgeContent={10} rounded color="danger"></Badge>
+          <Badge badgeContent={100} color="secondary">
+            <Button>button as a children</Button>
+          </Badge>
+          <Badge max={100} badgeContent={10} variant="dot" color="success">
+            variant dot
+          </Badge> */}
+        <div
+          style={{
+            position: 'absolute',
+            top: '50%',
+            right: '50%',
+          }}
+        >
+          {/* <Badge max={100} badgeContent={10} variant="dot" color="success">
+              <p>This is for test</p>
+            </Badge> */}
+          <Badge color="success" placement="rightCenter">
+            <div
+              style={{ width: 100, height: 100, backgroundColor: 'red' }}
+            ></div>
+          </Badge>
+        </div>
         <br />
         <Row>
           <Col span={4}>
