@@ -7,7 +7,7 @@ import { Drawer } from './components/drawer';
 import { GlobalStyle, theme } from './global/Global';
 
 const App: React.FC = () => {
-  const [visible2, setVisible] = React.useState(false);
+  const [visible, setVisible] = React.useState(false);
 
   return (
     <ThemeProvider theme={theme}>
@@ -20,10 +20,10 @@ const App: React.FC = () => {
             alignItems: 'center',
           }}
         >
-          <button onClick={() => setVisible(!visible2)}>Drawer</button>
+          <button onClick={() => setVisible(!visible)}>Drawer</button>
         </div>
 
-        <Drawer visible={visible2} position="bottom">
+        <Drawer visible={visible} position="top" height={200}>
           <p>Text test</p>
           <p>Text test</p>
           <p>Text test</p>

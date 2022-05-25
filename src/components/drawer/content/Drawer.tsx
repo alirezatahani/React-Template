@@ -29,5 +29,8 @@ const Drawer: React.FC<DrawerProps> = ({ children, ...rest }: DrawerProps) => {
   );
 };
 
-Drawer.defaultProps = {};
+Drawer.defaultProps = {
+  width: 378,
+  height: 378,
+};
 export default Drawer;
