@@ -1,9 +1,10 @@
 import * as React from 'react';
 
 export type DrawerProps = {
-  children?: React.ReactNode;
+  children: React.ReactNode;
   style?: React.CSSProperties;
-  onClick?: Function;
-  title?: string;
-  visible?: boolean;
+  visible: boolean;
+  width?: number;
+  position?: 'top' | 'right' | 'left' | 'bottom';
+  onClose?: () => void;
 };

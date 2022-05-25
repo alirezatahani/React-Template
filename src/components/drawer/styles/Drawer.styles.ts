@@ -38,32 +38,20 @@ export const Title = styled.p<DrawerProps>(({}) => ({
 
 // overlay
 
-export const Overlay = styled.div<DrawerProps>(({ theme }) => ({
+export const Overlay = styled.div(({ theme }) => ({
   backgroundColor: theme.palette.common.black,
-  height: '100vh',
-  width: 300,
+  height: '80vh',
   position: 'relative',
-  // display: 'flex',
-  // alignItems: 'center',
-  // justifyContent: 'center',
-  // textAlign: 'center',
-  // opacity: 0,
-  // transition: 'all var(--menu-speed) ease',
+  transition: 'all 1s',
+  overflow: 'hidden',
 }));
 
-export const OverlayContent = styled.div<DrawerProps>(({}) => ({
-  // position: 'relative',
-  // top: 0,
-  // left: 0,
-  // height: '100%',
-  // width: '100%',
+export const OverlayContent = styled.div(({}) => ({
   flex: 'none',
   display: 'flex',
   alignItems: 'center',
   justifyContent: 'center',
   textAlign: 'center',
-  // opacity: 0,
-  // transition: 'opacity 0.4s ease-in',
 }));
 
 export const Ul = styled.ul<DrawerProps>(({}) => ({

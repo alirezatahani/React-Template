@@ -11,25 +11,23 @@ import {
   CloseIcon,
   Ul,
 } from '../styles/Drawer.styles';
-const Drawer: React.FC<DrawerProps> = ({ visible, ...rest }: DrawerProps) => {
 
-  
-  const [state, setState] = React.useState(false);
+const Drawer: React.FC<DrawerProps> = ({
+  visible,
+  children,
+  onClose,
+  ...rest
+}: DrawerProps) => {
+  React.useEffect(() => {
+    if (!visible) {
+      onClose();
+    }
+  }, [visible]);
 
   return (
-    <>
-      {state ? (
-        <Overlay>
-          <CloseIcon onClick={() => setState(false)}>Close</CloseIcon>
-
-          <OverlayContent>
-            <Ul>
-              <Li>first item</Li>
-            </Ul>
-          </OverlayContent>
-        </Overlay>
-      ) : null}
-    </>
+    <Overlay {...rest} style={{ width: visible ? 300 : 0 }}>
+      {children}
+    </Overlay>
   );
 };
 
