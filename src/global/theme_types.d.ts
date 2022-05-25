@@ -5,7 +5,7 @@ declare module 'styled-components' {
     palette: PaletteTypes;
     typography: TypographyTypes;
     general: GeneralStyleTypes;
-    sizes: Record<ScreenSize, SizeElems>;
+    sizes: any;
   }
 }
 
@@ -21,6 +21,12 @@ export type ScreenSize = 'sm' | 'md' | 'lg';
 export type SizeElems = {
   height: number;
   padding: number;
+
+  avatar: {
+    sm: { width: number; height: number };
+    md: { width: number; height: number };
+    lg: { width: number; height: number };
+  };
 };
 
 type SizeProps = {
