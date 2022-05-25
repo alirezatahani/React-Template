@@ -1,30 +1,26 @@
 import styled from 'styled-components';
 import { DrawerProps } from '../content/drawer_types';
 import { Position } from '../utils/constants';
-export const Overlay = styled.div<DrawerProps>(
+export const Overlay_Y = styled.div<DrawerProps>(
   ({ theme, visible, position }) => ({
     backgroundColor: theme.palette.secondary.main,
     position: 'absolute',
     transition: 'all 1s',
     overflow: 'hidden',
     borderRadius: '0px 2px 4px 0px',
-    zIndex: 1000,
+    zIndex: 1,
     width: visible ? 300 : 0,
     ...Position[position],
   })
 );
-
-export const OverlayContent = styled.div(({ theme }) => ({
+export const OverlayContent_Y = styled.div(({ theme }) => ({
   flex: 'none',
-  display: 'flex',
-  alignItems: 'center',
-  justifyContent: 'center',
   textAlign: 'center',
   padding: 20,
   color: theme.palette.common.white,
 }));
 
-export const OverlayTop = styled.div<DrawerProps>(
+export const Overlay_X = styled.div<DrawerProps>(
   ({ theme, visible, position }) => ({
     backgroundColor: theme.palette.secondary.main,
     position: 'absolute',
@@ -38,3 +34,13 @@ export const OverlayTop = styled.div<DrawerProps>(
     height: visible ? 240 : 0,
   })
 );
+
+export const OverlayContent_X = styled.div(({ theme }) => ({
+  flex: 'none',
+  textAlign: 'center',
+  padding: 20,
+  color: theme.palette.common.white,
+  display: 'flex',
+  justifyContent: 'space-around',
+  alignItems: 'center',
+}));

@@ -1,6 +1,11 @@
 import * as React from 'react';
 import { DrawerProps } from './drawer_types';
-import { Overlay, OverlayContent, OverlayTop } from '../styles/Drawer.styles';
+import {
+  Overlay_Y,
+  OverlayContent_Y,
+  Overlay_X,
+  OverlayContent_X,
+} from '../styles/Drawer.styles';
 
 const Drawer: React.FC<DrawerProps> = ({ children, ...rest }: DrawerProps) => {
   // React.useEffect(() => {
@@ -12,11 +17,13 @@ const Drawer: React.FC<DrawerProps> = ({ children, ...rest }: DrawerProps) => {
   return (
     <>
       {rest.position === 'top' || rest.position === 'bottom' ? (
-        <OverlayTop {...rest}>{children}</OverlayTop>
+        <Overlay_X {...rest}>
+          <OverlayContent_X {...rest}>{children}</OverlayContent_X>
+        </Overlay_X>
       ) : (
-        <Overlay {...rest}>
-          <OverlayContent {...rest}>{children}</OverlayContent>
-        </Overlay>
+        <Overlay_Y {...rest}>
+          <OverlayContent_Y {...rest}>{children}</OverlayContent_Y>
+        </Overlay_Y>
       )}
     </>
   );
