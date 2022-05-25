@@ -1,33 +1,24 @@
 import * as React from 'react';
 import { DrawerProps } from './drawer_types';
-import {
-  Div,
-  HamburgerIcon,
-  Li,
-  Nav,
-  Overlay,
-  OverlayContent,
-  Title,
-  CloseIcon,
-  Ul,
-} from '../styles/Drawer.styles';
+import { Overlay, OverlayContent, OverlayTop } from '../styles/Drawer.styles';
 
-const Drawer: React.FC<DrawerProps> = ({
-  visible,
-  children,
-  onClose,
-  ...rest
-}: DrawerProps) => {
-  React.useEffect(() => {
-    if (!visible) {
-      onClose();
-    }
-  }, [visible]);
+const Drawer: React.FC<DrawerProps> = ({ children, ...rest }: DrawerProps) => {
+  // React.useEffect(() => {
+  //   if (!visible) {
+  //     onClose();
+  //   }
+  // }, [visible]);
 
   return (
-    <Overlay {...rest} style={{ width: visible ? 300 : 0 }}>
-      {children}
-    </Overlay>
+    <>
+      {rest.position === 'top' || rest.position === 'bottom' ? (
+        <OverlayTop {...rest}>{children}</OverlayTop>
+      ) : (
+        <Overlay {...rest}>
+          <OverlayContent {...rest}>{children}</OverlayContent>
+        </Overlay>
+      )}
+    </>
   );
 };
 

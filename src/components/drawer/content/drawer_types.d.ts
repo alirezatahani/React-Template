@@ -6,5 +6,5 @@ export type DrawerProps = {
   visible: boolean;
   width?: number;
   position?: 'top' | 'right' | 'left' | 'bottom';
-  onClose?: () => void;
+  // onClose?: () => void;
 };

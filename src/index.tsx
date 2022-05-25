@@ -2,17 +2,6 @@ import * as React from 'react';
 import { createRoot } from 'react-dom/client';
 import { ThemeProvider } from 'styled-components';
 
-import {
-  Input,
-  Col,
-  Row,
-  Button,
-  Typography,
-  Divider,
-  Alert,
-  Avatar,
-  Badge,
-} from './components';
 import { Drawer } from './components/drawer';
 
 import { GlobalStyle, theme } from './global/Global';
@@ -23,9 +12,18 @@ const App: React.FC = () => {
   return (
     <ThemeProvider theme={theme}>
       <>
-        <button onClick={() => setVisible(!visible2)}>Drawer</button>
+        <GlobalStyle />
+        <div
+          style={{
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center',
+          }}
+        >
+          <button onClick={() => setVisible(!visible2)}>Drawer</button>
+        </div>
 
-        <Drawer onClose={() => console.log('closing')} visible={visible2}>
+        <Drawer visible={visible2} position="top">
           <p>Text test</p>
         </Drawer>
       </>
