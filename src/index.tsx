@@ -12,6 +12,7 @@ import {
   Alert,
   Avatar,
   Badge,
+  Image,
 } from './components';
 
 import { GlobalStyle, theme } from './global/Global';
@@ -413,6 +414,15 @@ const App: React.FC = () => {
               placeholder="Success Filled"
             />
           </Col>
+        </Row>
+        <Row>
+          <Image
+            src="https://www.industrialempathy.com/img/remote/ZiClJf-640w.avif"
+            width="500"
+            heigth="300"
+            rounded
+          />
+          <Image src="https://www.industrialempathy.com/img/remote/ZiClJf-640w.avif" />
         </Row>
       </>
     </ThemeProvider>
