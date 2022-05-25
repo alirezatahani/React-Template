@@ -18,10 +18,14 @@ import { Drawer } from './components/drawer';
 import { GlobalStyle, theme } from './global/Global';
 
 const App: React.FC = () => {
+  const [visible2, setVisible] = React.useState(false);
+
   return (
     <ThemeProvider theme={theme}>
       <>
-        <Drawer title="Title" />
+        <button onClick={() => setVisible(true)}>Drawer</button>
+
+        <Drawer title="Title" visible={visible2} />
         <GlobalStyle />
         <Row>
           <Col span={6}>

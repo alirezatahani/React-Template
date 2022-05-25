@@ -5,4 +5,5 @@ export type DrawerProps = {
   style?: React.CSSProperties;
   onClick?: Function;
   title?: string;
+  visible?: boolean;
 };

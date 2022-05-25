@@ -9,33 +9,26 @@ import {
   OverlayContent,
   Title,
   CloseIcon,
-  CloseOverlay,
   Ul,
 } from '../styles/Drawer.styles';
-const Drawer: React.FC<DrawerProps> = ({ ...rest }: DrawerProps) => {
-  const [state, setState] = React.useState<boolean>(false);
+const Drawer: React.FC<DrawerProps> = ({ visible, ...rest }: DrawerProps) => {
+
+  
+  const [state, setState] = React.useState(false);
 
   return (
     <>
-      {!state ? (
-        <Nav>
-          <HamburgerIcon onClick={() => setState(true)}>
-            <Div></Div>
-            <Div></Div>
-            <Div></Div>
-          </HamburgerIcon>
-          <Title>{rest.title}</Title>
-        </Nav>
-      ) : (
+      {state ? (
         <Overlay>
           <CloseIcon onClick={() => setState(false)}>Close</CloseIcon>
+
           <OverlayContent>
             <Ul>
               <Li>first item</Li>
             </Ul>
           </OverlayContent>
         </Overlay>
-      )}
+      ) : null}
     </>
   );
 };
