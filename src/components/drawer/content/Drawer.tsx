@@ -1,10 +1,11 @@
 import * as React from 'react';
 import { DrawerProps } from './drawer_types';
 import {
-  Overlay_Y,
-  OverlayContent_Y,
-  Overlay_X,
-  OverlayContent_X,
+  OverlayLeftRight,
+  OverlayContentLeftRight,
+  OverlayTop,
+  OverlayBottom,
+  OverlayContentTopBottom,
 } from '../styles/Drawer.styles';
 
 const Drawer: React.FC<DrawerProps> = ({ children, ...rest }: DrawerProps) => {
@@ -14,23 +15,40 @@ const Drawer: React.FC<DrawerProps> = ({ children, ...rest }: DrawerProps) => {
   //   }
   // }, [visible]);
 
-  return (
-    <>
-      {rest.position === 'top' || rest.position === 'bottom' ? (
-        <Overlay_X {...rest}>
-          <OverlayContent_X {...rest}>{children}</OverlayContent_X>
-        </Overlay_X>
-      ) : (
-        <Overlay_Y {...rest}>
-          <OverlayContent_Y {...rest}>{children}</OverlayContent_Y>
-        </Overlay_Y>
-      )}
-    </>
-  );
+  function handlePosition() {
+    if (rest.position == 'top') {
+      return (
+        <OverlayTop {...rest}>
+          <OverlayContentTopBottom {...rest}>
+            {children}
+          </OverlayContentTopBottom>
+        </OverlayTop>
+      );
+    }
+    if (rest.position === 'bottom') {
+      return (
+        <OverlayBottom {...rest}>
+          <OverlayContentTopBottom {...rest}>
+            {children}
+          </OverlayContentTopBottom>
+        </OverlayBottom>
+      );
+    } else {
+      return (
+        <OverlayLeftRight {...rest}>
+          <OverlayContentLeftRight {...rest}>
+            {children}
+          </OverlayContentLeftRight>
+        </OverlayLeftRight>
+      );
+    }
+  }
+
+  return <>{handlePosition()}</>;
 };
 
 Drawer.defaultProps = {
   width: 378,
-  height: 378,
+  height: 278,
 };
 export default Drawer;

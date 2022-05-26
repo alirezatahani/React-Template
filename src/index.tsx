@@ -18,13 +18,13 @@ const App: React.FC = () => {
             display: 'flex',
             justifyContent: 'center',
             alignItems: 'center',
+            marginTop: '20%',
           }}
         >
           <button onClick={() => setVisible(!visible)}>Drawer</button>
         </div>
 
-        <Drawer visible={visible} position="top" height={200}>
-          <p>Text test</p>
+        <Drawer visible={visible} position="top">
           <p>Text test</p>
           <p>Text test</p>
           <p>Text test</p>
