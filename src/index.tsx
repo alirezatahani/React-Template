@@ -24,7 +24,11 @@ const App: React.FC = () => {
           <button onClick={() => setVisible(!visible)}>Drawer</button>
         </div>
 
-        <Drawer visible={visible} position="top">
+        <Drawer
+          visible={visible}
+          position="top"
+          onClose={() => console.log('clicked')}
+        >
           <p>Text test</p>
           <p>Text test</p>
           <p>Text test</p>

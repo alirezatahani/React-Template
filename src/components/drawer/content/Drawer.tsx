@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { DrawerProps } from './drawer_types';
+import { useIsMount } from '../utils/utils';
 import {
   OverlayLeftRight,
   OverlayContentLeftRight,
@@ -9,11 +10,14 @@ import {
 } from '../styles/Drawer.styles';
 
 const Drawer: React.FC<DrawerProps> = ({ children, ...rest }: DrawerProps) => {
-  // React.useEffect(() => {
-  //   if (!visible) {
-  //     onClose();
-  //   }
-  // }, [visible]);
+  const isMount = useIsMount();
+
+  React.useEffect(() => {
+    if (isMount) {
+    } else if (!rest.visible) {
+      rest.onClose();
+    }
+  }, [rest.visible]);
 
   function handlePosition() {
     if (rest.position == 'top') {
