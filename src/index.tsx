@@ -1,9 +1,20 @@
 import * as React from 'react';
 import { createRoot } from 'react-dom/client';
 import { ThemeProvider } from 'styled-components';
-import { Input, Col, Row, Button } from './components';
-import { Avatar } from './components/avatar';
-import { Badge } from './components/badge';
+
+import {
+  Input,
+  Col,
+  Row,
+  Button,
+  Typography,
+  Divider,
+  Alert,
+  Avatar,
+  Badge,
+  Image,
+} from './components';
+
 import { GlobalStyle, theme } from './global/Global';
 
 const App: React.FC = () => {
@@ -206,7 +217,16 @@ const App: React.FC = () => {
               placeholder="Success Filled"
             />
           </Col>
-        </Row> */}
+    </Row>
+        <Row>
+          <Image
+            src="https://www.industrialempathy.com/img/remote/ZiClJf-640w.avif"
+            width="500"
+            heigth="300"
+            rounded
+          />
+          <Image src="https://www.industrialempathy.com/img/remote/ZiClJf-640w.avif" />
+        </Row>
       </>
     </ThemeProvider>
   );
