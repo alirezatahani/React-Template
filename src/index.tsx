@@ -8,6 +8,7 @@ import ComponentsArea from './modules/createLanding/componentsArea/content/Compo
 import { Col, Row } from './components';
 
 const App: React.FC = () => {
+
   const [componentToRender, setComponentToRender] = React.useState<string>('');
   return (
     <ThemeProvider theme={theme}>
