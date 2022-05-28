@@ -32,6 +32,10 @@ type SizeProps = {
 type GeneralStyleTypes = {
   borderRadius: number;
   transition: string;
+  imageShapes: {
+    rounded: { borderRadius: string | number };
+    circle: { borderRadius: string | number };
+  };
 };
 
 type PaletteTypes = {

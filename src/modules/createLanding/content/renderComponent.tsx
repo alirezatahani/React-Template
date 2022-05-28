@@ -1,26 +1,19 @@
 import * as React from 'react';
-import { MainConfig } from '../../utils/constants';
+import { MainConfig } from '../utils/constants';
+import { ComponentToRenderProps } from './renderComponent_types';
 
-const RenderComponent = ({
+const RenderComponent: React.FC<ComponentToRenderProps> = ({
   componentToRender,
-}: {
-  componentToRender: string;
-}) => {
-  const renderer = (configs: any) => {
-    //@ts-ignore
-    if (typeof MainConfig[componentToRender] !== 'undefined') {
-      return React.createElement(
-        //@ts-ignore
-        MainConfig[componentToRender].component,
-        configs[componentToRender].props
-          ? configs[componentToRender]?.props
-          : null,
-        configs ? configs[componentToRender].children : null
-      );
-    }
-  };
-
-  return <>{renderer(MainConfig)}</>;
+}: ComponentToRenderProps) => {
+  if (typeof MainConfig[componentToRender] !== 'undefined') {
+    return React.createElement(
+      MainConfig[componentToRender].component,
+      MainConfig[componentToRender].props
+        ? MainConfig[componentToRender]?.props
+        : null,
+      MainConfig ? MainConfig[componentToRender].children : null
+    );
+  }
 };
 
 export default RenderComponent;

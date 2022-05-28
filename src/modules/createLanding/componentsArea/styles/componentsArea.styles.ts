@@ -2,6 +2,10 @@ import styled from 'styled-components';
 
 export const ComponentAreaContainer = styled.div({
   border: '1px solid blue',
-  display: 'grid',
-  placeItems: 'center',
+  display: 'flex',
+  justifyContent: 'center',
+  alignItems: 'start',
+  paddingTop: 30,
+  height: '70vh',
+  width: '100%',
 });

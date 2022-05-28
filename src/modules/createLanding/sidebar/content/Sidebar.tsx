@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { MainConfig } from '../../utils/constants';
-import { Button } from '../../../components';
+import { Button } from '../../../../components';
 import { StyledSidebar } from '../styles/sidebar.styles';
 
 type Props = {

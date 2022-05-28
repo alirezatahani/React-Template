@@ -11,5 +11,6 @@ export type ButtonProps = {
   disabled?: boolean;
   value?: string | number;
   onClick?: () => void;
+  getProps?: any;
 };
 export type StyledButtonProps = {} & ButtonProps;
