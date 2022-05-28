@@ -5,14 +5,9 @@ import {
   Button,
   Input,
   Typography,
+  Image,
 } from '../../../components';
 import { MainConfigTypes } from './constants_types';
-
-const getP = (allProps: any) => {
-  console.log(allProps);
-  return [allProps];
-  //  setComponentProps(Object.keys(allProps));
-};
 
 export const MainConfig: MainConfigTypes = {
   button: {
@@ -51,6 +46,15 @@ export const MainConfig: MainConfigTypes = {
     component: Avatar,
     props: {
       text: 'Amirmasoud Jafari',
+    },
+  },
+  image: {
+    name: 'Image',
+    component: Image,
+    props: {
+      width: 200,
+      shape: 'rounded',
+      src: 'https://zos.alipayobjects.com/rmsportal/jkjgkEfvpUPVyRjUImniVslZfWPnJuuZ.png',
     },
   },
 };
