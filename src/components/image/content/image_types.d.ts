@@ -10,6 +10,7 @@ export type ImageProps = {
   height?: string | number;
   src: string;
   shape?: 'rounded' | 'circle';
-  fallback?: string;
+  onError?: ReactEventHandler<HTMLImageElement> &
+    React.SyntheticEvent<HTMLDivElement, Event>;
   onClick?: () => void;
 };
