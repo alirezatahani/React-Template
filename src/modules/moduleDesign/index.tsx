@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Row, Col } from '../../components';
+import { Row, Col } from '../../components/grid/Index';
 
 export const ModuleDesign = () => {
   return (
