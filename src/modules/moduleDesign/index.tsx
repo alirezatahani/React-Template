@@ -4,7 +4,7 @@ import { Row, Col } from '../../components';
 export const ModuleDesign = () => {
   return (
     <Row>
-      <Col xs={3} sm={3} md={6} lg={12} xl={12}>
+      <Col xs={3} sm={3} md={6} lg={3} xl={3}>
         <div
           style={{ width: '100%', height: '100vh', background: 'red' }}
         ></div>

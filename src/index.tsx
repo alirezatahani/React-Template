@@ -2,17 +2,7 @@ import * as React from 'react';
 import { createRoot } from 'react-dom/client';
 import { ThemeProvider } from 'styled-components';
 
-import {
-  Input,
-  Col,
-  Row,
-  Button,
-  Typography,
-  Divider,
-  Alert,
-  Avatar,
-  Badge,
-} from './components';
+import { ModuleDesign } from './modules/moduleDesign';
 
 import { GlobalStyle, theme } from './global/Global';
 
@@ -24,6 +14,7 @@ const App: React.FC = () => {
     <ThemeProvider theme={theme}>
       <>
         <GlobalStyle />
+        <ModuleDesign />
       </>
     </ThemeProvider>
   );

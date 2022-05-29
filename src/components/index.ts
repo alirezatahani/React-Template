@@ -1,5 +1,5 @@
 import { Button } from './button';
-import { Row, Col } from './grid/Index';
+import { Row, Col } from './grid';
 import { Input } from './input';
 import { Space } from './space';
 import { Typography } from './typography';
@@ -7,7 +7,7 @@ import { Divider } from './divider';
 import { Alert } from './alert';
 import { Badge } from './badge';
 import { Avatar } from './avatar';
-import {Image} from "./image"
+import { Image } from './image';
 
 export {
   Button,
@@ -20,5 +20,5 @@ export {
   Alert,
   Badge,
   Avatar,
-  Image
+  Image,
 };

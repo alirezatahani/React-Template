@@ -2,7 +2,7 @@ import * as React from 'react';
 import { FlexRow } from '../../styles/Row.styles';
 import { RowProps } from './row_types';
 
-const Row: React.FC<RowProps> = ({ children, spacing }: RowProps) => {
+const Row: React.FC<RowProps> = ({ children, spacing, ...rest }: RowProps) => {
   const childrenWithProps = React.Children.map(children, (child) => {
     return React.isValidElement(child)
       ? React.cloneElement(child, {
@@ -11,9 +11,9 @@ const Row: React.FC<RowProps> = ({ children, spacing }: RowProps) => {
       : child;
   });
   return (
-    <div>
-      <FlexRow spacing={spacing}>{childrenWithProps}</FlexRow>
-    </div>
+    <FlexRow {...rest} spacing={spacing}>
+      {childrenWithProps}
+    </FlexRow>
   );
 };
 
