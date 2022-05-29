@@ -1,9 +1,7 @@
 import * as React from 'react';
 import { createRoot } from 'react-dom/client';
 import { ThemeProvider } from 'styled-components';
-
-import { Drawer } from './components/drawer';
-
+import { Drawer } from './components';
 import { GlobalStyle, theme } from './global/Global';
 
 const App: React.FC = () => {
@@ -26,7 +24,7 @@ const App: React.FC = () => {
 
         <Drawer
           visible={visible}
-          position="top"
+          position="left"
           onClose={() => console.log('clicked')}
         >
           <p>Text test</p>

@@ -1,8 +1,10 @@
 import styled from 'styled-components';
 import { DrawerProps } from '../content/drawer_types';
 import { Position } from '../utils/constants';
+
 export const OverlayLeftRight = styled.div<DrawerProps>(
   ({ theme, visible, position, width, height }) => ({
+    ...Position[position],
     backgroundColor: theme.palette.secondary.main,
     position: 'absolute',
     transition: 'all 1s',
@@ -11,7 +13,6 @@ export const OverlayLeftRight = styled.div<DrawerProps>(
     zIndex: 1,
     height: visible ? `${height}px` : 0,
     width: visible ? `${width}px` : 0,
-    ...Position[position],
   })
 );
 export const OverlayContentLeftRight = styled.div(({ theme }) => ({
@@ -23,13 +24,13 @@ export const OverlayContentLeftRight = styled.div(({ theme }) => ({
 
 export const OverlayTop = styled.div<DrawerProps>(
   ({ theme, visible, position, height }) => ({
+    ...Position[position],
     backgroundColor: theme.palette.secondary.main,
     position: 'absolute',
     overflow: 'hidden',
     borderRadius: '0px 2px 4px 0px',
     zIndex: 1,
     width: visible ? '100%' : 0,
-    ...Position[position],
     transform: visible ? 'translateY(0px)' : 'translateY(-500px)',
     transition: 'transform 1s ease-in-out',
     height: visible ? `${height}px` : 0,
@@ -37,13 +38,13 @@ export const OverlayTop = styled.div<DrawerProps>(
 );
 export const OverlayBottom = styled.div<DrawerProps>(
   ({ theme, visible, position, height }) => ({
+    ...Position[position],
     backgroundColor: theme.palette.secondary.main,
     position: 'absolute',
     overflow: 'hidden',
     borderRadius: '0px 2px 4px 0px',
     zIndex: 1,
     width: visible ? '100%' : 0,
-    ...Position[position],
     transform: visible ? 'translateY(0px)' : 'translateY(500px)',
     transition: 'transform 1s ease-in-out',
     height: visible ? `${height}px` : 0,
