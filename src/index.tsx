@@ -3,6 +3,8 @@ import { createRoot } from 'react-dom/client';
 import { ThemeProvider } from 'styled-components';
 import { Navbar } from './components/menu';
 
+import { ModuleDesign } from './modules/moduleDesign';
+
 import { GlobalStyle, theme } from './global/Global';
 
 const App: React.FC = () => {
@@ -11,6 +13,7 @@ const App: React.FC = () => {
       <>
         <GlobalStyle />
         <Navbar />
+        <ModuleDesign />
       </>
     </ThemeProvider>
   );

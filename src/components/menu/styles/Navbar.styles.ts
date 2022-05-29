@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import { NavbarProps } from '../content/navbar_types';
-export const Nav = styled.div<NavbarProps>(({ theme }) => ({
+
+export const Nav = styled.nav<NavbarProps>(({ theme }) => ({
   backgroundColor: theme.palette.background.paper,
   color: theme.palette.common.black,
   height: 40,
