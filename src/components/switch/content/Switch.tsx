@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { SwitchProps } from './switch_types';
-import { Label, ToggleButton, Slider, Wrapper } from '../styles/Switch.styles';
+import { ToggleButton, Slider, Wrapper } from '../styles/Switch.styles';
 
 const Switch: React.FC<SwitchProps> = ({ ...rest }: SwitchProps) => {
   const [checked, setChecked] = React.useState<boolean>(rest.checked);
@@ -11,7 +11,6 @@ const Switch: React.FC<SwitchProps> = ({ ...rest }: SwitchProps) => {
 
   return (
     <Wrapper>
-      <Label value={rest.value}>{rest.label}</Label>
       <ToggleButton
         onClick={toggle}
         checked={checked}
@@ -27,6 +26,5 @@ const Switch: React.FC<SwitchProps> = ({ ...rest }: SwitchProps) => {
 Switch.defaultProps = {
   size: 'md',
   color: 'primary',
-  value: 'start',
 };
 export default Switch;

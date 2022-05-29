@@ -1,14 +1,11 @@
 import styled from 'styled-components';
 import { SwitchProps } from '../content/switch_types';
-import { SizeBtn, SizeSlider, position } from '../utils/constants';
-export const Wrapper = styled.div<SwitchProps>(({}) => ({
-  position: 'relative',
-}));
+import { SizeBtn, SizeSlider } from '../utils/constants';
 
-export const Label = styled.div<SwitchProps>(({ theme, value }) => ({
+export const Wrapper = styled.div<SwitchProps>(({}) => ({}));
+
+export const Label = styled.div<SwitchProps>(({ theme }) => ({
   ...theme.typography.body1,
-  ...position[value],
-  position: 'absolute',
 }));
 
 export const ToggleButton = styled.div<SwitchProps>(

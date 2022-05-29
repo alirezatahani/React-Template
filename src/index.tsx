@@ -1,10 +1,7 @@
 import * as React from 'react';
 import { createRoot } from 'react-dom/client';
 import { ThemeProvider } from 'styled-components';
-
-import { Col, Row } from './components';
-import Switch from './components/switch/content/Switch';
-
+import { Switch } from './components';
 import { GlobalStyle, theme } from './global/Global';
 
 const App: React.FC = () => {
