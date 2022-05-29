@@ -7,7 +7,8 @@ import { Divider } from './divider';
 import { Alert } from './alert';
 import { Badge } from './badge';
 import { Avatar } from './avatar';
-import {Image} from "./image"
+import { Image } from './image';
+import { Navbar } from './menu';
 
 export {
   Button,
@@ -20,5 +21,6 @@ export {
   Alert,
   Badge,
   Avatar,
-  Image
+  Navbar,
+  Image,
 };
