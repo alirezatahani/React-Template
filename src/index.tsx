@@ -14,6 +14,7 @@ import {
   Badge,
   Image,
 } from './components';
+import {  Progress } from './components/progress';
 
 import { GlobalStyle, theme } from './global/Global';
 
@@ -423,6 +424,12 @@ const App: React.FC = () => {
             rounded
           />
           <Image src="https://www.industrialempathy.com/img/remote/ZiClJf-640w.avif" />
+        </Row>
+        <Row>
+          <Progress completed={70} color="primary" label />
+          <Progress completed={40} color="danger" />
+          <Progress completed={90} color="warning" label/>
+          <Progress completed={60} variant="determinate"/>
         </Row>
       </>
     </ThemeProvider>
