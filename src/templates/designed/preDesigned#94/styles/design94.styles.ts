@@ -16,7 +16,7 @@ export const HeroContainer = styled(Container)<HeroContainerTypes>(
     background: `url(${image})`,
     // width: '100%',
     objectFit: 'cover',
-    height: 400,
+    height: 700,
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
