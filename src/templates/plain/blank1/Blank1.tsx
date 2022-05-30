@@ -2,7 +2,7 @@ import * as React from 'react';
 import { Button } from '../../../components/button/index';
 import { Row, Col } from '../../../components/grid/Index';
 import { Typography } from '../../../components/typography/index';
-import { Jumbotron } from './blank,style';
+import { Jumbotron } from './blank.style';
 export const Blank1 = () => {
   return (
     <Row>
