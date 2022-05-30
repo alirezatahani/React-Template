@@ -14,7 +14,7 @@ import {
   Badge,
   Image,
 } from './components';
-import {  Progress } from './components/progress';
+import { CircularProgress, Progress } from './components/progress';
 
 import { GlobalStyle, theme } from './global/Global';
 
@@ -430,6 +430,9 @@ const App: React.FC = () => {
           <Progress completed={40} color="danger" />
           <Progress completed={90} color="warning" label/>
           <Progress completed={60} variant="determinate"/>
+          <CircularProgress completed={90} color="primary" label/>
+          <CircularProgress completed={9} color="warning"/>
+          <CircularProgress completed={50} color="danger" label/>
         </Row>
       </>
     </ThemeProvider>

@@ -1,2 +1,3 @@
 import Progress from './content/Progress';
-export { Progress };
+import CircularProgress from './content/CircularProgress';
+export { Progress, CircularProgress };
