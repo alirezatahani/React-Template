@@ -8,3 +8,4 @@ export * from './image';
 export * from './input';
 export * from './space';
 export * from './typography';
+export * from './container';
