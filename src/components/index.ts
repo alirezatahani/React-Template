@@ -20,5 +20,5 @@ export {
   Alert,
   Badge,
   Avatar,
-  Image
+  Image,
 };

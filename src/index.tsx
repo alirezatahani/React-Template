@@ -14,10 +14,14 @@ import {
   Badge,
   Image,
 } from './components';
+import { ModuleDesign } from './modules/moduleDesign';
 
 import { GlobalStyle, theme } from './global/Global';
 
 const App: React.FC = () => {
+  const [fnameVal, setFnameVal] = React.useState<string>('');
+  const [lnameVal, setLnameVal] = React.useState<string>('');
+
   return (
     <ThemeProvider theme={theme}>
       <>
@@ -424,6 +428,7 @@ const App: React.FC = () => {
           />
           <Image src="https://www.industrialempathy.com/img/remote/ZiClJf-640w.avif" />
         </Row>
+        <ModuleDesign />
       </>
     </ThemeProvider>
   );
