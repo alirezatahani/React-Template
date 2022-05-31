@@ -1,3 +1,4 @@
+import { Container } from '../../../components/container//index';
 import * as React from 'react';
 import { Button } from '../../../components/button/index';
 import { Row, Col } from '../../../components/grid/Index';
@@ -6,14 +7,13 @@ import { Jumbotron } from './blank.style';
 export const Blank1 = () => {
   return (
     <Row>
-      <Col xs={12}>
+      <Container>
         <Row>
-          <Col xs={2}></Col>
-          <Col xs={8}>
+          <Col xs={12}>
             <Row>
               <Col xs={1}></Col>
               <Col xs={3}>
-                <Typography variant="h2">Indroduce your idea</Typography>
+                <Typography variant="h3">Introduce your idea</Typography>
                 <br />
                 <Typography variant="body1">
                   Tell people more about what you do. Use this space to describe
@@ -30,10 +30,8 @@ export const Blank1 = () => {
             <br />
             <br />
           </Col>
-
-          <Col xs={2}></Col>
         </Row>
-      </Col>
+      </Container>
 
       <Col xs={12}>
         <Jumbotron>
@@ -61,14 +59,13 @@ export const Blank1 = () => {
       </Col>
       <br />
       <br />
-      <Col xs={12}>
+      <Container>
         <Row>
-          <Col xs={2}></Col>
-          <Col xs={8}>
+          <Col xs={12}>
             <Row>
               <Col xs={1}></Col>
               <Col xs={3}>
-                <Typography variant="h3">Indroduce your idea</Typography>
+                <Typography variant="h3">Introduce your idea</Typography>
                 <br />
                 <Typography variant="body1">
                   Tell people more about what you do. Use this space to describe
@@ -85,18 +82,15 @@ export const Blank1 = () => {
             <br />
             <br />
           </Col>
-
-          <Col xs={2}></Col>
         </Row>
-      </Col>
-      <Col xs={12}>
+      </Container>
+      <Container>
         <Row>
-          <Col xs={2}></Col>
-          <Col xs={8}>
+          <Col xs={12}>
             <Row>
               <Col xs={1}></Col>
               <Col xs={3}>
-                <Typography variant="h3">Indroduce your idea</Typography>
+                <Typography variant="h3">Introduce your idea</Typography>
                 <br />
                 <Typography variant="body1">
                   Tell people more about what you do. Use this space to describe
@@ -113,15 +107,11 @@ export const Blank1 = () => {
             <br />
             <br />
           </Col>
-
-          <Col xs={2}></Col>
         </Row>
-      </Col>
-
-      <Col xs={12}>
+      </Container>
+      <Container>
         <Row>
-          <Col xs={2}></Col>
-          <Col xs={8}>
+          <Col xs={12}>
             <Row>
               <Col xs={1}></Col>
               <Col xs={5}>
@@ -145,10 +135,8 @@ export const Blank1 = () => {
             <br />
             <br />
           </Col>
-
-          <Col xs={2}></Col>
         </Row>
-      </Col>
+      </Container>
     </Row>
   );
 };
