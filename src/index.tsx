@@ -8,10 +8,6 @@ import { CardMedia } from './components/card';
 import { GlobalStyle, theme } from './global/Global';
 
 const App: React.FC = () => {
-  const StyledCard = styled(Card)(({ theme }) => ({
-    backgroundColor: theme.palette.common.black,
-  }));
-
   return (
     <ThemeProvider theme={theme}>
       <>
@@ -57,11 +53,9 @@ const App: React.FC = () => {
             </Card>
           </Col>
           <Col span={3}>
-            <StyledCard>
-              <div>
-                <p>testttttttttttttttttt</p>
-              </div>
-            </StyledCard>
+            <div>
+              <p>testttttttttttttttttt</p>
+            </div>
           </Col>
         </Row>
       </>
