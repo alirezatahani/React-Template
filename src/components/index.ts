@@ -1,24 +1,12 @@
-import { Button } from './button';
-import { Row, Col } from './grid/Index';
-import { Input } from './input';
-import { Space } from './space';
-import { Typography } from './typography';
-import { Divider } from './divider';
-import { Alert } from './alert';
-import { Badge } from './badge';
-import { Avatar } from './avatar';
-import {Image} from "./image"
-
-export {
-  Button,
-  Row,
-  Col,
-  Input,
-  Space,
-  Typography,
-  Divider,
-  Alert,
-  Badge,
-  Avatar,
-  Image,
-};
+export * from './alert';
+export * from './avatar';
+export * from './badge';
+export * from './button';
+export * from './divider';
+export * from './grid';
+export * from './image';
+export * from './input';
+export * from './space';
+export * from './typography';
+export * from './container';
+export * from './footer';

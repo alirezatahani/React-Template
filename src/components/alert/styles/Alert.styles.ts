@@ -26,6 +26,7 @@ export const StyledAlert = styled.div<StyledAlertProps>(
   ({ theme, type, variant, isClosed }) => ({
     display: isClosed ? 'none' : 'flex',
     alignItems: 'center',
+    width: '100%',
     marginBottom: 16,
     border: `solid 2px ${
       theme.palette[type === 'info' ? 'primary' : type].main
