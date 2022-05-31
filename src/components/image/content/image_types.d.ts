@@ -1,4 +1,4 @@
-import { ReactEventHandler } from 'react';
+import { CSSProperties, ReactEventHandler } from 'react';
 
 export type ImageContainerProps = {
   width?: string | number;
@@ -13,4 +13,5 @@ export type ImageProps = {
   onError?: ReactEventHandler<HTMLImageElement> &
     React.SyntheticEvent<HTMLDivElement, Event>;
   onClick?: () => void;
+  style?: CSSProperties;
 };

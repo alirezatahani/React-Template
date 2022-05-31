@@ -1,5 +1,5 @@
 import { Button } from './button';
-import { Row, Col } from './grid/Index';
+import { Row, Col } from './grid';
 import { Input } from './input';
 import { Space } from './space';
 import { Typography } from './typography';

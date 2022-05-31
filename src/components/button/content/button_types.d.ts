@@ -1,7 +1,7 @@
 import * as React from 'react';
 
 export type ButtonProps = {
-  children?: React.ReactNode;
+  children: React.ReactNode;
   style?: React.CSSProperties;
   size?: 'sm' | 'md' | 'lg';
   variant?: 'outlined' | 'text' | 'filled';
@@ -9,8 +9,5 @@ export type ButtonProps = {
   rounded?: boolean;
   block?: boolean;
   disabled?: boolean;
-  value?: string | number;
   onClick?: () => void;
-  getProps?: any;
 };
-export type StyledButtonProps = {} & ButtonProps;
