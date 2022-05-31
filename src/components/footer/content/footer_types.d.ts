@@ -1,5 +1,5 @@
 import * as React from 'react';
 
-export type NavbarProps = {
+export type FooterProps = {
   style?: React.CSSProperties;
 };

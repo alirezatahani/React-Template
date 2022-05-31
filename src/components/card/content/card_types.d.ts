@@ -1,5 +1,6 @@
 import * as React from 'react';
 
-export type NavbarProps = {
+export type CardProps = {
+  children: React.ReactNode;
   style?: React.CSSProperties;
 };
