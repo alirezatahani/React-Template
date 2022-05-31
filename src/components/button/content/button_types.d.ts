@@ -9,5 +9,5 @@ export type ButtonProps = {
   rounded?: boolean;
   block?: boolean;
   disabled?: boolean;
+  onClick?: () => void;
 };
-export type StyledButtonProps = {} & ButtonProps;

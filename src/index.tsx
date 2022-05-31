@@ -6,7 +6,7 @@ import { Card } from './components/card';
 import { CardContent } from './components/card';
 import { CardMedia } from './components/card';
 import { GlobalStyle, theme } from './global/Global';
-
+import { Col, Row } from './components';
 const App: React.FC = () => {
   return (
     <ThemeProvider theme={theme}>
