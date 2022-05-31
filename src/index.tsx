@@ -7,14 +7,14 @@ import { Routes } from './routes';
 
 const App: React.FC = () => {
   return (
-    <ThemeProvider theme={theme}>
-      <>
-        <GlobalStyle />
-        <BrowserRouter>
+    <BrowserRouter>
+      <ThemeProvider theme={theme}>
+        <>
+          <GlobalStyle />
           <Routes />
-        </BrowserRouter>
-      </>
-    </ThemeProvider>
+        </>
+      </ThemeProvider>
+    </BrowserRouter>
   );
 };
 const container = document.getElementById('app');
