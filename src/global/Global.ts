@@ -203,7 +203,7 @@ const theme = {
     transition: 'all 100ms ease-in',
     imageShapes: {
       rounded: { borderRadius: 6 },
-      circle: { borderRadius: '90%' },
+      circle: { borderRadius: '50%' },
     },
   },
 };

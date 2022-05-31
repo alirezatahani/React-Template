@@ -8,7 +8,7 @@ export type ImageProps = {
   alt?: string;
   width?: string | number;
   height?: string | number;
-  src: string;
+  src?: string;
   shape?: 'rounded' | 'circle';
   onError?: ReactEventHandler<HTMLImageElement> &
     React.SyntheticEvent<HTMLDivElement, Event>;

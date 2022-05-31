@@ -11,6 +11,7 @@ const Image: React.FC<ImageProps> = ({ src, ...props }: ImageProps) => {
 };
 
 Image.defaultProps = {
+  src: 'https://us-wbe-img.gr-cdn.com/user/8a9c5bd8-0d48-4f74-839c-04b16e7e404a/610efd88-ae0d-48b7-96fb-8bc45cc8ad61.png',
   width: '100%',
   height: 'auto',
 };
