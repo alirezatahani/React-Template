@@ -1,5 +1,5 @@
 import { CSSProperties, ReactNode } from 'react';
-import { ColorsType } from 'src/global/theme_types';
+import { ColorsType } from 'global/theme_types';
 
 export type TypographyProps = {
   children?: ReactNode;

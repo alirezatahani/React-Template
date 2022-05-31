@@ -5,6 +5,7 @@ import { ThemeProvider } from 'styled-components';
 import { ModuleDesign } from './modules/moduleDesign';
 
 import { GlobalStyle, theme } from './global/Global';
+import { HomePage } from './components/templates/designed/pizzaTemplate/container/pages/HomePage';
 
 const App: React.FC = () => {
   const [fnameVal, setFnameVal] = React.useState<string>('');
@@ -15,6 +16,7 @@ const App: React.FC = () => {
       <>
         <GlobalStyle />
         <ModuleDesign />
+        <HomePage />
       </>
     </ThemeProvider>
   );
