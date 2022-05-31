@@ -63,7 +63,6 @@ export const Blank2 = () => {
               <Col xs={1}></Col>
             </Row>
             <br />
-            <br />
           </Col>
 
           <Col xs={2}></Col>
@@ -71,7 +70,7 @@ export const Blank2 = () => {
       </Col>
 
       <br />
-      <br />
+
       <Col xs={12}>
         <Row>
           <Col xs={2}></Col>
@@ -93,7 +92,6 @@ export const Blank2 = () => {
               </Col>
               <Col xs={8}>{/* Image */}</Col>
             </Row>
-            <br />
             <br />
           </Col>
 
