@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { createRoot } from 'react-dom/client';
-import { ThemeProvider } from 'styled-components';
+import styled, { ThemeProvider } from 'styled-components';
 import { Row, Col } from './components';
 import { Card } from './components/card';
 import { CardContent } from './components/card';
@@ -8,6 +8,10 @@ import { CardMedia } from './components/card';
 import { GlobalStyle, theme } from './global/Global';
 
 const App: React.FC = () => {
+  const StyledCard = styled(Card)(({ theme }) => ({
+    backgroundColor: theme.palette.common.black,
+  }));
+
   return (
     <ThemeProvider theme={theme}>
       <>
@@ -21,7 +25,6 @@ const App: React.FC = () => {
                 some text some text some some text some text some some text some
                 text some
               </CardContent>
-              <CardMedia />
             </Card>
           </Col>
           <Col span={3}>
@@ -52,6 +55,13 @@ const App: React.FC = () => {
                 some text some text some
               </CardContent>
             </Card>
+          </Col>
+          <Col span={3}>
+            <StyledCard>
+              <div>
+                <p>testttttttttttttttttt</p>
+              </div>
+            </StyledCard>
           </Col>
         </Row>
       </>

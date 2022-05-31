@@ -4,12 +4,13 @@ import { CardContentProps } from './cardContent_types';
 
 const CardContent: React.FC<CardContentProps> = ({
   children,
+  title,
   ...rest
 }: CardContentProps) => {
   return (
     <>
       <Content {...rest}>
-        <Title {...rest}>{rest.title}</Title>
+        {title && <Title {...rest}>{title}</Title>}
         {children}
       </Content>
     </>
