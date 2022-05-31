@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Row, Col } from '../../grid/Index';
+import { Row, Col } from '../../grid';
 import { FooterProps } from './footer_types';
 import { FaFacebook, FaTwitter } from 'react-icons/fa';
 
