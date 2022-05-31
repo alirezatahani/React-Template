@@ -79,8 +79,8 @@ export const MainTitleImage = styled(Image)(({}) => ({
     height: '530px',
 }));
 
-export const MainTexts = styled.div(({}) => ({
+export const MainTexts = styled(Typography)(({}) => ({
     padding: '100px',
     margin: 'auto',
-    color: 'white'
+    color: 'rgb(236, 18, 18)',
 }));
