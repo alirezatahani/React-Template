@@ -1,5 +1,5 @@
 import { CSSProperties, ReactNode } from 'react';
-import { ColorsType } from 'src/global/theme_types';
+import { ColorsType } from '../../../global/theme_types';
 
 export type TypographyProps = {
   children?: ReactNode;
@@ -12,7 +12,7 @@ export type TypographyProps = {
     | 'body1'
     | 'subtitle1'
     | 'subtitle2';
-  color?: ColorsType | string;
+  color?: ColorsType;
   style?: CSSProperties;
   disabled?: boolean;
   copyable?: boolean;
@@ -31,7 +31,7 @@ export type StyledTypographyProps = {
     | 'body1'
     | 'subtitle1'
     | 'subtitle2';
-  color?: ColorsType | string;
+  color?: ColorsType;
   disabled?: boolean;
   underline?: boolean;
   italic?: boolean;
