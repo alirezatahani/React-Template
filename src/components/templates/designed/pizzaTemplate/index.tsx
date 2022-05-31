@@ -1,10 +1,10 @@
-import * as React from 'react'
-import HomePage from './container/pages/HomePage'
+import * as React from 'react';
+import HomePage from './content/pages/HomePage';
 
 const PizzaTemplate: React.FC = () => {
-    return (
-        <>
-        <HomePage/>
-        </>
-)
+  return (
+    <>
+      <HomePage />
+    </>
+  );
 };
