@@ -1,7 +1,7 @@
 
 import { Image } from '../../../../../../image/index';
 import styled, { css } from 'styled-components';
-import { Col, Row } from '../../../../../../grid/index';
+import { Col, Row } from '../../../../../../grid/Index';
 import { Typography } from '../../../../../../typography/index';
 import { Button } from '../../../../../../button/index';
 import { Space } from '../../../../../../space/index';

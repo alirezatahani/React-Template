@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Row, Col } from '../../../../../../grid/index';
+import { Row, Col } from '../../../../../../grid/Index';
 import { Typography } from '../../../../../../typography/index';
 import { ImageContainer, ImagesContainer, Jumbotron, MainTexts, MainTitleRow, MenuButton, PizzaImage, PizzaRoundedImage, Price, MainTitleImage, CallToActionButton, ImagesContainer2, AddTitleText } from '../../assets/styles/style';
 // import {pizza1} from './assets/pizza1.jpg';
