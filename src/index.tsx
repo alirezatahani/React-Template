@@ -1,12 +1,18 @@
 import * as React from 'react';
 import { createRoot } from 'react-dom/client';
 import { ThemeProvider } from 'styled-components';
+import Footer from './components/footer/content/Footer';
+import { ModuleDesign } from './modules/moduleDesign';
 import { GlobalStyle, theme } from './global/Global';
-import { Col, Image, Row } from './components';
+import { Col, Row } from './components';
 const App: React.FC = () => {
   return (
     <ThemeProvider theme={theme}>
-      <GlobalStyle />
+      <>
+        <GlobalStyle />
+        <ModuleDesign />
+        <Footer />
+      </>
     </ThemeProvider>
   );
 };

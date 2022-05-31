@@ -3,6 +3,7 @@ import * as React from 'react';
 type RowProps = {
   children: React.ReactNode;
   spacing?: Spacing | number;
+  style?: React.CSSProperties;
 };
 type Spacing = {
   xs?: number;
