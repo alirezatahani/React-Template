@@ -1,10 +1,10 @@
 
 import { Image } from '../../../../../../image/index';
 import styled, { css } from 'styled-components';
-import { Col, Row } from '../../../../../../grid/Index';
+import { Col, Row } from '../../../../../../grid';
 import { Typography } from '../../../../../../typography/index';
 import { Button } from '../../../../../../button/index';
-import { Space } from '../../../../../../space/index';
+import { Space } from '../../../../../../space';
 
 export const Jumbotron = styled(Row)(({}) => ({
   backgroundColor: 'whitesmoke',

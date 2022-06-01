@@ -3,7 +3,7 @@ import { createRoot } from 'react-dom/client';
 import { ThemeProvider } from 'styled-components';
 import Footer from './components/footer/content/Footer';
 import { GlobalStyle, theme } from './global/Global';
-import { HomePage } from './components/templates/designed/pizzaTemplate/content/pages/HomePage';
+import HomePage from './components/templates/designed/pizzaTemplate/content/pages/HomePage';
 
 // @ts-ignore
 const App: React.FC = () => {
@@ -12,7 +12,7 @@ const App: React.FC = () => {
     <ThemeProvider theme={theme}>
       <>
         <GlobalStyle />
-        <HomePage />
+        <HomePage/>
         <Footer />
       </>
     </ThemeProvider>
