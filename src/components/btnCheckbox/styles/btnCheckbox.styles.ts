@@ -6,7 +6,9 @@ export const BtnCheckboxContainer = styled.div<BtnCheckboxPropsType>(
   ({ theme }) => ({
     display: 'flex',
     alignItems: 'center',
+
     border: '1px solid hsl(0, 0%, 80%)',
+    width: 'fit-content',
     borderRadius: 5,
     transition: theme.general.transition,
     [`${Label}:last-child`]: {
@@ -17,13 +19,15 @@ export const BtnCheckboxContainer = styled.div<BtnCheckboxPropsType>(
 
 export const Label = styled.label<BtnCheckboxPropsType>(({ theme }) => ({
   cursor: 'pointer',
+  padding: 10,
   width: '100%',
   display: 'flex',
+  flexWrap: 'wrap',
   alignItems: 'center',
   justifyContent: 'center',
   borderRight: '1px solid hsl(0, 0%, 80%)',
   transition: theme.general.transition,
-  minHeight: 37,
+  minHeight: 25,
 }));
 
 export const CustomCheckbox = styled.input<BtnCheckboxPropsType>(

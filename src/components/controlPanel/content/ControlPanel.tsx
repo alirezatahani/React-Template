@@ -1,3 +1,4 @@
+import * as React from 'react';
 import {
   Space,
   Button,
@@ -6,119 +7,133 @@ import {
   Row,
   Col,
   BtnCheckbox,
+  ColorPicker,
 } from '../../../components';
-import * as React from 'react';
-import { ControlPanelSettingContainer } from '../styles/controlPanel.styles';
-import { BiBold, BiItalic, BiFont } from 'react-icons/bi';
+import { Design94 } from '../../../templates/designed/94';
+import {
+  fontTypeOptions,
+  fontSizeOptions,
+  checkboxOptions,
+  alignOptions,
+  fontFamilyOptions,
+} from '../utils/constants';
+import {
+  ControlPanelItemContainer,
+  ControlPanelItemLabel,
+  ControlPanelSettingContainer,
+  SideButtonsContainer,
+} from '../styles/controlPanel.styles';
+
 import Select from 'react-select';
-
-const fontTypeOptions = [
-  { value: 'h1', label: 'Heading 1' },
-  { value: 'h2', label: 'Heading 2' },
-  { value: 'body1', label: 'Paragraph' },
-];
-const fontFamilyOptions = [
-  { value: 'h1', label: 'Heading 1' },
-  { value: 'h2', label: 'Heading 2' },
-  { value: 'body1', label: 'Paragraph' },
-];
-
-const fontSizeOptions = [
-  { value: '10', label: '10' },
-  { value: '12', label: '12' },
-  { value: '15', label: '15' },
-  { value: '18', label: '18' },
-  { value: '20', label: '20' },
-];
-
-const checkboxOptions = [
-  { value: 'h1', label: <BiBold />, name: 'h1' },
-  { value: 'h2', label: <BiItalic />, name: 'h2' },
-  { value: 'body1', label: <BiFont />, name: 'body1' },
-  { value: 'subtitle1', label: <BiBold />, name: 'subtitle1' },
-  { value: 'subtitle2', label: <BiBold />, name: 'subtitle2' },
-];
 
 const ControlPanel: React.FC = () => {
   const [showControlPanel, setShowControlPanel] = React.useState(true);
+  const [color, setColor] = React.useState('red');
 
   const handleToggle = () => {
     setShowControlPanel(!showControlPanel);
   };
 
   const handleChange = (e: any) => {
-    console.log(e.target.value);
+    setColor(e.target.value);
   };
 
   return (
-    <div style={{ display: 'flex', height: '100vh' }}>
-      <div style={{ background: '#323232', width: '100%' }}>Content</div>
-      <div style={{ background: 'blue', display: 'flex' }}>
-        <>
-          {showControlPanel && (
-            <ControlPanelSettingContainer>
-              <Typography variant="h5">Text</Typography>
-              <br />
-              <Collapsible open title="Text Setting">
-                <br />
-                <label style={{ fontSize: 12 }}>Type</label>
+    <div style={{ display: 'flex' }}>
+      <div
+        style={{
+          color: color,
+          width: showControlPanel ? 'calc(100% - 360px)' : '100%',
+        }}
+      >
+        {/* <h1>Content</h1> */}
+        <Design94 />
+      </div>
+      <div
+        style={{
+          background: 'blue',
+          display: 'flex',
+          position: 'fixed',
+          right: 0,
+          top: 0,
+          zIndex: 999,
+          height: '100vh',
+        }}
+      >
+        {showControlPanel && (
+          <ControlPanelSettingContainer>
+            <Typography variant="h5">Text</Typography>
+            <Collapsible open title="Text Setting">
+              <ControlPanelItemContainer>
+                <ControlPanelItemLabel>Type</ControlPanelItemLabel>
                 <Select options={fontTypeOptions} />
-                <br />
-
+              </ControlPanelItemContainer>
+              <ControlPanelItemContainer>
                 <Row>
                   <Col span={6}>
-                    <label style={{ fontSize: 12 }}>Font</label>
+                    <ControlPanelItemLabel>Font Family</ControlPanelItemLabel>
                     <Select options={fontFamilyOptions} />
                   </Col>
-                  <Col span={6}>
-                    <label style={{ fontSize: 12 }}>Font</label>
-                    <Select options={fontFamilyOptions} />
-                  </Col>
+                  <Col span={6}></Col>
                 </Row>
-
-                <br />
-
+              </ControlPanelItemContainer>
+              <ControlPanelItemContainer>
                 <Row>
                   <Col span={4}>
-                    <label style={{ fontSize: 12 }}>Font</label>
+                    <ControlPanelItemLabel>Font Size</ControlPanelItemLabel>
                     <Select
                       placeholder={fontSizeOptions[0].label}
                       options={fontSizeOptions}
                     />
                   </Col>
                   <Col span={8}>
-                    <label style={{ fontSize: 12 }}>Fodasdnt</label>
+                    <ControlPanelItemLabel>
+                      Font Decoration
+                    </ControlPanelItemLabel>
                     <BtnCheckbox
                       onChange={handleChange}
                       options={checkboxOptions}
                     />
                   </Col>
                 </Row>
-              </Collapsible>
-              <Collapsible title="Block Setting">Coming Soon ...</Collapsible>
-            </ControlPanelSettingContainer>
-          )}
-          <div
-            style={{
-              width: 75,
-              background: '#323232',
-              paddingInline: 20,
-              paddingTop: 30,
-            }}
-          >
-            <Space spacing={10} direction="vertical" align="start">
-              <Button onClick={handleToggle} color="primary" rounded>
-                +
-              </Button>
-              <Button color="danger" rounded>
-                G
-              </Button>
-              <Button color="warning" rounded>
-                A
-              </Button>
-            </Space>
-          </div>
-        </>
+              </ControlPanelItemContainer>
+              <ControlPanelItemContainer>
+                <Row>
+                  <Col span={4}>
+                    <ControlPanelItemLabel>Font color</ControlPanelItemLabel>
+                    <ColorPicker
+                      onChange={handleChange}
+                      id="head"
+                      name="head"
+                      value={color}
+                    />
+                  </Col>
+                  <Col span={8}>
+                    <ControlPanelItemLabel>Align Text</ControlPanelItemLabel>
+                    <BtnCheckbox
+                      onChange={handleChange}
+                      options={alignOptions}
+                    />
+                  </Col>
+                </Row>
+              </ControlPanelItemContainer>
+            </Collapsible>
+            <Collapsible title="Block Setting">Coming Soon ...</Collapsible>
+          </ControlPanelSettingContainer>
+        )}
+        <SideButtonsContainer>
+          <Space spacing={10} direction="vertical" align="start">
+            <Button onClick={handleToggle} color="primary" rounded>
+              +
+            </Button>
+            <Button color="danger" rounded>
+              G
+            </Button>
+            <Button color="warning" rounded>
+              A
+            </Button>
+          </Space>
+        </SideButtonsContainer>
       </div>
     </div>
   );

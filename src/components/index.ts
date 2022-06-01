@@ -13,3 +13,4 @@ export * from './footer';
 export * from './controlPanel';
 export * from './collapsible';
 export * from './btnCheckbox';
+export * from './colorPicker';
