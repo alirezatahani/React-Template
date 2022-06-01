@@ -23,7 +23,7 @@ export const ItemTitle = styled.div`
 export const CollapsibleItemContent = styled.div<any>(
   ({ theme, showContent }) => ({
     height: showContent ? 'auto ' : '0',
-    opacity: showContent ? 1 : 0,
+    display: showContent ? 'block' : 'none',
     transition: theme.general.transition,
     paddingLeft: 5,
     marginBottom: showContent && 30,

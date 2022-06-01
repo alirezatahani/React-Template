@@ -5,9 +5,11 @@ import {
   Collapsible,
   Row,
   Col,
+  BtnCheckbox,
 } from '../../../components';
 import * as React from 'react';
 import { ControlPanelSettingContainer } from '../styles/controlPanel.styles';
+import { BiBold, BiItalic, BiFont } from 'react-icons/bi';
 import Select from 'react-select';
 
 const fontTypeOptions = [
@@ -20,12 +22,21 @@ const fontFamilyOptions = [
   { value: 'h2', label: 'Heading 2' },
   { value: 'body1', label: 'Paragraph' },
 ];
+
 const fontSizeOptions = [
   { value: '10', label: '10' },
   { value: '12', label: '12' },
   { value: '15', label: '15' },
   { value: '18', label: '18' },
   { value: '20', label: '20' },
+];
+
+const checkboxOptions = [
+  { value: 'h1', label: <BiBold />, name: 'h1' },
+  { value: 'h2', label: <BiItalic />, name: 'h2' },
+  { value: 'body1', label: <BiFont />, name: 'body1' },
+  { value: 'subtitle1', label: <BiBold />, name: 'subtitle1' },
+  { value: 'subtitle2', label: <BiBold />, name: 'subtitle2' },
 ];
 
 const ControlPanel: React.FC = () => {
@@ -35,16 +46,20 @@ const ControlPanel: React.FC = () => {
     setShowControlPanel(!showControlPanel);
   };
 
+  const handleChange = (e: any) => {
+    console.log(e.target.value);
+  };
+
   return (
     <div style={{ display: 'flex', height: '100vh' }}>
-      <div style={{ background: 'red', width: '100%' }}>Content</div>
+      <div style={{ background: '#323232', width: '100%' }}>Content</div>
       <div style={{ background: 'blue', display: 'flex' }}>
         <>
           {showControlPanel && (
             <ControlPanelSettingContainer>
               <Typography variant="h5">Text</Typography>
               <br />
-              <Collapsible title="Text Setting">
+              <Collapsible open title="Text Setting">
                 <br />
                 <label style={{ fontSize: 12 }}>Type</label>
                 <Select options={fontTypeOptions} />
@@ -60,6 +75,7 @@ const ControlPanel: React.FC = () => {
                     <Select options={fontFamilyOptions} />
                   </Col>
                 </Row>
+
                 <br />
 
                 <Row>
@@ -71,8 +87,11 @@ const ControlPanel: React.FC = () => {
                     />
                   </Col>
                   <Col span={8}>
-                    <label style={{ fontSize: 12 }}>Font</label>
-                    <Select options={fontFamilyOptions} />
+                    <label style={{ fontSize: 12 }}>Fodasdnt</label>
+                    <BtnCheckbox
+                      onChange={handleChange}
+                      options={checkboxOptions}
+                    />
                   </Col>
                 </Row>
               </Collapsible>
