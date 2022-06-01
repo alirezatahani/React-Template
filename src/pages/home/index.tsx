@@ -5,6 +5,7 @@ export const Home = () => {
   return (
     <>
       <Link to="predesign/94">Design 94</Link>
+      <Link to="control-panel">control-panel</Link>
     </>
   );
 };
