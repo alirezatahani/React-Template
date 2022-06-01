@@ -12,6 +12,23 @@ module.exports = {
   module: {
     rules: [
       {
+        test: /\.html$/,
+        loader: 'file-loader',
+        include: path.resolve(__dirname, 'src', 'html'),
+        exclude: /node_modules/,
+        options: {
+          name: '[name].[ext]',
+          outputPath: 'examples',
+        },
+      },
+      {
+        test: /\.html$/i,
+        loader: 'html-loader',
+        options: {
+          sources: false,
+        },
+      },
+      {
         test: /\.(js|jsx)$/,
         use: ['babel-loader'],
         exclude: /node_modules/,
@@ -43,7 +60,7 @@ module.exports = {
     ],
   },
   resolve: {
-    extensions: ['.tsx', '.ts', '.js'],
+    extensions: ['.tsx', '.ts', '.js', '.html'],
   },
   devServer: {
     static: './dist',
