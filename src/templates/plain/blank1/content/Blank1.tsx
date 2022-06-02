@@ -1,10 +1,15 @@
-import { Container } from '../../../components/container//index';
 import * as React from 'react';
-import { Button } from '../../../components/button/index';
-import { Row, Col } from '../../../components/grid/Index';
-import { Typography } from '../../../components/typography/index';
-import { Jumbotron } from './blank.style';
-import { Navbar, Footer, Image } from '../../../components';
+import { Jumbotron } from '../styles/blank1.style';
+import {
+  Navbar,
+  Footer,
+  Image,
+  Typography,
+  Row,
+  Col,
+  Button,
+  Container,
+} from '../../../../components';
 
 export const Blank1 = () => {
   return (

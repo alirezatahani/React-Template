@@ -1,4 +1,4 @@
-import Design94 from '../../templates/designed/94/content/Design94';
+import { Design94 } from '../../templates/designed/94';
 import * as React from 'react';
 import { Row, Col } from '../../components/grid/Index';
 
