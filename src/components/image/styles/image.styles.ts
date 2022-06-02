@@ -1,8 +1,13 @@
 import styled from 'styled-components';
-import { ImageProps } from '../content/image_types';
+import { ImageContainerProps, ImageProps } from '../content/image_types';
 
-export const StyleImage = styled.img<ImageProps>(
-  ({ rounded }) => ({
-    borderRadius: rounded ? "20px" : "2px",
+export const ImageContainer = styled.div<ImageContainerProps>(({ width }) => ({
+  width: width,
+}));
+export const StyledImage = styled.img<ImageProps>(
+  ({ theme, shape, width, height }) => ({
+    ...theme.general.imageShapes[shape],
+    width: width,
+    height: height,
   })
 );

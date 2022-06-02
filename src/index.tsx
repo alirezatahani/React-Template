@@ -1,18 +1,21 @@
 import * as React from 'react';
+import { BrowserRouter } from 'react-router-dom';
 import { createRoot } from 'react-dom/client';
 import { ThemeProvider } from 'styled-components';
-import { Blank2 } from './templates/plain/blank2/Blank2';
 
 import { GlobalStyle, theme } from './global/Global';
+import { Routes } from './routes';
 
 const App: React.FC = () => {
   return (
-    <ThemeProvider theme={theme}>
-      <>
-        <GlobalStyle />
-        <Blank2 />
-      </>
-    </ThemeProvider>
+    <BrowserRouter>
+      <ThemeProvider theme={theme}>
+        <>
+          <GlobalStyle />
+          <Routes />
+        </>
+      </ThemeProvider>
+    </BrowserRouter>
   );
 };
 const container = document.getElementById('app');

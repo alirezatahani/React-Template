@@ -79,7 +79,7 @@ const theme = {
     button: {
       fontWeight: 300,
       fontStyle: 'normal',
-      fontSize: 14,
+      fontSize: 18,
       lineHeight: '24px',
       letterSpacing: '0.5px',
     },
@@ -201,10 +201,13 @@ const theme = {
       },
     },
   },
-
   general: {
     borderRadius: 50,
     transition: 'all 100ms ease-in',
+    imageShapes: {
+      rounded: { borderRadius: 6 },
+      circle: { borderRadius: '50%' },
+    },
   },
 };
 export { GlobalStyle, theme };
