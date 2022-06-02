@@ -28,7 +28,7 @@ export const TemplateDataDiv = styled.div<TemplateDataDivTypes>(({width})=>({
     maxWidth: width? width:"100%",
     margin:"0 auto ",
     fontSize:"18px",
-    padding:"1rem",
+     padding:0,
 }))
 export type TemplateDataColType = {
   align?:string;
