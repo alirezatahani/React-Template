@@ -4,6 +4,7 @@ export type SpaceProps = {
   children: React.ReactNode;
   align?: 'start' | 'end' | 'center' | 'baseline';
   direction?: 'vertical' | 'horizontal';
+  alignItems?: React.CSSProperties['alignItems'];
   wrap?: boolean;
   spacing?: number | number[];
 };
