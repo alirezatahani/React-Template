@@ -1,33 +1,46 @@
 import styled from 'styled-components';
 import { FooterProps } from '../content/footer_types';
-export const FooterStyled = styled.footer<FooterProps>(({ theme }) => ({
+import { Row, Col } from '../../grid';
+
+export const FooterWrapper = styled.footer<FooterProps>(({ theme }) => ({
   backgroundColor: theme.palette.common.black,
   color: theme.palette.common.white,
   height: 60,
+  width: '100%',
 }));
-export const Item = styled.div<FooterProps>(({ theme }) => ({
+export const FooterContainer = styled(Row)(({ theme }) => ({
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'center',
+  height: 'inherit',
+}));
+export const Item = styled.div(({ theme }) => ({
+  ...theme.typography.body1,
   textAlign: 'center',
   marginLeft: 24,
-  ...theme.typography.body1,
+  cursor: 'pointer',
 }));
-export const SocialItem = styled.div<FooterProps>(({ theme }) => ({
-  textAlign: 'center',
+export const SocialItems = styled.div(({ theme }) => ({
   ...theme.typography.body1,
+  textAlign: 'center',
   display: 'flex',
   justifyContent: 'center',
   alignItems: 'center',
 }));
-export const SocialContent = styled.div<FooterProps>(({ theme }) => ({
-  textAlign: 'center',
-  marginLeft: 17,
+export const SocialContent = styled.div(({ theme }) => ({
   ...theme.typography.body1,
+  marginLeft: 17,
+  display: 'flex',
+  justifyContent: 'center',
+  alignItems: 'center',
+  cursor: 'pointer',
 }));
-export const Logo = styled.div<FooterProps>(({ theme }) => ({
+export const Logo = styled.div(({ theme }) => ({
+  ...theme.typography.body1,
   textAlign: 'center',
   marginLeft: 24,
-  ...theme.typography.body1,
 }));
-export const Ul = styled.div<FooterProps>(({}) => ({
+export const Ul = styled.div(({}) => ({
   display: 'flex',
   justifyContent: 'center',
   alignItems: 'center',
