@@ -21,7 +21,7 @@ const Home: React.FC = () => {
     return (
         <Row>
             <MainTitleRow image='https://us-wbe-img.gr-cdn.com/user/8a9c5bd8-0d48-4f74-839c-04b16e7e404a/1ede5857-d0b6-4c36-b39d-8666d1f56d47.png'>
-                <Col md={6}>
+                <Col xs={12} sm={12} md={6}>
                     <MainTexts>
                         <Typography variant="h1" style={{color:'#fff'}}>ADD YOUR TITLE</Typography>
                         <br />
@@ -33,21 +33,21 @@ const Home: React.FC = () => {
                         <CallToActionButton>CALL TO ACTION</CallToActionButton>
                     </MainTexts>
                 </Col>
-                <Col md={6}>
+                <Col xs={12} sm={12} md={6}>
                     <MainTitleImage src="https://us-wbe-img.gr-cdn.com/user/8a9c5bd8-0d48-4f74-839c-04b16e7e404a/a2f85e28-163a-4a45-8a8b-dd7f0a897507.png" />
                 </Col>
             </MainTitleRow>
             <ImagesContainer>
                 <Col md={1}></Col>
-                <Col md={10}>
-                    <Space align={'center'}>
+                <Col xs={12} sm={12} md={10}>
+                    <Space align='center'>
                         <AddTitleText>ADD YOUR TITLE</AddTitleText>
                     </Space>
-                    <Space align={'center'}>
+                    <Space align='center'>
                         <Typography variant="h2">INTRODUCE YOUR IDEA</Typography>
                     </Space>
                     <br />
-                    <Space align={'center'}>
+                    <Space align='center'>
                         <Typography variant="body1">
                             Use this space to elaborate on your headline and connect with
                             your visitors. You can build on the first idea or add your
@@ -57,7 +57,7 @@ const Home: React.FC = () => {
                         </Typography>
                     </Space>
                     <Row>
-                        <Col md={4}>
+                        <Col xs={12} sm={12} md={4}>
                             <div style={{ textAlign: 'center' }}>
                                 <PizzaRoundedImage src="https://us-wbe-img.gr-cdn.com/user/8a9c5bd8-0d48-4f74-839c-04b16e7e404a/28f237fe-2073-4c99-901a-b6149a6ead60.png" />
                             </div>
@@ -69,7 +69,7 @@ const Home: React.FC = () => {
                                 <Price variant="body1">$6.99</Price>
                             </div>
                         </Col>
-                        <Col md={4}>
+                        <Col xs={12} sm={12} md={4}>
                             <div style={{ textAlign: 'center' }}>
                                 <PizzaRoundedImage src="https://us-wbe-img.gr-cdn.com/user/8a9c5bd8-0d48-4f74-839c-04b16e7e404a/d2df2e7a-7b12-4967-b511-47dac43ea55c.png" />
                             </div>
@@ -81,7 +81,7 @@ const Home: React.FC = () => {
                                 <Price variant="body1">$9.99</Price>
                             </div>
                         </Col>
-                        <Col md={4}>
+                        <Col xs={12} sm={12} md={4}>
                             <div style={{ textAlign: 'center' }}>
                                 <PizzaRoundedImage src="https://us-wbe-img.gr-cdn.com/user/8a9c5bd8-0d48-4f74-839c-04b16e7e404a/310328fa-17c2-458b-86d1-1fbf9dd9020d.png" />
                             </div>
@@ -96,7 +96,7 @@ const Home: React.FC = () => {
                     </Row>
                     <br />
                     <Row>
-                        <Col md={4}>
+                        <Col xs={12} sm={12} md={4}>
                             <div style={{ textAlign: 'center' }}>
                                 <PizzaRoundedImage src="https://us-wbe-img.gr-cdn.com/user/8a9c5bd8-0d48-4f74-839c-04b16e7e404a/28f237fe-2073-4c99-901a-b6149a6ead60.png" />
                             </div>
@@ -108,7 +108,7 @@ const Home: React.FC = () => {
                                 <Price variant="body1">$7.99</Price>
                             </div>
                         </Col>
-                        <Col md={4}>
+                        <Col xs={12} sm={12} md={4}>
                             <div style={{ textAlign: 'center' }}>
                                 <PizzaRoundedImage src="https://us-wbe-img.gr-cdn.com/user/8a9c5bd8-0d48-4f74-839c-04b16e7e404a/d2df2e7a-7b12-4967-b511-47dac43ea55c.png" />
                             </div>
@@ -120,7 +120,7 @@ const Home: React.FC = () => {
                                 <Price variant="body1">$9.99</Price>
                             </div>
                         </Col>
-                        <Col md={4}>
+                        <Col xs={12} sm={12} md={4}>
                             <div style={{ textAlign: 'center' }}>
                                 <PizzaRoundedImage src="https://us-wbe-img.gr-cdn.com/user/8a9c5bd8-0d48-4f74-839c-04b16e7e404a/d1ef202c-fd23-4606-be56-dd72be51221b.png" />
                             </div>
@@ -152,7 +152,7 @@ const Home: React.FC = () => {
                 <Col md={10}>
                     <Row>
                         <Col md={1}></Col>
-                        <Col md={10}>
+                        <Col xs={12} sm={12} md={10}>
                             <Space align={'center'}>
                                 <AddTitleText>ADD YOUR TITLE</AddTitleText>
                             </Space>

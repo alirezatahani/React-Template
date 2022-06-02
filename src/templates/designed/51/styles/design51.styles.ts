@@ -14,7 +14,7 @@ export const MainTitleRow = styled(Row)<MainTitleTypes>(({ image }) => ({
     background: `url(${image})`,
     backgroundSize: 'cover',
     backgroundPosition: 'center',
-    height: 700,
+    minHeight: 700,
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
@@ -34,6 +34,7 @@ export const MainTitleImage = styled(Image)(({}) => ({
     borderRadius: '50%',
     width: '530px',
     height: '530px',
+    margin: 'auto',
 }));
 
 export const MainTexts = styled(Typography)(({}) => ({
