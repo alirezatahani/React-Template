@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { FooterProps } from '../content/footer_types';
-export const FooterStyled = styled.div<FooterProps>(({ theme }) => ({
+export const FooterStyled = styled.footer<FooterProps>(({ theme }) => ({
   backgroundColor: theme.palette.common.black,
   color: theme.palette.common.white,
   height: 60,

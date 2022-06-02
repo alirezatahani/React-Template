@@ -1,8 +1,8 @@
 import * as React from 'react';
-import { Row, Col } from '../../grid/Index';
+import { Row, Col } from '../../grid';
 import { FooterProps } from './footer_types';
 import { FaFacebook, FaTwitter } from 'react-icons/fa';
-
+import { Items } from '../utils/constants';
 import {
   FooterStyled,
   Item,
@@ -20,10 +20,9 @@ const Footer: React.FC<FooterProps> = ({ ...rest }: FooterProps) => {
           <Row>
             <Col md={6}>
               <Ul>
-                <Item>Home</Item>
-                <Item>About us</Item>
-                <Item>Pricing</Item>
-                <Item>Contact</Item>
+                {Items.map((value) => {
+                  return <Item>{value.name}</Item>;
+                })}
               </Ul>
             </Col>
 
