@@ -6,6 +6,7 @@ import {
   HeroFormInput,
   HeroCard,
   Jumbotron,
+  Section,
 } from '../styles/blank3.styles';
 import {
   Navbar,
@@ -24,36 +25,95 @@ export const Blank3 = () => {
   return (
     <React.Fragment>
       <Navbar />
-      <Wrapper>
+
+      <Section>
         <Container>
-          <Image
-            src="https://us-wbe-img.gr-cdn.com/template/website-id-d46691d1-c4bb-4a59-a194-9012099062fd/22eae2c7-8a18-451c-b077-0cc4841f434a.png"
-            style={{ marginTop: '-2rem' }}
-          />
-          <TemplateContainer style={{ textAlign: 'center' }}>
-            <Typography
-              variant="h2"
-              style={{ textAlign: 'center', marginBottom: '2rem' }}
-            >
-              Introduce your idea
-            </Typography>
-            <Typography variant="body1" style={{ textAlign: 'center' }}>
-              Share more about what you do. Use this space to describe your
-              products or services, and highlight their benefits. Customize the
-              image to draw people in and drive your point home.
-            </Typography>
-            <Button
-              style={{
-                marginTop: '2rem',
-              }}
-              variant="outlined"
-              size="lg"
-            >
-              Call to Action
-            </Button>
-          </TemplateContainer>
+          <Row>
+            <Col xs={12}>
+              <Image
+                src="https://us-wbe-img.gr-cdn.com/template/website-id-d46691d1-c4bb-4a59-a194-9012099062fd/22eae2c7-8a18-451c-b077-0cc4841f434a.png"
+                // style={{ marginTop: '-2rem' }}
+              />
+            </Col>
+          </Row>
+          <Row>
+            <Col xs={12}>
+              <Typography
+                variant="h2"
+                style={{ textAlign: 'center', marginBottom: '2rem' }}
+              >
+                Introduce your idea
+              </Typography>
+            </Col>
+          </Row>
+          <Row>
+            <Col xs={12}>
+              <Typography variant="body1" style={{ textAlign: 'center' }}>
+                Share more about what you do. Use this space to describe your
+                products or services, and highlight their benefits. Customize
+                the image to draw people in and drive your point home.
+              </Typography>
+            </Col>
+          </Row>
+          <Row>
+            <Col xs={12} alignItems="center" justify="center" display="flex">
+              <Button
+                style={{
+                  marginTop: '2rem',
+                }}
+                variant="outlined"
+                size="lg"
+              >
+                Call to Action
+              </Button>
+            </Col>
+          </Row>
         </Container>
-      </Wrapper>
+      </Section>
+      <Section>
+        <Container>
+          <Row>
+            <Col xs={12}>
+              <Image
+                src="https://us-wbe-img.gr-cdn.com/template/website-id-d46691d1-c4bb-4a59-a194-9012099062fd/22eae2c7-8a18-451c-b077-0cc4841f434a.png"
+                // style={{ marginTop: '-2rem' }}
+              />
+            </Col>
+          </Row>
+          <Row>
+            <Col xs={12}>
+              <Typography
+                variant="h2"
+                style={{ textAlign: 'center', marginBottom: '2rem' }}
+              >
+                Introduce your idea
+              </Typography>
+            </Col>
+          </Row>
+          <Row>
+            <Col xs={12}>
+              <Typography variant="body1" style={{ textAlign: 'center' }}>
+                Share more about what you do. Use this space to describe your
+                products or services, and highlight their benefits. Customize
+                the image to draw people in and drive your point home.
+              </Typography>
+            </Col>
+          </Row>
+          <Row>
+            <Col xs={12} alignItems="center" justify="center" display="flex">
+              <Button
+                style={{
+                  marginTop: '2rem',
+                }}
+                variant="outlined"
+                size="lg"
+              >
+                Call to Action
+              </Button>
+            </Col>
+          </Row>
+        </Container>
+      </Section>
 
       <SectionContainer>
         <TemplateContainer>

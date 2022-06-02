@@ -14,6 +14,9 @@ export const TemplateContainer = styled.section({
   maxWidth: '1040px',
   margin: '0 auto',
 });
+export const Section = styled.section({
+  padding: 24,
+});
 export const Wrapper = styled.section({
   backgroundColor: 'whitesmoke',
 });
