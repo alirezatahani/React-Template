@@ -14,7 +14,6 @@ import {
     CallToActionButton,
     ImagesContainer2,
     AddTitleText,
-    ImagesRow,
 } from '../../styles/design51.styles';
 
 const Home: React.FC = () => {
@@ -40,22 +39,29 @@ const Home: React.FC = () => {
             <ImagesContainer>
                 <Col md={1}></Col>
                 <Col xs={12} sm={12} md={10}>
-                    <Space align='center'>
-                        <AddTitleText>ADD YOUR TITLE</AddTitleText>
-                    </Space>
-                    <Space align='center'>
-                        <Typography variant="h2">INTRODUCE YOUR IDEA</Typography>
-                    </Space>
-                    <br />
-                    <Space align='center'>
-                        <Typography variant="body1">
-                            Use this space to elaborate on your headline and connect with
-                            your visitors. You can build on the first idea or add your
-                            second point. Now that you've got your visitors' attention, let
-                            them know what they can expect, and encourage them to explore
-                            your site.
-                        </Typography>
-                    </Space>
+                    <Row>
+                        <Col md={1}/>
+                        <Col xs={12} sm={12} md={10} style={{margin:'30px'}}>
+                            <Space align='center'>
+                                <AddTitleText>ADD YOUR TITLE</AddTitleText>
+                            </Space>
+                            <Space align='center'>
+                                <Typography variant="h2">INTRODUCE YOUR IDEA</Typography>
+                            </Space>
+                            <br />
+                            <Space align='center'>
+                                <Typography variant="body1" style={{margin:'10px'}}>
+                                    Use this space to elaborate on your headline and connect with
+                                    your visitors. You can build on the first idea or add your
+                                    second point. Now that you've got your visitors' attention, let
+                                    them know what they can expect, and encourage them to explore
+                                    your site.
+                                </Typography>
+                            </Space>
+                        </Col>
+                        <Col md={1}/>
+                    </Row>
+                    <br/>
                     <Row>
                         <Col xs={12} sm={12} md={4}>
                             <div style={{ textAlign: 'center' }}>
@@ -149,7 +155,7 @@ const Home: React.FC = () => {
             </ImagesContainer>
             <ImagesContainer2>
                 <Col md={1}></Col>
-                <Col md={10}>
+                <Col xs={12} sm={12} md={10}>
                     <Row>
                         <Col md={1}></Col>
                         <Col xs={12} sm={12} md={10}>
@@ -173,32 +179,36 @@ const Home: React.FC = () => {
                         <Col md={1}></Col>
                     </Row>
                     <br />
-                    <ImagesRow>
-                        <Row>
-                            <Col md={4}>
-                                    <PizzaImage src="https://images.unsplash.com/photo-1571501210331-41105cb1b3e7?ixid=MnwyMjUyNTN8MHwxfGFsbHx8fHx8fHx8fDE2MjIwNDYzMzQ&ixlib=rb-1.2.1&w=1280&h=1920&crop=faces&fit=crop" />
-                            </Col>
-                            <Col md={4}>
-                                    <PizzaImage src="https://images.unsplash.com/photo-1621538997178-8acbbcd64506?ixid=MnwyMjUyNTN8MHwxfGFsbHx8fHx8fHx8fDE2MjIwNDYzNDI&ixlib=rb-1.2.1&w=1920&h=1279&crop=faces&fit=crop" />
-                            </Col>
-                            <Col md={4}>
-                                    <PizzaImage src="https://us-wbe-img.gr-cdn.com/user/8a9c5bd8-0d48-4f74-839c-04b16e7e404a/310328fa-17c2-458b-86d1-1fbf9dd9020d.png" />
-                            </Col>
-                        </Row>
-                    </ImagesRow>
+                    <Row>
+                        <Col xs={12} sm={12} md={4}>
+                            <ImageContainer>
+                                <PizzaImage src="https://images.unsplash.com/photo-1571501210331-41105cb1b3e7?ixid=MnwyMjUyNTN8MHwxfGFsbHx8fHx8fHx8fDE2MjIwNDYzMzQ&ixlib=rb-1.2.1&w=1280&h=1920&crop=faces&fit=crop" />
+                            </ImageContainer>
+                        </Col>
+                        <Col xs={12} sm={12} md={4}>
+                            <ImageContainer>
+                                <PizzaImage src="https://images.unsplash.com/photo-1621538997178-8acbbcd64506?ixid=MnwyMjUyNTN8MHwxfGFsbHx8fHx8fHx8fDE2MjIwNDYzNDI&ixlib=rb-1.2.1&w=1920&h=1279&crop=faces&fit=crop" />
+                            </ImageContainer>
+                        </Col>
+                        <Col xs={12} sm={12} md={4}>
+                            <ImageContainer>
+                                <PizzaImage src="https://us-wbe-img.gr-cdn.com/user/8a9c5bd8-0d48-4f74-839c-04b16e7e404a/310328fa-17c2-458b-86d1-1fbf9dd9020d.png" />
+                            </ImageContainer>
+                        </Col>
+                    </Row>
                     <br />
                     <Row>
-                        <Col xs={4}>
+                        <Col xs={12} sm={12} md={4}>
                             <ImageContainer>
                                 <PizzaImage src="https://images.unsplash.com/photo-1595854341625-f33ee10dbf94?ixid=MnwyMjUyNTN8MHwxfGFsbHx8fHx8fHx8fDE2MjIwNDYzNzE&ixlib=rb-1.2.1&w=1920&h=1280&crop=faces&fit=crop" />
                             </ImageContainer>
                         </Col>
-                        <Col md={4}>
+                        <Col xs={12} sm={12} md={4}>
                             <ImageContainer>
                                 <PizzaImage src="https://images.unsplash.com/photo-1589187151053-5ec8818e661b?ixid=MnwyMjUyNTN8MHwxfGFsbHx8fHx8fHx8fDE2MjIwNDYzODI&ixlib=rb-1.2.1&w=1280&h=1920&crop=faces&fit=crop" />
                             </ImageContainer>
                         </Col>
-                        <Col md={4}>
+                        <Col xs={12} sm={12} md={4}>
                             <ImageContainer>
                                 <PizzaImage src="https://images.unsplash.com/photo-1621485817388-9ab03c1a56b5?ixid=MnwyMjUyNTN8MHwxfGFsbHx8fHx8fHx8fDE2MjIwNDY0MjA&ixlib=rb-1.2.1&w=1440&h=1920&crop=faces&fit=crop" />
                             </ImageContainer>

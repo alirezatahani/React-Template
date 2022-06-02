@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components';
-import { Row } from "../../../../components/grid";
+import { Row, Col } from "../../../../components/grid";
 import { Button } from "../../../../components/button";
 import { Space } from "../../../../components/space";
 import { Typography } from "../../../../components/typography";
@@ -8,7 +8,7 @@ import { ImageProps } from '@components/image/content/image_types';
 
 export type MainTitleTypes = {
     image?: string;
-  };
+};
 
 export const MainTitleRow = styled(Row)<MainTitleTypes>(({ image }) => ({
     background: `url(${image})`,
@@ -28,7 +28,7 @@ export const MainTitleRow = styled(Row)<MainTitleTypes>(({ image }) => ({
       opacity: 0.7,
       zIndex: -1,
     },
-  }));
+}));
 
 export const MainTitleImage = styled(Image)(({}) => ({
     borderRadius: '50%',
@@ -71,19 +71,17 @@ export const ImagesContainer2 = styled(Row)(({}) => ({
     padding: '70px 10px',
 }));
 
-export const ImagesRow = styled.div(({}) => ({
-    height: '330px',
-}));
 
-export const ImageContainer = styled.div(({}) => ({
-    width: '330px',
-    height: '330px',
-    margin: '5px',
-}));
+
+export const ImageContainer = styled(Space)(({}) => ({
+        width: '330px',
+        height: '330px',
+        margin: 'auto',
+    }));
 
 export const PizzaImage = styled(Image)<ImageProps>(({}) => ({
     width: '100%',
-    height: 'auto',
+    height: '100%',
     objectFit: 'cover',
 }));
 
