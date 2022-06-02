@@ -7,7 +7,7 @@ export const FlexRow = styled.div<RowStyleProps>`
   display: flex;
   flex-wrap: wrap;
   ${({ spacing }) => {
-    if (!spacing)
+    if (!spacing && spacing !== 0)
       return `
 ${calculateRowMargin(8)};
       `;
