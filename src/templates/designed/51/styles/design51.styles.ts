@@ -4,7 +4,42 @@ import { Button } from "../../../../components/button";
 import { Space } from "../../../../components/space";
 import { Typography } from "../../../../components/typography";
 import { Image } from "../../../../components/image";
+import { ImageProps } from '@components/image/content/image_types';
 
+export type MainTitleTypes = {
+    image?: string;
+  };
+
+export const MainTitleRow = styled(Row)<MainTitleTypes>(({ image }) => ({
+    background: `url(${image})`,
+    backgroundSize: 'cover',
+    backgroundPosition: 'center',
+    height: 700,
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    position: 'relative',
+    zIndex: 1,
+    ':after': {
+      content: "''",
+      position: 'absolute',
+      inset: 0,
+      background: '#ec1212',
+      opacity: 0.7,
+      zIndex: -1,
+    },
+  }));
+
+export const MainTitleImage = styled(Image)(({}) => ({
+    borderRadius: '50%',
+    width: '530px',
+    height: '530px',
+}));
+
+export const MainTexts = styled(Typography)(({}) => ({
+    padding: '100px',
+    margin: 'auto',
+}));
 
 export const AddTitleText = styled(Row)(({}) => ({
     color: '#7FAC11FF',
@@ -17,16 +52,37 @@ export const CallToActionButton = styled(Button)(({}) => ({
     borderRadius: '999px',
     fontWeight: 'bold',
     marginTop: '50px',
-    ":hover": {backgroundColor: 'rgb(151, 198, 29)'}
+    ":hover": {backgroundColor: 'rgb(151, 198, 29)', border: 'none'}
+}));
+
+export const ImagesContainer = styled(Row)(({}) => ({
+    backgroundColor: '#FFF',
+    padding: '70px 10px',
 }));
 
 export const PizzaRoundedImage = styled(Image)(({}) => ({
     borderRadius: '50%',
+    width: '200px',
 }));
 
-export const PizzaImage = styled(Image)(({}) => ({
+export const ImagesContainer2 = styled(Row)(({}) => ({
+    backgroundColor: 'rgb(255, 244, 244)',
+    padding: '70px 10px',
+}));
+
+export const ImagesRow = styled.div(({}) => ({
+    height: '330px',
+}));
+
+export const ImageContainer = styled.div(({}) => ({
+    width: '330px',
+    height: '330px',
+    margin: '5px',
+}));
+
+export const PizzaImage = styled(Image)<ImageProps>(({}) => ({
     width: '100%',
-    higth: '100%',
+    height: 'auto',
     objectFit: 'cover',
 }));
 
@@ -41,41 +97,4 @@ export const MenuButton = styled(Button)(({}) => ({
     padding: '24px 40px',
     borderRadius: '999px',
     fontWeight: 'bold',
-}));
-
-export const ImagesContainer = styled(Row)(({}) => ({
-    backgroundColor: '#FFF',
-    padding: '70px 10px',
-}));
-
-export const ImagesContainer2 = styled(Row)(({}) => ({
-    backgroundColor: 'rgb(255, 244, 244)',
-    padding: '70px 10px',
-}));
-
-
-export const ImageContainer = styled(Space)(({}) => ({
-    width: '330px',
-    height: '330px',
-    margin: '5px',
-    objectFit: 'cover',
-}));
-
-export const MainTitleRow = styled(Row)(({}) => ({
-    backgroundImage: `url('https://us-wbe-img.gr-cdn.com/user/8a9c5bd8-0d48-4f74-839c-04b16e7e404a/1ede5857-d0b6-4c36-b39d-8666d1f56d47.png')`,
-    width: '100%',
-    position: 'relative',
-    margin: 0,
-}));
-
-export const MainTitleImage = styled(Image)(({}) => ({
-    borderRadius: '50%',
-    width: '530px',
-    height: '530px',
-}));
-
-export const MainTexts = styled(Typography)(({}) => ({
-    padding: '100px',
-    margin: 'auto',
-    color: 'rgb(236, 18, 18)',
 }));
