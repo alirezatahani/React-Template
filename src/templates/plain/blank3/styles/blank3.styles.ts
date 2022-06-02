@@ -5,18 +5,26 @@ import { Card } from '../../../../components/card/index';
 
 export const Jumbotron = styled(Row)(({}) => ({
   backgroundColor: 'whitesmoke',
-  height: 300,
+  height: 400,
+  display: 'flex',
+  alignItems: 'center',
   textAlign: 'center',
 }));
-export const TemplateContainer = styled.div({
+export const TemplateContainer = styled.section({
   maxWidth: '1040px',
   margin: '0 auto',
 });
-export const Wrapper = styled.div({
+export const Wrapper = styled.section({
   backgroundColor: 'whitesmoke',
 });
 export const SectionContainer = styled(Container)({
   width: '100vw',
+});
+export const FormSection = styled.section({
+  position: 'relative',
+});
+export const FormItemSection = styled.section({
+  position: 'absolute',
 });
 
 export const HeroFormInput = styled(Input)({

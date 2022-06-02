@@ -17,7 +17,6 @@ import {
   Typography,
   Container,
 } from '../../../../components';
-import { Card } from '../../../../components/card/index';
 import { CardMedia } from '../../../../components/card/content/cardMedia/index';
 import { CardContent } from '../../../../components/card/content/cardContent/index';
 
@@ -142,40 +141,28 @@ export const Blank3 = () => {
         </TemplateContainer>
       </SectionContainer>
       <Jumbotron>
-        <Col xs={3}></Col>
-        <Col xs={6}>
-          <Row>
-            <Col xs={2}></Col>
-            <Col xs={8}>
-              <Typography variant="h2">Add your title</Typography>
-            </Col>
-            <Col xs={2}></Col>
-          </Row>
-          <br />
-          <Typography variant="body1">
-            Use this space to elaborate on the ideas introduced in the title.
-            Connect with your visitors. Include the information that makes the
-            most sense for your brand. Try sharing your mission to build trust.
-            Or, briefly explain how your product works and the value it brings,
-            so they feel compelled to explore your site. The sky is the limit.
+        <TemplateContainer style={{ textAlign: 'center' }}>
+          <Typography
+            variant="h2"
+            style={{ textAlign: 'center', marginBottom: '2rem' }}
+          >
+            Introduce your idea
           </Typography>
-          <Row>
-            <Col xs={4}></Col>
-            <Col xs={4}>
-              <Button
-                variant="outlined"
-                size="lg"
-                style={{
-                  marginTop: '1rem',
-                }}
-              >
-                CALL TO ACTION
-              </Button>
-            </Col>
-            <Col xs={4}></Col>
-          </Row>
-        </Col>
-        <Col xs={3}></Col>
+          <Typography variant="body1" style={{ textAlign: 'center' }}>
+            Share more about what you do. Use this space to describe your
+            products or services, and highlight their benefits. Customize the
+            image to draw people in and drive your point home.
+          </Typography>
+          <Button
+            style={{
+              marginTop: '2rem',
+            }}
+            variant="outlined"
+            size="lg"
+          >
+            Call to Action
+          </Button>
+        </TemplateContainer>
       </Jumbotron>
 
       <Footer />
