@@ -2,6 +2,7 @@ import * as React from 'react';
 import { Row, Col, Container } from '../../';
 import { FooterProps, MenuItem, SocialItem } from './footer_types';
 import { socialItems, menuItems } from '../utils/constants';
+
 import {
   FooterWrapper,
   FooterContainer,

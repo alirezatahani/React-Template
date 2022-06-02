@@ -1,4 +1,4 @@
-import { Design94 } from '../../templates/designed/preDesigned#94';
+import { Design94 } from '../../templates/designed/94';
 import * as React from 'react';
 import { Row, Col } from '../../components';
 
