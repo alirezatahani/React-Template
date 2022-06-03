@@ -1,9 +1,8 @@
-import {Design37} from './templates/designed/37';
+import { Design37 } from './templates/designed/37';
 import * as React from 'react';
 import { Route, Routes as ReactRoutes } from 'react-router-dom';
 import { Home } from './pages/home';
 import { Design94 } from './templates/designed/94';
-
 export const Routes = () => {
   return (
     <ReactRoutes>

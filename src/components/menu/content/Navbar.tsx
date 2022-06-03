@@ -1,45 +1,47 @@
 import * as React from 'react';
 import { NavbarProps } from './navbar_types';
-import { Row, Col } from '../../../components';
+import { Col, Container } from '../../../components';
+import { SocialNavItem, NavItem } from './navbar_types';
+import { socialNavItems, navItems, logoItem } from '../utils/constants';
 import {
-  Nav,
+  NavbarWrapper,
   Item,
   Ul,
   Logo,
   SocialItem,
   SocialContent,
+  NavbarContainer,
 } from '../styles/Navbar.styles';
-import { FaAtlassian, FaFacebook, FaTwitter } from 'react-icons/fa';
-import { Items } from '../utils/constants';
 
-const Navbar: React.FC<NavbarProps> = ({ ...rest }: NavbarProps) => {
+const Navbar: React.FC<NavbarProps> = ({}: NavbarProps) => {
   return (
-    <Nav>
-      <Row>
-        <Col xs={2}>
-          <Logo>
-            <FaAtlassian size={18} />
-          </Logo>
-        </Col>
-        <Col xs={8}>
-          <Ul>
-            {Items.map((item) => {
-              return <Item>{item.name}</Item>;
-            })}
-          </Ul>
-        </Col>
-        <Col xs={2}>
-          <SocialItem>
-            <SocialContent>
-              <FaFacebook size={18} />
-            </SocialContent>
-            <SocialContent>
-              <FaTwitter size={18} />
-            </SocialContent>
-          </SocialItem>
-        </Col>
-      </Row>
-    </Nav>
+    <NavbarWrapper>
+      <Container>
+        <NavbarContainer spacing={0}>
+          <Col xs={2}>
+            <Logo>{logoItem.icon}</Logo>
+          </Col>
+          <Col xs={8}>
+            <Ul>
+              {navItems.map((navItem: NavItem, index: number) => (
+                <Item key={index}>{navItem.name}</Item>
+              ))}
+            </Ul>
+          </Col>
+          <Col xs={2}>
+            <SocialItem>
+              {socialNavItems.map(
+                (socialNavItem: SocialNavItem, index: number) => (
+                  <SocialContent key={index}>
+                    {socialNavItem.icon}
+                  </SocialContent>
+                )
+              )}
+            </SocialItem>
+          </Col>
+        </NavbarContainer>
+      </Container>
+    </NavbarWrapper>
   );
 };
 
