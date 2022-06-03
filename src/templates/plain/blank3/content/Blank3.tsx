@@ -2,9 +2,9 @@ import * as React from 'react';
 import {
   SectionContainer,
   TemplateContainer,
-  Wrapper,
   HeroFormInput,
   HeroCard,
+  MainContainer,
   Jumbotron,
   Section,
 } from '../styles/blank3.styles';
@@ -27,13 +27,10 @@ export const Blank3 = () => {
       <Navbar />
 
       <Section>
-        <Container>
+        <MainContainer fluid>
           <Row>
             <Col xs={12}>
-              <Image
-                src="https://us-wbe-img.gr-cdn.com/template/website-id-d46691d1-c4bb-4a59-a194-9012099062fd/22eae2c7-8a18-451c-b077-0cc4841f434a.png"
-                // style={{ marginTop: '-2rem' }}
-              />
+              <Image src="https://us-wbe-img.gr-cdn.com/template/website-id-d46691d1-c4bb-4a59-a194-9012099062fd/22eae2c7-8a18-451c-b077-0cc4841f434a.png" />
             </Col>
           </Row>
           <Row>
@@ -60,6 +57,7 @@ export const Blank3 = () => {
               <Button
                 style={{
                   marginTop: '2rem',
+                  marginBottom: '4rem',
                 }}
                 variant="outlined"
                 size="lg"
@@ -68,51 +66,7 @@ export const Blank3 = () => {
               </Button>
             </Col>
           </Row>
-        </Container>
-      </Section>
-      <Section>
-        <Container>
-          <Row>
-            <Col xs={12}>
-              <Image
-                src="https://us-wbe-img.gr-cdn.com/template/website-id-d46691d1-c4bb-4a59-a194-9012099062fd/22eae2c7-8a18-451c-b077-0cc4841f434a.png"
-                // style={{ marginTop: '-2rem' }}
-              />
-            </Col>
-          </Row>
-          <Row>
-            <Col xs={12}>
-              <Typography
-                variant="h2"
-                style={{ textAlign: 'center', marginBottom: '2rem' }}
-              >
-                Introduce your idea
-              </Typography>
-            </Col>
-          </Row>
-          <Row>
-            <Col xs={12}>
-              <Typography variant="body1" style={{ textAlign: 'center' }}>
-                Share more about what you do. Use this space to describe your
-                products or services, and highlight their benefits. Customize
-                the image to draw people in and drive your point home.
-              </Typography>
-            </Col>
-          </Row>
-          <Row>
-            <Col xs={12} alignItems="center" justify="center" display="flex">
-              <Button
-                style={{
-                  marginTop: '2rem',
-                }}
-                variant="outlined"
-                size="lg"
-              >
-                Call to Action
-              </Button>
-            </Col>
-          </Row>
-        </Container>
+        </MainContainer>
       </Section>
 
       <SectionContainer>

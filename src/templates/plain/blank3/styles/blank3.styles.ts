@@ -4,7 +4,7 @@ import { Container, Input } from '../../../../components';
 import { Card } from '../../../../components/card/index';
 
 export const Jumbotron = styled(Row)(({}) => ({
-  backgroundColor: 'whitesmoke',
+  backgroundColor: '#F5F5F5',
   height: 400,
   display: 'flex',
   alignItems: 'center',
@@ -22,6 +22,9 @@ export const Wrapper = styled.section({
 });
 export const SectionContainer = styled(Container)({
   width: '100vw',
+});
+export const MainContainer = styled(Container)({
+  backgroundColor: '#F5F5F5',
 });
 export const FormSection = styled.section({
   position: 'relative',
