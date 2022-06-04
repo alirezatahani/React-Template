@@ -11,6 +11,10 @@ export const TemplateContainer = styled(Col)({
 });
 export const Section = styled.section({
   padding: 24,
+  marginBottom: '4rem',
+});
+export const SectionFluid = styled.section({
+  marginBottom: '4rem',
 });
 
 export const MainContainer = styled(Container)({

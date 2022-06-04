@@ -5,6 +5,7 @@ import {
   HeroCard,
   MainContainer,
   Jumbotron,
+  SectionFluid,
   Section,
 } from '../styles/blank3.styles';
 import {
@@ -25,7 +26,7 @@ export const Blank3 = () => {
     <React.Fragment>
       <Navbar />
 
-      <section>
+      <SectionFluid>
         <MainContainer fluid>
           <Row>
             <Col xs={12}>
@@ -66,7 +67,7 @@ export const Blank3 = () => {
             </Col>
           </Row>
         </MainContainer>
-      </section>
+      </SectionFluid>
 
       <Section>
         <Container>
