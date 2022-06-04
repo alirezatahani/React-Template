@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { Row } from '../../../../components/grid/Index';
+import { Row } from '../../../../components';
 
 export const Jumbotron = styled(Row)(({}) => ({
   backgroundColor: 'whitesmoke',
