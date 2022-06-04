@@ -153,30 +153,47 @@ export const Blank3 = () => {
           </Row>
         </TemplateContainer>
       </SectionContainer>
-      <Jumbotron>
-        <TemplateContainer style={{ textAlign: 'center' }}>
-          <Typography
-            variant="h2"
-            style={{ textAlign: 'center', marginBottom: '2rem' }}
-          >
-            Introduce your idea
-          </Typography>
-          <Typography variant="body1" style={{ textAlign: 'center' }}>
-            Share more about what you do. Use this space to describe your
-            products or services, and highlight their benefits. Customize the
-            image to draw people in and drive your point home.
-          </Typography>
-          <Button
-            style={{
-              marginTop: '2rem',
-            }}
-            variant="outlined"
-            size="lg"
-          >
-            Call to Action
-          </Button>
-        </TemplateContainer>
-      </Jumbotron>
+      <Section>
+        <Jumbotron fluid>
+          <Row>
+            <Col xs={12}>
+              <Typography
+                variant="h2"
+                style={{
+                  textAlign: 'center',
+                  marginBottom: '2rem',
+                  marginTop: '6rem',
+                }}
+              >
+                Introduce your idea
+              </Typography>
+            </Col>
+          </Row>
+          <Row>
+            <Col xs={12}>
+              <Typography variant="body1" style={{ textAlign: 'center' }}>
+                Share more about what you do. Use this space to describe your
+                products or services, and highlight their benefits. Customize
+                the image to draw people in and drive your point home.
+              </Typography>
+            </Col>
+          </Row>
+          <Row>
+            <Col xs={12} alignItems="center" justify="center" display="flex">
+              <Button
+                style={{
+                  marginTop: '2rem',
+                  marginBottom: '4rem',
+                }}
+                variant="outlined"
+                size="lg"
+              >
+                Call to Action
+              </Button>
+            </Col>
+          </Row>
+        </Jumbotron>
+      </Section>
 
       <Footer />
     </React.Fragment>
