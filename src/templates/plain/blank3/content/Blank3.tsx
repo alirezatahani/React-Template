@@ -1,6 +1,5 @@
 import * as React from 'react';
 import {
-  SectionContainer,
   TemplateContainer,
   HeroFormInput,
   HeroCard,
@@ -16,6 +15,7 @@ import {
   Col,
   Button,
   Typography,
+  Container,
 } from '../../../../components';
 import { CardMedia } from '../../../../components/card/content/cardMedia/index';
 import { CardContent } from '../../../../components/card/content/cardContent/index';
@@ -68,8 +68,8 @@ export const Blank3 = () => {
         </MainContainer>
       </section>
 
-      <SectionContainer>
-        <TemplateContainer>
+      <Section>
+        <Container>
           <Row>
             <TemplateContainer xs={12}>
               <Typography variant="h2">Add your title</Typography>
@@ -111,11 +111,11 @@ export const Blank3 = () => {
               <Button variant="outlined">Sign Up</Button>
             </Col>
           </Row>
-        </TemplateContainer>
-      </SectionContainer>
+        </Container>
+      </Section>
 
-      <SectionContainer>
-        <TemplateContainer>
+      <Section>
+        <Container>
           <Row>
             <Col xs={12} sm={12} md={4} lg={6} xl={4}>
               <HeroCard>
@@ -151,8 +151,8 @@ export const Blank3 = () => {
               </HeroCard>
             </Col>
           </Row>
-        </TemplateContainer>
-      </SectionContainer>
+        </Container>
+      </Section>
 
       <section>
         <Jumbotron fluid>

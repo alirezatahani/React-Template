@@ -13,10 +13,6 @@ export const Section = styled.section({
   padding: 24,
 });
 
-export const SectionContainer = styled(Container)({
-  width: '100vw',
-  marginBottom: '6rem',
-});
 export const MainContainer = styled(Container)({
   backgroundColor: '#F5F5F5',
 });
