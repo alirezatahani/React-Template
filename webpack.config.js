@@ -46,6 +46,7 @@ module.exports = {
     extensions: ['.tsx', '.ts', '.js'],
   },
   devServer: {
+    historyApiFallback: true,
     static: './dist',
     hot: true,
   },
