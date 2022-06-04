@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { Container, Input, Col } from '../../../../components';
+import { Container, Input, Col, Button } from '../../../../components';
 import { Card } from '../../../../components/card/index';
 
 export const Jumbotron = styled(Container)(({}) => ({
@@ -19,6 +19,10 @@ export const SectionFluid = styled.section({
 
 export const MainContainer = styled(Container)({
   backgroundColor: '#F5F5F5',
+});
+export const HeroButton = styled(Button)({
+  marginTop: '2rem',
+  marginBottom: '4rem',
 });
 export const FormSection = styled.section({
   position: 'relative',

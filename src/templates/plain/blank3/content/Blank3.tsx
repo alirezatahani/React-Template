@@ -6,6 +6,7 @@ import {
   MainContainer,
   Jumbotron,
   SectionFluid,
+  HeroButton,
   Section,
 } from '../styles/blank3.styles';
 import {
@@ -54,16 +55,9 @@ export const Blank3 = () => {
           </Row>
           <Row>
             <Col xs={12} alignItems="center" justify="center" display="flex">
-              <Button
-                style={{
-                  marginTop: '2rem',
-                  marginBottom: '4rem',
-                }}
-                variant="outlined"
-                size="lg"
-              >
+              <HeroButton variant="outlined" size="lg">
                 Call to Action
-              </Button>
+              </HeroButton>
             </Col>
           </Row>
         </MainContainer>
@@ -182,16 +176,9 @@ export const Blank3 = () => {
           </Row>
           <Row>
             <Col xs={12} alignItems="center" justify="center" display="flex">
-              <Button
-                style={{
-                  marginTop: '2rem',
-                  marginBottom: '4rem',
-                }}
-                variant="outlined"
-                size="lg"
-              >
+              <HeroButton variant="outlined" size="lg">
                 Call to Action
-              </Button>
+              </HeroButton>
             </Col>
           </Row>
         </Jumbotron>
