@@ -7,9 +7,6 @@ import { GlobalStyle, theme } from './global/Global';
 import { Routes } from './routes';
 
 const App: React.FC = () => {
-  const [fnameVal, setFnameVal] = React.useState<string>('');
-  const [lnameVal, setLnameVal] = React.useState<string>('');
-
 
   return (
     <BrowserRouter>
