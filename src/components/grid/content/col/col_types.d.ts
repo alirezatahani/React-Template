@@ -11,5 +11,4 @@ export interface ColProps {
   md?: number;
   lg?: number;
   xl?: number;
-  style?: React.CSSProperties;
 }

@@ -1,5 +1,10 @@
 import * as React from 'react';
-import { Jumbotron } from '../styles/blank2.styles';
+import {
+  SectionContainer,
+  TemplateContainer,
+  Jumbotron,
+  Section,
+} from '../styles/blank2.styles';
 import {
   Navbar,
   Footer,
@@ -15,146 +20,207 @@ export const Blank2 = () => {
   return (
     <React.Fragment>
       <Navbar />
-      <Row>
-        <Col xs={12}>
-          <Jumbotron>
-            <Col xs={3}></Col>
-            <Col xs={6}>
-              <Row>
-                <Col xs={2}></Col>
-                <Col xs={8}>
-                  <Typography variant="h2">Add your title</Typography>
-                </Col>
-                <Col xs={2}></Col>
-              </Row>
-              <br />
-              <Typography variant="body1">
-                Use this space to elaborate on the ideas introduced in the
-                title. Connect with your visitors. Include the information that
-                makes the most sense for your brand. Try sharing your mission to
-                build trust. Or, briefly explain how your product works and the
-                value it brings, so they feel compelled to explore your site.
-                The sky is the limit.
-              </Typography>
-              <Row>
-                <Col xs={4}></Col>
-                <Col xs={4}>
-                  <Button
-                    variant="outlined"
-                    size="lg"
-                    style={{
-                      marginTop: '1rem',
-                    }}
-                  >
-                    CALL TO ACTION
-                  </Button>
-                </Col>
-                <Col xs={4}></Col>
-              </Row>
-            </Col>
-            <Col xs={3}></Col>
-          </Jumbotron>
-        </Col>
-        <Container>
-          <Row>
-            <Col xs={12}>
-              <Row>
-                <Col xs={6}>
-                  <Image src="https://www.groupestate.gr/images/joomlart/demo/default.jpg" />
-                </Col>
-                <Col xs={1}></Col>
-                <Col xs={5}>
-                  <Typography variant="h3">Introduce your idea</Typography>
-                  <br />
-                  <Typography variant="body1">
-                    Tell people more about what you do. Use this space to
-                    describe your products or services. Highlight their benefits
-                    so they feel compelled to click.
-                  </Typography>
-                  <br />
-                  <Button variant="outlined" size="lg">
-                    Call To Action
-                  </Button>
-                </Col>
-              </Row>
-              <br />
-              <br />
-            </Col>
-          </Row>
-        </Container>
 
-        <br />
-        <br />
-        <Container>
+      <Section>
+        <Jumbotron fluid>
           <Row>
             <Col xs={12}>
+              <Typography
+                variant="h2"
+                style={{
+                  textAlign: 'center',
+                  marginBottom: '2rem',
+                  marginTop: '6rem',
+                }}
+              >
+                Introduce your idea
+              </Typography>
+            </Col>
+          </Row>
+          <Row>
+            <Col xs={12}>
+              <Typography variant="body1" style={{ textAlign: 'center' }}>
+                Share more about what you do. Use this space to describe your
+                products or services, and highlight their benefits. Customize
+                the image to draw people in and drive your point home.
+              </Typography>
+            </Col>
+          </Row>
+          <Row>
+            <Col xs={12}>
+              <Button
+                style={{
+                  marginTop: '2rem',
+                  marginBottom: '4rem',
+                }}
+                variant="outlined"
+                size="lg"
+              >
+                Call to Action
+              </Button>
+            </Col>
+          </Row>
+        </Jumbotron>
+      </Section>
+
+      <SectionContainer>
+        <TemplateContainer>
+          <Row>
+            <Col
+              xs={12}
+              sm={12}
+              md={6}
+              lg={6}
+              xl={6}
+              style={{
+                display: 'flex',
+                flexDirection: 'column',
+                alignItems: 'start',
+                justifyContent: 'center',
+                rowGap: '1rem',
+                marginTop: '2rem',
+              }}
+            >
+              <Image src="https://us-wbe-img.gr-cdn.com/template/website-id-d46691d1-c4bb-4a59-a194-9012099062fd/22eae2c7-8a18-451c-b077-0cc4841f434a.png" />
+            </Col>
+
+            <Col
+              xs={12}
+              sm={12}
+              md={6}
+              lg={6}
+              xl={6}
+              style={{ textAlign: 'center', marginTop: '3rem', padding: 40 }}
+            >
               <Row>
-                <Col xs={5}>
+                <Col xs={12} style={{ textAlign: 'left' }}>
                   <Typography variant="h3">Introduce your idea</Typography>
-                  <br />
-                  <Typography variant="body1">
+                </Col>
+              </Row>
+              <br />
+              <Row>
+                <Col xs={12}>
+                  <Typography variant="body1" style={{ textAlign: 'justify' }}>
                     Tell people more about what you do. Use this space to
                     describe your products or services. Highlight their benefits
                     so they feel compelled to click.
                   </Typography>
-                  <br />
+                </Col>
+              </Row>
+
+              <br />
+              <Row>
+                <Col xs={12} style={{ textAlign: 'left' }}>
                   <Button variant="outlined" size="lg">
                     Call To Action
                   </Button>
                 </Col>
-                <Col xs={1}></Col>
-                <Col xs={6}>
-                  <Image src="https://www.groupestate.gr/images/joomlart/demo/default.jpg" />
+              </Row>
+            </Col>
+          </Row>
+        </TemplateContainer>
+      </SectionContainer>
+
+      <SectionContainer>
+        <TemplateContainer>
+          <Row>
+            <Col
+              xs={12}
+              sm={12}
+              md={6}
+              lg={6}
+              xl={6}
+              style={{ textAlign: 'center', marginTop: '3rem', padding: 40 }}
+            >
+              <Row>
+                <Col xs={12} style={{ textAlign: 'left' }}>
+                  <Typography variant="h3">Introduce your idea</Typography>
                 </Col>
               </Row>
               <br />
+              <Row>
+                <Col xs={12}>
+                  <Typography variant="body1" style={{ textAlign: 'justify' }}>
+                    Tell people more about what you do. Use this space to
+                    describe your products or services. Highlight their benefits
+                    so they feel compelled to click.
+                  </Typography>
+                </Col>
+              </Row>
+
               <br />
+              <Row>
+                <Col xs={12} style={{ textAlign: 'left' }}>
+                  <Button variant="outlined" size="lg">
+                    Call To Action
+                  </Button>
+                </Col>
+              </Row>
+            </Col>
+
+            <Col
+              xs={12}
+              sm={12}
+              md={6}
+              lg={6}
+              xl={6}
+              style={{
+                display: 'flex',
+                flexDirection: 'column',
+                alignItems: 'start',
+                justifyContent: 'center',
+                rowGap: '1rem',
+                marginTop: '2rem',
+              }}
+            >
+              <Image src="https://us-wbe-img.gr-cdn.com/template/website-id-d46691d1-c4bb-4a59-a194-9012099062fd/22eae2c7-8a18-451c-b077-0cc4841f434a.png" />
+            </Col>
+          </Row>
+        </TemplateContainer>
+      </SectionContainer>
+
+      <Section>
+        <Container fluid>
+          <Row>
+            <Col xs={12}>
+              <Typography
+                variant="h2"
+                style={{
+                  textAlign: 'center',
+                  marginBottom: '2rem',
+                  marginTop: '6rem',
+                }}
+              >
+                Introduce your idea
+              </Typography>
+            </Col>
+          </Row>
+          <Row>
+            <Col xs={12}>
+              <Typography variant="body1" style={{ textAlign: 'center' }}>
+                Share more about what you do. Use this space to describe your
+                products or services, and highlight their benefits. Customize
+                the image to draw people in and drive your point home.
+              </Typography>
+            </Col>
+          </Row>
+          <Row>
+            <Col xs={12}>
+              <Button
+                style={{
+                  marginTop: '2rem',
+                  marginBottom: '4rem',
+                }}
+                variant="outlined"
+                size="lg"
+              >
+                Call to Action
+              </Button>
             </Col>
           </Row>
         </Container>
-        <Col xs={12}>
-          <Row>
-            <Col xs={3}></Col>
-            <Col xs={6}>
-              <Row>
-                <Col xs={2}></Col>
-                <Col xs={10}>
-                  <Typography variant="h4">
-                    Tell people what you will help them do
-                  </Typography>
-                </Col>
-                <Col xs={2}></Col>
-              </Row>
-              <br />
-              <Typography variant="body1" style={{ textAlign: 'center' }}>
-                Use this space to elaborate on your headline and connect with
-                your visitors. Include the information that makes the most sense
-                for your brand. Try sharing your company's mission to build
-                trust. Or, briefly explain how your product works and the value
-                it brings, so they feel compelled to give it a go.
-              </Typography>
-              <Row>
-                <Col xs={4}></Col>
-                <Col xs={5}>
-                  <Button
-                    variant="outlined"
-                    size="lg"
-                    style={{
-                      marginTop: '1rem',
-                    }}
-                  >
-                    CALL TO ACTION
-                  </Button>
-                </Col>
-                <Col xs={3}></Col>
-              </Row>
-            </Col>
-            <Col xs={3}></Col>
-          </Row>
-        </Col>
-      </Row>
-      <br />
-      <br />
+      </Section>
+
       <Footer />
     </React.Fragment>
   );
