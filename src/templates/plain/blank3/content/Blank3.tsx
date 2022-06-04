@@ -25,7 +25,7 @@ export const Blank3 = () => {
     <React.Fragment>
       <Navbar />
 
-      <Section>
+      <section>
         <MainContainer fluid>
           <Row>
             <Col xs={12}>
@@ -66,7 +66,7 @@ export const Blank3 = () => {
             </Col>
           </Row>
         </MainContainer>
-      </Section>
+      </section>
 
       <SectionContainer>
         <TemplateContainer>
@@ -154,7 +154,7 @@ export const Blank3 = () => {
         </TemplateContainer>
       </SectionContainer>
 
-      <Section>
+      <section>
         <Jumbotron fluid>
           <Row>
             <Col xs={12}>
@@ -194,7 +194,7 @@ export const Blank3 = () => {
             </Col>
           </Row>
         </Jumbotron>
-      </Section>
+      </section>
 
       <Footer />
     </React.Fragment>
