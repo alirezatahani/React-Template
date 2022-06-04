@@ -79,7 +79,7 @@ const theme = {
     button: {
       fontWeight: 300,
       fontStyle: 'normal',
-      fontSize: 14,
+      fontSize: 18,
       lineHeight: '24px',
       letterSpacing: '0.5px',
     },
@@ -185,23 +185,29 @@ const theme = {
       height: 40,
       padding: 12,
     },
-    small: {
-      width: 26,
-      height: 26,
-    },
-    medium: {
-      width: 40,
-      height: 40,
-    },
-    large: {
-      width: 50,
-      height: 50,
+
+    avatar: {
+      sm: {
+        width: 26,
+        height: 26,
+      },
+      md: {
+        width: 40,
+        height: 40,
+      },
+      lg: {
+        width: 50,
+        height: 50,
+      },
     },
   },
-
   general: {
     borderRadius: 50,
     transition: 'all 100ms ease-in',
+    imageShapes: {
+      rounded: { borderRadius: 6 },
+      circle: { borderRadius: '50%' },
+    },
   },
 };
 export { GlobalStyle, theme };
