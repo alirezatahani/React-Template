@@ -153,6 +153,7 @@ export const Blank3 = () => {
           </Row>
         </TemplateContainer>
       </SectionContainer>
+
       <Section>
         <Jumbotron fluid>
           <Row>
