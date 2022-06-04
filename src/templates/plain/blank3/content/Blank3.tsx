@@ -16,7 +16,6 @@ import {
   Col,
   Button,
   Typography,
-  Container,
 } from '../../../../components';
 import { CardMedia } from '../../../../components/card/content/cardMedia/index';
 import { CardContent } from '../../../../components/card/content/cardContent/index';
