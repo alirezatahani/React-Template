@@ -1,14 +1,13 @@
 import styled from 'styled-components';
-import { Container, Input } from '../../../../components';
+import { Container, Input, Col } from '../../../../components';
 import { Card } from '../../../../components/card/index';
 
 export const Jumbotron = styled(Container)(({}) => ({
   backgroundColor: '#F5F5F5',
   height: 400,
 }));
-export const TemplateContainer = styled.section({
-  maxWidth: '1040px',
-  margin: '0 auto',
+export const TemplateContainer = styled(Col)({
+  textAlign: 'center',
 });
 export const Section = styled.section({
   padding: 24,

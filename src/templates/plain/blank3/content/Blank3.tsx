@@ -71,7 +71,7 @@ export const Blank3 = () => {
       <SectionContainer>
         <TemplateContainer>
           <Row>
-            <TemplateContainer>
+            <TemplateContainer xs={12}>
               <Typography variant="h2">Add your title</Typography>
             </TemplateContainer>
           </Row>
