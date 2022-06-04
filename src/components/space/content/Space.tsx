@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react';
 import { StyledSpace } from '../styles/space.styles';
 import { SpaceProps } from './space_types';
 

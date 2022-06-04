@@ -1,12 +1,6 @@
-import * as React from 'react';
+import React from 'react';
 import { FaFacebook, FaTwitter, FaInstagram } from 'react-icons/fa';
-import {
-  Col,
-  Row,
-  Typography,
-  Container,
-  Image,
-} from '../../../../components';
+import { Col, Row, Typography, Container, Image } from '../../../../components';
 import {
   HeroContainer,
   HeroForm,
@@ -230,4 +224,3 @@ export const Home = () => {
     </>
   );
 };
-

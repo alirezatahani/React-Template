@@ -1,5 +1,11 @@
 import styled from 'styled-components';
-import { Button, Input, Container, Typography, Col } from '../../../../components';
+import {
+  Button,
+  Input,
+  Container,
+  Typography,
+  Col,
+} from '../../../../components';
 
 export type HeroContainerTypes = {
   image?: string;
@@ -69,16 +75,14 @@ export const TemplateBtn = styled(Button)({
   borderRadius: 0,
   fontWeight: 'bold',
 });
-export const TemplateDataSection = styled.section({
-  
-})
-export const TemplateDataCol= styled(Col)({
-  display:"flex",
-  flexDirection:"column",
-  alignItems:"center",
-  justifyContent:"center",
-  rowGap:"1rem",
-})
+export const TemplateDataSection = styled.section({});
+export const TemplateDataCol = styled(Col)({
+  display: 'flex',
+  flexDirection: 'column',
+  alignItems: 'center',
+  justifyContent: 'center',
+  rowGap: '1rem',
+});
 export const IconContainer = styled(Container)({
   minWidth: '100vw',
   backgroundColor: '#f6f6f6',
@@ -97,7 +101,7 @@ export const SocialSection = styled.section({
   display: 'flex',
   justifyContent: 'center',
   gap: '2rem',
-  padding:"2rem 0"
+  padding: '2rem 0',
 });
 export const SocialItemContainer = styled.div({
   width: '40px',

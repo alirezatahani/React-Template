@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { Button, Input, Container, Col} from '../../../../components';
+import { Button, Input, Container, Col } from '../../../../components';
 import { InputLabel } from '../../../../components/input/styles/Input.styles';
 
 export type HeroContainerTypes = {
@@ -22,16 +22,16 @@ export const HeroContainer = styled(Container)<HeroContainerTypes>(
 );
 export type TemplateDataDivTypes = {
   width?: string;
-  backgroundColor?:string;
-  padding?:string;
+  backgroundColor?: string;
+  padding?: string;
 };
 export const TemplateDataDiv = styled.div<TemplateDataDivTypes>(
-  ({ width,backgroundColor ,padding}) => ({
-    width:"100%",
+  ({ width, backgroundColor, padding }) => ({
+    width: '100%',
     maxWidth: width ? width : '100%',
     margin: '0 auto ',
-    padding: padding? padding : 0,
-    backgroundColor: backgroundColor
+    padding: padding ? padding : 0,
+    backgroundColor: backgroundColor,
   })
 );
 export type TemplateDataColType = {
@@ -58,16 +58,16 @@ export const TemplateWideContainer = styled(Container)({
   minWidth: '100vw',
   backgroundColor: '#f6f6f6',
 });
-export const TemplateInputLabel=styled(InputLabel)({
-  marginBottom:"5px",
-  fontSize:"18px",
-})
+export const TemplateInputLabel = styled(InputLabel)({
+  marginBottom: '5px',
+  fontSize: '18px',
+});
 export const TemplateInput = styled(Input)({
-    width:"100%",
-    border:"1px solid #333",
-    padding:"25px 5px",
-    borderRadius: 5,
-    ["&:focus"]:{
-      outline:0,
-    }
-})
+  width: '100%',
+  border: '1px solid #333',
+  padding: '25px 5px',
+  borderRadius: 5,
+  ['&:focus']: {
+    outline: 0,
+  },
+});

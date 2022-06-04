@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react';
 import { FaAtlassian, FaFacebook, FaTwitter } from 'react-icons/fa';
 import { LogoType, NavItem, SocialNavItem } from '../content/navbar_types';
 

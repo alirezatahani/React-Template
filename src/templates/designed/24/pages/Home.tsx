@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react';
 import {
   Col,
   Container,
@@ -22,7 +22,7 @@ export const Home = () => {
     <>
       <HeroContainer image={TemplateImages.heroImage}>
         <Container>
-          <TemplateDataDiv width='600px'>
+          <TemplateDataDiv width="600px">
             <TemplateDataCol align="center">
               <Typography strong variant="h2">
                 Add your title
@@ -101,7 +101,7 @@ export const Home = () => {
           </TemplateDataDiv>
         </Container>
       </TemplateWideContainer>
-      <Footer/>
+      <Footer />
     </>
   );
 };

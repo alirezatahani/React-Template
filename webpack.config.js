@@ -1,12 +1,16 @@
+const TsconfigPathsPlugin = require('tsconfig-paths-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const path = require('path');
+const webpack = require('webpack');
 
 module.exports = {
+  mode: 'development',
   entry: {
     app: './src/index.tsx',
   },
   output: {
     path: path.resolve(__dirname, 'dist'),
+    publicPath: '/',
     filename: 'bundle.js',
   },
   module: {
@@ -43,16 +47,24 @@ module.exports = {
     ],
   },
   resolve: {
+    plugins: [new TsconfigPathsPlugin({})],
     extensions: ['.tsx', '.ts', '.js'],
   },
   devServer: {
+    open: true,
+    hot: false,
+    port: 8080,
+    compress: true,
     historyApiFallback: true,
-    static: './dist',
-    hot: true,
+    static: {
+      directory: path.join(__dirname, 'dist'),
+      publicPath: '/',
+    },
   },
   plugins: [
     new HtmlWebpackPlugin({
       template: path.resolve('./public/index.html'),
     }),
+    new webpack.HotModuleReplacementPlugin(),
   ],
 };

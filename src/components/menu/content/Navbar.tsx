@@ -1,6 +1,6 @@
-import * as React from 'react';
+import React from 'react';
 import { NavbarProps } from './navbar_types';
-import { Col, Container } from '../../../components';
+import { Col, Container } from '../..';
 import { SocialNavItem, NavItem } from './navbar_types';
 import { socialNavItems, navItems, logoItem } from '../utils/constants';
 
@@ -27,7 +27,6 @@ const Navbar: React.FC<NavbarProps> = ({}: NavbarProps) => {
               {navItems.map((navItem: NavItem, index: number) => (
                 <Item key={index}>{navItem.name}</Item>
               ))}
-
             </Ul>
           </Col>
           <Col xs={2}>
@@ -44,7 +43,6 @@ const Navbar: React.FC<NavbarProps> = ({}: NavbarProps) => {
         </NavbarContainer>
       </Container>
     </NavbarWrapper>
-
   );
 };
 

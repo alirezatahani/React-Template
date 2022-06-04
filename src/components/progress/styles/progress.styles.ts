@@ -1,5 +1,7 @@
-import { position } from 'src/components/badge/utils/constants';
-import styled, { GlobalStyleComponent, ThemedGlobalStyledClassProps } from 'styled-components';
+import styled, {
+  GlobalStyleComponent,
+  ThemedGlobalStyledClassProps,
+} from 'styled-components';
 import { ProgressProps } from '../content/progress_types';
 
 export const ProgressContainer = styled.div({
@@ -10,20 +12,22 @@ export const ProgressContainer = styled.div({
   margin: 50,
 });
 export const ProgressFiller = styled.div<ProgressProps>(
-  ({ completed, color,theme }) => {
+  ({ completed, color, theme }) => {
     return {
       height: '100%',
       width: `${completed}%`,
-      backgroundColor:   color ? theme.palette[color].main : theme.palette.common.black,
+      backgroundColor: color
+        ? theme.palette[color].main
+        : theme.palette.common.black,
       borderRadius: 'inherit',
       textAlign: 'right',
-      position:"relative"
+      position: 'relative',
     };
   }
 );
 export const ProgressLabel = styled.span({
   color: 'dark',
-  fontSize:"12px",
-  position:"absolute",
-  top:"-20px",
+  fontSize: '12px',
+  position: 'absolute',
+  top: '-20px',
 });

@@ -1,15 +1,12 @@
-import * as React from 'react';
+import React from 'react';
+import { Container, Typography } from '../../../../components';
 import {
-  Container,
-  Typography,
-} from '../../../../components';
-import {
-    HeroContainer,
-    TemplateBtn,
-    TemplateDataCol,
-    TemplateDataDiv,
-    TemplateInput,
-    TemplateInputLabel,
+  HeroContainer,
+  TemplateBtn,
+  TemplateDataCol,
+  TemplateDataDiv,
+  TemplateInput,
+  TemplateInputLabel,
 } from '../styles/design24.styles';
 import { TemplateImages } from '../utils/index';
 
@@ -23,7 +20,7 @@ export const ContactUs = () => {
               <Typography variant="h3" strong>
                 Encourage people to get in touch
               </Typography>
-              <Typography variant='h5'>
+              <Typography variant="h5">
                 Let visitors know how you can help. You can describe your offer.
                 Or, share your story to connect with them.
               </Typography>

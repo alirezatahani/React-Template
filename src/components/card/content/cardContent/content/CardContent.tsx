@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react';
 import { Content, Title } from '../styles/CardContent.styles';
 import { CardContentProps } from './cardContent_types';
 

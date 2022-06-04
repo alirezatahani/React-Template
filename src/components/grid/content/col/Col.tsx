@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react';
 import { StyledCol } from '../../styles/Col.styles';
 import { ColProps } from './col_types';
 
