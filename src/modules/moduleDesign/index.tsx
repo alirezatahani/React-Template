@@ -1,6 +1,6 @@
 import { Design94 } from '../../templates/designed/94';
-import * as React from 'react';
-import { Row, Col } from '../../components/grid/Index';
+import React from 'react';
+import { Row, Col } from '../../components';
 
 export const ModuleDesign = () => {
   return (

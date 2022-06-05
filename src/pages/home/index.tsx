@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 
 export const Home = () => {
@@ -7,6 +7,9 @@ export const Home = () => {
       <Link to="predesign/94">Design 94</Link>
       <Link to="blank/1">Blank 1</Link>
       <Link to="predesign/37">Design 37</Link>
+      <Link to="predesign/24">Design 24</Link>
+      <Link to="blank/3">Blank3</Link>
+      <Link to="create">Create</Link>
     </div>
   );
 };

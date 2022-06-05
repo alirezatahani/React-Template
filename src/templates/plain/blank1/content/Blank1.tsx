@@ -1,62 +1,76 @@
-import * as React from 'react';
-import { Jumbotron } from '../styles/blank1.style';
+import React from 'react';
+import { Jumbotron, HeroButton, Section } from '../styles/blank1.styles';
 import {
   Navbar,
   Footer,
   Image,
-  Typography,
   Row,
   Col,
-  Button,
+  Typography,
   Container,
-} from '../../../../components';
+} from '@components/index';
 
 export const Blank1 = () => {
   return (
     <React.Fragment>
       <Navbar />
-      <Row>
+
+      <Section>
         <Container>
           <Row>
-            <Col xs={12}>
-              <Row>
-                <Col xs={1}></Col>
-                <Col xs={3}>
-                  <Typography variant="h3">Introduce your idea</Typography>
-                  <br />
-                  <Typography variant="body1">
-                    Tell people more about what you do. Use this space to
-                    describe your products or services. Highlight their benefits
-                    so they feel compelled to click.
-                  </Typography>
-                  <br />
-                  <Button variant="outlined" size="lg">
-                    Call To Action
-                  </Button>
-                </Col>
-                <Col xs={8}>
-                  <Image src="https://www.groupestate.gr/images/joomlart/demo/default.jpg" />
-                </Col>
-              </Row>
-              <br />
-              <br />
+            <Col
+              xs={12}
+              sm={12}
+              md={6}
+              lg={6}
+              xl={6}
+              style={{ padding: '20px 90px 20px ' }}
+            >
+              <Typography variant="h2" style={{ marginBottom: '1rem' }}>
+                Introduce your idea
+              </Typography>
+
+              <Typography variant="body1">
+                Tell people more about what you do. Use this space to describe
+                your products or services. Highlight their benefits so they feel
+                compelled to click.
+              </Typography>
+
+              <HeroButton variant="outlined" size="lg">
+                Call To Action
+              </HeroButton>
+            </Col>
+
+            <Col xs={12} sm={12} md={6} lg={6} xl={6}>
+              <Image
+                src="https://us-wbe-img.gr-cdn.com/template/website-id-d46691d1-c4bb-4a59-a194-9012099062fd/22eae2c7-8a18-451c-b077-0cc4841f434a.png"
+                height={440}
+              />
             </Col>
           </Row>
         </Container>
+      </Section>
 
-        <Col xs={12}>
-          <Jumbotron>
-            <Col xs={3}></Col>
-            <Col xs={6}>
-              <Row>
-                <Col xs={3}></Col>
-                <Col xs={5}>
-                  <Typography variant="h2">Add your title</Typography>
-                </Col>
-                <Col xs={2}></Col>
-              </Row>
-              <br />
-              <Typography variant="body1">
+      <section>
+        <Jumbotron fluid>
+          <Row>
+            <Col xs={12}>
+              <Typography
+                variant="h2"
+                style={{
+                  textAlign: 'center',
+                  marginBottom: '2rem',
+                  marginTop: '6rem',
+                }}
+              >
+                Add your title
+              </Typography>
+            </Col>
+          </Row>
+
+          <Row style={{ padding: '0px 300px' }}>
+            <Col xs={12}>
+              <Typography variant="body1" style={{ textAlign: 'center' }}>
                 Use this space to elaborate on the ideas introduced in the
                 title. Connect with your visitors. Include the information that
                 makes the most sense for your brand. Try sharing your mission to
@@ -65,94 +79,121 @@ export const Blank1 = () => {
                 The sky is the limit.
               </Typography>
             </Col>
-            <Col xs={3}></Col>
-          </Jumbotron>
-        </Col>
-        <br />
-        <br />
+          </Row>
+
+          <Row>
+            <Col xs={12} alignItems="center" justify="center" display="flex">
+              <HeroButton variant="outlined" size="lg">
+                Call to Action
+              </HeroButton>
+            </Col>
+          </Row>
+        </Jumbotron>
+      </section>
+
+      <Section>
         <Container>
           <Row>
-            <Col xs={12}>
-              <Row>
-                <Col xs={1}></Col>
-                <Col xs={3}>
-                  <Typography variant="h3">Introduce your idea</Typography>
-                  <br />
-                  <Typography variant="body1">
-                    Tell people more about what you do. Use this space to
-                    describe your products or services. Highlight their benefits
-                    so they feel compelled to click.
-                  </Typography>
-                  <br />
-                  <Button variant="outlined" size="lg">
-                    Call To Action
-                  </Button>
-                </Col>
-                <Col xs={8}>
-                  <Image src="https://www.groupestate.gr/images/joomlart/demo/default.jpg" />
-                </Col>
-              </Row>
-              <br />
-              <br />
+            <Col
+              xs={12}
+              sm={12}
+              md={6}
+              lg={6}
+              xl={6}
+              style={{ padding: '20px 80px 20px ' }}
+            >
+              <Typography variant="h4">Introduce your idea</Typography>
+
+              <Typography variant="body1">
+                Tell people more about what you do. Use this space to describe
+                your products or services. Highlight their benefits so they feel
+                compelled to click.
+              </Typography>
+
+              <HeroButton variant="outlined" size="lg">
+                Call to Action
+              </HeroButton>
+            </Col>
+
+            <Col xs={12} sm={12} md={6} lg={6} xl={6}>
+              <Image src="https://us-wbe-img.gr-cdn.com/template/website-id-d46691d1-c4bb-4a59-a194-9012099062fd/22eae2c7-8a18-451c-b077-0cc4841f434a.png" />
             </Col>
           </Row>
         </Container>
+      </Section>
+
+      <Section>
         <Container>
           <Row>
-            <Col xs={12}>
-              <Row>
-                <Col xs={1}></Col>
-                <Col xs={3}>
-                  <Typography variant="h3">Introduce your idea</Typography>
-                  <br />
-                  <Typography variant="body1">
-                    Tell people more about what you do. Use this space to
-                    describe your products or services. Highlight their benefits
-                    so they feel compelled to click.
-                  </Typography>
-                  <br />
-                  <Button variant="outlined" size="lg">
-                    Call To Action
-                  </Button>
-                </Col>
-                <Col xs={8}>
-                  <Image src="https://www.groupestate.gr/images/joomlart/demo/default.jpg" />
-                </Col>
-              </Row>
-              <br />
-              <br />
+            <Col
+              xs={12}
+              sm={12}
+              md={6}
+              lg={6}
+              xl={6}
+              style={{ padding: '20px 80px 20px ' }}
+            >
+              <Typography variant="h4">Introduce your idea</Typography>
+
+              <Typography variant="body1">
+                Tell people more about what you do. Use this space to describe
+                your products or services. Highlight their benefits so they feel
+                compelled to click.
+              </Typography>
+              <HeroButton variant="outlined" size="lg">
+                Call to Action
+              </HeroButton>
+            </Col>
+
+            <Col xs={12} sm={12} md={6} lg={6} xl={6}>
+              <Image src="https://us-wbe-img.gr-cdn.com/template/website-id-d46691d1-c4bb-4a59-a194-9012099062fd/22eae2c7-8a18-451c-b077-0cc4841f434a.png" />
             </Col>
           </Row>
         </Container>
+      </Section>
+
+      <Section>
         <Container>
           <Row>
-            <Col xs={12}>
-              <Row>
-                <Col xs={1}></Col>
-                <Col xs={6}>
-                  <Typography variant="h3">Indroduce your idea</Typography>
-                </Col>
-                <Col xs={5}>
-                  <Typography variant="body1">
-                    Use bullet points to highlight important information
-                  </Typography>
-                  <Typography variant="body1">
-                    Use bullet points to highlight important information
-                  </Typography>
-                  <Typography variant="body1">
-                    Use bullet points to highlight important information
-                  </Typography>
-                  <Typography variant="body1">
-                    Use bullet points to highlight important information
-                  </Typography>
-                </Col>
-              </Row>
-              <br />
-              <br />
+            <Col
+              xs={12}
+              sm={12}
+              md={6}
+              lg={6}
+              xl={6}
+              style={{ padding: '20px 100px 20px ' }}
+            >
+              <Typography variant="h3">Summarize your list here</Typography>
+            </Col>
+
+            <Col
+              xs={12}
+              sm={12}
+              md={6}
+              lg={6}
+              xl={6}
+              style={{ padding: '20px 20px 20px ' }}
+            >
+              <Typography variant="body1">
+                <li>Use bullet points to highlight important information</li>
+              </Typography>{' '}
+              <Typography variant="body1">
+                <li>Use bullet points to highlight important information</li>
+              </Typography>{' '}
+              <Typography variant="body1">
+                <li>Use bullet points to highlight important information</li>
+              </Typography>{' '}
+              <Typography variant="body1">
+                <li>Use bullet points to highlight important information</li>
+              </Typography>{' '}
+              <Typography variant="body1">
+                <li>Use bullet points to highlight important information</li>
+              </Typography>
             </Col>
           </Row>
         </Container>
-      </Row>
+      </Section>
+
       <Footer />
     </React.Fragment>
   );

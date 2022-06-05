@@ -5,9 +5,14 @@ import { calculateColPadding, calculateWidth } from '../utils/utils';
 
 export const StyledCol = styled.div<ColProps>`
   ${({ span, xs }) => (span ? calculateWidth(span) : calculateWidth(xs))};
+  ${({ display, alignItems, justify }) => ({
+    display,
+    alignItems,
+    justifyContent: justify,
+  })};
 
   ${({ spacing }) => {
-    if (!spacing) return `${calculateColPadding(8)}`;
+    if (!spacing && spacing !== 0) return `${calculateColPadding(8)}`;
     if (typeof spacing === 'number') {
       return `${calculateColPadding(spacing)};`;
     } else {

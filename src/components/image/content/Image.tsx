@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react';
 import { ImageContainer, StyledImage } from '../styles/image.styles';
 import { ImageProps } from './image_types';
 
