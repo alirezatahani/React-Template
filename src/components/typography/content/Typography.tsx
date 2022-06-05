@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react';
 import { TypographyContainer } from '../styles/typography.styles';
 import { TypographyProps, VariantsType } from './typography_types';
 

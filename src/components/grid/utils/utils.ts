@@ -13,7 +13,6 @@ const calculateColPadding = (value: number) => {
   `;
 };
 const calculateRowMargin = (value: number) => {
-  console.log(value, 'value');
   return ` 
   margin-right: -${value}px;
   margin-left: -${value}px;

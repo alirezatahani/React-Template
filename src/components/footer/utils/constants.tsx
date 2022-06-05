@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react';
 import { FaFacebook, FaTwitter } from 'react-icons/fa';
 import { MenuItem, SocialItem } from '../content/footer_types';
 

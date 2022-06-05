@@ -6,6 +6,11 @@ import { calculateRowMargin } from '../utils/utils';
 export const FlexRow = styled.div<RowStyleProps>`
   display: flex;
   flex-wrap: wrap;
+  ${({ display, alignItems, justify }) => ({
+    display,
+    alignItems,
+    justifyContent: justify,
+  })};
   ${({ spacing }) => {
     if (!spacing && spacing !== 0)
       return `

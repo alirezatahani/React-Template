@@ -1,27 +1,21 @@
-import * as React from 'react';
-import {
-  SectionContainer,
-  TemplateContainer,
-  Jumbotron,
-  Section,
-} from '../styles/blank2.styles';
+import React from 'react';
+import { Jumbotron, HeroButton, Section } from '../styles/blank2.styles';
 import {
   Navbar,
   Footer,
   Image,
   Row,
   Col,
-  Button,
   Typography,
   Container,
-} from '../../../../components';
+} from '@components/index';
 
 export const Blank2 = () => {
   return (
     <React.Fragment>
       <Navbar />
 
-      <Section>
+      <section>
         <Jumbotron fluid>
           <Row>
             <Col xs={12}>
@@ -47,140 +41,70 @@ export const Blank2 = () => {
             </Col>
           </Row>
           <Row>
-            <Col xs={12}>
-              <Button
-                style={{
-                  marginTop: '2rem',
-                  marginBottom: '4rem',
-                }}
-                variant="outlined"
-                size="lg"
-              >
+            <Col xs={12} alignItems="center" justify="center" display="flex">
+              <HeroButton variant="outlined" size="lg">
                 Call to Action
-              </Button>
+              </HeroButton>
             </Col>
           </Row>
         </Jumbotron>
-      </Section>
-
-      <SectionContainer>
-        <TemplateContainer>
-          <Row>
-            <Col
-              xs={12}
-              sm={12}
-              md={6}
-              lg={6}
-              xl={6}
-              style={{
-                display: 'flex',
-                flexDirection: 'column',
-                alignItems: 'start',
-                justifyContent: 'center',
-                rowGap: '1rem',
-                marginTop: '2rem',
-              }}
-            >
-              <Image src="https://us-wbe-img.gr-cdn.com/template/website-id-d46691d1-c4bb-4a59-a194-9012099062fd/22eae2c7-8a18-451c-b077-0cc4841f434a.png" />
-            </Col>
-
-            <Col
-              xs={12}
-              sm={12}
-              md={6}
-              lg={6}
-              xl={6}
-              style={{ textAlign: 'center', marginTop: '3rem', padding: 40 }}
-            >
-              <Row>
-                <Col xs={12} style={{ textAlign: 'left' }}>
-                  <Typography variant="h3">Introduce your idea</Typography>
-                </Col>
-              </Row>
-              <br />
-              <Row>
-                <Col xs={12}>
-                  <Typography variant="body1" style={{ textAlign: 'justify' }}>
-                    Tell people more about what you do. Use this space to
-                    describe your products or services. Highlight their benefits
-                    so they feel compelled to click.
-                  </Typography>
-                </Col>
-              </Row>
-
-              <br />
-              <Row>
-                <Col xs={12} style={{ textAlign: 'left' }}>
-                  <Button variant="outlined" size="lg">
-                    Call To Action
-                  </Button>
-                </Col>
-              </Row>
-            </Col>
-          </Row>
-        </TemplateContainer>
-      </SectionContainer>
-
-      <SectionContainer>
-        <TemplateContainer>
-          <Row>
-            <Col
-              xs={12}
-              sm={12}
-              md={6}
-              lg={6}
-              xl={6}
-              style={{ textAlign: 'center', marginTop: '3rem', padding: 40 }}
-            >
-              <Row>
-                <Col xs={12} style={{ textAlign: 'left' }}>
-                  <Typography variant="h3">Introduce your idea</Typography>
-                </Col>
-              </Row>
-              <br />
-              <Row>
-                <Col xs={12}>
-                  <Typography variant="body1" style={{ textAlign: 'justify' }}>
-                    Tell people more about what you do. Use this space to
-                    describe your products or services. Highlight their benefits
-                    so they feel compelled to click.
-                  </Typography>
-                </Col>
-              </Row>
-
-              <br />
-              <Row>
-                <Col xs={12} style={{ textAlign: 'left' }}>
-                  <Button variant="outlined" size="lg">
-                    Call To Action
-                  </Button>
-                </Col>
-              </Row>
-            </Col>
-
-            <Col
-              xs={12}
-              sm={12}
-              md={6}
-              lg={6}
-              xl={6}
-              style={{
-                display: 'flex',
-                flexDirection: 'column',
-                alignItems: 'start',
-                justifyContent: 'center',
-                rowGap: '1rem',
-                marginTop: '2rem',
-              }}
-            >
-              <Image src="https://us-wbe-img.gr-cdn.com/template/website-id-d46691d1-c4bb-4a59-a194-9012099062fd/22eae2c7-8a18-451c-b077-0cc4841f434a.png" />
-            </Col>
-          </Row>
-        </TemplateContainer>
-      </SectionContainer>
+      </section>
 
       <Section>
-        <Container fluid>
+        <Container>
+          <Row>
+            <Col xs={12} sm={12} md={6} lg={6} xl={6}>
+              <Image src="https://us-wbe-img.gr-cdn.com/template/website-id-d46691d1-c4bb-4a59-a194-9012099062fd/22eae2c7-8a18-451c-b077-0cc4841f434a.png" />
+            </Col>
+            <Col
+              xs={12}
+              sm={12}
+              md={6}
+              lg={6}
+              xl={6}
+              style={{ padding: '20px 80px 20px ' }}
+            >
+              <Typography variant="h4">Introduce your idea</Typography>
+
+              <Typography variant="body1">
+                Tell people more about what you do. Use this space to describe
+                your products or services. Highlight their benefits so they feel
+                compelled to click.
+              </Typography>
+            </Col>
+          </Row>
+        </Container>
+      </Section>
+
+      <Section>
+        <Container>
+          <Row>
+            <Col
+              xs={12}
+              sm={12}
+              md={6}
+              lg={6}
+              xl={6}
+              style={{ padding: '20px 80px 20px ' }}
+            >
+              <Typography variant="h4">Introduce your idea</Typography>
+
+              <Typography variant="body1">
+                Tell people more about what you do. Use this space to describe
+                your products or services. Highlight their benefits so they feel
+                compelled to click.
+              </Typography>
+            </Col>
+
+            <Col xs={12} sm={12} md={6} lg={6} xl={6}>
+              <Image src="https://us-wbe-img.gr-cdn.com/template/website-id-d46691d1-c4bb-4a59-a194-9012099062fd/22eae2c7-8a18-451c-b077-0cc4841f434a.png" />
+            </Col>
+          </Row>
+        </Container>
+      </Section>
+
+      <Section>
+        <Container>
           <Row>
             <Col xs={12}>
               <Typography
@@ -191,31 +115,26 @@ export const Blank2 = () => {
                   marginTop: '6rem',
                 }}
               >
-                Introduce your idea
+                Tell people what you will help them do
               </Typography>
             </Col>
           </Row>
           <Row>
             <Col xs={12}>
               <Typography variant="body1" style={{ textAlign: 'center' }}>
-                Share more about what you do. Use this space to describe your
-                products or services, and highlight their benefits. Customize
-                the image to draw people in and drive your point home.
+                Use this space to elaborate on your headline and connect with
+                your visitors. Include the information that makes the most sense
+                for your brand. Try sharing your company's mission to build
+                trust. Or, briefly explain how your product works and the value
+                it brings, so they feel compelled to give it a go.
               </Typography>
             </Col>
           </Row>
           <Row>
-            <Col xs={12}>
-              <Button
-                style={{
-                  marginTop: '2rem',
-                  marginBottom: '4rem',
-                }}
-                variant="outlined"
-                size="lg"
-              >
+            <Col xs={12} alignItems="center" justify="center" display="flex">
+              <HeroButton variant="outlined" size="lg">
                 Call to Action
-              </Button>
+              </HeroButton>
             </Col>
           </Row>
         </Container>
