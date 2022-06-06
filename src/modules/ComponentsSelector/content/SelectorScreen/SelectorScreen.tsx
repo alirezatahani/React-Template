@@ -3,6 +3,8 @@ import { memo } from 'react';
 import { Box } from '../Box/Box';
 import { Dustbin } from '../Dustbin/Dustbin';
 import { Row } from '@components/grid';
+import { BoxNames } from '@modules/ComponentsSelector/utils/constants';
+import { BoxName } from '@modules/ComponentsSelector/utils/constants';
 import {
   DragCol,
   DropCol,
@@ -19,9 +21,11 @@ export const SelectorScreen = memo(function Container() {
         </DropCol>
         <DragCol span={3} style={{ overflow: 'hidden', clear: 'both' }}>
           <div style={{ overflow: 'hidden', clear: 'both' }}>
-            <Box name="Glass" />
-            <Box name="Banana" />
-            <Box name="Paper" />
+            {BoxNames.map((boxName: BoxName, index: number) => (
+              <div key={index}>
+                <Box name={boxName.name} />
+              </div>
+            ))}
           </div>
         </DragCol>
       </Row>

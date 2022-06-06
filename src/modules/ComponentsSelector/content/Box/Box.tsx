@@ -1,16 +1,7 @@
 import * as React from 'react';
-import type { CSSProperties, FC } from 'react';
+import type { FC } from 'react';
 import { useDrag } from 'react-dnd';
-
-const style: CSSProperties = {
-  border: '1px dashed gray',
-  backgroundColor: 'white',
-  padding: '0.5rem 1rem',
-  marginRight: '1.5rem',
-  marginBottom: '1.5rem',
-  cursor: 'move',
-  float: 'left',
-};
+import { BoxStyled } from './box.styles';
 
 const ItemTypes = {
   BOX: 'box',
@@ -42,8 +33,8 @@ export const Box: FC<BoxProps> = function Box({ name }) {
 
   const opacity = isDragging ? 0.4 : 1;
   return (
-    <div ref={drag} style={{ ...style, opacity }} data-testid={`box`}>
+    <BoxStyled ref={drag} data-testid={`box`} style={{ opacity }}>
       {name}
-    </div>
+    </BoxStyled>
   );
 };
