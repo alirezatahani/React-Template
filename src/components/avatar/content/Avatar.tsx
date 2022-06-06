@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react';
 import { AvatarStyled, AvatarText } from '../styles/Avatar.styles';
 import { AvatarProps } from './avatar_types';
 import { AbbreviateText } from '../utils/utils';

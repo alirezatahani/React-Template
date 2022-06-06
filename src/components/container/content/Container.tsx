@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react';
 import { MainContainer } from '../styles/container.styles';
 import { ContainerProps } from './container_types';
 

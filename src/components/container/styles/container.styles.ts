@@ -5,21 +5,22 @@ import { mediaQueries } from '../utils/mediaQuery';
 export const MainContainer = styled.div<ContainerProps>(({ fluid }) => ({
   width: '100%',
   overflow: 'hidden',
-  margin: '0 auto',
-  padding: '7vh 2vw',
+  margin: 'auto',
+  height: 'inherit',
+
   [mediaQueries('xs')]: {
-    width: '100%',
+    maxWidth: 'calc(100% - 20%)',
   },
   [mediaQueries('sm')]: {
-    width: fluid ? '100%' : 576,
+    maxWidth: fluid ? '100%' : 'calc(100% - 20%)',
   },
   [mediaQueries('md')]: {
-    width: fluid ? '100%' : 960,
+    maxWidth: fluid ? '100%' : 'calc(100% - 20%)',
   },
   [mediaQueries('lg')]: {
-    width: fluid ? '100%' : 1028,
+    maxWidth: fluid ? '100%' : 'calc(100% - 20%)',
   },
   [mediaQueries('xl')]: {
-    width: fluid ? '100%' : 1140,
+    maxWidth: fluid ? '100%' : 'calc(100% - 20%)',
   },
 }));

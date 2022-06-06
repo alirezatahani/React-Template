@@ -15,3 +15,4 @@ export * from './collapsible';
 export * from './btnCheckbox';
 export * from './colorPicker';
 export * from './menu';
+export * from "./textarea"
