@@ -38,7 +38,7 @@ export const Dustbin = ({ selectedComponent }: DustBinProps) => {
   if (isActive) {
     backgroundColor = '#F5F5F5';
   } else if (canDrop) {
-    backgroundColor = 'darkkhaki';
+    backgroundColor = '#F5F5';
   }
 
   return (
