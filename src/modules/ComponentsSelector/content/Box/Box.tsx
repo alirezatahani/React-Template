@@ -9,20 +9,22 @@ const ItemTypes = {
 
 export interface BoxProps {
   name: string;
+  onDrop: (item: any) => void;
 }
 
 interface DropResult {
   name: string;
 }
 
-export const Box: FC<BoxProps> = function Box({ name }) {
+export const Box: FC<BoxProps> = function Box({ name, onDrop }) {
   const [{ isDragging }, drag] = useDrag(() => ({
     type: ItemTypes.BOX,
     item: { name },
     end: (item, monitor) => {
       const dropResult = monitor.getDropResult<DropResult>();
       if (item && dropResult) {
-        alert(`You dropped ${item.name} into ${dropResult.name}!`);
+        // alert(`You dropped ${item.name} into ${dropResult.name}!`);
+        onDrop(item);
       }
     },
     collect: (monitor) => ({

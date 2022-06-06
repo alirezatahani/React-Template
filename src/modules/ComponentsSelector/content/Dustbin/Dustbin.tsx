@@ -11,8 +11,18 @@ const style: CSSProperties = {
   padding: 30,
   textAlign: 'center',
 };
+type DustBinProps = {
+  selectedComponent?: string;
+};
 
-export const Dustbin = () => {
+const components: any = {
+  Button: <button>Test</button>,
+  Typography: <p>Test</p>,
+  Input: <input value="test" />,
+  Card: <div>Test</div>,
+};
+
+export const Dustbin = ({ selectedComponent }: DustBinProps) => {
   const [{ canDrop, isOver }, drop] = useDrop(() => ({
     accept: ItemTypes.BOX,
     drop: () => ({ name: 'Dustbin' }),
@@ -37,7 +47,7 @@ export const Dustbin = () => {
         style={{ ...style, backgroundColor }}
         data-testid="dustbin"
       >
-        {isActive ? 'Release to drop' : 'Drag a box here'}
+        {components[selectedComponent]}
       </div>
     </React.Fragment>
   );
