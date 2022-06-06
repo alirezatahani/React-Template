@@ -59,7 +59,7 @@ const ControlPanel: React.FC<ControlPanelProps> = ({
   return (
     <div style={{ display: 'flex' }}>
       <TemplateContainer showControlPanel={showControlPanel}>
-        {/*      Design Here    */}
+        {/*    Design Here  */}
         {children}
       </TemplateContainer>
       <ControlPanelWrapper>
