@@ -6,11 +6,22 @@ import { Typography } from "../../../../components/typography";
 import { Image } from "../../../../components/image";
 import { ImageProps } from '@components/image/content/image_types';
 
-export type MainTitleTypes = {
+export type HeroContainerTypes = {
     image?: string;
 };
 
-export const MainTitleRow = styled(Row)<MainTitleTypes>(({ image }) => ({
+export type BottomRowTypes = {
+    image?: string;
+};
+
+export type MenuItemProps = {
+    src?: string;
+    title?: string;
+    text?: string;
+    price?: string
+};
+
+export const HomeHeroContainer = styled(Row)<HeroContainerTypes>(({ image }) => ({
     background: `url(${image})`,
     backgroundSize: 'cover',
     backgroundPosition: 'center',
@@ -30,7 +41,7 @@ export const MainTitleRow = styled(Row)<MainTitleTypes>(({ image }) => ({
     },
 }));
 
-export const MainTitleImage = styled(Image)(({}) => ({
+export const HeroContainerImage = styled(Image)(({}) => ({
     borderRadius: '50%',
     width: '530px',
     height: '530px',
@@ -46,8 +57,7 @@ export const AddTitleText = styled(Row)(({}) => ({
     color: '#7FAC11FF',
 }));
 
-export const CallToActionButton = styled(Button)(({}) => ({
-    backgroundColor: 'rgb(127, 172, 17)',
+export const CallToActionButton = styled(Button)(({color}) => ({
     border: 'none',
     padding: '27px 40px',
     borderRadius: '999px',
@@ -61,9 +71,10 @@ export const ImagesContainer = styled(Row)(({}) => ({
     padding: '70px 10px',
 }));
 
-export const PizzaRoundedImage = styled(Image)(({}) => ({
+export const PizzaRoundedImage = styled(Image)<ImageProps>(({}) => ({
     borderRadius: '50%',
     width: '200px',
+    margin: '0 auto'
 }));
 
 export const ImagesContainer2 = styled(Row)(({}) => ({
@@ -96,4 +107,49 @@ export const MenuButton = styled(Button)(({}) => ({
     padding: '24px 40px',
     borderRadius: '999px',
     fontWeight: 'bold',
+}));
+
+export const HeroContainer = styled(Row)<HeroContainerTypes>(({ image }) => ({
+    background: `url(${image})`,
+    backgroundSize: 'cover',
+    backgroundPosition: 'center',
+    minHeight: 120,
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    position: 'relative',
+    zIndex: 1,
+    ':after': {
+      content: "''",
+      position: 'absolute',
+      inset: 0,
+      background: '#ec1212',
+      opacity: 0.7,
+      zIndex: -1,
+    },
+}));
+
+export const MenuItemContainer = styled(Row)(({}) => ({
+    padding: '40px',
+    borderBottom: '1px solid rgb(220,221,222)'
+}));
+
+export const BottomRow = styled(Row)<BottomRowTypes>(({ image }) => ({
+    background: `url(${image})`,
+    backgroundSize: 'cover',
+    backgroundPosition: 'center',
+    minHeight:'100%',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    position: 'relative',
+    zIndex: 1,
+    ':after': {
+        content: "''",
+        position: 'absolute',
+        inset: 0,
+        background: '#000',
+        opacity: 0.3,
+        zIndex: -1,
+      },
 }));

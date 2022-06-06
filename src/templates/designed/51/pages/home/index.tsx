@@ -5,37 +5,37 @@ import {
     ImageContainer,
     ImagesContainer,
     MainTexts,
-    MainTitleRow,
     MenuButton,
     PizzaImage,
     PizzaRoundedImage,
     Price,
-    MainTitleImage,
     CallToActionButton,
     ImagesContainer2,
     AddTitleText,
+    HomeHeroContainer,
+    HeroContainerImage,
 } from '../../styles/design51.styles';
 
 const Home: React.FC = () => {
     return (
         <Row>
-            <MainTitleRow image='https://us-wbe-img.gr-cdn.com/user/8a9c5bd8-0d48-4f74-839c-04b16e7e404a/1ede5857-d0b6-4c36-b39d-8666d1f56d47.png'>
+            <HomeHeroContainer image='https://us-wbe-img.gr-cdn.com/user/8a9c5bd8-0d48-4f74-839c-04b16e7e404a/1ede5857-d0b6-4c36-b39d-8666d1f56d47.png'>
                 <Col xs={12} sm={12} md={6}>
                     <MainTexts>
-                        <Typography variant="h1" style={{color:'#fff'}}>ADD YOUR TITLE</Typography>
+                        <Typography variant="h1" strong style={{color:'#fff'}}>ADD YOUR TITLE</Typography>
                         <br />
                         <Typography variant="body1" style={{color:'#fff'}}>
                             Use this space to elaborate on the ideas introduced in the
                             title. Include the information that makes the most sense for
                             your brand.
                         </Typography>
-                        <CallToActionButton>CALL TO ACTION</CallToActionButton>
+                        <CallToActionButton style={{backgroundColor:'rgb(127, 172, 17)'}}>CALL TO ACTION</CallToActionButton>
                     </MainTexts>
                 </Col>
                 <Col xs={12} sm={12} md={6}>
-                    <MainTitleImage src="https://us-wbe-img.gr-cdn.com/user/8a9c5bd8-0d48-4f74-839c-04b16e7e404a/a2f85e28-163a-4a45-8a8b-dd7f0a897507.png" />
+                    <HeroContainerImage src="https://us-wbe-img.gr-cdn.com/user/8a9c5bd8-0d48-4f74-839c-04b16e7e404a/a2f85e28-163a-4a45-8a8b-dd7f0a897507.png" />
                 </Col>
-            </MainTitleRow>
+            </HomeHeroContainer>
             <ImagesContainer>
                 <Col md={1}></Col>
                 <Col xs={12} sm={12} md={10}>
@@ -46,7 +46,7 @@ const Home: React.FC = () => {
                                 <AddTitleText>ADD YOUR TITLE</AddTitleText>
                             </Space>
                             <Space align='center'>
-                                <Typography variant="h2">INTRODUCE YOUR IDEA</Typography>
+                                <Typography variant="h2" strong>INTRODUCE YOUR IDEA</Typography>
                             </Space>
                             <br />
                             <Space align='center'>
@@ -163,7 +163,7 @@ const Home: React.FC = () => {
                                 <AddTitleText>ADD YOUR TITLE</AddTitleText>
                             </Space>
                             <Space align={'center'}>
-                                <Typography variant="h2">INTRODUCE YOUR IDEA</Typography>
+                                <Typography variant="h2" strong>INTRODUCE YOUR IDEA</Typography>
                             </Space>
                             <br />
                             <Space align={'center'}>
