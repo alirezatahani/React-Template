@@ -39,8 +39,8 @@ const ControlPanel: React.FC<ControlPanelProps> = ({
     fontFamily: '',
     fontSize: '',
     fontDecoration: '',
-    fontColor: '',
     textAlign: '',
+    fontColor: '',
   });
 
   const handleToggle = () => {

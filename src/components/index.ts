@@ -10,6 +10,7 @@ export * from './space';
 export * from './typography';
 export * from './container';
 export * from './footer';
+export * from './textarea';
 export * from './controlPanel';
 export * from './collapsible';
 export * from './btnCheckbox';
