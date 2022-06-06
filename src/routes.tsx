@@ -1,6 +1,6 @@
 import React from 'react';
 import { Route, Routes as ReactRoutes } from 'react-router-dom';
-import { ControlPanel } from '@components/index';
+import { ControlPanel } from '@modules/index';
 import { Home, Create } from '@pages/index';
 import { Design37 } from '@templates/designed/37';
 import { Blank3 } from '@templates/plain/blank3';

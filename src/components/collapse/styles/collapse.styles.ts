@@ -1,13 +1,13 @@
 import styled from 'styled-components';
 
-export const CollapsibleItemContainer = styled.div({
+export const CollapseItemContainer = styled.div({
   display: 'flex',
   paddingInline: 6,
   flexDirection: 'column',
   justifyContent: 'center',
   borderBottom: '1px solid #e5e5e5',
 });
-export const CollapsibleItemTitle = styled.div(({ theme }) => ({
+export const CollapseItemTitle = styled.div(({ theme }) => ({
   color: theme.palette.common.black,
   fontSize: 14,
   opacity: 0.7,
@@ -20,7 +20,7 @@ export const CollapsibleItemTitle = styled.div(({ theme }) => ({
 export const ItemTitle = styled.div`
   padding-left: 5px;
 `;
-export const CollapsibleItemContent = styled.div<any>(
+export const CollapseItemContent = styled.div<any>(
   ({ theme, showContent }) => ({
     height: showContent ? 'auto ' : '0',
     display: showContent ? 'block' : 'none',

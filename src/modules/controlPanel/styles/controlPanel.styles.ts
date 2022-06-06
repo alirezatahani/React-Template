@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { TemolateContainerProps } from '../content/controlPanel_types';
+import { TemolateContainerProps } from '../controlPanel_types';
 
 export const ControlPanelSettingContainer = styled.div(({ theme }) => ({
   width: 360,
@@ -14,16 +14,22 @@ export const ControlPanelItemContainer = styled.div({
 });
 export const SideButtonsContainer = styled.div({
   background: '#323232',
-  paddingInline: 20,
-  paddingTop: 30,
+  display: 'flex',
+  justifyContent: 'center',
+  paddingTop: 20,
+  height: '100vh',
+  position: 'fixed',
+  top: 0,
+  width: '8%',
 });
 export const ControlPanelWrapper = styled.div({
   display: 'flex',
   position: 'fixed',
-  right: 0,
+  boxShadow: '0 0 2px 0px #ccc',
+  height: '100vh',
+  right: '7%',
   top: 0,
   zIndex: 999,
-  height: '100vh',
 });
 export const TemplateContainer = styled.div<TemolateContainerProps>(
   ({ showControlPanel }) => ({
