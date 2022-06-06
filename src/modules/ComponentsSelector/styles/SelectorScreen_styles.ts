@@ -10,4 +10,7 @@ export const DragCol = styled(Col)({
   backgroundColor: 'whitesmoke',
 });
 
-export const Wrapper = styled.div(({}) => ({}));
+export const TextWrapper = styled.div(({}) => ({
+  marginLeft: '2rem',
+  marginTop: '2rem',
+}));

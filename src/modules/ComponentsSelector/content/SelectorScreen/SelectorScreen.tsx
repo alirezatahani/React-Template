@@ -8,8 +8,9 @@ import { BoxName } from '@modules/ComponentsSelector/utils/constants';
 import {
   DragCol,
   DropCol,
-  Wrapper,
+  TextWrapper,
 } from '@modules/ComponentsSelector/styles/SelectorScreen_styles';
+import { Typography } from '@components/typography';
 
 export const SelectorScreen = memo(function Container() {
   const [selectedComponent, setSelectedComponent] = useState(null);
@@ -28,13 +29,22 @@ export const SelectorScreen = memo(function Container() {
           </div>
         </DropCol>
         <DragCol span={3} style={{ overflow: 'scroll', clear: 'both' }}>
-          <Wrapper style={{ overflow: 'hidden', clear: 'both' }}>
+          <TextWrapper>
+            <Typography variant="h5">Add Elements</Typography>
+            <Typography>Basic Elements</Typography>
+          </TextWrapper>
+
+          <div style={{ overflow: 'hidden', clear: 'both' }}>
             {BoxNames.map((boxName: BoxName, index: number) => (
               <div key={index}>
-                <Box name={boxName.name} onDrop={handleDropComponent} />
+                <Box
+                  name={boxName.name}
+                  onDrop={handleDropComponent}
+                  icon={boxName.icon}
+                />
               </div>
             ))}
-          </Wrapper>
+          </div>
         </DragCol>
       </Row>
     </React.Fragment>

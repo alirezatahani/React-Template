@@ -1,6 +1,7 @@
 import * as React from 'react';
 import type { CSSProperties } from 'react';
 import { useDrop } from 'react-dnd';
+import { Button, Typography, Input, Image } from '@components/index';
 
 const ItemTypes = {
   BOX: 'box',
@@ -16,10 +17,10 @@ type DustBinProps = {
 };
 
 const components: any = {
-  Button: <button>Test</button>,
-  Typography: <p>Test</p>,
-  Input: <input value="test" />,
-  Card: <div>Test</div>,
+  Button: <Button>Test</Button>,
+  Typography: <Typography>Test</Typography>,
+  Input: <Input value="test" />,
+  Image: <Image />,
 };
 
 export const Dustbin = ({ selectedComponent }: DustBinProps) => {
