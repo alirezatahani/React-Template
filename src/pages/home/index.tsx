@@ -9,6 +9,7 @@ export const Home = () => {
       <Link to="predesign/24">Design 24</Link>
       <Link to="blank/3">Blank3</Link>
       <Link to="create">Create</Link>
+      <Link to="selector">Selector</Link>
     </div>
   );
 };
