@@ -4,6 +4,7 @@ export type BtnCheckboxPropsType = {
   label?: string;
   name?: string;
   options?: any;
+  type?: string;
   onChange?: React.ChangeEventHandler;
 };
 export type BtnCheckboxOptionType = {

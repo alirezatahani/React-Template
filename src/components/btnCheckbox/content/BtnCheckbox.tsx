@@ -12,17 +12,19 @@ import {
 const BtnCheckbox: React.FC<BtnCheckboxPropsType> = ({
   name,
   options,
+  type = 'checkbox',
   ...props
 }: BtnCheckboxPropsType) => {
   return (
     <BtnCheckboxContainer>
-      {options.map((option: BtnCheckboxOptionType) => (
-        <React.Fragment key={option.id}>
+      {options.map((option: BtnCheckboxOptionType, index: number) => (
+        <React.Fragment key={index}>
           <CustomCheckbox
             onChange={props.onChange}
+            name={name}
             value={option.value}
             id={option.name}
-            type="checkbox"
+            type={type}
             {...props}
           />
           <Label htmlFor={option.name}>{option.label}</Label>

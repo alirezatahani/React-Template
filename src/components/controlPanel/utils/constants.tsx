@@ -10,35 +10,57 @@ import {
 } from 'react-icons/bi';
 
 export const fontTypeOptions = [
-  { value: 'h1', label: 'Heading 1' },
-  { value: 'h2', label: 'Heading 2' },
-  { value: 'body1', label: 'Paragraph' },
+  { value: 'h1', label: 'Heading 1', kind: 'fontType' },
+  { value: 'h2', label: 'Heading 2', kind: 'fontType' },
+  { value: 'body1', label: 'Paragraph', kind: 'fontType' },
 ];
 export const fontFamilyOptions = [
-  { value: 'h1', label: 'Heading 1' },
-  { value: 'h2', label: 'Heading 2' },
-  { value: 'body1', label: 'Paragraph' },
+  { value: 'Roboto', label: 'Roboto', kind: 'fontFamily' },
+  { value: 'Poppins', label: 'Poppins', kind: 'fontFamily' },
+  { value: 'Arial', label: 'Arial', kind: 'fontFamily' },
 ];
 
 export const fontSizeOptions = [
-  { value: '10', label: '10' },
-  { value: '12', label: '12' },
-  { value: '15', label: '15' },
-  { value: '18', label: '18' },
-  { value: '20', label: '20' },
+  { value: '10', label: '10', kind: 'fontSize' },
+  { value: '12', label: '12', kind: 'fontSize' },
+  { value: '15', label: '15', kind: 'fontSize' },
+  { value: '18', label: '18', kind: 'fontSize' },
+  { value: '20', label: '20', kind: 'fontSize' },
 ];
 
-export const checkboxOptions = [
-  { value: 'h1', label: <BiBold />, name: 'h1' },
-  { value: 'h2', label: <BiItalic />, name: 'h2' },
-  { value: 'body1', label: <BiFont />, name: 'body1' },
-  { value: 'subtitle1', label: <BiBold />, name: 'subtitle1' },
-  { value: 'subtitle2', label: <BiBold />, name: 'subtitle2' },
+export const fontDecorationOptions = [
+  { value: 'bold', label: <BiBold />, name: 'bold', kind: 'fontDecoration' },
+  {
+    value: 'italic',
+    label: <BiItalic />,
+    name: 'italic',
+    kind: 'fontDecoration',
+  },
 ];
 
 export const alignOptions = [
-  { value: 'textLeft', label: <BiAlignLeft />, name: 'textLeft' },
-  { value: 'textCenter', label: <BiAlignMiddle />, name: 'textCenter' },
-  { value: 'textRight', label: <BiAlignRight />, name: 'textRight' },
-  { value: 'textJustify', label: <BiAlignJustify />, name: 'textJustify' },
+  {
+    value: 'left',
+    label: <BiAlignLeft />,
+    name: 'textLeft',
+    kind: 'textAlign',
+  },
+  {
+    value: 'center',
+    label: <BiAlignMiddle />,
+    name: 'textCenter',
+    kind: 'textAlign',
+  },
+  {
+    value: 'right',
+    label: <BiAlignRight />,
+    name: 'textRight',
+    kind: 'textAlign',
+  },
+  {
+    value: 'justify',
+    label: <BiAlignJustify />,
+    name: 'textJustify',
+    kind: 'textAlign',
+  },
 ];
