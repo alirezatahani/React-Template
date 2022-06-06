@@ -8,7 +8,8 @@ import { BoxName } from '@modules/ComponentsSelector/utils/constants';
 import {
   DragCol,
   DropCol,
-} from '@modules/ComponentsSelector/styles/ComponentsSelector_styles';
+  Wrapper,
+} from '@modules/ComponentsSelector/styles/SelectorScreen_styles';
 
 export const SelectorScreen = memo(function Container() {
   return (
@@ -19,14 +20,14 @@ export const SelectorScreen = memo(function Container() {
             <Dustbin />
           </div>
         </DropCol>
-        <DragCol span={3} style={{ overflow: 'hidden', clear: 'both' }}>
-          <div style={{ overflow: 'hidden', clear: 'both' }}>
+        <DragCol span={3} style={{ overflow: 'scroll', clear: 'both' }}>
+          <Wrapper style={{ overflow: 'hidden', clear: 'both' }}>
             {BoxNames.map((boxName: BoxName, index: number) => (
               <div key={index}>
                 <Box name={boxName.name} />
               </div>
             ))}
-          </div>
+          </Wrapper>
         </DragCol>
       </Row>
     </React.Fragment>

@@ -9,3 +9,5 @@ export const DragCol = styled(Col)({
   height: '100vh',
   backgroundColor: 'whitesmoke',
 });
+
+export const Wrapper = styled.div(({}) => ({}));

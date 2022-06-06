@@ -1,7 +1,7 @@
 import * as React from 'react';
 import type { FC } from 'react';
 import { useDrag } from 'react-dnd';
-import { BoxStyled } from './box.styles';
+import { BoxStyled, BoxContent, BoxWrapper } from './box.styles';
 
 const ItemTypes = {
   BOX: 'box',
@@ -33,8 +33,10 @@ export const Box: FC<BoxProps> = function Box({ name }) {
 
   const opacity = isDragging ? 0.4 : 1;
   return (
-    <BoxStyled ref={drag} data-testid={`box`} style={{ opacity }}>
-      {name}
-    </BoxStyled>
+    <BoxWrapper>
+      <BoxStyled ref={drag} data-testid={`box`} style={{ opacity }}>
+        <BoxContent> {name}</BoxContent>
+      </BoxStyled>
+    </BoxWrapper>
   );
 };
