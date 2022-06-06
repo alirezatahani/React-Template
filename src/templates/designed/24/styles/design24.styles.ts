@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { Button, Input, Container, Col} from '../../../../components';
+import { Button, Input, Container, Col, Typography, Textarea } from '../../../../components';
 import { InputLabel } from '../../../../components/input/styles/Input.styles';
 
 export type HeroContainerTypes = {
@@ -20,15 +20,23 @@ export const HeroContainer = styled(Container)<HeroContainerTypes>(
     minWidth: '100vw',
   })
 );
+export const TemplateContainer = styled(Container)({
+  maxWidth:"1180px",
+  padding:"2rem 1rem",
+})
 export type TemplateDataDivTypes = {
   width?: string;
-  backgroundColor?:string;
-  padding?:string;
+  backgroundColor?: string;
+  padding?: string;
+  display?:string;
+  height?:string;
 };
 export const TemplateDataDiv = styled.div<TemplateDataDivTypes>(
-  ({ width,backgroundColor ,padding}) => ({
-    width:"100%",
-    maxWidth: width ? width : '100%',
+  ({ width, backgroundColor, padding ,display,height}) => ({
+    width: width,
+    height:height? height:"",
+    display: display === "flex" ? "flex" : "",
+    maxWidth: '100%',
     margin: '0 auto ',
     padding: padding? padding : 0,
     backgroundColor: backgroundColor
@@ -36,6 +44,7 @@ export const TemplateDataDiv = styled.div<TemplateDataDivTypes>(
 );
 export type TemplateDataColType = {
   align?: string;
+  width?:string;
 };
 export const TemplateDataCol = styled(Col)<TemplateDataColType>(
   ({ align }) => ({
@@ -52,6 +61,9 @@ export const TemplateBtn = styled(Button)({
   padding: '28px 44px',
   borderRadius: '5px',
   fontWeight: 'bold',
+  ":hover":{
+    backgroundColor:"#202730",
+  }
 });
 export const TemplateMain = styled.section({});
 export const TemplateWideContainer = styled(Container)({
@@ -63,11 +75,30 @@ export const TemplateInputLabel=styled(InputLabel)({
   fontSize:"18px",
 })
 export const TemplateInput = styled(Input)({
-    width:"100%",
-    border:"1px solid #333",
-    padding:"25px 5px",
-    borderRadius: 5,
-    ["&:focus"]:{
-      outline:0,
-    }
-})
+  width: '100%',
+  border: '1px solid #333',
+  padding: '25px 5px',
+  borderRadius: 5,
+  ['&:focus']: {
+    outline: 0,
+  },
+});
+export const TemplateTextarea = styled(Textarea)({
+  width: '100%',
+  border: '1px solid #333',
+  padding: '25px 5px',
+  borderRadius: 5,
+  overflow:"hidden",
+  ['&:focus']: {
+    outline: 0,
+  },
+});
+export type TemplateTypo ={
+  size?:string;
+  lineHeight?:number;
+}
+export const TemplateTypo  = styled(Typography)<TemplateTypo>(({size,lineHeight})=>({
+  fontSize:size? size:"",
+  textAlign:"center",
+  lineHeight:lineHeight? lineHeight:"",
+}))

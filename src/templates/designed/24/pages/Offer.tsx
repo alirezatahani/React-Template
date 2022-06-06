@@ -2,7 +2,6 @@ import * as React from 'react';
 import {
   Col,
   Container,
-  Footer,
   Image,
   Row,
   Space,
@@ -10,8 +9,7 @@ import {
 } from '../../../../components';
 import { TemplateImages } from '../utils/index';
 import {
-  HeroContainer,
-  TemplateBtn,
+ TemplateBtn,
   TemplateDataCol,
   TemplateDataDiv,
   TemplateMain,
@@ -23,33 +21,39 @@ export const Offer = () => {
     <>
       <TemplateWideContainer>
         <Container>
-          <Row>
-            <TemplateDataCol align="flex-start">
-              <Typography variant="h2" strong>
-                Introduce your idea
-              </Typography>
-            </TemplateDataCol>
-          </Row>
-          <Row>
-            <TemplateDataCol sm={12} md={9}>
-              <Typography variant="body1">
-                Let people find out more about what you do. Use this space to
-                describe your products or services, and highlight their
-                benefits. Want people to know your company? Share information
-                about you and your team members.
-              </Typography>
-            </TemplateDataCol>
-            <TemplateDataCol sm={6} md={3}>
-              <TemplateBtn size="lg">Call to action</TemplateBtn>
-            </TemplateDataCol>
-          </Row>
+          <TemplateDataDiv padding="4rem 5rem">
+            <Row>
+              <TemplateDataCol align="flex-start">
+                <Typography variant="h2" strong>
+                  Introduce your idea
+                </Typography>
+              </TemplateDataCol>
+            </Row>
+            <Row>
+              <TemplateDataCol sm={12} md={8}>
+                <TemplateDataDiv>
+                  <Typography variant="body1">
+                    Let people find out more about what you do. Use this space
+                    to describe your products or services, and highlight their
+                    benefits. Want people to know your company? Share
+                    information about you and your team members.
+                  </Typography>
+                </TemplateDataDiv>
+              </TemplateDataCol>
+              <TemplateDataCol sm={12} md={4}>
+                <TemplateDataDiv>
+                  <TemplateBtn size="lg">Call to action</TemplateBtn>
+                </TemplateDataDiv>
+              </TemplateDataCol>
+            </Row>
+          </TemplateDataDiv>
         </Container>
       </TemplateWideContainer>
       <TemplateDataDiv>
         <Container>
           <Space direction="vertical" spacing={40}>
             <Row>
-              <Col xl={4} md={12} sm={12}>
+              <Col lg={4} sm={12}>
                 <TemplateDataDiv>
                   <TemplateDataCol align="center">
                     <Image src={TemplateImages.offer.image1} />
@@ -63,7 +67,7 @@ export const Offer = () => {
                   </TemplateDataCol>
                 </TemplateDataDiv>
               </Col>
-              <Col xl={4} md={12} sm={12}>
+              <Col lg={4} sm={12}>
                 <TemplateDataDiv>
                   <TemplateDataCol align="center">
                     <Image src={TemplateImages.offer.image2} />
@@ -77,7 +81,7 @@ export const Offer = () => {
                   </TemplateDataCol>
                 </TemplateDataDiv>
               </Col>
-              <Col xl={4} md={12} sm={12}>
+              <Col lg={4} sm={12}>
                 <TemplateDataDiv>
                   <TemplateDataCol align="center">
                     <Image src={TemplateImages.offer.image3} />
@@ -93,10 +97,10 @@ export const Offer = () => {
               </Col>
             </Row>
             <Row>
-              <Col xl={6} md={12} sm={12}>
+              <Col lg={6} sm={12}>
                 <Image src={TemplateImages.offer.image4} />
               </Col>
-              <Col xl={6} md={12} sm={12}>
+              <Col lg={6} sm={12}>
                 <TemplateDataDiv>
                   <TemplateDataCol align="flex-start">
                     <Typography variant="h3">Introduce your idea</Typography>

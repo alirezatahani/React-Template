@@ -1,15 +1,13 @@
-import * as React from 'react';
+import React from 'react';
+import { Container, Typography,Textarea } from '../../../../components';
 import {
-  Container,
-  Typography,
-} from '../../../../components';
-import {
-    HeroContainer,
-    TemplateBtn,
-    TemplateDataCol,
-    TemplateDataDiv,
-    TemplateInput,
-    TemplateInputLabel,
+  HeroContainer,
+  TemplateBtn,
+  TemplateDataCol,
+  TemplateDataDiv,
+  TemplateInput,
+  TemplateInputLabel,
+  TemplateTextarea,
 } from '../styles/design24.styles';
 import { TemplateImages } from '../utils/index';
 
@@ -40,10 +38,7 @@ export const ContactUs = () => {
                 <TemplateInput name="phone" type="phone" />
               </TemplateDataDiv>
               <TemplateDataDiv width="80%">
-                <TemplateInputLabel htmlFor="message">
-                  Message*
-                </TemplateInputLabel>
-                <TemplateInput name="message" type="textarea" />
+                <TemplateTextarea htmlFor="message" label="Message*" placeholder="Type Your Message..."  height="200px" direction="column" />
               </TemplateDataDiv>
               <TemplateBtn size="lg">Call to Action</TemplateBtn>
             </TemplateDataCol>
