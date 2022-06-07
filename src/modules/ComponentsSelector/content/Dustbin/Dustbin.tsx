@@ -9,11 +9,12 @@ const ItemTypes = {
 
 const style: CSSProperties = {
   height: '100vh',
+  overflow: 'scroll',
   padding: 30,
   textAlign: 'center',
 };
 type DustBinProps = {
-  selectedComponent?: string;
+  selectedComponent?: any;
 };
 
 const components: any = {
@@ -48,7 +49,9 @@ export const Dustbin = ({ selectedComponent }: DustBinProps) => {
         style={{ ...style, backgroundColor }}
         data-testid="dustbin"
       >
-        {components[selectedComponent]}
+        {selectedComponent.map((item: any) => {
+          return components[item];
+        })}
       </div>
     </React.Fragment>
   );

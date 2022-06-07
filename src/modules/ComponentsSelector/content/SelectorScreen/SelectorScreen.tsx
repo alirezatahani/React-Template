@@ -13,10 +13,13 @@ import {
 import { Typography } from '@components/typography';
 
 export const SelectorScreen = memo(function Container() {
-  const [selectedComponent, setSelectedComponent] = useState(null);
+  const [selectedComponent, setSelectedComponent] = useState([]);
 
   const handleDropComponent = (item: any) => {
-    setSelectedComponent(item.name);
+    setSelectedComponent((selectedComponent: any) => [
+      ...selectedComponent,
+      item.name,
+    ]);
   };
 
   console.log(selectedComponent, 'selectedComponent');
