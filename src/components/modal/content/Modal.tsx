@@ -1,23 +1,33 @@
-import * as React from 'react';
-import { FaTimes} from 'react-icons/fa';
-import { ModalClose, ModalContainer, ModalContent, ModalSection } from '../styles/modal.styles';
+import React from 'react';
+import ReactDOM from 'react-dom';
+import { FaTimes } from 'react-icons/fa';
+import {
+  ModalClose,
+  ModalContainer,
+  ModalContent,
+  ModalSection,
+  ModalWrapper,
+} from '../styles/modal.styles';
 import { ModalProps } from './modal_types';
 
-const Modal : React.FC<ModalProps> = ({...props}:ModalProps)=>{
-return <>
+const Modal: React.FC<ModalProps> = ({ ...props }: ModalProps) => {
+  return ReactDOM.createPortal(
+    <>
+      <ModalWrapper>
         <ModalSection visible={props.visible}>
-            <ModalContainer>
-                <ModalContent>
-                    {props.children}
-                </ModalContent>
-                <ModalClose>
-                    <FaTimes size={18} />
-                </ModalClose>
-            </ModalContainer>
+          <ModalContainer>
+            <ModalContent>{props.children}</ModalContent>
+            <ModalClose>
+              <FaTimes size={18} />
+            </ModalClose>
+          </ModalContainer>
         </ModalSection>
-</>
-}
-Modal.defaultProps={
-   visible:false,
-}
+      </ModalWrapper>
+    </>,
+    document.getElementById('modal')
+  );
+};
+Modal.defaultProps = {
+  visible: false,
+};
 export default Modal;

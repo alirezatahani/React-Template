@@ -1,14 +1,23 @@
 import styled from 'styled-components';
 import { ModalProps } from '../content/modal_types';
 
+export const ModalWrapper = styled.div({
+  position:"fixed",
+  top:0,
+  left:0,
+  right:0,
+  bottom:0,
+  backgroundColor: 'rgba(0,0,0,0.3)',
+  zIndex:9999,
+})
 export const ModalSection = styled.div<ModalProps>(({ visible }) => ({
   display: visible ? 'block' : 'none',
+  width:"100%",
   position: 'fixed',
-  zIndex: 100,
-  paddingTop: '200px',
-  width: '100%',
-  height: '100%',
-  backgroundColor: 'rgba(0,0,0,0.3)',
+  top:"50%",
+  left:"50%",
+  transform:"translate(-50%,-50%)",
+  zIndex: 9999,
 }));
 export const ModalContainer = styled.div({
   display: 'flex', 
