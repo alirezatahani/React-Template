@@ -7,8 +7,8 @@ import Menu from '../pages/Menu';
 const Design51 = () => {
     return(
         <>
-        {/* <Home />
-        <Menu /> */}
+        <Home />
+        <Menu />
         <AboutUs />
         </>
     )

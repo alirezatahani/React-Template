@@ -1,4 +1,4 @@
-import { Col, Container, Image, Row, Space, Typography } from '../../../../../components';
+import { Col, Container, Footer, Image, Row, Space, Typography } from '../../../../../components';
 import * as React from 'react';
 import {BottomRow, CallToActionButton, HeroContainer, MenuItemContainer, PizzaRoundedImage} from '../../styles/design51.styles';
 import MenuItem from './components/MenuItem';
@@ -60,6 +60,9 @@ const Menu: React.FC = () => {
                     </Space>
                     </Col>
                 </BottomRow>
+            </Col>
+            <Col xs={12}>
+                <Footer/>
             </Col>
         </Row>
     )

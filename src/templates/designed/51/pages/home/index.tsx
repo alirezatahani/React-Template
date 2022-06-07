@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Row, Col, Space, Typography } from '../../../../../components';
+import { Row, Col, Space, Typography, Footer } from '../../../../../components';
 
 import {
     ImageContainer,
@@ -228,6 +228,9 @@ const Home: React.FC = () => {
                 </Col>
                 <Col md={1}></Col>
             </ImagesContainer2>
+            <Col xs={12}>
+                <Footer/>
+            </Col>
         </Row>
     );
 };
