@@ -1,5 +1,10 @@
 import styled from 'styled-components';
-import { Button, Input, Container, Col, Typography, Textarea } from '../../../../components';
+import { Container } from '@components/container';
+import { Typography } from '@components/typography';
+import { Textarea } from '@components/textarea';
+import {Col} from "@components/grid"
+import {Input} from "@components/input"
+import {Button} from "@components/button"
 import { InputLabel } from '../../../../components/input/styles/Input.styles';
 
 export type HeroContainerTypes = {
@@ -34,7 +39,7 @@ export type TemplateDataDivTypes = {
 export const TemplateDataDiv = styled.div<TemplateDataDivTypes>(
   ({ width, backgroundColor, padding ,display,height}) => ({
     width: width,
-    height:height? height:"",
+    height:height? height:"inherit",
     display: display === "flex" ? "flex" : "",
     maxWidth: '100%',
     margin: '0 auto ',
@@ -98,7 +103,7 @@ export type TemplateTypo ={
   lineHeight?:number;
 }
 export const TemplateTypo  = styled(Typography)<TemplateTypo>(({size,lineHeight})=>({
-  fontSize:size? size:"",
+  fontSize:size? size:"inherit",
   textAlign:"center",
-  lineHeight:lineHeight? lineHeight:"",
+  lineHeight:lineHeight? lineHeight:"inherit",
 }))

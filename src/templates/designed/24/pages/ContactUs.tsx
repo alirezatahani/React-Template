@@ -1,5 +1,6 @@
 import React from 'react';
-import { Container, Typography,Textarea } from '../../../../components';
+import { Container } from '@components/container';
+import { Typography } from '@components/typography';
 import {
   HeroContainer,
   TemplateBtn,
@@ -38,7 +39,13 @@ export const ContactUs = () => {
                 <TemplateInput name="phone" type="phone" />
               </TemplateDataDiv>
               <TemplateDataDiv width="80%">
-                <TemplateTextarea htmlFor="message" label="Message*" placeholder="Type Your Message..."  height="200px" direction="column" />
+                <TemplateTextarea
+                  htmlFor="message"
+                  label="Message*"
+                  placeholder="Type Your Message..."
+                  height="200px"
+                  direction="column"
+                />
               </TemplateDataDiv>
               <TemplateBtn size="lg">Call to Action</TemplateBtn>
             </TemplateDataCol>
