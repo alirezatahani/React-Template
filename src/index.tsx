@@ -1,10 +1,10 @@
 import React from 'react';
-import { BrowserRouter } from 'react-router-dom';
+import { BrowserRouter,Routes,Route } from 'react-router-dom';
 import { createRoot } from 'react-dom/client';
 import { ThemeProvider } from 'styled-components';
 
 import { GlobalStyle, theme } from './global/Global';
-import { Routes } from './routes';
+import { routes } from './routes';
 
 const App: React.FC = () => {
   return (
@@ -12,7 +12,11 @@ const App: React.FC = () => {
       <ThemeProvider theme={theme}>
         <>
           <GlobalStyle />
-          <Routes />
+          <Routes>
+          {
+         routes.map((route)=><Route {...route} key={route.path}/>)
+       }
+          </Routes>
         </>
       </ThemeProvider>
     </BrowserRouter>
