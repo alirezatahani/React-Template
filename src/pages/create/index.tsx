@@ -5,14 +5,15 @@ import { Row, Col, Container } from '@components/index';
 import SideActionButtons from '@modules/controlPanel/content/sideActionButtons/SideActionButtons';
 
 export const Create = () => {
+  const [selected, setSelected] = React.useState(null);
   return (
     <Container fluid>
       <Row>
         <Col span={8}>
-          <Blank3 />
+          <Blank3 setSelected={setSelected} />
         </Col>
         <Col span={3}>
-          <ControlPanel />
+          <ControlPanel selected={selected} />
         </Col>
         <Col span={1}>
           <SideActionButtons />

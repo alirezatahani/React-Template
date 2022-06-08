@@ -8,6 +8,7 @@ export const ControlPanelSettingContainer = styled.div(({ theme }) => ({
 }));
 export const ControlPanelItemLabel = styled.div({
   fontSize: 12,
+  paddingBottom: 8,
 });
 export const ControlPanelItemContainer = styled.div({
   paddingBottom: 20,

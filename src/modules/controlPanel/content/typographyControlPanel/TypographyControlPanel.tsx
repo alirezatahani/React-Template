@@ -13,9 +13,6 @@ import {
   ControlPanelItemContainer,
   ControlPanelItemLabel,
   ControlPanelSettingContainer,
-  ControlPanelWrapper,
-  SideButtonsContainer,
-  TemplateContainer,
 } from '../../styles/controlPanel.styles';
 import {
   fontTypeOptions,

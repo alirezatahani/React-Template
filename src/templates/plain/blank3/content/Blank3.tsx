@@ -22,7 +22,7 @@ import {
 import { CardMedia } from '../../../../components/card/content/cardMedia/index';
 import { CardContent } from '../../../../components/card/content/cardContent/index';
 
-export const Blank3 = () => {
+export const Blank3 = ({ setSelected }: any) => {
   return (
     <React.Fragment>
       <Navbar />
@@ -37,6 +37,7 @@ export const Blank3 = () => {
           <Row>
             <Col xs={12}>
               <Typography
+                onClick={() => setSelected({ type: 'typography' })}
                 variant="h2"
                 style={{ textAlign: 'center', marginBottom: '2rem' }}
               >
@@ -55,7 +56,11 @@ export const Blank3 = () => {
           </Row>
           <Row>
             <Col xs={12} alignItems="center" justify="center" display="flex">
-              <HeroButton variant="outlined" size="lg">
+              <HeroButton
+                onClick={() => setSelected({ type: 'button' })}
+                variant="outlined"
+                size="lg"
+              >
                 Call to Action
               </HeroButton>
             </Col>

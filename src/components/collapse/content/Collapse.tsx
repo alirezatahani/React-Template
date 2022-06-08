@@ -19,7 +19,7 @@ const Collapsible: React.FC<CollapseType> = ({
     <CollapseItemContainer>
       <CollapseItemTitle onClick={toggle}>
         <ItemTitle>{title}</ItemTitle>
-        {showContent ? <span>+</span> : <span>-</span>}
+        {showContent ? <span>-</span> : <span>+</span>}
       </CollapseItemTitle>
       <CollapseItemContent showContent={showContent}>
         {children}

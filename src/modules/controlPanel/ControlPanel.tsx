@@ -1,12 +1,18 @@
 import React from 'react';
 import { ControlPanelWrapper } from './styles/controlPanel.styles';
 import TypographyControlPanel from './content/typographyControlPanel/TypographyControlPanel';
+import ButtonControlPanel from './content/buttonControlPanel/ButtonControlPanel';
 
-const ControlPanel: React.FC = () => {
+const settings: any = {
+  typography: <TypographyControlPanel />,
+  button: <ButtonControlPanel />,
+};
+
+const ControlPanel: React.FC<any> = ({ selected }: any) => {
   return (
     <div>
       <ControlPanelWrapper>
-        <TypographyControlPanel />
+        {selected ? settings[selected.type] : ''}
       </ControlPanelWrapper>
     </div>
   );
