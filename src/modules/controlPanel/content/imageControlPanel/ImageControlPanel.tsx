@@ -8,24 +8,6 @@ import {
 import { HeroButton, ButtonWrapper } from './ImageControlPanel_styles';
 
 const ImageControlPanel = () => {
-  const [state, setState] = React.useState({
-    fontType: '',
-    fontFamily: '',
-    fontSize: '',
-    fontDecoration: '',
-    textAlign: '',
-    fontColor: '',
-  });
-
-  const handleChange = (evt: any) => {
-    const getLabel = evt.kind ? evt.kind : evt.target.name;
-    const getValue = evt.value ? evt.value : evt.target.value;
-    setState({
-      ...state,
-      [getLabel]: getValue,
-    });
-  };
-
   return (
     <React.Fragment>
       <ControlPanelSettingContainer>
