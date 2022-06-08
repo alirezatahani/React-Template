@@ -12,3 +12,4 @@ export * from './container';
 export * from './footer';
 export * from './menu';
 export * from "./textarea"
+export * from "./tab"
