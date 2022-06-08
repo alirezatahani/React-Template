@@ -1,5 +1,5 @@
 import { HeroContainer } from '../../../styles/design94.styles';
-import * as React from 'react';
+import React from 'react';
 import {
   Container,
   Typography,

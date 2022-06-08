@@ -9,7 +9,6 @@ max-width: ${(num * 100) / 12}%;
 const calculateColPadding = (value: number) => {
   return `
   padding-left:${value}px;
-  padding-right:${value}px;
   padding-top:${value}px;
   `;
 };

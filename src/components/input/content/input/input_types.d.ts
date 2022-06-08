@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react';
 import { SizeElems } from 'src/global/theme_types';
 
 type ScreenSize = { sm: SizeElems; md: SizeElems; lg: SizeElems };
