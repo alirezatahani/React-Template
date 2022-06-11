@@ -25,3 +25,10 @@ export const HeroButton = styled(Button)(({ theme }) => ({
 export const ButtonWrapper = styled.div(({}) => ({
   textAlign: 'center',
 }));
+
+export const ControlPanelSettingContainer = styled.div(({ theme }) => ({
+  width: 360,
+  background: theme.palette.background.paper,
+  padding: 10,
+  overflow: 'scroll',
+}));

@@ -28,6 +28,12 @@ export const fontSizeOptions = [
   { value: '20', label: '20', kind: 'fontSize' },
 ];
 
+export const displayOptions = [
+  { value: 'masonry', label: 'Masonry', kind: 'displayStyle' },
+  { value: 'grid', label: 'Grid', kind: 'displayStyle' },
+  { value: 'slideshow', label: 'Slideshow', kind: 'displayStyle' },
+];
+
 export const fontDecorationOptions = [
   { value: 'bold', label: <BiBold />, name: 'bold', kind: 'fontDecoration' },
   {
