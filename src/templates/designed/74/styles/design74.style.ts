@@ -9,6 +9,32 @@ export type HeroContainerTypes = {
     image?: string;
 };
 
+export type HeroTypes = {
+    src?: string;
+    title?: string;
+    buttonText?: string;
+    color?: string;
+};
+
+export type FeedbackTypes = {
+    name?: string;
+    comment?: string;
+}
+
+export type ListTypes = {
+    title?: string;
+    image?: string;
+    items?:{
+        [index: number]: string;
+    }
+};
+
+export type PriceTypes = {
+    months?: string;
+    time?: string;
+    price?: string;
+}
+
 export const HomeHeroContainer = styled(Container)<HeroContainerTypes>(({ image }) => ({
     background: `url(${image})`,
     backgroundSize: 'cover',
@@ -36,15 +62,30 @@ export const HomeHeroContainer = styled(Container)<HeroContainerTypes>(({ image 
     }
 });
 
-export const HomeImage = styled(Image)<ImageProps>(({}) => ({
+export const RoundedImage = styled(Image)<ImageProps>(({}) => ({
     borderRadius:'5%',
     width:'100%',
     height:'auto',
     padding:'5px',
 }));
 
-export const HomePagePoster = styled(Col)(({}) => ({
-    backgroundImage:'url(https:us-wbe-img.gr-cdn.com/user/8a9c5bd8-0d48-4f74-839c-04b16e7e404a/d797e744-48d2-49d8-8f6d-87ab172237a2.png)',
+export type PosterTypes = {
+    image?: string;
+};
+
+export const VerticalLineContainer = styled.div`
+    border-left: 2px solid #FFDE00FF;
+    height: 150px;
+    position: absolute;
+    margin-left: -3px;
+    @media (max-width: 1024px) {
+        display: none;
+    }
+`;
+
+export const Poster = styled(Col)<PosterTypes>(({ image }) => ({
+    //backgroundImage:'url(https:us-wbe-img.gr-cdn.com/user/8a9c5bd8-0d48-4f74-839c-04b16e7e404a/d797e744-48d2-49d8-8f6d-87ab172237a2.png)',
+    backgroundImage: `url(${image})`,
     height:'615px',
     backgroundSize: 'cover',
     backgroundPosition: 'center center',
