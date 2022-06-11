@@ -72,7 +72,11 @@ const About = () => {
                     </Row>
                     <List 
                         image="https://us-wbe-img.gr-cdn.com/user/8a9c5bd8-0d48-4f74-839c-04b16e7e404a/a418f86e-32b6-4e89-8fda-975b51482038.png"
-                        title={"BEDROOMS"}
+                        titles= {{
+                            title: "bedrooms",
+                            subTitle1: "bedroom1",
+                            subTitle2: "bedroom2",
+                            subTitle3: "bedroom3"}}
                         items={[
                             "List what's included",
                             "List what's included",
@@ -87,7 +91,11 @@ const About = () => {
                     />
                     <List
                         image="https://us-wbe-img.gr-cdn.com/user/8a9c5bd8-0d48-4f74-839c-04b16e7e404a/a418f86e-32b6-4e89-8fda-975b51482038.png"
-                        title={"BEDROOMS"}
+                        titles= {{
+                            title: "bedrooms",
+                            subTitle1: "bedroom1",
+                            subTitle2: "bedroom2",
+                            subTitle3: "bedroom3"}}
                         items={[
                             "List what's included",
                             "List what's included",
@@ -102,7 +110,11 @@ const About = () => {
                     />
                     <List 
                         image="https://us-wbe-img.gr-cdn.com/user/8a9c5bd8-0d48-4f74-839c-04b16e7e404a/a418f86e-32b6-4e89-8fda-975b51482038.png"
-                        title={"BEDROOMS"}
+                        titles= {{
+                            title: "bedrooms",
+                            subTitle1: "bedroom1",
+                            subTitle2: "bedroom2",
+                            subTitle3: "bedroom3"}}
                         items={[
                             "List what's included",
                             "List what's included",
@@ -117,7 +129,11 @@ const About = () => {
                     />
                     <List 
                         image="https://us-wbe-img.gr-cdn.com/user/8a9c5bd8-0d48-4f74-839c-04b16e7e404a/a418f86e-32b6-4e89-8fda-975b51482038.png"
-                        title={"BEDROOMS"}
+                        titles= {{
+                            title: "bedrooms",
+                            subTitle1: "bedroom1",
+                            subTitle2: "bedroom2",
+                            subTitle3: "bedroom3"}}
                         items={[
                             "List what's included",
                             "List what's included",

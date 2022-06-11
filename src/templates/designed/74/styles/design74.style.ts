@@ -1,6 +1,6 @@
 import { Button } from "@components/button";
 import { Container } from "@components/container";
-import { Col, Row } from "@components/grid";
+import { Col } from "@components/grid";
 import { Image } from "@components/image";
 import { ImageProps } from "@components/image/content/image_types";
 import styled from "styled-components";
@@ -22,7 +22,7 @@ export type FeedbackTypes = {
 }
 
 export type ListTypes = {
-    title?: string;
+    titles?: Object;
     image?: string;
     items?:{
         [index: number]: string;
@@ -84,7 +84,6 @@ export const VerticalLineContainer = styled.div`
 `;
 
 export const Poster = styled(Col)<PosterTypes>(({ image }) => ({
-    //backgroundImage:'url(https:us-wbe-img.gr-cdn.com/user/8a9c5bd8-0d48-4f74-839c-04b16e7e404a/d797e744-48d2-49d8-8f6d-87ab172237a2.png)',
     backgroundImage: `url(${image})`,
     height:'615px',
     backgroundSize: 'cover',

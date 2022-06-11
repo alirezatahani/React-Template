@@ -1,4 +1,3 @@
-import { Container } from '@components/container';
 import { Col, Row } from '@components/grid';
 import { Space } from '@components/space';
 import { Typography } from '@components/typography';
@@ -31,7 +30,7 @@ const Home = () => {
                         </Space>
                     </Col>
                 </Row>
-                <Row style={{marginTop:'80px'}}>
+                <Row style={{margin:''}}>
                     <Col xs={12} sm={12} md={12} lg={4}>
                         <Typography variant='h2' style={{color:'#297EDDFF'}}>3</Typography>
                         <Typography>bedrooms</Typography>
@@ -62,8 +61,8 @@ const Home = () => {
                         <RoundedImage src='https://images.unsplash.com/photo-1618370342544-228e30d72b39?ixid=MnwyMjUyNTN8MHwxfGFsbHx8fHx8fHx8fDE2MjI4ODQzNDA&ixlib=rb-1.2.1&w=1920&h=1279&crop=faces&fit=crop'/>
                     </Col>
                 </Row>
-                <Typography variant='h2' style={{paddingLeft:'20px'}}>LOCATION</Typography>
-                <Row>
+                <Row style={{margin:'50px 0'}}>
+                    <Typography variant='h2' style={{paddingLeft:'20px'}}>LOCATION</Typography>
                     <Col md={12} lg={4}>
                         <RoundedImage src='https://images.unsplash.com/photo-1533104816931-20fa691ff6ca?ixid=MnwyMjUyNTN8MHwxfHNlYXJjaHw0MXx8c3BlY2lhbHR5JTIwdHJhdmVsfGVufDB8fHx8MTYyMDIwMzg5Mg&ixlib=rb-1.2.1&w=1280&h=1920&crop=faces&fit=crop'/>
                     </Col>
@@ -82,7 +81,7 @@ const Home = () => {
             </Col>
             </Row>
         </Col>
-        <Poster image='https:us-wbe-img.gr-cdn.com/user/8a9c5bd8-0d48-4f74-839c-04b16e7e404a/d797e744-48d2-49d8-8f6d-87ab172237a2.png' md={12}/>
+        <Poster xs={12} image='https:us-wbe-img.gr-cdn.com/user/8a9c5bd8-0d48-4f74-839c-04b16e7e404a/d797e744-48d2-49d8-8f6d-87ab172237a2.png'/>
     </Row>
 )}
 

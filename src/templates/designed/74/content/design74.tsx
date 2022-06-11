@@ -8,7 +8,7 @@ import Pricing from '../pages/Pricing';
 export const Design74 = () => {
     return(
         <>
-        {/* <Home/> */}
+        <Home/>
         <About/>
         <Pricing/>
         </>
