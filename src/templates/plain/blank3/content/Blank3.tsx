@@ -22,7 +22,7 @@ import {
 import { CardMedia } from '../../../../components/card/content/cardMedia/index';
 import { CardContent } from '../../../../components/card/content/cardContent/index';
 
-export const Blank3 = ({ setSelected }: any) => {
+export const Blank3 = ({ setSelected, state }: any) => {
   return (
     <React.Fragment>
       <Navbar />
@@ -38,8 +38,8 @@ export const Blank3 = ({ setSelected }: any) => {
             <Col xs={12}>
               <Typography
                 onClick={() => setSelected({ type: 'typography' })}
-                variant="h2"
-                style={{ textAlign: 'center', marginBottom: '2rem' }}
+                variant={state.fontType}
+                style={{ ...state, color: state.fontColor }}
               >
                 Introduce your idea
               </Typography>
@@ -58,10 +58,10 @@ export const Blank3 = ({ setSelected }: any) => {
             <Col xs={12} alignItems="center" justify="center" display="flex">
               <HeroButton
                 onClick={() => setSelected({ type: 'button' })}
-                variant="outlined"
-                size="lg"
+                variant={state.btnVariant}
+                size={state.btnSize}
               >
-                Call to Action
+                {state.btnText}
               </HeroButton>
             </Col>
           </Row>

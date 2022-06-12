@@ -21,20 +21,20 @@ export const fontFamilyOptions = [
 ];
 
 export const fontSizeOptions = [
-  { value: '10', label: '10', kind: 'fontSize' },
-  { value: '12', label: '12', kind: 'fontSize' },
-  { value: '15', label: '15', kind: 'fontSize' },
-  { value: '18', label: '18', kind: 'fontSize' },
-  { value: '20', label: '20', kind: 'fontSize' },
+  { value: 10, label: '10', kind: 'fontSize' },
+  { value: 12, label: '12', kind: 'fontSize' },
+  { value: 15, label: '15', kind: 'fontSize' },
+  { value: 18, label: '18', kind: 'fontSize' },
+  { value: 20, label: '20', kind: 'fontSize' },
 ];
 
 export const fontDecorationOptions = [
-  { value: 'bold', label: <BiBold />, name: 'bold', kind: 'fontDecoration' },
+  { value: 'bold', label: <BiBold />, name: 'bold', kind: 'fontStyle' },
   {
     value: 'italic',
     label: <BiItalic />,
     name: 'italic',
-    kind: 'fontDecoration',
+    kind: 'fontStyle',
   },
 ];
 

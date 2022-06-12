@@ -15,25 +15,22 @@ import {
   ControlPanelItemLabel,
   ControlPanelSettingContainer,
 } from '../../styles/controlPanel.styles';
-import {
-  fontTypeOptions,
-  fontSizeOptions,
-  fontDecorationOptions,
-  alignOptions,
-  fontFamilyOptions,
-} from '../../utils/constants';
 
 import Select from 'react-select';
 import { btnLinkOptions, btnSizeOptions } from './constants';
 
-const ButtonControlPanel = () => {
+const ButtonControlPanel = ({ state, handleChange }: any) => {
   return (
     <ControlPanelSettingContainer>
       <Typography variant="h5">Button</Typography>
       <Collapse open title="CTA and Linking">
         <ControlPanelItemContainer>
           <ControlPanelItemLabel>Button Text</ControlPanelItemLabel>
-          <Input name="textBtn" placeholder="Enter button text ..." />
+          <Input
+            onChange={handleChange}
+            name="btnText"
+            placeholder="Enter button text ..."
+          />
         </ControlPanelItemContainer>
         <ControlPanelItemContainer>
           <Row>
@@ -81,6 +78,7 @@ const ButtonControlPanel = () => {
             <Col span={12}>
               <ControlPanelItemLabel>Button Size</ControlPanelItemLabel>
               <BtnCheckbox
+                onChange={handleChange}
                 type="radio"
                 name="btnSize"
                 options={btnSizeOptions}

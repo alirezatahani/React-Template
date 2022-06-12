@@ -6,14 +6,15 @@ import SideActionButtons from '@modules/controlPanel/content/sideActionButtons/S
 
 export const Create = () => {
   const [selected, setSelected] = React.useState(null);
+  const [state, setState] = React.useState({});
   return (
     <Container fluid>
       <Row>
         <Col span={8}>
-          <Blank3 setSelected={setSelected} />
+          <Blank3 state={state} setSelected={setSelected} />
         </Col>
         <Col span={3}>
-          <ControlPanel selected={selected} />
+          <ControlPanel state={state} setState={setState} selected={selected} />
         </Col>
         <Col span={1}>
           <SideActionButtons />
