@@ -2,11 +2,13 @@ import * as React from 'react';
 import { SwitchProps } from './switch_types';
 import { ToggleButton, Slider, Wrapper } from '../styles/Switch.styles';
 
-const Switch: React.FC<SwitchProps> = ({ ...rest }: SwitchProps) => {
-  const [checked, setChecked] = React.useState<boolean>(rest.checked);
-
-  const toggle = () => {
-    return setChecked(!checked);
+const Switch: React.FC<SwitchProps> = ({
+  checked,
+  onChange,
+  ...rest
+}: SwitchProps) => {
+  const toggle = (e: any) => {
+    onChange(e.target.checked);
   };
 
   return (

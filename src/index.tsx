@@ -5,6 +5,15 @@ import { Switch } from './components';
 import { GlobalStyle, theme } from './global/Global';
 
 const App: React.FC = () => {
+  const [checked, setChecked] = React.useState<boolean>(false);
+
+  function withEvent(func: Function): React.ChangeEventHandler<any> {
+    return (event: React.ChangeEvent<any>) => {
+      const { target } = event;
+      func(target.value);
+    };
+  }
+
   return (
     <ThemeProvider theme={theme}>
       <>
@@ -16,7 +25,7 @@ const App: React.FC = () => {
             alignItems: 'center',
           }}
         >
-          <Switch size="sm" checked={true} />
+          <Switch size="sm" checked={true} onChange={withEvent(setChecked)} />
           <Switch color="danger" />
           <Switch color="secondary" />
         </div>
