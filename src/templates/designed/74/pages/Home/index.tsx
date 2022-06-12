@@ -62,7 +62,9 @@ const Home = () => {
                     </Col>
                 </Row>
                 <Row style={{margin:'50px 0'}}>
-                    <Typography variant='h2' style={{paddingLeft:'20px'}}>LOCATION</Typography>
+                    <Col xs={12}>
+                        <Typography variant='h2' style={{paddingLeft:'20px'}}>LOCATION</Typography>
+                    </Col>
                     <Col md={12} lg={4}>
                         <RoundedImage src='https://images.unsplash.com/photo-1533104816931-20fa691ff6ca?ixid=MnwyMjUyNTN8MHwxfHNlYXJjaHw0MXx8c3BlY2lhbHR5JTIwdHJhdmVsfGVufDB8fHx8MTYyMDIwMzg5Mg&ixlib=rb-1.2.1&w=1280&h=1920&crop=faces&fit=crop'/>
                     </Col>

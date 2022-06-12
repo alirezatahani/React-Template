@@ -9,8 +9,8 @@ export const Design74 = () => {
     return(
         <>
         <Home/>
-        <About/>
-        <Pricing/>
+        {/* <About/>
+        <Pricing/> */}
         </>
     )
 }
