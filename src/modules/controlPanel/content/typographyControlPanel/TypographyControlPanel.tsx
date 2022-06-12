@@ -21,10 +21,22 @@ import {
   alignOptions,
   fontFamilyOptions,
 } from '../../utils/constants';
-
-import Select from 'react-select';
+import { useTheme } from 'styled-components';
+import Select, { StylesConfig } from 'react-select';
 
 const TypographyControlPanel = ({ state, handleChange }: any) => {
+  const theme = useTheme();
+
+  const colourStyles: StylesConfig = {
+    option: (styles, { data }: any) => {
+      return {
+        ...styles,
+        //@ts-ignore
+        ...theme.typography[data.value],
+      };
+    },
+  };
+
   return (
     <ControlPanelSettingContainer>
       <Typography variant="h5">Text</Typography>
@@ -35,6 +47,7 @@ const TypographyControlPanel = ({ state, handleChange }: any) => {
             name="fontType"
             onChange={handleChange}
             options={fontTypeOptions}
+            styles={colourStyles}
           />
         </ControlPanelItemContainer>
         <ControlPanelItemContainer>

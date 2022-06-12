@@ -18,9 +18,9 @@ import {
   Button,
   Typography,
   Container,
-} from '../../../../components';
-import { CardMedia } from '../../../../components/card/content/cardMedia/index';
-import { CardContent } from '../../../../components/card/content/cardContent/index';
+} from '@components/index';
+import { CardMedia } from '@components/card/content/cardMedia/index';
+import { CardContent } from '@components/card/content/cardContent/index';
 
 export const Blank3 = ({ setSelected, state }: any) => {
   return (
@@ -58,7 +58,7 @@ export const Blank3 = ({ setSelected, state }: any) => {
             <Col xs={12} alignItems="center" justify="center" display="flex">
               <HeroButton
                 onClick={() => setSelected({ type: 'button' })}
-                variant={state.btnVariant}
+                variant={state.variant}
                 size={state.btnSize}
               >
                 {state.btnText}

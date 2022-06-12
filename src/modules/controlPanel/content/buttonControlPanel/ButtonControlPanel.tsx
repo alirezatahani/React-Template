@@ -20,6 +20,12 @@ import Select from 'react-select';
 import { btnLinkOptions, btnSizeOptions } from './constants';
 
 const ButtonControlPanel = ({ state, handleChange }: any) => {
+  const handleChngeBtnStyle = (variant: string) => {
+    handleChange({
+      kind: 'variant',
+      value: variant,
+    });
+  };
   return (
     <ControlPanelSettingContainer>
       <Typography variant="h5">Button</Typography>
@@ -53,9 +59,21 @@ const ButtonControlPanel = ({ state, handleChange }: any) => {
             <Col span={12}>
               <ControlPanelItemLabel>Button Style</ControlPanelItemLabel>
               <Space spacing={20}>
-                <Button>Filled</Button>
-                <Button variant="outlined">Outlined</Button>
-                <Button variant="text">Text</Button>
+                <Button onClick={() => handleChngeBtnStyle('filled')}>
+                  Filled
+                </Button>
+                <Button
+                  onClick={() => handleChngeBtnStyle('outlined')}
+                  variant="outlined"
+                >
+                  Outlined
+                </Button>
+                <Button
+                  onClick={() => handleChngeBtnStyle('text')}
+                  variant="text"
+                >
+                  Text
+                </Button>
               </Space>
             </Col>
           </Row>
