@@ -1,18 +1,13 @@
-import { ReactNode } from "react";
+import { EventHandler, MouseEventHandler, ReactElement, ReactNode } from "react";
 
-export type TabProps = {
-    items:string[];
-    children:ReactNode[];
+export type TabsProps = {
+    children:ReactElement[];
     align?:"center"|"end"|"start";
-    disable?:number
-}
-export type TabsProps={
-    align?:string
 }
 export type TabPaneProps ={
+    children:ReactNode;
+    tab:string;
+    onClick?:MouseEventHandler;
     disable?:boolean;
-    activeTab:boolean;
-}
-export type TabContentProps = {
-   showContent:boolean;  
+    activeTab?:boolean;
 }

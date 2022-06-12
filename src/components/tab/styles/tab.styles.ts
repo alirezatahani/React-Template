@@ -1,36 +1,47 @@
-import styled from "styled-components";
-import { TabContentProps, TabPaneProps, TabsProps } from "../content/tab_types";
+import styled from 'styled-components';
+import { TabPaneProps, TabsProps } from '../content/tab_types';
 
-export const TabContainer = styled.div({
-    padding :"1rem 2rem",
-})
-export const Tabs = styled.div<TabsProps>(({align})=>({
-    width:"100%",
-    display:"flex",
-    justifyContent:align==="center"? "center": align==="end"?"flex-end":"flex-start",
-    alignItems:"center",
-    gap:"2rem",
-    padding:"1rem 0",
-    position:"relative",
-}))
-export const TabsBar = styled.div({
-    borderBottom:"1px solid rgb(3,3,3,.3)",
-    position:"absolute",
-    bottom:"16px",
-    width:"100%",
-})
-export const TabPane = styled.div<TabPaneProps>(({activeTab,disable})=>({
-    color : activeTab? "#40a9ff" : "black",
-    borderBottom:activeTab?"2px solid #40a9ff":"",
-    opacity: disable? "0.5" : "1",
-    cursor: disable? "not-allowed":"pointer",
-    padding:"1rem 0",
-}))
-export const TabContentContainer =styled.div({
-    width:"100%",
-    display:"flex",
-    padding :"1rem 2rem",
-})
-export const TabContent = styled.div<TabContentProps>(({showContent})=>({
-    display :showContent? "block":"none"
-}))
+export const TabSection = styled.section({
+  width: '100%',
+  padding: '1rem 2rem',
+  position: 'relative',
+});
+export const TabsContainer = styled.div<TabsProps>(({ align }) => ({
+  width: '100%',
+  display: 'flex',
+  justifyContent:
+    align === 'center' ? 'center' : align === 'end' ? 'flex-end' : 'flex-start',
+  alignItems: 'center',
+  gap: '2rem',
+  position: 'relative',
+}));
+export const TabPane = styled.div<TabPaneProps>(({ activeTab, disable }) => ({
+  color: activeTab ? '#40a9ff' : 'black',
+  borderBottom: activeTab ? '3px solid #40a9ff' : 'none',
+  opacity: disable ? '0.5' : '1',
+  cursor: disable ? 'not-allowed' : 'pointer',
+  padding: '.5rem 0',
+  fontWeight: 600,
+  fontSize: '17px',
+}));
+export const TabContentContainer = styled.div({
+  width: '100%',
+  display: 'flex',
+  padding: '1rem 2rem',
+});
+export const BottomBorderContainer = styled.div({
+  width: '100%',
+  position: 'absolute',
+  top: '63%',
+  left: '50%',
+  bottom: 0,
+  right: 0,
+  transform: 'translate(-50%,-50%)',
+  paddingRight: 'inherit',
+  paddingLeft: 'inherit',
+});
+export const BottomBorder = styled.div({
+  width: '100%',
+  padding: ' 0 1rem',
+  borderBottom: '1px solid #ccc',
+});
