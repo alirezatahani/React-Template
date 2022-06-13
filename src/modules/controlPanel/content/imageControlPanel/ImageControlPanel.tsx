@@ -1,6 +1,12 @@
 import React from 'react';
-import { Collapse, Typography, Col, Row, BtnCheckbox } from '@components/index';
-import { CardBox } from './content/CardBox';
+import {
+  Collapse,
+  Typography,
+  Col,
+  Row,
+  BtnCheckbox,
+  Image,
+} from '@components/index';
 import {
   ControlPanelItemContainer,
   ControlPanelItemLabel,
@@ -13,19 +19,39 @@ import {
 import Select from 'react-select';
 import { displayOptions } from '@modules/controlPanel/utils/constants';
 import { imageSizeOptions } from './constants';
-import { Progress } from '@components/progress';
+import {
+  ImageBox,
+  HeroFormInput,
+  Wrapper,
+} from '@modules/controlPanel/content/imageControlPanel/ImageControlPanel_styles';
+import { FaMinus } from 'react-icons/fa';
 
 const ImageControlPanel = () => {
-  const [cardState, setCardState] = React.useState([]);
+  const [state, setState] = React.useState({});
+  const [gallery, setGallery] = React.useState([]);
 
-  const boxHandler = () => {
-    setCardState((prevState) => [
-      ...prevState,
-      { id: Math.random(), item: <CardBox /> },
-    ]);
+  const handleAddBox = (id: number) => {
+    const boxState = {
+      id: id + 1,
+      url: '',
+      altText: '',
+    };
+
+    setGallery((prev) => [...prev, boxState]);
   };
 
-  const [state, setState] = React.useState({});
+  const handleRemoveBox = (id: number) => {
+    const filteredGallery = gallery.filter((item) => item.id !== id);
+    setGallery(filteredGallery);
+  };
+
+  const handleFormChange = (index: any, event: any) => {
+    let data = [...gallery];
+    data[index][event.target.name] = event.target.value;
+    setGallery(data);
+  };
+
+  console.log(gallery, 'gallery');
 
   const handleChange = (evt: any) => {
     const getLabel = evt.kind ? evt.kind : evt.target.name;
@@ -41,16 +67,50 @@ const ImageControlPanel = () => {
         <Typography variant="h5">Gallery</Typography>
         <Collapse open title="Images">
           <ControlPanelItemContainer>
-            {cardState ? (
-              cardState.map((cardBox) => {
-                return cardBox.item;
-              })
-            ) : (
-              <CardBox />
-            )}
-
             <ButtonWrapper>
-              <HeroButton color="secondary" onClick={boxHandler}>
+              {gallery.map((item, index) => {
+                return (
+                  <div key={index}>
+                    <ImageBox>
+                      <Wrapper>
+                        <Typography variant="body1">Image#{item.id}</Typography>
+                        <FaMinus
+                          size={13}
+                          onClick={() => handleRemoveBox(item.id)}
+                        />
+                      </Wrapper>
+
+                      <Image
+                        shape="rounded"
+                        src="https://us-wbe-img.gr-cdn.com/template/website-id-d46691d1-c4bb-4a59-a194-9012099062fd/22eae2c7-8a18-451c-b077-0cc4841f434a.png"
+                      />
+                      <Collapse title="Embed a file from a Url">
+                        <HeroFormInput
+                          name="url"
+                          scale="sm"
+                          rightAddon="Go"
+                          placeholder="Enter Image Url"
+                          value={item.url}
+                          onChange={(event) => handleFormChange(index, event)}
+                        />
+                      </Collapse>
+                      <Collapse title="alt text">
+                        <HeroFormInput
+                          name="altText"
+                          scale="sm"
+                          placeholder="Enter Alternative Text"
+                          value={item.altText}
+                          onChange={(event) => handleFormChange(index, event)}
+                        />
+                      </Collapse>
+                    </ImageBox>
+                  </div>
+                );
+              })}
+              <HeroButton
+                color="secondary"
+                onClick={() => handleAddBox(gallery.length)}
+              >
                 Add Image
               </HeroButton>
             </ButtonWrapper>

@@ -25,6 +25,12 @@ export const HeroButton = styled(Button)(({ theme }) => ({
 export const ButtonWrapper = styled.div(({}) => ({
   textAlign: 'center',
 }));
+export const Wrapper = styled.div(({}) => ({
+  display: 'flex',
+  justifyContent: 'space-between',
+  alignItem: 'center',
+  cursor: 'pointer',
+}));
 
 export const ControlPanelSettingContainer = styled.div(({ theme }) => ({
   width: 360,
