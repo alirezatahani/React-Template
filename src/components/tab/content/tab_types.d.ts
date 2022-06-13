@@ -2,7 +2,7 @@ import {  MouseEventHandler, ReactElement, ReactNode } from "react";
 
 export type TabsProps = {
     children:ReactElement[] | ReactElement;
-    defaultTab ?: string;
+    defaultTab ?: string  ;
     align?:"center"|"end"|"start";
 }
 export type TabPaneProps ={

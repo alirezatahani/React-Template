@@ -1,4 +1,4 @@
-import React, { ReactElement, useState } from 'react';
+import React, { Children, ReactElement, useState } from 'react';
 import {
   TabPane,
   BottomBorderContainer,
@@ -12,13 +12,18 @@ import { TabPaneProps, TabsProps } from './tab_types';
 /**
  * @children should be an array of React elements
  * @align can be set as  'center' | 'end' | 'start'
- * @defaultTab can be set equal to tab name as string
- * @tab should be set your tabs name as string
- * @disable can be set as true | false
  */
 
 export const Tabs: React.FC<TabsProps> = ({ ...props }) => {
-  const [activeTab, setActiveTab] = useState(props.defaultTab);
+  const tabsArray: string[] = [];
+  React.Children.map(props.children, (child: ReactElement) => {
+    return tabsArray.push(child.props.tab);
+  });
+  const [activeTab, setActiveTab] = useState(
+    props.defaultTab && tabsArray.indexOf(props.defaultTab) > 0
+      ? props.defaultTab
+      : tabsArray[0]
+  );
   const handleTabClick = (tab: string) => {
     return setActiveTab(tab);
   };
