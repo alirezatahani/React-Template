@@ -30,19 +30,28 @@ const ImageControlPanel = () => {
   const [state, setState] = React.useState({});
   const [gallery, setGallery] = React.useState([]);
 
-  const handleAddBox = (id: number) => {
-    const boxState = {
-      id: id + 1,
-      url: '',
-      altText: '',
-    };
-
-    setGallery((prev) => [...prev, boxState]);
+  const handleAddBox = () => {
+    setGallery((prev) => [
+      ...prev,
+      {
+        id: prev.length + 1,
+        url: '',
+        altText: '',
+      },
+    ]);
   };
 
   const handleRemoveBox = (id: number) => {
-    const filteredGallery = gallery.filter((item) => item.id !== id);
-    setGallery(filteredGallery);
+    setGallery((prevGallery) => {
+      return prevGallery.reduce((result, current) => {
+        if (current.id < id) {
+          result.push(current);
+        } else if (current.id > id) {
+          result.push({ ...current, id: current.id - 1 });
+        }
+        return result;
+      }, []);
+    });
   };
 
   const handleFormChange = (index: any, event: any) => {
@@ -108,10 +117,7 @@ const ImageControlPanel = () => {
                   </div>
                 );
               })}
-              <HeroButton
-                color="secondary"
-                onClick={() => handleAddBox(gallery.length)}
-              >
+              <HeroButton color="secondary" onClick={handleAddBox}>
                 Add Image
               </HeroButton>
             </ButtonWrapper>
