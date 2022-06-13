@@ -8,7 +8,7 @@ const Switch: React.FC<SwitchProps> = ({
   ...rest
 }: SwitchProps) => {
   const toggle = (e: any) => {
-    onChange(e.target.checked);
+    onChange && onChange(!e.target.checked);
   };
 
   return (

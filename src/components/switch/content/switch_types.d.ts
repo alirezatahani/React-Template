@@ -3,7 +3,7 @@ import * as React from 'react';
 export type SwitchProps = {
   children?: React.ReactNode;
   style?: React.CSSProperties;
-  onChange?: React.ChangeEventHandler;
+  onChange?: (value: boolean) => void;
   disabled?: boolean;
   checked?: boolean;
   size?: 'sm' | 'md';
