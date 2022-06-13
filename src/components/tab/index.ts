@@ -1,2 +1,2 @@
-import Tabs from "./content/Tabs"
-export {Tabs}
+import {Tabs , TabPane} from "./content/Tabs"
+export {Tabs ,TabPane}

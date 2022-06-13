@@ -15,9 +15,9 @@ export const TabsContainer = styled.div<TabsProps>(({ align }) => ({
   gap: '2rem',
   position: 'relative',
 }));
-export const TabPane = styled.div<TabPaneProps>(({ activeTab, disable }) => ({
-  color: activeTab ? '#40a9ff' : 'black',
-  borderBottom: activeTab ? '3px solid #40a9ff' : 'none',
+export const TabPane = styled.div<TabPaneProps>(({ active, disable }) => ({
+  color: active ? '#40a9ff' : 'black',
+  borderBottom: active ? '3px solid #40a9ff' : 'none',
   opacity: disable ? '0.5' : '1',
   cursor: disable ? 'not-allowed' : 'pointer',
   padding: '.5rem 0',

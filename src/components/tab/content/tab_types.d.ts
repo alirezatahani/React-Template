@@ -1,7 +1,8 @@
-import { EventHandler, MouseEventHandler, ReactElement, ReactNode } from "react";
+import {  MouseEventHandler, ReactElement, ReactNode } from "react";
 
 export type TabsProps = {
-    children:ReactElement[];
+    children:ReactElement[] | ReactElement;
+    defaultTab ?: string;
     align?:"center"|"end"|"start";
 }
 export type TabPaneProps ={
@@ -9,5 +10,5 @@ export type TabPaneProps ={
     tab:string;
     onClick?:MouseEventHandler;
     disable?:boolean;
-    activeTab?:boolean;
+    active?:boolean;
 }

@@ -9,20 +9,30 @@ import {
 } from '../styles/tab.styles';
 import { TabPaneProps, TabsProps } from './tab_types';
 
-const Tabs: React.FC<TabsProps> = ({ ...props }) => {
-  const [activeIndex, setActiveIndex] = useState(0);
-  const handleTabClick = (index: number) => {
-    return setActiveIndex(index);
+/**
+ * @children should be an array of React elements
+ * @align can be set as  'center' | 'end' | 'start'
+ * @defaultTab can be set equal to tab name as string
+ * @tab should be set your tabs name as string
+ * @disable can be set as true | false
+ */
+
+export const Tabs: React.FC<TabsProps> = ({ ...props }) => {
+  const [activeTab, setActiveTab] = useState(props.defaultTab);
+  const handleTabClick = (tab: string) => {
+    return setActiveTab(tab);
   };
   const renderTabs = () => {
-    return React.Children.map(props.children, (child: ReactElement, index) => {
+    return React.Children.map(props.children, (child: ReactElement) => {
       return React.cloneElement(
         child as React.ReactElement<TabPaneProps>,
         {
-          onClick: !child.props.disable ? () => handleTabClick(index) : null,
+          onClick: !child.props.disable
+            ? () => handleTabClick(child.props.tab)
+            : null,
         },
         <TabPane
-          activeTab={index === activeIndex}
+          active={child.props.tab === activeTab}
           disable={child.props.disable}
           {...child.props}
         >
@@ -33,14 +43,19 @@ const Tabs: React.FC<TabsProps> = ({ ...props }) => {
   };
   const renderActiveTabContent = () => {
     const { children } = props;
-    if (children[activeIndex]) {
-      return children[activeIndex].props.children;
-    }
+    let activeContent = '';
+    React.Children.map(children, (child: ReactElement) => {
+      if (child.props.tab === activeTab)
+        return (activeContent = child.props.children);
+    });
+    return activeContent;
   };
   return (
     <>
       <TabSection>
-        <TabsContainer align={props.align}>{renderTabs()}</TabsContainer>
+        <TabsContainer align={props.align} defaultTab={activeTab}>
+          {renderTabs()}
+        </TabsContainer>
         <BottomBorderContainer>
           <BottomBorder></BottomBorder>
         </BottomBorderContainer>
@@ -52,4 +67,5 @@ const Tabs: React.FC<TabsProps> = ({ ...props }) => {
 Tabs.defaultProps = {
   align: 'start',
 };
-export default Tabs;
+export type {TabPaneProps}
+export { TabPane };
