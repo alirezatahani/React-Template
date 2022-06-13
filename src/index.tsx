@@ -1,31 +1,20 @@
-import * as React from 'react';
+import React from 'react';
+import { BrowserRouter } from 'react-router-dom';
 import { createRoot } from 'react-dom/client';
 import { ThemeProvider } from 'styled-components';
-import { Switch } from './components';
 import { GlobalStyle, theme } from './global/Global';
+import { Routes } from './routes';
 
 const App: React.FC = () => {
-  const [checked, setChecked] = React.useState<boolean>(false);
-
-  const handleOnchange = (value: boolean) => {
-    setChecked(value);
-  };
-
   return (
-    <ThemeProvider theme={theme}>
-      <>
-        <GlobalStyle />
-        <div
-          style={{
-            display: 'flex',
-            justifyContent: 'center',
-            alignItems: 'center',
-          }}
-        >
-          <Switch checked={checked} onChange={handleOnchange} />
-        </div>
-      </>
-    </ThemeProvider>
+    <BrowserRouter>
+      <ThemeProvider theme={theme}>
+        <>
+          <GlobalStyle />
+          <Routes />
+        </>
+      </ThemeProvider>
+    </BrowserRouter>
   );
 };
 const container = document.getElementById('app');

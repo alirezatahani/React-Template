@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "target": "es6",
+    "target": "esnext",
     "outDir": "./dist/",
     "noImplicitAny": true,
     "forceConsistentCasingInFileNames": true,
@@ -10,14 +10,16 @@
     "strict": false,
     "moduleResolution": "node",
     "resolveJsonModule": true,
+    "esModuleInterop": true,
     "isolatedModules": true,
     "incremental": true,
-    "lib": ["es6", "dom", "dom.iterable"],
+    "lib": ["dom", "dom.iterable", "es6"],
     "baseUrl": "./src",
     "paths": {
       "@components/*": ["components/*"],
       "@assets/*": ["public/static/images/*"],
       "@templates/*": ["templates/*"],
+      "@pages/*": ["pages/*"],
       "@modules/*": ["modules/*"]
     }
   },
