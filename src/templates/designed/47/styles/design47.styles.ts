@@ -4,11 +4,15 @@ import { Col, Row } from "@components/grid";
 import { Typography } from "@components/typography";
 import styled from "styled-components";
 
+
+export const Text = styled(Typography)({
+    color: 'rgb(54, 13, 90)',
+});
+
 export type HeroContainerTypes = {
     image?: string;
     height?: string
 };
-
 
 export type SalamType = {
     image?: string;
@@ -16,7 +20,10 @@ export type SalamType = {
 };
 export const Salam = styled(Col)<SalamType>(({ image }) => ({
     backgroundImage: `url(${image})`,
-    height: '100%',
+    backgroundSize:'cover',
+    width: '100%',
+    height: 'auto',
+    backgroundPosition:'center'
 }));
 
 export type HeroTypes = {
@@ -67,7 +74,7 @@ export const RegisterCol = styled(Col)<RegisterColType>(({ imageContainer,column
     borderRadius: imageContainer? '10%' : 0,
     display: 'flex',
     flexDirection: 'column',
-    justifyContent: 'space-between'
+    justifyContent: 'space-between',
 }));
 
 export const RegisterBtnContainer = styled.div({
@@ -128,23 +135,12 @@ export type IntroduseTypes = {
     image?: string;
 };
 
-export const Introduce = styled.div<IntroduseTypes>(({ image }) => ({
-    background: 'rgb(255, 201, 0)',
-    backgroundSize: 'cover',
-    backgroundPosition: 'center center',
-    position: 'relative',
-    zIndex: 1,
-    width: '90%',
-    height: '100%',
-    borderRadius: '25px',
-    ':after': {
-        content: "''",
-        position: 'absolute',
-        inset: 0,
-        backgroundImage: `url(${image})`,
-        opacity: 1,
-        width: '75%',
-        zIndex: -1,
-        borderRadius: '25px 0 0 25px'
-      },
-}));
+export const Introduce = styled(Row)`
+    display: flex;
+    height: 100%;
+    width: 95%;
+    @media (max-width: 1024px) {
+        width: '100%;
+        height: 100%;
+    }
+`;
