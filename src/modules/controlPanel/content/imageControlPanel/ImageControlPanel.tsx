@@ -61,6 +61,7 @@ const ImageControlPanel = () => {
       [getLabel]: getValue,
     });
   };
+
   return (
     <React.Fragment>
       <ControlPanelSettingContainer>
