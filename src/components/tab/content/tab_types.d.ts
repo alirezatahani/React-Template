@@ -12,3 +12,6 @@ export type TabPaneProps ={
     disable?:boolean;
     active?:boolean;
 }
+export type TabPaneContainerProps = {
+    align?:"center"|"end"|"start";
+}
