@@ -11,6 +11,7 @@ export * from './typography';
 export * from './container';
 export * from './footer';
 export * from './menu';
+export * from "./tab"
 export * from './textarea';
 export * from "./templateCart"
 export * from "./textarea";
