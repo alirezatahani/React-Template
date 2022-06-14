@@ -18,11 +18,12 @@ import {
   Button,
   Typography,
   Container,
-} from '../../../../components';
-import { CardMedia } from '../../../../components/card/content/cardMedia/index';
-import { CardContent } from '../../../../components/card/content/cardContent/index';
+} from '@components/index';
+import { CardMedia } from '@components/card/content/cardMedia/index';
+import { CardContent } from '@components/card/content/cardContent/index';
 
-export const Blank3 = ({ setSelected }: any) => {
+export const Blank3 = ({ setSelected, state }: any) => {
+  console.log(state);
   return (
     <React.Fragment>
       <Navbar />
@@ -31,18 +32,19 @@ export const Blank3 = ({ setSelected }: any) => {
         <MainContainer fluid>
           <Row>
             <Col xs={12}>
-              <Image
-                onClick={() => setSelected({ type: 'image' })}
-                src="https://us-wbe-img.gr-cdn.com/template/website-id-d46691d1-c4bb-4a59-a194-9012099062fd/22eae2c7-8a18-451c-b077-0cc4841f434a.png"
-              />
+              <Image src="https://us-wbe-img.gr-cdn.com/template/website-id-d46691d1-c4bb-4a59-a194-9012099062fd/22eae2c7-8a18-451c-b077-0cc4841f434a.png" />
             </Col>
           </Row>
           <Row>
             <Col xs={12}>
               <Typography
                 onClick={() => setSelected({ type: 'typography' })}
-                variant="h2"
-                style={{ textAlign: 'center', marginBottom: '2rem' }}
+                variant={state.fontType}
+                textAlign={state.textAlign}
+                style={{
+                  textDecoration: state.textDecoration,
+                  color: state.fontColor,
+                }}
               >
                 Introduce your idea
               </Typography>
@@ -50,7 +52,15 @@ export const Blank3 = ({ setSelected }: any) => {
           </Row>
           <Row>
             <Col xs={12}>
-              <Typography variant="body1" style={{ textAlign: 'center' }}>
+              <Typography
+                onClick={() => setSelected({ type: 'typography' })}
+                variant={state.fontType}
+                textAlign={state.textAlign}
+                style={{
+                  textDecoration: state.textDecoration,
+                  color: state.fontColor,
+                }}
+              >
                 Share more about what you do. Use this space to describe your
                 products or services, and highlight their benefits. Customize
                 the image to draw people in and drive your point home.
@@ -61,10 +71,11 @@ export const Blank3 = ({ setSelected }: any) => {
             <Col xs={12} alignItems="center" justify="center" display="flex">
               <HeroButton
                 onClick={() => setSelected({ type: 'button' })}
-                variant="outlined"
-                size="lg"
+                variant={state.variant}
+                size={state.btnSize}
+                shape={state.btnShape}
               >
-                Call to Action
+                {state.btnText}
               </HeroButton>
             </Col>
           </Row>

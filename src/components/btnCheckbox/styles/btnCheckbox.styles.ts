@@ -8,7 +8,6 @@ export const BtnCheckboxContainer = styled.div<BtnCheckboxPropsType>(
     alignItems: 'center',
 
     border: '1px solid hsl(0, 0%, 80%)',
-    width: 'fit-content',
     borderRadius: 5,
     transition: theme.general.transition,
     [`${Label}:last-child`]: {

@@ -1,8 +1,9 @@
 import * as React from 'react';
 
 export type ControlPanelProps = {
-  children: React.ReactNode;
-  onChnage?: React.ChangeEventHandler;
+  selected: any;
+  state: any;
+  setState: any;
 };
 export type TemolateContainerProps = {
   showControlPanel: boolean;

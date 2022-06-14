@@ -19,6 +19,7 @@ export type TypographyProps = {
   underline?: boolean;
   strong?: boolean;
   italic?: boolean;
+  textAlign?: 'center' | 'left' | 'right' | 'justify';
   onClick?: React.MouseEventHandler;
 };
 export type StyledTypographyProps = {
@@ -36,6 +37,7 @@ export type StyledTypographyProps = {
   underline?: boolean;
   italic?: boolean;
   strong?: boolean;
+  textAlign?: 'center' | 'left' | 'right' | 'justify';
 };
 
 export type VariantsType = {

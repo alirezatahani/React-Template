@@ -6,13 +6,13 @@ const SideActionButtons = () => {
   return (
     <SideButtonsContainer>
       <Space spacing={10} direction="vertical" align="start">
-        <Button size="lg" color="primary" rounded>
+        <Button size="lg" color="primary" shape="rounded">
           +
         </Button>
-        <Button size="lg" color="danger" rounded>
+        <Button size="lg" color="danger" shape="rounded">
           G
         </Button>
-        <Button size="lg" color="warning" rounded>
+        <Button size="lg" color="warning" shape="rounded">
           A
         </Button>
       </Space>

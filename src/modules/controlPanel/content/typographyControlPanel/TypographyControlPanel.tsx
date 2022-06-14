@@ -20,27 +20,22 @@ import {
   fontDecorationOptions,
   alignOptions,
   fontFamilyOptions,
+  fontStyleOptions,
 } from '../../utils/constants';
+import { useTheme } from 'styled-components';
+import Select, { StylesConfig } from 'react-select';
 
-import Select from 'react-select';
+const TypographyControlPanel = ({ state, handleChange }: any) => {
+  const theme = useTheme();
 
-const TypographyControlPanel = () => {
-  const [state, setState] = React.useState({
-    fontType: '',
-    fontFamily: '',
-    fontSize: '',
-    fontDecoration: '',
-    textAlign: '',
-    fontColor: '',
-  });
-
-  const handleChange = (evt: any) => {
-    const getLabel = evt.kind ? evt.kind : evt.target.name;
-    const getValue = evt.value ? evt.value : evt.target.value;
-    setState({
-      ...state,
-      [getLabel]: getValue,
-    });
+  const colourStyles: StylesConfig = {
+    option: (styles, { data }: any) => {
+      return {
+        ...styles,
+        //@ts-ignore
+        ...theme.typography[data.value],
+      };
+    },
   };
 
   return (
@@ -53,6 +48,7 @@ const TypographyControlPanel = () => {
             name="fontType"
             onChange={handleChange}
             options={fontTypeOptions}
+            styles={colourStyles}
           />
         </ControlPanelItemContainer>
         <ControlPanelItemContainer>
@@ -70,17 +66,23 @@ const TypographyControlPanel = () => {
         </ControlPanelItemContainer>
         <ControlPanelItemContainer>
           <Row>
-            <Col span={4}>
+            <Col span={6}>
               <ControlPanelItemLabel>Font Size</ControlPanelItemLabel>
               <Select onChange={handleChange} options={fontSizeOptions} />
             </Col>
-            <Col span={8}>
+            <Col span={6}>
               <ControlPanelItemLabel>Font Decoration</ControlPanelItemLabel>
               <BtnCheckbox
-                type="radio"
-                name="fontDecoration"
+                type="checkbox"
+                name="textDecoration"
                 onChange={handleChange}
                 options={fontDecorationOptions}
+              />
+              <BtnCheckbox
+                type="checkbox"
+                name="fontStyle"
+                onChange={handleChange}
+                options={fontStyleOptions}
               />
             </Col>
           </Row>

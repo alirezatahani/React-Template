@@ -15,25 +15,39 @@ import {
   ControlPanelItemLabel,
   ControlPanelSettingContainer,
 } from '../../styles/controlPanel.styles';
-import {
-  fontTypeOptions,
-  fontSizeOptions,
-  fontDecorationOptions,
-  alignOptions,
-  fontFamilyOptions,
-} from '../../utils/constants';
 
 import Select from 'react-select';
 import { btnLinkOptions, btnSizeOptions } from './constants';
 
-const ButtonControlPanel = () => {
+const ButtonControlPanel = ({ state, handleChange }: any) => {
+  const handleChngeBtnStyle = (variant: string) => {
+    handleChange({
+      kind: 'variant',
+      value: variant,
+    });
+  };
+
+  const handleChangeBtnShape = (round: string) => {
+    handleChange({
+      kind: 'btnShape',
+      value: round,
+    });
+  };
+
+  console.log(state, 'state');
+
   return (
     <ControlPanelSettingContainer>
       <Typography variant="h5">Button</Typography>
       <Collapse open title="CTA and Linking">
         <ControlPanelItemContainer>
           <ControlPanelItemLabel>Button Text</ControlPanelItemLabel>
-          <Input name="textBtn" placeholder="Enter button text ..." />
+          <Input
+            onChange={handleChange}
+            name="btnText"
+            placeholder="Enter button text ..."
+            value={state.btnText}
+          />
         </ControlPanelItemContainer>
         <ControlPanelItemContainer>
           <Row>
@@ -56,9 +70,21 @@ const ButtonControlPanel = () => {
             <Col span={12}>
               <ControlPanelItemLabel>Button Style</ControlPanelItemLabel>
               <Space spacing={20}>
-                <Button>Filled</Button>
-                <Button variant="outlined">Outlined</Button>
-                <Button variant="text">Text</Button>
+                <Button onClick={() => handleChngeBtnStyle('filled')}>
+                  Filled
+                </Button>
+                <Button
+                  onClick={() => handleChngeBtnStyle('outlined')}
+                  variant="outlined"
+                >
+                  Outlined
+                </Button>
+                <Button
+                  onClick={() => handleChngeBtnStyle('text')}
+                  variant="text"
+                >
+                  Text
+                </Button>
               </Space>
             </Col>
           </Row>
@@ -68,10 +94,20 @@ const ButtonControlPanel = () => {
             <Col span={12}>
               <ControlPanelItemLabel>Button Shape</ControlPanelItemLabel>
               <Space spacing={20}>
-                <Button rounded variant="filled">
+                <Button
+                  shape="sharp"
+                  onClick={() => handleChangeBtnShape('sharp')}
+                  variant="filled"
+                >
                   Rounded
                 </Button>
-                <Button variant="filled">Standard</Button>
+                <Button
+                  shape="rounded"
+                  onClick={() => handleChangeBtnShape('rounded')}
+                  variant="filled"
+                >
+                  Standard
+                </Button>
               </Space>
             </Col>
           </Row>
@@ -81,6 +117,7 @@ const ButtonControlPanel = () => {
             <Col span={12}>
               <ControlPanelItemLabel>Button Size</ControlPanelItemLabel>
               <BtnCheckbox
+                onChange={handleChange}
                 type="radio"
                 name="btnSize"
                 options={btnSizeOptions}

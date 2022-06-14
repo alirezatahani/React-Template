@@ -1,33 +1,23 @@
 import React from 'react';
-import {
-  Collapse,
-  Typography,
-  Col,
-  Row,
-  BtnCheckbox,
-  Image,
-} from '@components/index';
-import {
-  ControlPanelItemContainer,
-  ControlPanelItemLabel,
-} from '@modules/controlPanel/styles/controlPanel.styles';
+import { Collapse, Typography, Image } from '@components/index';
+import { ControlPanelItemContainer } from '@modules/controlPanel/styles/controlPanel.styles';
 import {
   HeroButton,
   ButtonWrapper,
   ControlPanelSettingContainer,
-} from './ImageControlPanel_styles';
+} from './galleryControlPanel_styles';
 import Select from 'react-select';
 import { displayOptions } from '@modules/controlPanel/utils/constants';
-import { imageSizeOptions } from './constants';
 import {
   ImageBox,
   HeroFormInput,
   Wrapper,
-} from '@modules/controlPanel/content/imageControlPanel/ImageControlPanel_styles';
+} from '@modules/controlPanel/content/galleryControlPanel/galleryControlPanel_styles';
 import { FaMinus } from 'react-icons/fa';
 
-const ImageControlPanel = () => {
+const GalleryControlPanel = () => {
   const [state, setState] = React.useState({});
+
   const [gallery, setGallery] = React.useState([]);
 
   const handleAddBox = () => {
@@ -131,25 +121,13 @@ const ImageControlPanel = () => {
               onChange={handleChange}
             />
           </ControlPanelItemContainer>
-          <ControlPanelItemContainer>
-            <Row>
-              <Col span={12}>
-                <ControlPanelItemLabel>Image Size</ControlPanelItemLabel>
-                <BtnCheckbox
-                  type="radio"
-                  name="imageSize"
-                  options={imageSizeOptions}
-                />
-              </Col>
-            </Row>
-          </ControlPanelItemContainer>
         </Collapse>
         <Collapse open title="Block Settings">
-          test
+          coming soon
         </Collapse>
       </ControlPanelSettingContainer>
     </React.Fragment>
   );
 };
 
-export default ImageControlPanel;
+export default GalleryControlPanel;
