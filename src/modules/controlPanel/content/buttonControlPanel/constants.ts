@@ -4,7 +4,7 @@ export const btnLinkOptions = [
   { value: 'email', label: 'Email Address', kind: 'btnLink' },
 ];
 export const btnSizeOptions = [
-  { value: 'sm', label: 'Small', name: 'small', kind: 'btnSize' },
-  { value: 'md', label: 'Medium', name: 'medium', kind: 'btnSize' },
-  { value: 'lg', label: 'Large', name: 'large', kind: 'btnSize' },
+  { value: 'sm', label: 'Small', name: 'small' },
+  { value: 'md', label: 'Medium', name: 'medium' },
+  { value: 'lg', label: 'Large', name: 'large' },
 ];

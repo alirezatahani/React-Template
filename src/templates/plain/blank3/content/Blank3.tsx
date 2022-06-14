@@ -23,6 +23,7 @@ import { CardMedia } from '@components/card/content/cardMedia/index';
 import { CardContent } from '@components/card/content/cardContent/index';
 
 export const Blank3 = ({ setSelected, state }: any) => {
+  console.log(state);
   return (
     <React.Fragment>
       <Navbar />
@@ -39,7 +40,11 @@ export const Blank3 = ({ setSelected, state }: any) => {
               <Typography
                 onClick={() => setSelected({ type: 'typography' })}
                 variant={state.fontType}
-                style={{ ...state, color: state.fontColor }}
+                textAlign={state.textAlign}
+                style={{
+                  textDecoration: state.textDecoration,
+                  color: state.fontColor,
+                }}
               >
                 Introduce your idea
               </Typography>
@@ -47,7 +52,15 @@ export const Blank3 = ({ setSelected, state }: any) => {
           </Row>
           <Row>
             <Col xs={12}>
-              <Typography variant="body1" style={{ textAlign: 'center' }}>
+              <Typography
+                onClick={() => setSelected({ type: 'typography' })}
+                variant={state.fontType}
+                textAlign={state.textAlign}
+                style={{
+                  textDecoration: state.textDecoration,
+                  color: state.fontColor,
+                }}
+              >
                 Share more about what you do. Use this space to describe your
                 products or services, and highlight their benefits. Customize
                 the image to draw people in and drive your point home.
@@ -60,6 +73,7 @@ export const Blank3 = ({ setSelected, state }: any) => {
                 onClick={() => setSelected({ type: 'button' })}
                 variant={state.variant}
                 size={state.btnSize}
+                shape={state.btnShape}
               >
                 {state.btnText}
               </HeroButton>

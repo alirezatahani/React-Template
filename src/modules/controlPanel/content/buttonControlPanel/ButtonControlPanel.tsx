@@ -26,6 +26,16 @@ const ButtonControlPanel = ({ state, handleChange }: any) => {
       value: variant,
     });
   };
+
+  const handleChangeBtnShape = (round: string) => {
+    handleChange({
+      kind: 'btnShape',
+      value: round,
+    });
+  };
+
+  console.log(state, 'state');
+
   return (
     <ControlPanelSettingContainer>
       <Typography variant="h5">Button</Typography>
@@ -36,6 +46,7 @@ const ButtonControlPanel = ({ state, handleChange }: any) => {
             onChange={handleChange}
             name="btnText"
             placeholder="Enter button text ..."
+            value={state.btnText}
           />
         </ControlPanelItemContainer>
         <ControlPanelItemContainer>
@@ -83,10 +94,20 @@ const ButtonControlPanel = ({ state, handleChange }: any) => {
             <Col span={12}>
               <ControlPanelItemLabel>Button Shape</ControlPanelItemLabel>
               <Space spacing={20}>
-                <Button rounded variant="filled">
+                <Button
+                  shape="sharp"
+                  onClick={() => handleChangeBtnShape('sharp')}
+                  variant="filled"
+                >
                   Rounded
                 </Button>
-                <Button variant="filled">Standard</Button>
+                <Button
+                  shape="rounded"
+                  onClick={() => handleChangeBtnShape('rounded')}
+                  variant="filled"
+                >
+                  Standard
+                </Button>
               </Space>
             </Col>
           </Row>

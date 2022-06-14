@@ -20,6 +20,7 @@ import {
   fontDecorationOptions,
   alignOptions,
   fontFamilyOptions,
+  fontStyleOptions,
 } from '../../utils/constants';
 import { useTheme } from 'styled-components';
 import Select, { StylesConfig } from 'react-select';
@@ -65,17 +66,23 @@ const TypographyControlPanel = ({ state, handleChange }: any) => {
         </ControlPanelItemContainer>
         <ControlPanelItemContainer>
           <Row>
-            <Col span={4}>
+            <Col span={6}>
               <ControlPanelItemLabel>Font Size</ControlPanelItemLabel>
               <Select onChange={handleChange} options={fontSizeOptions} />
             </Col>
-            <Col span={8}>
+            <Col span={6}>
               <ControlPanelItemLabel>Font Decoration</ControlPanelItemLabel>
               <BtnCheckbox
-                type="radio"
-                name="fontStyle"
+                type="checkbox"
+                name="textDecoration"
                 onChange={handleChange}
                 options={fontDecorationOptions}
+              />
+              <BtnCheckbox
+                type="checkbox"
+                name="fontStyle"
+                onChange={handleChange}
+                options={fontStyleOptions}
               />
             </Col>
           </Row>

@@ -12,6 +12,7 @@ import {
 const BtnCheckbox: React.FC<BtnCheckboxPropsType> = ({
   name,
   options,
+  defaultValue,
   type = 'checkbox',
   ...props
 }: BtnCheckboxPropsType) => {
@@ -25,6 +26,7 @@ const BtnCheckbox: React.FC<BtnCheckboxPropsType> = ({
             value={option.value}
             id={option.name}
             type={type}
+            defaultValue={defaultValue}
             {...props}
           />
           <Label htmlFor={option.name}>{option.label}</Label>

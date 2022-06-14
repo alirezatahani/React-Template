@@ -7,13 +7,12 @@ const ControlPanel: React.FC<any> = ({ selected, state, setState }: any) => {
   const handleChange = (evt: any) => {
     const getLabel = evt.kind ? evt.kind : evt.target.name;
     const getValue = evt.value ? evt.value : evt.target.value;
+    console.log(getValue);
     setState({
       ...state,
       [getLabel]: getValue,
     });
   };
-
-  console.log(state);
 
   const settings: any = {
     typography: (
