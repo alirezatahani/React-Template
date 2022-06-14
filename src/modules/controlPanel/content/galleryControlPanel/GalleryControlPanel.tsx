@@ -50,8 +50,6 @@ const GalleryControlPanel = () => {
     setGallery(data);
   };
 
-  console.log(gallery, 'gallery');
-
   const handleChange = (evt: any) => {
     const getLabel = evt.kind ? evt.kind : evt.target.name;
     const getValue = evt.value ? evt.value : evt.target.value;
