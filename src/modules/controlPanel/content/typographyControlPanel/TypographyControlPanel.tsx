@@ -20,12 +20,12 @@ import {
   fontDecorationOptions,
   alignOptions,
   fontFamilyOptions,
-  fontStyleOptions,
+  typographyTranslator,
 } from '../../utils/constants';
 import { useTheme } from 'styled-components';
 import Select, { StylesConfig } from 'react-select';
 
-const TypographyControlPanel = ({ state, handleChange }: any) => {
+const TypographyControlPanel = ({ initialValue, onChange }: any) => {
   const theme = useTheme();
 
   const colourStyles: StylesConfig = {
@@ -38,6 +38,29 @@ const TypographyControlPanel = ({ state, handleChange }: any) => {
     },
   };
 
+  const handleChangeSelect = (event: any) => {
+    onChange(event.kind, event.value);
+  };
+  const handleChangeCheckBox = (event: any, values: any) => {
+    onChange(event.target.name, values);
+  };
+
+  console.log(theme, 'theme');
+  const {
+    fontType,
+    fontFamily,
+    fontSize,
+    textDecoration,
+    fontColor,
+    textAlign,
+  } = initialValue;
+
+  const fontTypes = Object.keys(theme.typography).map((key: any) => ({
+    value: key,
+    //@ts-ignore
+    label: typographyTranslator[key],
+    kind: 'fontType',
+  }));
   return (
     <ControlPanelSettingContainer>
       <Typography variant="h5">Text</Typography>
@@ -46,8 +69,11 @@ const TypographyControlPanel = ({ state, handleChange }: any) => {
           <ControlPanelItemLabel>Type</ControlPanelItemLabel>
           <Select
             name="fontType"
-            onChange={handleChange}
-            options={fontTypeOptions}
+            onChange={handleChangeSelect}
+            defaultValue={fontTypeOptions.filter(
+              (fontTypeOption) => fontTypeOption.value === fontType
+            )}
+            options={fontTypes}
             styles={colourStyles}
           />
         </ControlPanelItemContainer>
@@ -57,7 +83,10 @@ const TypographyControlPanel = ({ state, handleChange }: any) => {
               <ControlPanelItemLabel>Font Family</ControlPanelItemLabel>
               <Select
                 name="fontFamily"
-                onChange={handleChange}
+                onChange={handleChangeSelect}
+                defaultValue={fontFamilyOptions.filter(
+                  (fontFamilyOption) => fontFamilyOption.value === fontFamily
+                )}
                 options={fontFamilyOptions}
               />
             </Col>
@@ -68,21 +97,23 @@ const TypographyControlPanel = ({ state, handleChange }: any) => {
           <Row>
             <Col span={6}>
               <ControlPanelItemLabel>Font Size</ControlPanelItemLabel>
-              <Select onChange={handleChange} options={fontSizeOptions} />
+              <Select
+                name="fontSize"
+                defaultValue={fontSizeOptions.filter(
+                  (fontSizeOption) => fontSizeOption.value === fontSize
+                )}
+                onChange={handleChangeSelect}
+                options={fontSizeOptions}
+              />
             </Col>
             <Col span={6}>
               <ControlPanelItemLabel>Font Decoration</ControlPanelItemLabel>
               <BtnCheckbox
                 type="checkbox"
                 name="textDecoration"
-                onChange={handleChange}
+                onChange={handleChangeCheckBox}
+                defaultValue={textDecoration}
                 options={fontDecorationOptions}
-              />
-              <BtnCheckbox
-                type="checkbox"
-                name="fontStyle"
-                onChange={handleChange}
-                options={fontStyleOptions}
               />
             </Col>
           </Row>
@@ -92,8 +123,8 @@ const TypographyControlPanel = ({ state, handleChange }: any) => {
             <Col span={4}>
               <ControlPanelItemLabel>Font color</ControlPanelItemLabel>
               <ColorPicker
-                value={state.fontColor}
-                onChange={handleChange}
+                value={fontColor}
+                onChange={handleChangeCheckBox}
                 id="fontColor"
                 name="fontColor"
               />
@@ -103,7 +134,8 @@ const TypographyControlPanel = ({ state, handleChange }: any) => {
               <BtnCheckbox
                 type="radio"
                 name="textAlign"
-                onChange={handleChange}
+                defaultValue={textAlign}
+                onChange={handleChangeCheckBox}
                 options={alignOptions}
               />
             </Col>

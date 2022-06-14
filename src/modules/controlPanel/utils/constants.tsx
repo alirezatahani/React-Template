@@ -12,6 +12,10 @@ import {
 import { TbLetterT } from 'react-icons/tb';
 import { MdFormatClear } from 'react-icons/md';
 
+export const typographyTranslator = {
+  h1: 'Heading 1',
+  h2: 'Heading 2',
+};
 export const fontTypeOptions = [
   { value: 'h1', label: 'Heading 1', kind: 'fontType' },
   { value: 'h2', label: 'Heading 2', kind: 'fontType' },
@@ -44,22 +48,17 @@ export const fontDecorationOptions = [
     value: 'initial',
     label: <TbLetterT />,
     name: 'initial',
-    kind: 'textDecoration',
   },
   {
     value: 'line-through',
     label: <MdFormatClear />,
     name: 'line-through',
-    kind: 'textDecoration',
   },
   {
     value: 'underline',
     label: <BiUnderline />,
     name: 'underline',
-    kind: 'textDecoration',
   },
-];
-export const fontStyleOptions = [
   {
     value: 'italic',
     label: <BiItalic />,
@@ -72,24 +71,20 @@ export const alignOptions = [
     value: 'left',
     label: <BiAlignLeft />,
     name: 'textLeft',
-    kind: 'textAlign',
   },
   {
     value: 'center',
     label: <BiAlignMiddle />,
     name: 'textCenter',
-    kind: 'textAlign',
   },
   {
     value: 'right',
     label: <BiAlignRight />,
     name: 'textRight',
-    kind: 'textAlign',
   },
   {
     value: 'justify',
     label: <BiAlignJustify />,
     name: 'textJustify',
-    kind: 'textAlign',
   },
 ];

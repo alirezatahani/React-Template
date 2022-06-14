@@ -2,5 +2,5 @@ export type ColorPickerPropsType = {
   value?: string;
   id?: string;
   name?: string;
-  onChange?: React.ChangeEventHandler;
+  onChange?: (event: any, values: string | string[]) => void;
 };
