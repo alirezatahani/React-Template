@@ -3,6 +3,7 @@ import { ControlPanelWrapper } from './styles/controlPanel.styles';
 import TypographyControlPanel from './content/typographyControlPanel/TypographyControlPanel';
 import ButtonControlPanel from './content/buttonControlPanel/ButtonControlPanel';
 import GalleryControlPanel from './content/galleryControlPanel/GalleryControlPanel';
+import ImageControlPanel from './content/imageControlPanel/ImageControlPanel';
 
 const ControlPanel: React.FC<any> = ({ selected, state, setState }: any) => {
   const handleChange = (evt: any) => {
@@ -20,6 +21,7 @@ const ControlPanel: React.FC<any> = ({ selected, state, setState }: any) => {
       <TypographyControlPanel state={state} handleChange={handleChange} />
     ),
     button: <ButtonControlPanel state={state} handleChange={handleChange} />,
+    image: <ImageControlPanel />,
   };
 
   return (
