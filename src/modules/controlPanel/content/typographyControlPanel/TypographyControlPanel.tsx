@@ -15,7 +15,6 @@ import {
   ControlPanelSettingContainer,
 } from '../../styles/controlPanel.styles';
 import {
-  fontTypeOptions,
   fontSizeOptions,
   fontDecorationOptions,
   alignOptions,
@@ -28,7 +27,7 @@ import Select, { StylesConfig } from 'react-select';
 const TypographyControlPanel = ({ initialValue, onChange }: any) => {
   const theme = useTheme();
 
-  const colourStyles: StylesConfig = {
+  const fontTypesStyles: StylesConfig = {
     option: (styles, { data }: any) => {
       return {
         ...styles,
@@ -38,14 +37,16 @@ const TypographyControlPanel = ({ initialValue, onChange }: any) => {
     },
   };
 
-  const handleChangeSelect = (event: any) => {
+  const handleChangeSelect = (event: { kind: string; value: string }) => {
     onChange(event.kind, event.value);
   };
-  const handleChangeCheckBox = (event: any, values: any) => {
+  const handleChangeCheckBox = (
+    event: { target: { name: string } },
+    values: string | string[]
+  ) => {
     onChange(event.target.name, values);
   };
 
-  console.log(theme, 'theme');
   const {
     fontType,
     fontFamily,
@@ -55,12 +56,26 @@ const TypographyControlPanel = ({ initialValue, onChange }: any) => {
     textAlign,
   } = initialValue;
 
-  const fontTypes = Object.keys(theme.typography).map((key: any) => ({
-    value: key,
-    //@ts-ignore
-    label: typographyTranslator[key],
-    kind: 'fontType',
-  }));
+  const fontTypes = Object.keys(theme.typography)
+    .filter(
+      (typography: any) =>
+        typography !== 'button' &&
+        typography !== 'input' &&
+        typography !== 'table' &&
+        typography !== 'table2' &&
+        typography !== 'overLineCaption' &&
+        typography !== 'link' &&
+        typography !== 'fontFamily' &&
+        typography !== 'typographyDitypographyabled' &&
+        typography !== 'fontStyles'
+    )
+    .map((key: any) => ({
+      value: key,
+      //@ts-ignore
+      label: typographyTranslator[key],
+      kind: 'fontType',
+    }));
+
   return (
     <ControlPanelSettingContainer>
       <Typography variant="h5">Text</Typography>
@@ -70,16 +85,16 @@ const TypographyControlPanel = ({ initialValue, onChange }: any) => {
           <Select
             name="fontType"
             onChange={handleChangeSelect}
-            defaultValue={fontTypeOptions.filter(
+            defaultValue={fontTypes.filter(
               (fontTypeOption) => fontTypeOption.value === fontType
             )}
             options={fontTypes}
-            styles={colourStyles}
+            styles={fontTypesStyles}
           />
         </ControlPanelItemContainer>
         <ControlPanelItemContainer>
           <Row>
-            <Col span={6}>
+            <Col span={12}>
               <ControlPanelItemLabel>Font Family</ControlPanelItemLabel>
               <Select
                 name="fontFamily"
@@ -90,7 +105,6 @@ const TypographyControlPanel = ({ initialValue, onChange }: any) => {
                 options={fontFamilyOptions}
               />
             </Col>
-            <Col span={6}></Col>
           </Row>
         </ControlPanelItemContainer>
         <ControlPanelItemContainer>
@@ -102,7 +116,7 @@ const TypographyControlPanel = ({ initialValue, onChange }: any) => {
                 defaultValue={fontSizeOptions.filter(
                   (fontSizeOption) => fontSizeOption.value === fontSize
                 )}
-                onChange={handleChangeSelect}
+                onChange={() => handleChangeSelect}
                 options={fontSizeOptions}
               />
             </Col>

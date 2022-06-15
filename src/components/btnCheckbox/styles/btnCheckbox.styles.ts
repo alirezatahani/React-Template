@@ -32,7 +32,6 @@ export const CustomCheckbox = styled.input<any>(({ theme, checked }) => ({
   transition: 'opacity 100ms',
   [`& + ${Label}:hover`]: {
     opacity: 0.8,
-    backgroundColor: 'red',
   },
 
   [`& + ${Label}`]: {
