@@ -8,10 +8,21 @@ export const ImageBox = styled.div(({ theme }) => ({
   paddingTop: 10,
   borderRadius: 8,
   boxShadow: '2px 2px 10px -3px #B5A5A2',
+  transition: '0.4s ease-out',
+  position: 'relative',
+
+  ['&:hover']: {
+    background: theme.palette.secondary.main,
+    color: 'white',
+  },
 }));
+
 export const HeroImage = styled(Image)(({}) => ({
   width: '100%',
   height: 170,
+  ['&:hover']: {
+    opacity: '0.1',
+  },
 }));
 
 export const HeroFormInput = styled(Input)({
@@ -21,8 +32,17 @@ export const HeroFormInput = styled(Input)({
 });
 
 export const HeroButton = styled(Button)(({ theme }) => ({
-  backgroundColor: theme.palette.common.black,
-  width: '100%',
+  position: 'absolute',
+  top: '41%',
+  left: '34%',
+  border: `1px solid ${theme.palette.background.paper}`,
+  color: 'white',
+
+  ['&:hover']: {
+    background: theme.palette.secondary.main,
+    color: 'white',
+    zIndex: 1,
+  },
 }));
 
 export const ButtonWrapper = styled.div(({}) => ({

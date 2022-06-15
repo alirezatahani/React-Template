@@ -6,10 +6,13 @@ import {
   ImageBox,
   HeroImage,
   HeroFormInput,
+  HeroButton,
 } from '@modules/controlPanel/content/imageControlPanel/imageControlPanel_styles';
 
 const ImageControlPanel = ({ state, handleChange }: any) => {
   const [image, setImage] = React.useState(null);
+
+  const [isShown, setIsShown] = React.useState(false);
 
   const convert2base64 = (file: any) => {
     const reader = new FileReader();
@@ -41,11 +44,20 @@ const ImageControlPanel = ({ state, handleChange }: any) => {
         <Typography variant="h5">Image</Typography>
         <Collapse open title="Source">
           <ControlPanelItemContainer>
-            <ImageBox>
+            <ImageBox
+              onMouseEnter={() => setIsShown(true)}
+              onMouseLeave={() => setIsShown(false)}
+            >
               {image ? (
                 <HeroImage src={image.image} />
               ) : (
                 <HeroImage src="https://us-wbe-img.gr-cdn.com/template/website-id-d46691d1-c4bb-4a59-a194-9012099062fd/22eae2c7-8a18-451c-b077-0cc4841f434a.png" />
+              )}
+
+              {isShown && (
+                <HeroButton variant="outlined" size="lg">
+                  Replace
+                </HeroButton>
               )}
             </ImageBox>
             <Input
