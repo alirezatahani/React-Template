@@ -2,7 +2,7 @@ import { Col, Row } from "@components/grid";
 import { Space } from "@components/space";
 import React from "react";
 import IntroduceWithImage from "../../components/IntroduceWithImage";
-import { HeroContainer, HeroItems, HeroTitlesSection, HeroTitlestext, Poster, RedDiv, RegisterBtnContainer, RegisterCol, SubTitle, TemplateButton, Text, ImageSideRow, RegisterImage, FeedbackContent } from "../../styles/design47.styles";
+import { HeroContainer, HeroItems, HeroTitlesSection, HeroTitlestext, Poster, RegisterBtnContainer, RegisterCol, SubTitle, TemplateButton, Text, ImageSideRow, RegisterImage, FeedbackContent } from "../../styles/design47.styles";
 
 
 const Home = () => {

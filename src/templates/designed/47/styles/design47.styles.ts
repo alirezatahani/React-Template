@@ -6,32 +6,6 @@ import { Space } from "@components/space";
 import { Typography } from "@components/typography";
 import styled from "styled-components";
 
-export const RegisterImage = styled(Image)`
-    object-fit: cover;
-    @media (min-width: 1024px) {
-        height: 280px;
-    }
-`;
-
-export const ImageSideRow = styled(Row)`
-    flex-direction: column;
-    background-color: red;
-    padding: 30px;
-    margin: 0;
-    @media (max-width: 1024px) {
-        width: 100%;
-    }
-`;
-
-export const RedDiv = styled.div`
-    background-color: red;
-    height: auto;
-    object-fit: cover;
-    @media (max-width: 1024px) {
-        height: 300px;
-    }
-`;
-
 export const Text = styled(Typography)({
     color: 'rgb(54, 13, 90)',
 });
@@ -92,12 +66,9 @@ export const SubTitle = styled(Typography)({
 
 export type RegisterColType = {
     imageContainer?: boolean;
-    column1?: boolean;
-    column2?: boolean;
-    column3?: boolean;
 };
 
-export const RegisterCol = styled(Col)<RegisterColType>(({ imageContainer,column1, column2, column3 }) => ({
+export const RegisterCol = styled(Col)<RegisterColType>(({ imageContainer}) => ({
     padding: imageContainer? 0 : '20px' ,
     borderRadius: imageContainer? '10%' : 0,
     display: 'flex',
@@ -105,26 +76,47 @@ export const RegisterCol = styled(Col)<RegisterColType>(({ imageContainer,column
     justifyContent: 'space-between',
 }));
 
+export const RegisterImage = styled(Image)`
+    object-fit: cover;
+    @media (min-width: 1024px) {
+        height: 280px;
+    }
+`;
+
+export const ImageSideRow = styled(Row)`
+    flex-direction: column;
+    background-color: rgb(255, 201, 0);
+    padding: 30px;
+    margin: 0;
+    @media (max-width: 1024px) {
+        width: 100%;
+    }
+`;
+
 export const RegisterBtnContainer = styled.div({
     width: '200px',
      margin: 'auto',
 });
 
+export type TemplateButtonTypes = {
+    home?: boolean;
+};
 
-export const TemplateButton = styled(Button)({
-    backgroundColor:'rgb(54, 13, 90)',
-    color:'rgb(255, 201, 0)',
+export const TemplateButton = styled(Button)<TemplateButtonTypes>(({home}) => ({
+    backgroundColor: home? 'rgb(54, 13, 90)' : 'rgb(255, 201, 0)',
+    color: home? 'rgb(255, 201, 0)' : 'rgb(54, 13, 90)',
+    margin: home? '70px 0' : 0,
     border: 'none',
     padding: '27px 40px',
     borderRadius: '999px',
     fontWeight: 'bold',
     ":hover": {
-        color:'rgb(186, 223, 96)',
-        backgroundColor:'rgb(54, 13, 90)',
+        backgroundColor: home? 'rgb(54, 13, 90)' : 'orange',
+        color: home? 'rgb(186, 223, 96)' : 'rgb(54, 13, 90)',
         opacity:1,
         border: 'none'
     }
-});
+}));
 
 export type PosterTypes = {
     image?: string;
@@ -188,24 +180,29 @@ export const ClassComponentListItems = styled.ul({
     paddingLeft: '20px',
 });
 
-export type ClassImageTypes = {
-    image: string;
-}
-
-export const ClassImageContaine = styled(Col)<ClassImageTypes>(({ image }: ClassImageTypes) =>`
-    background-image: url(${image});
-    background-size: cover;
-    background-position: center;
-    border-radius: 40px;
+export const ClassImageContainer = styled(Col)(() =>`
     @media (min-width: 1024px) {
-        width: 300px;
         height: 300px;
     }
-    @media (max-width: 1024px) {
-        width: 100%;
-        height: auto
-    }
 `);
+
+export const ClassComponentImage = styled(Image)({
+    height: 'auto',
+    objectFit: 'cover',
+    borderRadius: '40px',
+});
+
+export const EventsHeroTexts = styled(Row)`
+    display: Flex;
+    flex-direction: column
+    width: 100%;
+    justify-content: center;
+    padding: 60px 0;
+    @media (min-width: 1024px) {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+`;
 
 export const EventButtonSection = styled.div`
     display: flex;
@@ -227,27 +224,3 @@ export const EventsImages = styled(Image)({
     padding: '10px',
     borderRadius: '40px'
 });
-
-export const ClassImageContainer = styled(Col)`
-    @media (min-width: 1024px) {
-        height: 300px;
-    }
-`;
-
-export const ClassImages = styled(Image)({
-    height: 'auto',
-    objectFit: 'cover',
-    borderRadius: '40px',
-});
-
-export const EventsHeroTexts = styled(Row)`
-    display: Flex;
-    flex-direction: column
-    width: 100%;
-    justify-content: center;
-    padding: 60px 0;
-    @media (min-width: 1024px) {
-        flex-direction: row;
-        justify-content: space-between;
-    }
-`;

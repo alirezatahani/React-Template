@@ -1,4 +1,4 @@
-import { ClassComponentContainer, ClassImageContainer, ClassImages, ClassComponentListItems, Text, ClassComponentTexts} from "@templates/designed/47/styles/design47.styles";
+import { ClassComponentContainer, ClassComponentListItems, Text, ClassComponentTexts, ClassImageContainer, ClassComponentImage} from "@templates/designed/47/styles/design47.styles";
 import React from "react";
 
 type ClassComponentTypes = {
@@ -18,7 +18,7 @@ const Class = ({image, title, text, listItems, background}: ClassComponentTypes)
     return(
         <ClassComponentContainer background={background} >
             <ClassImageContainer xs={12} lg={3}>
-                <ClassImages src={image}/>
+                <ClassComponentImage src={image}/>
             </ClassImageContainer>
             <ClassComponentTexts xs={12} lg={9}>
                 <Text variant="h2">{title}</Text>

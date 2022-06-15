@@ -2,7 +2,7 @@ import { Col, Row } from "@components/grid";
 import React from "react";
 import IntroduceContent from "./IntroduceContenct";
 
-type IntrodiuseContentTypes = {
+ export type IntrodiuceTypes = {
     image1: string;
     image2: string;
     image3: string;
@@ -18,7 +18,7 @@ type IntrodiuseContentTypes = {
     home?: boolean;
 }
 
-const IntroduceWithImage = ({image1, image2, image3, title1, title2, title3, text1, text2, text3,buttonText1, buttonText2, buttonText3}: IntrodiuseContentTypes) => {
+const IntroduceWithImage = ({image1, image2, image3, title1, title2, title3, text1, text2, text3,buttonText1, buttonText2, buttonText3}: IntrodiuceTypes) => {
     return(
         <Col xs={12}>
             <Row>
@@ -38,7 +38,7 @@ const IntroduceWithImage = ({image1, image2, image3, title1, title2, title3, tex
                         buttonText={buttonText2}
                     />
                 </Col>
-                <Col xs={12} lg={4} style={{backgroundColor:'rgb(186, 223, 96)', padding:'30px', borderRadius:'0 40px 40px 0'}}>
+                <Col xs={12} lg={4} style={{backgroundColor:'rgb(186, 223, 96)', padding:'30px', borderRadius:'0 40px 40px'}}>
                     <IntroduceContent
                         image={image3}
                         title={title3}
