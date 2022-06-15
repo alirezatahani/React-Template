@@ -1,6 +1,5 @@
 import { Col, Row } from "@components/grid";
 import { Space } from "@components/space";
-import { Typography } from "@components/typography";
 import React from "react";
 import IntroduceWithImage from "../../components/IntroduceWithImage";
 import { HeroContainer, Text } from "../../styles/design47.styles";
@@ -11,6 +10,7 @@ const About = () => {
         <HeroContainer
         image="https://images.unsplash.com/photo-1583468991267-3f068b607ae1?ixid=MnwyMjUyNTN8MHwxfHNlYXJjaHw2fHx0ZWFjaGVyc3xlbnwwfHx8fDE2MjE4ODk5Nzg&ixlib=rb-1.2.1&w=1920&h=1566&crop=faces&fit=crop"
         height="580px"
+        backgroundColor
         >
             <Col xs={12} style={{margin:'100px'}}>
                 <Space align="center">

@@ -5,6 +5,7 @@ export type ImageContainerProps = {
   shape?: 'rounded' | 'circle';
 };
 export type ImageProps = {
+  wrapperProps?: React.HTMLAttributes<HTMLDivElement>;
   alt?: string;
   width?: string | number;
   height?: string | number;

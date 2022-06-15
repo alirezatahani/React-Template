@@ -1,5 +1,4 @@
 import { Image } from "@components/image";
-import { Typography } from "@components/typography";
 import { TemplateButton, Text } from "@templates/designed/47/styles/design47.styles";
 import React from "react";
 

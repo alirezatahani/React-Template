@@ -1,30 +1,44 @@
 import { Button } from "@components/button";
 import { Container } from "@components/container";
 import { Col, Row } from "@components/grid";
+import { Image } from "@components/image";
+import { Space } from "@components/space";
 import { Typography } from "@components/typography";
 import styled from "styled-components";
 
+export const RegisterImage = styled(Image)`
+    object-fit: cover;
+    @media (min-width: 1024px) {
+        height: 280px;
+    }
+`;
+
+export const ImageSideRow = styled(Row)`
+    flex-direction: column;
+    background-color: red;
+    padding: 30px;
+    margin: 0;
+    @media (max-width: 1024px) {
+        width: 100%;
+    }
+`;
+
+export const RedDiv = styled.div`
+    background-color: red;
+    height: auto;
+    object-fit: cover;
+    @media (max-width: 1024px) {
+        height: 300px;
+    }
+`;
 
 export const Text = styled(Typography)({
     color: 'rgb(54, 13, 90)',
 });
 
-export type HeroContainerTypes = {
-    image?: string;
-    height?: string
-};
-
-export type SalamType = {
-    image?: string;
-    height?: string
-};
-export const Salam = styled(Col)<SalamType>(({ image }) => ({
-    backgroundImage: `url(${image})`,
-    backgroundSize:'cover',
-    width: '100%',
-    height: 'auto',
-    backgroundPosition:'center'
-}));
+export const RoundedImage = styled(Image)({
+    borderRadius: '40px',
+});
 
 export type HeroTypes = {
     src?: string;
@@ -33,7 +47,13 @@ export type HeroTypes = {
     color?: string;
 };
 
-export const HeroContainer = styled(Container)<HeroContainerTypes>(({ image, height }) => ({
+export type HeroContainerTypes = {
+    image?: string;
+    height?: string;
+    backgroundColor?: boolean;
+};
+
+export const HeroContainer = styled(Container)<HeroContainerTypes>(({ image, height, backgroundColor}) => ({
     background: `url(${image})`,
     backgroundSize: 'cover',
     backgroundPosition: 'center center',
@@ -43,6 +63,14 @@ export const HeroContainer = styled(Container)<HeroContainerTypes>(({ image, hei
     position: 'relative',
     zIndex: 1,
     minWidth: '100vw',
+    ':after': {
+        content: "''",
+        position: 'absolute',
+        inset: 0,
+        background: backgroundColor? 'rgb(199, 191, 232)' : null,
+        opacity: 0.7,
+        zIndex: -1,
+      },
 }));
 
 export const HeroItems = styled(Col)({
@@ -98,15 +126,6 @@ export const TemplateButton = styled(Button)({
     }
 });
 
-export const Date = styled(Col)({
-    display: 'flex',
-    flexDirection: 'column',
-    margin: '60px 0',
-    color: 'rgb(54, 13, 90)',
-    float: 'right',
-    marginRight: '20px'
-});
-
 export type PosterTypes = {
     image?: string;
 };
@@ -131,9 +150,12 @@ export const Poster = styled.div<PosterTypes>(({ image }) => ({
       },
 }));
 
-export type IntroduseTypes = {
-    image?: string;
-};
+export const FeedbackContent = styled.div`
+    background-color: rgb(255, 201, 0);
+    border-radius: 25px;
+    margin: 100px 200px;
+    padding: 60px 100px;
+`;
 
 export const Introduce = styled(Row)`
     display: flex;
@@ -142,5 +164,90 @@ export const Introduce = styled(Row)`
     @media (max-width: 1024px) {
         width: '100%;
         height: 100%;
+    }
+`;
+
+export const HeroContent = styled(Space)({
+    height: '100%',
+});
+
+export type ClassComponentContainerTypes = {
+    background?: string;
+}
+
+export const ClassComponentContainer = styled(Row)<ClassComponentContainerTypes>(({background}) => ({
+    backgroundColor: background,
+    padding: '100px 40px'
+}));
+
+export const ClassComponentTexts = styled(Col)({
+    padding: '25px',
+});
+
+export const ClassComponentListItems = styled.ul({
+    paddingLeft: '20px',
+});
+
+export type ClassImageTypes = {
+    image: string;
+}
+
+export const ClassImageContaine = styled(Col)<ClassImageTypes>(({ image }: ClassImageTypes) =>`
+    background-image: url(${image});
+    background-size: cover;
+    background-position: center;
+    border-radius: 40px;
+    @media (min-width: 1024px) {
+        width: 300px;
+        height: 300px;
+    }
+    @media (max-width: 1024px) {
+        width: 100%;
+        height: auto
+    }
+`);
+
+export const EventButtonSection = styled.div`
+    display: flex;
+    flex-direction: column;
+    @media (min-width: 1024px) {
+        flex-direction: row;
+    }
+`;
+
+export const EventsImageContainer = styled(Col)({
+    height: '600px',
+    position: 'relative',
+});
+
+export const EventsImages = styled(Image)({
+    position: 'absolute',
+    height: '100%',
+    objectFit: 'cover',
+    padding: '10px',
+    borderRadius: '40px'
+});
+
+export const ClassImageContainer = styled(Col)`
+    @media (min-width: 1024px) {
+        height: 300px;
+    }
+`;
+
+export const ClassImages = styled(Image)({
+    height: 'auto',
+    objectFit: 'cover',
+    borderRadius: '40px',
+});
+
+export const EventsHeroTexts = styled(Row)`
+    display: Flex;
+    flex-direction: column
+    width: 100%;
+    justify-content: center;
+    padding: 60px 0;
+    @media (min-width: 1024px) {
+        flex-direction: row;
+        justify-content: space-between;
     }
 `;
