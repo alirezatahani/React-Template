@@ -1,13 +1,17 @@
 import styled from 'styled-components';
-import { Input, Button } from '@components/index';
+import { Input, Button, Image } from '@components/index';
 
 export const ImageBox = styled.div(({ theme }) => ({
   width: '100%',
-  height: 'auto',
+  height: 190,
   background: theme.palette.background.paper,
-  padding: 20,
+  paddingTop: 10,
   borderRadius: 8,
   boxShadow: '2px 2px 10px -3px #B5A5A2',
+}));
+export const HeroImage = styled(Image)(({}) => ({
+  width: '100%',
+  height: 170,
 }));
 
 export const HeroFormInput = styled(Input)({

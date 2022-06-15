@@ -1,9 +1,10 @@
 import React from 'react';
-import { Collapse, Typography, Image, Input, Button } from '@components/index';
+import { Collapse, Typography, Input, Button } from '@components/index';
 import { ControlPanelItemContainer } from '@modules/controlPanel/styles/controlPanel.styles';
 import { ControlPanelSettingContainer } from './imageControlPanel_styles';
 import {
   ImageBox,
+  HeroImage,
   HeroFormInput,
 } from '@modules/controlPanel/content/imageControlPanel/imageControlPanel_styles';
 
@@ -34,13 +35,13 @@ const ImageControlPanel = ({ state, handleChange }: any) => {
         <Collapse open title="Source">
           <ControlPanelItemContainer>
             <ImageBox>
-              <Image
-                shape="rounded"
-                src="https://us-wbe-img.gr-cdn.com/template/website-id-d46691d1-c4bb-4a59-a194-9012099062fd/22eae2c7-8a18-451c-b077-0cc4841f434a.png"
-              />
+              {image ? (
+                <HeroImage src={image.image} />
+              ) : (
+                <HeroImage src="https://us-wbe-img.gr-cdn.com/template/website-id-d46691d1-c4bb-4a59-a194-9012099062fd/22eae2c7-8a18-451c-b077-0cc4841f434a.png" />
+              )}
             </ImageBox>
             <Input type="file" name="files" onChange={uploadHandler} />
-            {image ? <Image src={image.image} /> : null}
           </ControlPanelItemContainer>
         </Collapse>
 
