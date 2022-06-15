@@ -28,6 +28,13 @@ const ImageControlPanel = ({ state, handleChange }: any) => {
     }
   };
 
+  const handleChangeImage = (src: any) => {
+    handleChange({
+      kind: 'file',
+      value: src,
+    });
+  };
+
   return (
     <React.Fragment>
       <ControlPanelSettingContainer>
@@ -41,7 +48,15 @@ const ImageControlPanel = ({ state, handleChange }: any) => {
                 <HeroImage src="https://us-wbe-img.gr-cdn.com/template/website-id-d46691d1-c4bb-4a59-a194-9012099062fd/22eae2c7-8a18-451c-b077-0cc4841f434a.png" />
               )}
             </ImageBox>
-            <Input type="file" name="files" onChange={uploadHandler} />
+            <Input
+              type="file"
+              value={state.files}
+              name="files"
+              onChange={uploadHandler}
+            />
+            <Button onClick={() => handleChangeImage(image.image)}>
+              Add File
+            </Button>
           </ControlPanelItemContainer>
         </Collapse>
 
