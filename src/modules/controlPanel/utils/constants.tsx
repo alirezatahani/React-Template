@@ -5,11 +5,12 @@ import {
   BiFont,
   BiAlignLeft,
   BiAlignMiddle,
+  BiHorizontalCenter,
   BiAlignRight,
   BiAlignJustify,
   BiUnderline,
 } from 'react-icons/bi';
-import { TbLetterT } from 'react-icons/tb';
+import { TbLetterT, TbArrowBarToRight, TbArrowBarToLeft } from 'react-icons/tb';
 import { MdFormatClear } from 'react-icons/md';
 
 export const fontTypeOptions = [
@@ -97,5 +98,26 @@ export const alignOptions = [
     label: <BiAlignJustify />,
     name: 'textJustify',
     kind: 'textAlign',
+  },
+];
+
+export const alignImageOptions = [
+  {
+    value: 'left',
+    label: <TbArrowBarToLeft />,
+    name: 'alignLeft',
+    kind: 'alignMent',
+  },
+  {
+    value: 'center',
+    label: <BiHorizontalCenter />,
+    name: 'alignCenter',
+    kind: 'alignMent',
+  },
+  {
+    value: 'right',
+    label: <TbArrowBarToRight />,
+    name: 'alignRight',
+    kind: 'alignMent',
   },
 ];

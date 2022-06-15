@@ -30,21 +30,31 @@ export const Blank3 = ({ setSelected, state }: any) => {
 
       <SectionFluid>
         <MainContainer fluid>
-          <Row>
-            <Col xs={12}>
-              {!state.file ? (
-                <Image
-                  src="https://us-wbe-img.gr-cdn.com/template/website-id-d46691d1-c4bb-4a59-a194-9012099062fd/22eae2c7-8a18-451c-b077-0cc4841f434a.png"
-                  onClick={() => setSelected({ type: 'image' })}
-                />
-              ) : (
-                <Image
-                  src={state.file}
-                  onClick={() => setSelected({ type: 'image' })}
-                />
-              )}
-            </Col>
-          </Row>
+          <MainContainer>
+            <Row>
+              <Col xs={12}>
+                {!state.file ? (
+                  <Image
+                    src="https://us-wbe-img.gr-cdn.com/template/website-id-d46691d1-c4bb-4a59-a194-9012099062fd/22eae2c7-8a18-451c-b077-0cc4841f434a.png"
+                    onClick={() => setSelected({ type: 'image' })}
+                    style={{
+                      textAlign: state.alignMent,
+                    }}
+                  />
+                ) : (
+                  <Image
+                    src={state.file}
+                    onClick={() => setSelected({ type: 'image' })}
+                    height={520}
+                    style={{
+                      textAlign: state.alignMent,
+                    }}
+                  />
+                )}
+              </Col>
+            </Row>
+          </MainContainer>
+
           <Row>
             <Col xs={12}>
               <Typography
