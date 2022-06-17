@@ -70,7 +70,7 @@ export const Blank3 = ({ setSelected, state }: any) => {
             <Col xs={12} alignItems="center" justify="center" display="flex">
               <HeroButton
                 onClick={() => setSelected({ type: 'button' })}
-                variant={state.variant}
+                variant={state.btnVariant}
                 size={state.btnSize}
                 shape={state.btnShape}
               >

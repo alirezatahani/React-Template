@@ -15,6 +15,7 @@ type InitialValueType = {
   fontType: string;
   textAlign: string;
   textDecoration: string | string[];
+  btnText?: string;
 };
 
 type ControlPanelProps = {
