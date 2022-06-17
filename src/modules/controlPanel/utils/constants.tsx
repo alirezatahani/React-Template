@@ -12,17 +12,16 @@ import {
 import { TbLetterT } from 'react-icons/tb';
 import { MdFormatClear } from 'react-icons/md';
 
-export const typographyTranslator = {
-  h1: 'Heading 1',
-  h2: 'Heading 2',
-  h3: 'Heading 3',
-  h4: 'Heading 4',
-  h5: 'Heading 5',
-  body1: 'Paragraph',
-  subtitle1: 'Subtitle 1',
-  subtitle2: 'Subtitle 2',
-};
-
+export const fontTypeOptions = [
+  { value: 'h1', label: 'Heading 1', kind: 'fontType' },
+  { value: 'h2', label: 'Heading 2', kind: 'fontType' },
+  { value: 'h3', label: 'Heading 3', kind: 'fontType' },
+  { value: 'h4', label: 'Heading 4', kind: 'fontType' },
+  { value: 'h5', label: 'Heading 5', kind: 'fontType' },
+  { value: 'body1', label: 'Paragraph', kind: 'fontType' },
+  { value: 'subtitle1', label: 'Subtitle 1', kind: 'fontType' },
+  { value: 'subtitle1', label: 'Subtitle 1', kind: 'fontType' },
+];
 export const fontFamilyOptions = [
   { value: 'Roboto', label: 'Roboto', kind: 'fontFamily' },
   { value: 'Poppins', label: 'Poppins', kind: 'fontFamily' },

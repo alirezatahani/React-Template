@@ -1,5 +1,12 @@
-export type HandleChangeSelectTypes = { kind: string; value: string };
-export type HandleChangeCheckBoxTypes = {
-  event: { target: { name: string } };
-  values: any;
+import { InitialValueType } from '@modules/controlPanel/controlPanel_types';
+import React from 'react';
+
+export type FontTypeOptionDataType = {
+  kind?: string;
+  label?: string;
+  value?: string;
+};
+export type TypographyControlPanelProps = {
+  initialValue?: InitialValueType;
+  onChange?: (name: string, value: string | number | string[]) => any;
 };
