@@ -104,7 +104,7 @@ export const HeroSpanRight = styled.span(({}) => ({
   alignItem: 'center',
   borderRadius: '0px 4px 4px 0px',
 }));
-export const HeroResult = styled.span(({ theme }) => ({
+export const HeroResult = styled.span(({}) => ({
   width: 70,
   height: 30,
 }));

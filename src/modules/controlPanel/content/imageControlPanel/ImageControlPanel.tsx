@@ -72,6 +72,18 @@ const ImageControlPanel = ({ state, handleChange }: any) => {
       value: e.target.value,
     });
   };
+  const handleChangeWidth = (e: any) => {
+    handleChange({
+      kind: 'width',
+      value: e.target.value,
+    });
+  };
+  const handleChangeHeight = (e: any) => {
+    handleChange({
+      kind: 'height',
+      value: e.target.value,
+    });
+  };
 
   return (
     <React.Fragment>
@@ -147,7 +159,11 @@ const ImageControlPanel = ({ state, handleChange }: any) => {
             <CounterContainer>
               <HeroSpanLeft>+</HeroSpanLeft>
               <HeroResult>
-                <FormInput />
+                <FormInput
+                  name="width"
+                  value={state.width}
+                  onChange={handleChangeWidth}
+                />
               </HeroResult>
               <HeroSpanRight>-</HeroSpanRight>
             </CounterContainer>
@@ -155,7 +171,11 @@ const ImageControlPanel = ({ state, handleChange }: any) => {
             <CounterContainer>
               <HeroSpanLeft>+</HeroSpanLeft>
               <HeroResult>
-                <FormInput />
+                <FormInput
+                  name="height"
+                  value={state.height}
+                  onChange={handleChangeHeight}
+                />
               </HeroResult>
               <HeroSpanRight>-</HeroSpanRight>
             </CounterContainer>
