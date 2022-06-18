@@ -11,6 +11,7 @@ export const Home = () => {
       <Link to="blank/3">Blank3</Link>
       <Link to="blank/2">Blank2</Link>
       <Link to="create">Create</Link>
+      <Link to="selector">Selector</Link>
     </div>
   );
 };

@@ -5,6 +5,7 @@ import { Design37 } from '@templates/designed/37';
 import { Blank3 } from '@templates/plain/blank3';
 import { Design94 } from '@templates/designed/94';
 import { Design24 } from '@templates/designed/24';
+import { ComponentsSelector } from '@modules/ComponentsSelector/ComponentsSelector';
 import { Blank1 } from '@templates/plain/blank1';
 import { Blank2 } from '@templates/plain/blank2';
 
@@ -19,6 +20,7 @@ export const Routes = () => {
       <Route path="blank/3" element={<Blank3 />} />
       <Route path="blank/2" element={<Blank2 />} />
       <Route path="create" element={<Create />} />
+      <Route path="selector" element={<ComponentsSelector />} />
     </ReactRoutes>
   );
 };
