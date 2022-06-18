@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import ReactDOM from 'react-dom';
 import { FaTimes } from 'react-icons/fa';
 import {
@@ -10,14 +10,14 @@ import {
 } from '../styles/modal.styles';
 import { ModalProps } from './modal_types';
 
-const Modal: React.FC<ModalProps> = ({ ...props }: ModalProps) => {
+const Modal: React.FC<ModalProps> = ({ visible, ...props }: ModalProps) => {
   return ReactDOM.createPortal(
     <>
-      <ModalWrapper>
-        <ModalSection visible={props.visible}>
+      <ModalWrapper visible={visible}>
+        <ModalSection visible={visible}>
           <ModalContainer>
             <ModalContent>{props.children}</ModalContent>
-            <ModalClose>
+            <ModalClose onClick={props.onClose}>
               <FaTimes size={18} />
             </ModalClose>
           </ModalContainer>
