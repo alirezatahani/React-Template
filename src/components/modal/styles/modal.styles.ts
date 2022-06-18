@@ -1,7 +1,8 @@
 import styled from 'styled-components';
-import { ModalProps } from '../content/modal_types';
+import { ModalWrapperProps } from '../content/modal_types';
 
-export const ModalWrapper = styled.div({
+export const ModalWrapper = styled.div<ModalWrapperProps>(({visible})=>({
+  display:visible?"block":"none",
   position:"fixed",
   top:0,
   left:0,
@@ -9,8 +10,8 @@ export const ModalWrapper = styled.div({
   bottom:0,
   backgroundColor: 'rgba(0,0,0,0.3)',
   zIndex:9999,
-})
-export const ModalSection = styled.div<ModalProps>(({ visible }) => ({
+}))
+export const ModalSection = styled.div<ModalWrapperProps>(({ visible }) => ({
   display: visible ? 'block' : 'none',
   width:"100%",
   position: 'fixed',
