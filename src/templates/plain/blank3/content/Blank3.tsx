@@ -44,8 +44,8 @@ export const Blank3 = ({ setSelected, state }: any) => {
                 ) : (
                   <Image
                     src={state.file}
+                    alt={state.altText}
                     onClick={() => setSelected({ type: 'image' })}
-                    height={520}
                     style={{
                       textAlign: state.alignMent,
                     }}

@@ -18,7 +18,6 @@ import { alignImageOptions } from '@modules/controlPanel/utils/constants';
 
 const ImageControlPanel = ({ state, handleChange }: any) => {
   const [image, setImage] = React.useState(null);
-
   const [isShown, setIsShown] = React.useState(false);
 
   const convert2base64 = (file: any) => {
@@ -42,6 +41,18 @@ const ImageControlPanel = ({ state, handleChange }: any) => {
     handleChange({
       kind: 'file',
       value: src,
+    });
+  };
+  const handleChangeAltText = (e: any) => {
+    handleChange({
+      kind: 'altText',
+      value: e.target.value,
+    });
+  };
+  const handleChangeUrl = (e: any) => {
+    handleChange({
+      kind: 'Url',
+      value: e.target.value,
     });
   };
 
@@ -84,10 +95,18 @@ const ImageControlPanel = ({ state, handleChange }: any) => {
             scale="sm"
             rightAddon="Go"
             placeholder="Enter Image Url"
+            value={state.url}
+            onChange={handleChangeUrl}
           />
         </Collapse>
         <Collapse title="alt text">
-          <HeroFormInput name="altText" scale="sm" placeholder="alt text" />
+          <HeroFormInput
+            name="altText"
+            scale="sm"
+            placeholder="alt text"
+            value={state.altText}
+            onChange={handleChangeAltText}
+          />
         </Collapse>
         <Collapse title="Image window setting">
           <BtnCheckbox
