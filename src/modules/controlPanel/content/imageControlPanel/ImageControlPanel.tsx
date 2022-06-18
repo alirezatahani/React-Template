@@ -5,6 +5,7 @@ import {
   Input,
   Button,
   BtnCheckbox,
+  Modal,
 } from '@components/index';
 import { ControlPanelItemContainer } from '@modules/controlPanel/styles/controlPanel.styles';
 import { ControlPanelSettingContainer } from './imageControlPanel_styles';
@@ -19,6 +20,7 @@ import { alignImageOptions } from '@modules/controlPanel/utils/constants';
 const ImageControlPanel = ({ state, handleChange }: any) => {
   const [image, setImage] = React.useState(null);
   const [isShown, setIsShown] = React.useState(false);
+  const [modal, setModal] = React.useState(false);
 
   const convert2base64 = (file: any) => {
     const reader = new FileReader();
@@ -73,20 +75,26 @@ const ImageControlPanel = ({ state, handleChange }: any) => {
               )}
 
               {isShown && (
-                <HeroButton variant="outlined" size="lg">
+                <HeroButton
+                  variant="outlined"
+                  size="lg"
+                  onClick={() => setModal(true)}
+                >
                   Replace
                 </HeroButton>
               )}
             </ImageBox>
-            <Input
-              type="file"
-              value={state.files}
-              name="files"
-              onChange={uploadHandler}
-            />
-            <Button onClick={() => handleChangeImage(image.image)}>
-              Add File
-            </Button>
+            <Modal visible={modal} onClose={() => setModal(false)}>
+              <Input
+                type="file"
+                value={state.files}
+                name="files"
+                onChange={uploadHandler}
+              />
+              <Button onClick={() => handleChangeImage(image.image)}>
+                Add File
+              </Button>
+            </Modal>
           </ControlPanelItemContainer>
         </Collapse>
         <Collapse title="Embed a file form a Url">
