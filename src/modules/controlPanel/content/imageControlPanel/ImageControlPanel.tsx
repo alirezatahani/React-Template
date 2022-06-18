@@ -59,6 +59,7 @@ const ImageControlPanel = ({ state, handleChange }: any) => {
       kind: 'file',
       value: src,
     });
+    setModal(false);
   };
   const handleChangeAltText = (e: any) => {
     handleChange({
