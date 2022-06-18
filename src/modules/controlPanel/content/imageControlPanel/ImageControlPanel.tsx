@@ -164,6 +164,7 @@ const ImageControlPanel = ({ state, handleChange }: any) => {
                   name="width"
                   value={state.width}
                   onChange={handleChangeWidth}
+                  type="number"
                 />
               </HeroResult>
               <HeroSpanRight>-</HeroSpanRight>
@@ -175,6 +176,7 @@ const ImageControlPanel = ({ state, handleChange }: any) => {
                 <FormInput
                   name="height"
                   value={state.height}
+                  type="number"
                   onChange={handleChangeHeight}
                 />
               </HeroResult>

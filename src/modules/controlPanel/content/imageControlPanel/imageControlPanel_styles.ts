@@ -124,4 +124,7 @@ export const WrapperCounter = styled.div(({}) => ({
 export const FormInput = styled(Input)({
   borderRadius: 0,
   border: '1px solid #F5F5F5',
+  ' :focus': {
+    outline: 'none',
+  },
 });
