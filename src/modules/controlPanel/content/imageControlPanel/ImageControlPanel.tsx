@@ -1,7 +1,13 @@
 import React from 'react';
 import { Collapse, Typography, BtnCheckbox, Modal } from '@components/index';
-import { ControlPanelItemContainer } from '@modules/controlPanel/styles/controlPanel.styles';
-import { ControlPanelSettingContainer } from './imageControlPanel_styles';
+import {
+  ControlPanelItemContainer,
+  ControlPanelItemLabel,
+} from '@modules/controlPanel/styles/controlPanel.styles';
+import {
+  ControlPanelSettingContainer,
+  Wrapper,
+} from './imageControlPanel_styles';
 import {
   ImageBox,
   HeroImage,
@@ -10,6 +16,11 @@ import {
   ModalContent,
   InputFile,
   ButtonAddFile,
+  CounterContainer,
+  HeroSpan,
+  HeroResult,
+  WrapperCounter,
+  WrapperLabel,
 } from '@modules/controlPanel/content/imageControlPanel/imageControlPanel_styles';
 import { alignImageOptions } from '@modules/controlPanel/utils/constants';
 
@@ -115,6 +126,33 @@ const ImageControlPanel = ({ state, handleChange }: any) => {
           />
         </Collapse>
         <Collapse title="Image window setting">
+          <WrapperLabel>
+            <ControlPanelItemLabel>
+              <Typography variant="body1">width</Typography>
+            </ControlPanelItemLabel>
+            <ControlPanelItemLabel>
+              <Typography variant="body1">Height</Typography>
+            </ControlPanelItemLabel>
+          </WrapperLabel>
+
+          <WrapperCounter>
+            <CounterContainer>
+              <HeroSpan>+</HeroSpan>
+              <HeroResult>
+                <Typography variant="body1">result</Typography>
+              </HeroResult>
+              <HeroSpan>-</HeroSpan>
+            </CounterContainer>
+
+            <CounterContainer>
+              <HeroSpan>+</HeroSpan>
+              <HeroResult>
+                <Typography variant="body1">result</Typography>
+              </HeroResult>
+              <HeroSpan>-</HeroSpan>
+            </CounterContainer>
+          </WrapperCounter>
+
           <BtnCheckbox
             type="radio"
             name="alignMent"

@@ -77,3 +77,41 @@ export const ButtonAddFile = styled(Button)(({ theme }) => ({
   border: 'none',
   borderRadius: 4,
 }));
+
+export const CounterContainer = styled.div(({}) => ({
+  display: 'flex',
+  justifyContent: 'center',
+  alignItem: 'center',
+}));
+
+export const HeroSpan = styled.span(({}) => ({
+  width: 30,
+  height: 30,
+  backgroundColor: '#F5F5F5',
+  display: 'flex',
+  justifyContent: 'center',
+  cursor: 'pointer',
+  alignItem: 'center',
+  borderRadius: 6,
+}));
+export const HeroResult = styled.span(({ theme }) => ({
+  boxShadow: '2px 2px 4px 2px #F5fF5F5',
+  width: 60,
+  height: 30,
+  display: 'flex',
+  justifyContent: 'center',
+  cursor: 'pointer',
+  alignItem: 'center',
+}));
+export const WrapperLabel = styled.div(({}) => ({
+  display: 'flex',
+  justifyContent: 'space-around',
+  alignItem: 'center',
+}));
+
+export const WrapperCounter = styled.div(({}) => ({
+  display: 'flex',
+  justifyContent: 'space-around',
+  alignItem: 'center',
+  marginBottom: '2rem',
+}));
