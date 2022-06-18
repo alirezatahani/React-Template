@@ -1,5 +1,11 @@
 import React from 'react';
-import { Collapse, Typography, BtnCheckbox, Modal } from '@components/index';
+import {
+  Collapse,
+  Typography,
+  BtnCheckbox,
+  Modal,
+  Input,
+} from '@components/index';
 import {
   ControlPanelItemContainer,
   ControlPanelItemLabel,
@@ -17,10 +23,12 @@ import {
   InputFile,
   ButtonAddFile,
   CounterContainer,
-  HeroSpan,
+  HeroSpanLeft,
+  HeroSpanRight,
   HeroResult,
   WrapperCounter,
   WrapperLabel,
+  FormInput,
 } from '@modules/controlPanel/content/imageControlPanel/imageControlPanel_styles';
 import { alignImageOptions } from '@modules/controlPanel/utils/constants';
 
@@ -137,19 +145,19 @@ const ImageControlPanel = ({ state, handleChange }: any) => {
 
           <WrapperCounter>
             <CounterContainer>
-              <HeroSpan>+</HeroSpan>
+              <HeroSpanLeft>+</HeroSpanLeft>
               <HeroResult>
-                <Typography variant="body1">result</Typography>
+                <FormInput />
               </HeroResult>
-              <HeroSpan>-</HeroSpan>
+              <HeroSpanRight>-</HeroSpanRight>
             </CounterContainer>
 
             <CounterContainer>
-              <HeroSpan>+</HeroSpan>
+              <HeroSpanLeft>+</HeroSpanLeft>
               <HeroResult>
-                <Typography variant="body1">result</Typography>
+                <FormInput />
               </HeroResult>
-              <HeroSpan>-</HeroSpan>
+              <HeroSpanRight>-</HeroSpanRight>
             </CounterContainer>
           </WrapperCounter>
 
