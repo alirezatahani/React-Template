@@ -1,12 +1,5 @@
 import React from 'react';
-import {
-  Collapse,
-  Typography,
-  Input,
-  Button,
-  BtnCheckbox,
-  Modal,
-} from '@components/index';
+import { Collapse, Typography, BtnCheckbox, Modal } from '@components/index';
 import { ControlPanelItemContainer } from '@modules/controlPanel/styles/controlPanel.styles';
 import { ControlPanelSettingContainer } from './imageControlPanel_styles';
 import {
@@ -14,6 +7,9 @@ import {
   HeroImage,
   HeroFormInput,
   HeroButton,
+  ModalContent,
+  InputFile,
+  ButtonAddFile,
 } from '@modules/controlPanel/content/imageControlPanel/imageControlPanel_styles';
 import { alignImageOptions } from '@modules/controlPanel/utils/constants';
 
@@ -85,15 +81,17 @@ const ImageControlPanel = ({ state, handleChange }: any) => {
               )}
             </ImageBox>
             <Modal visible={modal} onClose={() => setModal(false)}>
-              <Input
-                type="file"
-                value={state.files}
-                name="files"
-                onChange={uploadHandler}
-              />
-              <Button onClick={() => handleChangeImage(image.image)}>
-                Add File
-              </Button>
+              <ModalContent>
+                <InputFile
+                  type="file"
+                  value={state.files}
+                  name="files"
+                  onChange={uploadHandler}
+                />
+                <ButtonAddFile onClick={() => handleChangeImage(image.image)}>
+                  Add File
+                </ButtonAddFile>
+              </ModalContent>
             </Modal>
           </ControlPanelItemContainer>
         </Collapse>

@@ -61,3 +61,19 @@ export const ControlPanelSettingContainer = styled.div(({ theme }) => ({
   padding: 10,
   overflow: 'scroll',
 }));
+
+export const ModalContent = styled.div(({}) => ({
+  display: 'flex',
+  justifyContent: 'center',
+  alignItem: 'center',
+  marginLeft: '14rem',
+}));
+
+export const InputFile = styled(Input)({
+  border: 'none',
+});
+export const ButtonAddFile = styled(Button)(({ theme }) => ({
+  backgroundColor: theme.palette.success[600],
+  border: 'none',
+  borderRadius: 4,
+}));
