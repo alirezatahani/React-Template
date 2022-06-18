@@ -103,7 +103,7 @@ export const alignOptions = [
 
 export const alignImageOptions = [
   {
-    value: 'left',
+    value: 'flex-start',
     label: <TbArrowBarToLeft />,
     name: 'alignLeft',
     kind: 'alignMent',
@@ -115,7 +115,7 @@ export const alignImageOptions = [
     kind: 'alignMent',
   },
   {
-    value: 'right',
+    value: 'flex-end',
     label: <TbArrowBarToRight />,
     name: 'alignRight',
     kind: 'alignMent',

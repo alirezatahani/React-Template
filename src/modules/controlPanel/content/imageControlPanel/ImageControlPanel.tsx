@@ -1,19 +1,10 @@
 import React from 'react';
-import {
-  Collapse,
-  Typography,
-  BtnCheckbox,
-  Modal,
-  Input,
-} from '@components/index';
+import { Collapse, Typography, BtnCheckbox, Modal } from '@components/index';
 import {
   ControlPanelItemContainer,
   ControlPanelItemLabel,
 } from '@modules/controlPanel/styles/controlPanel.styles';
-import {
-  ControlPanelSettingContainer,
-  Wrapper,
-} from './imageControlPanel_styles';
+import { ControlPanelSettingContainer } from './imageControlPanel_styles';
 import {
   ImageBox,
   HeroImage,
@@ -23,19 +14,19 @@ import {
   InputFile,
   ButtonAddFile,
   CounterContainer,
-  HeroSpanLeft,
-  HeroSpanRight,
   HeroResult,
   WrapperCounter,
   WrapperLabel,
   FormInput,
 } from '@modules/controlPanel/content/imageControlPanel/imageControlPanel_styles';
 import { alignImageOptions } from '@modules/controlPanel/utils/constants';
-
+//end imports
 const ImageControlPanel = ({ state, handleChange }: any) => {
   const [image, setImage] = React.useState(null);
   const [isShown, setIsShown] = React.useState(false);
   const [modal, setModal] = React.useState(false);
+
+  //load image
 
   const convert2base64 = (file: any) => {
     const reader = new FileReader();
@@ -53,6 +44,8 @@ const ImageControlPanel = ({ state, handleChange }: any) => {
       convert2base64(e.target.files[0]);
     }
   };
+
+  //state Handler
 
   const handleChangeImage = (src: any) => {
     handleChange({
@@ -114,6 +107,12 @@ const ImageControlPanel = ({ state, handleChange }: any) => {
             </ImageBox>
             <Modal visible={modal} onClose={() => setModal(false)}>
               <ModalContent>
+                <Typography
+                  variant="h5"
+                  style={{ textAlign: 'center', marginBottom: '2rem' }}
+                >
+                  Upload from your Device
+                </Typography>
                 <InputFile
                   type="file"
                   value={state.files}
@@ -127,7 +126,7 @@ const ImageControlPanel = ({ state, handleChange }: any) => {
             </Modal>
           </ControlPanelItemContainer>
         </Collapse>
-        <Collapse title="Embed a file form a Url">
+        <Collapse open title="Embed a file form a Url">
           <HeroFormInput
             name="url"
             scale="sm"
@@ -146,7 +145,7 @@ const ImageControlPanel = ({ state, handleChange }: any) => {
             onChange={handleChangeAltText}
           />
         </Collapse>
-        <Collapse title="Image window setting">
+        <Collapse open title="Image window setting">
           <WrapperLabel>
             <ControlPanelItemLabel>
               <Typography variant="body1">width</Typography>
@@ -158,7 +157,7 @@ const ImageControlPanel = ({ state, handleChange }: any) => {
 
           <WrapperCounter>
             <CounterContainer>
-              <HeroSpanLeft>+</HeroSpanLeft>
+              {/* <HeroSpanLeft>+</HeroSpanLeft> */}
               <HeroResult>
                 <FormInput
                   name="width"
@@ -167,11 +166,11 @@ const ImageControlPanel = ({ state, handleChange }: any) => {
                   type="number"
                 />
               </HeroResult>
-              <HeroSpanRight>-</HeroSpanRight>
+              {/* <HeroSpanRight>-</HeroSpanRight> */}
             </CounterContainer>
 
             <CounterContainer>
-              <HeroSpanLeft>+</HeroSpanLeft>
+              {/* <HeroSpanLeft>+</HeroSpanLeft> */}
               <HeroResult>
                 <FormInput
                   name="height"
@@ -180,7 +179,7 @@ const ImageControlPanel = ({ state, handleChange }: any) => {
                   onChange={handleChangeHeight}
                 />
               </HeroResult>
-              <HeroSpanRight>-</HeroSpanRight>
+              {/* <HeroSpanRight>-</HeroSpanRight> */}
             </CounterContainer>
           </WrapperCounter>
 

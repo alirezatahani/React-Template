@@ -63,17 +63,22 @@ export const ControlPanelSettingContainer = styled.div(({ theme }) => ({
 }));
 
 export const ModalContent = styled.div(({}) => ({
-  display: 'flex',
-  justifyContent: 'center',
-  alignItem: 'center',
-  marginLeft: '14rem',
+  display: 'grid',
+  marginLeft: '11em',
+  padding: '8rem',
 }));
 
-export const InputFile = styled(Input)({
+export const InputFile = styled(Input)(({ theme }) => ({
+  ...theme.typography.body1,
+  backgroundColor: theme.palette.success.main,
+  color: theme.palette.background.paper,
   border: 'none',
-});
+  padding: 5,
+}));
 export const ButtonAddFile = styled(Button)(({ theme }) => ({
-  backgroundColor: theme.palette.success[600],
+  backgroundColor: theme.palette.common.black,
+  color: theme.palette.background.paper,
+  marginLeft: 4,
   border: 'none',
   borderRadius: 4,
 }));
@@ -105,8 +110,9 @@ export const HeroSpanRight = styled.span(({}) => ({
   borderRadius: '0px 4px 4px 0px',
 }));
 export const HeroResult = styled.span(({}) => ({
-  width: 70,
+  width: 120,
   height: 30,
+  borderRadius: 4,
 }));
 export const WrapperLabel = styled.div(({}) => ({
   display: 'flex',
@@ -122,8 +128,8 @@ export const WrapperCounter = styled.div(({}) => ({
 }));
 
 export const FormInput = styled(Input)({
-  borderRadius: 0,
-  border: '1px solid #F5F5F5',
+  borderRadius: 4,
+  border: '2px solid #F5F5F5',
   ' :focus': {
     outline: 'none',
   },
