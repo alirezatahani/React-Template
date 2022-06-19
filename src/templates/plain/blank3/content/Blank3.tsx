@@ -18,6 +18,7 @@ import {
   Button,
   Typography,
   Container,
+  Slider,
 } from '../../../../components';
 import { CardMedia } from '../../../../components/card/content/cardMedia/index';
 import { CardContent } from '../../../../components/card/content/cardContent/index';
