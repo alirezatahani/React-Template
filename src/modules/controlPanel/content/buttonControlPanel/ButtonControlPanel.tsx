@@ -45,6 +45,8 @@ const ButtonControlPanel = ({
     onChange(event.target.name, values);
   };
 
+  const { btnSize, btnText } = initialValue;
+
   return (
     <ControlPanelSettingContainer>
       <Typography variant="h5">Button</Typography>
@@ -55,7 +57,7 @@ const ButtonControlPanel = ({
             onChange={handleChangeBtnText}
             name="btnText"
             placeholder="Enter button text ..."
-            value={initialValue.btnText}
+            value={btnText}
           />
         </ControlPanelItemContainer>
         <ControlPanelItemContainer>
@@ -134,6 +136,7 @@ const ButtonControlPanel = ({
                 type="radio"
                 name="btnSize"
                 options={btnSizeOptions}
+                defaultValue={btnSize}
               />
             </Col>
           </Row>

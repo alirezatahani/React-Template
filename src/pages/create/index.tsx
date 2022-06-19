@@ -14,6 +14,7 @@ export const Create = () => {
     fontColor: '#c3c3c3',
     textAlign: 'center',
     btnText: 'Some text',
+    btnSize: 'md',
   });
 
   return (
