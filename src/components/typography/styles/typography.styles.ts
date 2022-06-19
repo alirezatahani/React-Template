@@ -2,10 +2,19 @@ import styled from 'styled-components';
 import { StyledTypographyProps } from '../content/typography_types';
 
 export const TypographyContainer = styled.div<StyledTypographyProps>(
-  ({ theme, variant, color, underline, disabled, strong, italic }) => ({
+  ({
+    theme,
+    variant,
+    color,
+    underline,
+    disabled,
+    strong,
+    italic,
+    textAlign,
+  }) => ({
     color: color ? theme.palette[color].main : theme.palette.common.black,
     textDecoration: underline && 'underline',
-
+    textAlign: textAlign,
     p: {
       ...theme.typography.body1,
       fontWeight: strong && 'bold',

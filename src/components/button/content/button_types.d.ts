@@ -9,5 +9,6 @@ export type ButtonProps = {
   rounded?: boolean;
   block?: boolean;
   disabled?: boolean;
+  shape?: 'sharp' | 'rounded';
   onClick?: () => void;
 };

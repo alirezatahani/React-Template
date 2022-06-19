@@ -1,12 +1,18 @@
 import styled from 'styled-components';
 import { ButtonProps } from '../content/button_types';
 
+const btnShape = {
+  sharp: { borderRadius: 2 },
+  rounded: { borderRadius: 50 },
+};
+
 export const StyledButton = styled.button<ButtonProps>(
-  ({ theme, size, rounded, variant, color, block }) => ({
+  ({ theme, size, rounded, variant, color, block, shape }) => ({
     ...theme.sizes[size],
     ...theme.typography.button,
+    ...btnShape[shape],
     width: block ? '100%' : 'auto',
-    borderRadius: rounded ? 50 : 8,
+    // borderRadius: rounded ? 50 : 8,
     border:
       variant === 'text' ? 'none' : `1px solid ${theme.palette[color].main}`,
 
