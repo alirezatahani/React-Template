@@ -6,6 +6,7 @@ import {
   TabContentContainer,
   TabSection,
   TabsContainer,
+  TabsHead,
 } from '../styles/tab.styles';
 import { TabPaneProps, TabsProps } from './tab_types';
 
@@ -60,13 +61,17 @@ export const Tabs: React.FC<TabsProps> = ({ ...props }) => {
   return (
     <>
       <TabSection>
-        <TabsContainer align={props.align} defaultTab={activeTab}>
-          {renderTabs()}
-        </TabsContainer>
-        <BottomBorderContainer>
-          <BottomBorder></BottomBorder>
-        </BottomBorderContainer>
-        <TabContentContainer align={props.align}>{renderActiveTabContent()}</TabContentContainer>
+        <TabsHead>
+          <TabsContainer align={props.align} defaultTab={activeTab}>
+            {renderTabs()}
+          </TabsContainer>
+          <BottomBorderContainer>
+            <BottomBorder></BottomBorder>
+          </BottomBorderContainer>
+        </TabsHead>
+        <TabContentContainer align={props.align}>
+          {renderActiveTabContent()}
+        </TabContentContainer>
       </TabSection>
     </>
   );

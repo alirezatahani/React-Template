@@ -1,8 +1,9 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { ChooseTemplates } from 'pages/chooseTemplates';
 
 export const Home = () => {
   return (
+
     <div style={{ display: 'flex', gap: '2rem' }}>
       <Link to="predesign/94">Design 94</Link>
       <Link to="blank/1">Blank 1</Link>
@@ -14,5 +15,8 @@ export const Home = () => {
       <Link to="create">Create</Link>
       <Link to="selector">Selector</Link>
     </div>
+    <>
+      <ChooseTemplates />
+    </>
   );
 };

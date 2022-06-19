@@ -47,7 +47,6 @@ const TypographyControlPanel: React.FC<TypographyControlPanelProps> = ({
     kind: string;
     value: string | number;
   }) => {
-    console.log(event);
     onChange(event.kind, event.value);
   };
 

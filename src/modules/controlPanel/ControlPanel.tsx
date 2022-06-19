@@ -2,6 +2,7 @@ import React from 'react';
 import { ControlPanelWrapper } from './styles/controlPanel.styles';
 import TypographyControlPanel from './content/typographyControlPanel/TypographyControlPanel';
 import ButtonControlPanel from './content/buttonControlPanel/ButtonControlPanel';
+import GalleryControlPanel from './content/galleryControlPanel/GalleryControlPanel';
 import { ControlPanelProps, SettingType } from './controlPanel_types';
 
 const ControlPanel: React.FC<ControlPanelProps> = ({
@@ -18,17 +19,12 @@ const ControlPanel: React.FC<ControlPanelProps> = ({
 
   const settings: SettingType = {
     typography: (
-      <TypographyControlPanel
-        initialValue={initialValue}
-        onChange={handleChange}
-      />
+      <TypographyControlPanel state={state} handleChange={handleChange} />
     ),
-    button: (
-      <ButtonControlPanel initialValue={initialValue} onChange={handleChange} />
-    ),
+    button: <ButtonControlPanel state={state} handleChange={handleChange} />,
+    gallery: <GalleryControlPanel />,
   };
 
-  console.log(initialValue);
 
   return (
     <div>

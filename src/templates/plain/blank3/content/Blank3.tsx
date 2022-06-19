@@ -23,6 +23,7 @@ import { CardMedia } from '@components/card/content/cardMedia/index';
 import { CardContent } from '@components/card/content/cardContent/index';
 
 export const Blank3 = ({ setSelected, state }: any) => {
+
   return (
     <React.Fragment>
       <Navbar />
@@ -31,7 +32,10 @@ export const Blank3 = ({ setSelected, state }: any) => {
         <MainContainer fluid>
           <Row>
             <Col xs={12}>
-              <Image src="https://us-wbe-img.gr-cdn.com/template/website-id-d46691d1-c4bb-4a59-a194-9012099062fd/22eae2c7-8a18-451c-b077-0cc4841f434a.png" />
+              <Image
+                src="https://us-wbe-img.gr-cdn.com/template/website-id-d46691d1-c4bb-4a59-a194-9012099062fd/22eae2c7-8a18-451c-b077-0cc4841f434a.png"
+                onClick={() => setSelected({ type: 'gallery' })}
+              />
             </Col>
           </Row>
           <Row>
