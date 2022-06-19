@@ -1,10 +1,12 @@
 import styled from 'styled-components';
-import { Container } from '@components/container';
-import { Typography } from '@components/typography';
-import { Textarea } from '@components/textarea';
-import {Col} from "@components/grid"
-import {Input} from "@components/input"
-import {Button} from "@components/button"
+import {
+  Col,
+  Input,
+  Button,
+  Textarea,
+  Typography,
+  Container
+} from '@components/index';
 import { InputLabel } from '../../../../components/input/styles/Input.styles';
 
 export type HeroContainerTypes = {
@@ -26,30 +28,30 @@ export const HeroContainer = styled(Container)<HeroContainerTypes>(
   })
 );
 export const TemplateContainer = styled(Container)({
-  maxWidth:"1180px",
-  padding:"2rem 1rem",
-})
+  maxWidth: '1180px',
+  padding: '2rem 1rem',
+});
 export type TemplateDataDivTypes = {
   width?: string;
   backgroundColor?: string;
   padding?: string;
-  display?:string;
-  height?:string;
+  display?: string;
+  height?: string;
 };
 export const TemplateDataDiv = styled.div<TemplateDataDivTypes>(
-  ({ width, backgroundColor, padding ,display,height}) => ({
+  ({ width, backgroundColor, padding, display, height }) => ({
     width: width,
-    height:height? height:"inherit",
-    display: display === "flex" ? "flex" : "",
+    height: height ? height : 'inherit',
+    display: display === 'flex' ? 'flex' : 'inherit',
     maxWidth: '100%',
     margin: '0 auto ',
-    padding: padding? padding : 0,
-    backgroundColor: backgroundColor
+    padding: padding ? padding : 0,
+    backgroundColor: backgroundColor,
   })
 );
 export type TemplateDataColType = {
   align?: string;
-  width?:string;
+  width?: string;
 };
 export const TemplateDataCol = styled(Col)<TemplateDataColType>(
   ({ align }) => ({
@@ -66,19 +68,19 @@ export const TemplateBtn = styled(Button)({
   padding: '28px 44px',
   borderRadius: '5px',
   fontWeight: 'bold',
-  ":hover":{
-    backgroundColor:"#202730",
-  }
+  ':hover': {
+    backgroundColor: '#202730',
+  },
 });
 export const TemplateMain = styled.section({});
 export const TemplateWideContainer = styled(Container)({
   minWidth: '100vw',
   backgroundColor: '#f6f6f6',
 });
-export const TemplateInputLabel=styled(InputLabel)({
-  marginBottom:"5px",
-  fontSize:"18px",
-})
+export const TemplateInputLabel = styled(InputLabel)({
+  marginBottom: '5px',
+  fontSize: '18px',
+});
 export const TemplateInput = styled(Input)({
   width: '100%',
   border: '1px solid #333',
@@ -93,17 +95,19 @@ export const TemplateTextarea = styled(Textarea)({
   border: '1px solid #333',
   padding: '25px 5px',
   borderRadius: 5,
-  overflow:"hidden",
+  overflow: 'hidden',
   ['&:focus']: {
     outline: 0,
   },
 });
-export type TemplateTypo ={
-  size?:string;
-  lineHeight?:number;
-}
-export const TemplateTypo  = styled(Typography)<TemplateTypo>(({size,lineHeight})=>({
-  fontSize:size? size:"inherit",
-  textAlign:"center",
-  lineHeight:lineHeight? lineHeight:"inherit",
-}))
+export type TemplateTypo = {
+  size?: string;
+  lineHeight?: number;
+};
+export const TemplateTypo = styled(Typography)<TemplateTypo>(
+  ({ size, lineHeight }) => ({
+    fontSize: size ? size : 'inherit',
+    textAlign: 'center',
+    lineHeight: lineHeight ? lineHeight : 'inherit',
+  })
+);
