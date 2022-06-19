@@ -2,7 +2,6 @@ import React from 'react';
 import { BrowserRouter,Routes,Route } from 'react-router-dom';
 import { createRoot } from 'react-dom/client';
 import { ThemeProvider } from 'styled-components';
-
 import { GlobalStyle, theme } from './global/Global';
 import { routes } from './routes';
 
