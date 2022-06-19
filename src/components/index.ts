@@ -16,4 +16,8 @@ export * from './collapse';
 export * from './btnCheckbox';
 export * from './colorPicker';
 export * from './menu';
+export * from "./tab"
 export * from './textarea';
+export * from "./templateCart"
+export * from "./textarea";
+export * from "./modal";
