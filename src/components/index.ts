@@ -11,6 +11,11 @@ export * from './typography';
 export * from './switch';
 export * from './container';
 export * from './footer';
+export * from './textarea';
+export * from '../modules/controlPanel';
+export * from './collapse';
+export * from './btnCheckbox';
+export * from './colorPicker';
 export * from './menu';
 export * from "./tab"
 export * from './textarea';

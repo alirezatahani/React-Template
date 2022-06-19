@@ -1,5 +1,7 @@
 import React from 'react';
-import { Home } from '@pages/index';
+import { Route, Routes as ReactRoutes } from 'react-router-dom';
+import { ControlPanel } from '@modules/index';
+import { Home, Create } from '@pages/index';
 import { Design37 } from '@templates/designed/37';
 import { Blank3 } from '@templates/plain/blank3';
 import { Design94 } from '@templates/designed/94';
@@ -7,6 +9,7 @@ import { Design24 } from '@templates/designed/24';
 import { ComponentsSelector } from '@modules/ComponentsSelector/ComponentsSelector';
 import { Blank1 } from '@templates/plain/blank1';
 import { Blank2 } from '@templates/plain/blank2';
+
 
 export const routes = [
   { path: '/', element: <Home /> },
