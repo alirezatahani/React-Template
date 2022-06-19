@@ -11,7 +11,7 @@ const GlobalStyle = createGlobalStyle(({ theme }) => ({
 
 const theme = {
   palette: {
-    background: { paper: '#fff' },
+    background: { paper: '#fff', whiteSmoke: '#F5F5F5' },
     common: {
       black: '#323232',
       white: '#FFFFFF',

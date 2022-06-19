@@ -7,15 +7,15 @@ export const SliderWrapper = styled.div<SliderProps>(({}) => ({
   alignItem: 'center',
 }));
 
-export const SliderResult = styled.div<SliderProps>(({}) => ({
+export const SliderResult = styled.div<SliderProps>(({ theme }) => ({
+  backgroundColor: theme.palette.background.whiteSmoke,
   display: 'flex',
   justifyContent: 'center',
   alignItem: 'center',
   marginLeft: 4,
   width: 50,
   height: 24,
-  backgroundColor: '#F5F5F5',
   borderRadius: 4,
 }));
 
-export const HeroInput = styled.input<SliderProps>(({ theme }) => ({}));
+export const HeroInput = styled.input<SliderProps>(({}) => ({}));
