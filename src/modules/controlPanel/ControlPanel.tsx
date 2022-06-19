@@ -22,6 +22,7 @@ const ControlPanel: React.FC<any> = ({ selected, state, setState }: any) => {
     ),
     button: <ButtonControlPanel state={state} handleChange={handleChange} />,
     image: <ImageControlPanel state={state} handleChange={handleChange} />,
+    gallery: <GalleryControlPanel />,
   };
 
   return (

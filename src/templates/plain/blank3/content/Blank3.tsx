@@ -73,21 +73,6 @@ export const Blank3 = ({ setSelected, state }: any) => {
                   color: state.fontColor,
                 }}
               >
-                Introduce your idea
-              </Typography>
-            </Col>
-          </Row>
-          <Row>
-            <Col xs={12}>
-              <Typography
-                onClick={() => setSelected({ type: 'typography' })}
-                variant={state.fontType}
-                textAlign={state.textAlign}
-                style={{
-                  textDecoration: state.textDecoration,
-                  color: state.fontColor,
-                }}
-              >
                 Share more about what you do. Use this space to describe your
                 products or services, and highlight their benefits. Customize
                 the image to draw people in and drive your point home.

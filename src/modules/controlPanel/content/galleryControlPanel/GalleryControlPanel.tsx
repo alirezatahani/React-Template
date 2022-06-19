@@ -14,35 +14,12 @@ import {
   Wrapper,
 } from '@modules/controlPanel/content/galleryControlPanel/galleryControlPanel_styles';
 import { FaMinus } from 'react-icons/fa';
+import { RemoveFromArray, addToArray } from 'utils/dynamicForm';
 
 const GalleryControlPanel = () => {
   const [state, setState] = React.useState({});
 
   const [gallery, setGallery] = React.useState([]);
-
-  const handleAddBox = () => {
-    setGallery((prev) => [
-      ...prev,
-      {
-        id: prev.length + 1,
-        url: '',
-        altText: '',
-      },
-    ]);
-  };
-
-  const handleRemoveBox = (id: number) => {
-    setGallery((prevGallery) => {
-      return prevGallery.reduce((result, current) => {
-        if (current.id < id) {
-          result.push(current);
-        } else if (current.id > id) {
-          result.push({ ...current, id: current.id - 1 });
-        }
-        return result;
-      }, []);
-    });
-  };
 
   const handleFormChange = (index: any, event: any) => {
     let data = [...gallery];
@@ -58,7 +35,7 @@ const GalleryControlPanel = () => {
       [getLabel]: getValue,
     });
   };
-
+  console.log(gallery);
   return (
     <React.Fragment>
       <ControlPanelSettingContainer>
@@ -74,7 +51,9 @@ const GalleryControlPanel = () => {
                         <Typography variant="body1">Image#{item.id}</Typography>
                         <FaMinus
                           size={13}
-                          onClick={() => handleRemoveBox(item.id)}
+                          onClick={() =>
+                            RemoveFromArray(item.id, gallery, setGallery)
+                          }
                         />
                       </Wrapper>
 
@@ -105,7 +84,10 @@ const GalleryControlPanel = () => {
                   </div>
                 );
               })}
-              <HeroButton color="secondary" onClick={handleAddBox}>
+              <HeroButton
+                color="secondary"
+                onClick={() => addToArray(gallery, setGallery)}
+              >
                 Add Image
               </HeroButton>
             </ButtonWrapper>
