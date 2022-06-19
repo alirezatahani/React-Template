@@ -1,4 +1,4 @@
-import React, { Children, ReactElement, useState } from 'react';
+import React, { ReactElement, useState } from 'react';
 import {
   TabPane,
   BottomBorderContainer,
