@@ -1,8 +1,8 @@
 import React from 'react';
-import { Container } from '@components/container';
-import { Col } from '@components/grid';
-import { Tab } from '@components/tab';
-import { TemplateCart } from '@components/templateCart';
+import { Container } from '@components/index';
+import { Col } from '@components/index';
+import { Tabs, TabPane } from '@components/index';
+import { TemplateCart } from '@components/index';
 import {
   PageTitle,
   TemlatesContainer,
@@ -23,37 +23,51 @@ const ChooseTemplates: React.FC = () => {
       <TemplatesSection>
         <Container>
           <Col xs={12} alignItems="center">
-            <PageTitle variant="h3" strong>Pick your template</PageTitle>
+            <PageTitle variant="h3" strong>
+              Pick your template
+            </PageTitle>
           </Col>
           <Col xs={12}>
-            <Tab
-              items={['Predesigned Templates', 'Balnk templates']}
-              align="center"
-            >
-              <TemlatesContainer>
-                {filteredProdesign.map((route) => {
-                  const src =
-                    AllTemplatesImage[
-                      route.path as keyof typeof AllTemplatesImage
-                    ];
-                  return <TemplateCart template={route} src={src} />;
-                })}
-              </TemlatesContainer>
-              <TemlatesContainer>
-                {filteredBlank.map((route) => {
-                  const src =
-                    AllTemplatesImage[
-                      route.path as keyof typeof AllTemplatesImage
-                    ];
-                  return <TemplateCart template={route} src={src} />;
-                })}
-              </TemlatesContainer>
-            </Tab>
+            <Tabs>
+              <TabPane tab="Predesigned Templates">
+                <TemlatesContainer>
+                  {filteredProdesign.map((route) => {
+                    const src =
+                      AllTemplatesImage[
+                        route.path as keyof typeof AllTemplatesImage
+                      ];
+                    return (
+                      <TemplateCart
+                        template={route}
+                        src={src}
+                        key={route.path}
+                      />
+                    );
+                  })}
+                </TemlatesContainer>
+              </TabPane>
+              <TabPane tab="Balnk templates">
+                <TemlatesContainer>
+                  {filteredBlank.map((route) => {
+                    const src =
+                      AllTemplatesImage[
+                        route.path as keyof typeof AllTemplatesImage
+                      ];
+                    return (
+                      <TemplateCart
+                        template={route}
+                        src={src}
+                        key={route.path}
+                      />
+                    );
+                  })}
+                </TemlatesContainer>
+              </TabPane>
+            </Tabs>
           </Col>
         </Container>
       </TemplatesSection>
     </>
   );
 };
-
 export default ChooseTemplates;
