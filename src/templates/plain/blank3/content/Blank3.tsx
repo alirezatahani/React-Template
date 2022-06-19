@@ -26,7 +26,6 @@ export const Blank3 = () => {
   return (
     <React.Fragment>
       <Navbar />
-
       <SectionFluid>
         <MainContainer fluid>
           <Row>
