@@ -19,7 +19,7 @@ export const StyledInput = styled.input<InputProps>(
     border: `${
       variant === 'outlined' || variant === 'filled'
         ? `solid 1px ${
-            status ? theme.palette[status].main : theme.palette.greyScale['200']
+            status ? theme.palette[status].main : theme.palette.greyScale['400']
           }`
         : `none`
     }`,
@@ -61,7 +61,7 @@ export const InputContainer = styled.div<InputContainerProps>({
   display: 'flex',
   justifyContent: 'center',
   alignItems: 'center',
-  margin: '0 0 20px',
+  margin: '0 0 10px',
 });
 
 export const InputLabel = styled.span<InputLabelProps>({

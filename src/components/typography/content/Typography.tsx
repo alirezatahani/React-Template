@@ -25,6 +25,7 @@ const Typography: React.FC<TypographyProps> = ({
   const handleCopy = () => {
     navigator.clipboard.writeText(copyRef.current.innerText);
   };
+
   return (
     <TypographyContainer {...props}>
       <Component ref={copyRef}>
