@@ -44,6 +44,9 @@ export const Blank3 = ({ setSelected, state }: any) => {
                     onClick={() => setSelected({ type: 'image' })}
                     width={state.width}
                     height={state.height}
+                    style={{
+                      paddingTop: Number(state.paddingTop),
+                    }}
                   />
                 ) : (
                   <Image
@@ -52,6 +55,9 @@ export const Blank3 = ({ setSelected, state }: any) => {
                     width={state.width}
                     height={state.height}
                     onClick={() => setSelected({ type: 'image' })}
+                    style={{
+                      paddingTop: state.paddingTop,
+                    }}
                   />
                 )}
               </Col>

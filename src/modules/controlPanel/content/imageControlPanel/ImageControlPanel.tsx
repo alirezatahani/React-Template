@@ -88,6 +88,10 @@ const ImageControlPanel = ({ state, setState, handleChange }: any) => {
     handleChange('alignMent', e.target.value);
   };
 
+  const handleChangePaddingTop = (e: React.ChangeEvent<HTMLInputElement>) => {
+    handleChange('paddingTop', e.target.value);
+  };
+
   const increaseWidthValue = () => {
     setState((prevState: any) => ({
       ...prevState,
@@ -123,7 +127,7 @@ const ImageControlPanel = ({ state, setState, handleChange }: any) => {
       setFlags([...flags, label]);
     }
   };
-
+  console.log(state, 'state');
   return (
     <React.Fragment>
       <ControlPanelSettingContainer>
@@ -251,7 +255,11 @@ const ImageControlPanel = ({ state, setState, handleChange }: any) => {
                   <CounterContainer>
                     <HeroSpanLeft>+</HeroSpanLeft>
                     <HeroResult>
-                      <FormInput />
+                      <FormInput
+                        name="paddingTop"
+                        value={state.paddingTop}
+                        onChange={handleChangePaddingTop}
+                      />
                     </HeroResult>
                     <HeroSpanRight>-</HeroSpanRight>
                   </CounterContainer>
