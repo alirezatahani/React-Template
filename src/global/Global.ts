@@ -9,7 +9,7 @@ const GlobalStyle = createGlobalStyle(({ theme }) => ({
   },
 }));
 
-const theme = {
+const theme: DefaultTheme = {
   palette: {
     background: { paper: '#fff' },
     common: {
@@ -165,11 +165,6 @@ const theme = {
       color: '#0000004d',
       cursor: 'not-allowed',
       userSelect: 'none',
-    },
-    fontStyles: {
-      underline: {
-        fontStyle: 'underline',
-      },
     },
   },
   sizes: {

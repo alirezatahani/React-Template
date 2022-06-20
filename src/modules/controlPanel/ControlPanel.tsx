@@ -4,24 +4,33 @@ import TypographyControlPanel from './content/typographyControlPanel/TypographyC
 import ButtonControlPanel from './content/buttonControlPanel/ButtonControlPanel';
 import GalleryControlPanel from './content/galleryControlPanel/GalleryControlPanel';
 import ImageControlPanel from './content/imageControlPanel/ImageControlPanel';
+import { ControlPanelProps, SettingType } from './controlPanel_types';
 
-const ControlPanel: React.FC<any> = ({ selected, state, setState }: any) => {
-  const handleChange = (evt: any) => {
-    const getLabel = evt.kind ? evt.kind : evt.target.name;
-    const getValue = evt.value ? evt.value : evt.target.value;
-    console.log(getValue);
-    setState({
-      ...state,
-      [getLabel]: getValue,
+const ControlPanel: React.FC<ControlPanelProps> = ({
+  selected,
+  initialValue,
+  setInitialValue,
+}: ControlPanelProps) => {
+  const handleChange = (name: string, value: string | number) => {
+    setInitialValue({
+      ...initialValue,
+      [name]: value,
     });
   };
 
-  const settings: any = {
+  const settings: SettingType = {
     typography: (
-      <TypographyControlPanel state={state} handleChange={handleChange} />
+      <TypographyControlPanel
+        initialValue={initialValue}
+        onChange={handleChange}
+      />
     ),
-    button: <ButtonControlPanel state={state} handleChange={handleChange} />,
-    image: <ImageControlPanel state={state} handleChange={handleChange} />,
+    button: (
+      <ButtonControlPanel state={initialValue} handleChange={handleChange} />
+    ),
+    image: (
+      <ImageControlPanel state={initialValue} handleChange={handleChange} />
+    ),
     gallery: <GalleryControlPanel />,
   };
 

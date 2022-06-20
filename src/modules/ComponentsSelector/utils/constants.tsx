@@ -1,6 +1,6 @@
 import React from 'react';
 import { FaAlignLeft, FaImage, FaEdit } from 'react-icons/fa';
-import { MdSmartButton } from 'react-icons/Md';
+// import { MdSmartButton } from 'react-icons/Md';
 
 export type BoxName = {
   id: number;
@@ -10,7 +10,7 @@ export type BoxName = {
 
 export const BoxNames: BoxName[] = [
   { id: 1, name: 'Typography', icon: <FaAlignLeft /> },
-  { id: 2, name: 'Button', icon:<MdSmartButton/> },
+  { id: 2, name: 'Button', icon: <FaAlignLeft /> },
   { id: 3, name: 'Input', icon: <FaEdit /> },
   { id: 4, name: 'Image', icon: <FaImage /> },
 ];

@@ -34,8 +34,6 @@ const ButtonControlPanel = ({ state, handleChange }: any) => {
     });
   };
 
-  console.log(state, 'state');
-
   return (
     <ControlPanelSettingContainer>
       <Typography variant="h5">Button</Typography>

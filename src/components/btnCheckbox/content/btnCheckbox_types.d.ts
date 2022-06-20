@@ -1,20 +1,20 @@
+import React from 'react';
+
 export type BtnCheckboxPropsType = {
   icon?: string | React.ReactNode;
   label?: string;
   name?: string;
-  options?: any;
+  options: BtnCheckboxOptionType[];
   type?: string;
-  onChange?: React.ChangeEventHandler;
-  value?: any;
-  defaultValue?: any;
+  onChange?: (event: any, values: string | string[]) => void;
+  value?: BtnCheckboxOptionType;
+  defaultValue?: string | string[] | number[];
   checked?: boolean;
 };
 export type BtnCheckboxOptionType = {
-  value?: any;
+  value?: string | number;
   icon?: string | React.ReactNode;
-  label?: string;
+  label?: string | React.ReactNode;
+  id?: string | number;
   name?: string;
-  id?: string;
-  options?: any;
-  defaultValue?: any;
 };

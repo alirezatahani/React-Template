@@ -1,20 +1,32 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Blank3 } from '@templates/plain/blank3';
 import { ControlPanel } from '@modules/index';
 import { Row, Col, Container } from '@components/index';
 import SideActionButtons from '@modules/controlPanel/content/sideActionButtons/SideActionButtons';
 
 export const Create = () => {
-  const [selected, setSelected] = React.useState(null);
-  const [state, setState] = React.useState({});
+  const [selected, setSelected] = useState(null);
+  const [initialValue, setInitialValue] = useState({
+    fontType: 'h2',
+    fontFamily: 'Roboto',
+    fontSize: 12,
+    textDecoration: ['underline'],
+    fontColor: '#c3c3c3',
+    textAlign: 'center',
+  });
+
   return (
     <Container fluid>
       <Row>
         <Col span={8}>
-          <Blank3 state={state} setSelected={setSelected} />
+          <Blank3 state={initialValue} setSelected={setSelected} />
         </Col>
         <Col span={3}>
-          <ControlPanel state={state} setState={setState} selected={selected} />
+          <ControlPanel
+            initialValue={initialValue}
+            setInitialValue={setInitialValue}
+            selected={selected}
+          />
         </Col>
         <Col span={1}>
           <SideActionButtons />

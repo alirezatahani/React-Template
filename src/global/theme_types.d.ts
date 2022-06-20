@@ -84,7 +84,8 @@ type TypographyTypes = {
   h5: TypographyElement;
   subtitle1: TypographyElement;
   subtitle2: TypographyElement;
-  typographyDisabled: { color: string; cursor: string };
+  typographyDisabled: React.CSSProperties;
+  [key: string]: any;
 };
 
 type TypographyElement = {
