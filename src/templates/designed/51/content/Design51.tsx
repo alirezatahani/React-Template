@@ -8,8 +8,8 @@ const Design51 = () => {
     return(
         <>
         <Home />
-        {/* <Menu />
-        <AboutUs /> */}
+        {/* <Menu /> */}
+        {/* <AboutUs /> */}
         </>
     )
 }
