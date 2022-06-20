@@ -41,7 +41,7 @@ const ImageControlPanel = ({ state, handleChange, setState }: any) => {
     reader.readAsDataURL(file);
   };
 
-  const uploadHandler = (e: any) => {
+  const uploadHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
     if (e.target.files.length > 0) {
       convert2base64(e.target.files[0]);
     }
@@ -49,36 +49,25 @@ const ImageControlPanel = ({ state, handleChange, setState }: any) => {
 
   //state Handler
 
-  const handleChangeImage = (src: any) => {
-    handleChange({
-      kind: 'file',
-      value: src,
-    });
+  const handleChangeImage = (src: string) => {
+    handleChange('file', src);
     setModal(false);
   };
-  const handleChangeAltText = (e: any) => {
-    handleChange({
-      kind: 'altText',
-      value: e.target.value,
-    });
+  const handleChangeAltText = (e: React.ChangeEvent<HTMLInputElement>) => {
+    handleChange('altText', e.target.value);
   };
-  const handleChangeUrl = (e: any) => {
-    handleChange({
-      kind: 'Url',
-      value: e.target.value,
-    });
+  const handleChangeWidth = (e: React.ChangeEvent<HTMLInputElement>) => {
+    handleChange('width', e.target.value);
   };
-  const handleChangeWidth = (e: any) => {
-    handleChange({
-      kind: 'width',
-      value: e.target.value,
-    });
+
+  const handleChangeHeight = (e: React.ChangeEvent<HTMLInputElement>) => {
+    handleChange('height', e.target.value);
   };
-  const handleChangeHeight = (e: any) => {
-    handleChange({
-      kind: 'height',
-      value: e.target.value,
-    });
+  const handleChangeUrl = (e: React.ChangeEvent<HTMLInputElement>) => {
+    handleChange('Url', e.target.value);
+  };
+  const handleChangeAlignMent = (e: React.ChangeEvent<HTMLInputElement>) => {
+    handleChange('alignMent', e.target.value);
   };
 
   return (
@@ -159,15 +148,12 @@ const ImageControlPanel = ({ state, handleChange, setState }: any) => {
 
           <WrapperCounter>
             <CounterContainer>
-              <HeroSpanLeft onClick={() => setState(Number(state.width) + 1)}>
-                +
-              </HeroSpanLeft>
+              <HeroSpanLeft>+</HeroSpanLeft>
               <HeroResult>
                 <FormInput
                   name="width"
                   value={state.width}
                   onChange={handleChangeWidth}
-                  type="number"
                 />
               </HeroResult>
               <HeroSpanRight>-</HeroSpanRight>
@@ -179,7 +165,6 @@ const ImageControlPanel = ({ state, handleChange, setState }: any) => {
                 <FormInput
                   name="height"
                   value={state.height}
-                  type="number"
                   onChange={handleChangeHeight}
                 />
               </HeroResult>
@@ -190,7 +175,7 @@ const ImageControlPanel = ({ state, handleChange, setState }: any) => {
           <BtnCheckbox
             type="radio"
             name="alignMent"
-            onChange={handleChange}
+            onChange={handleChangeAlignMent}
             options={alignImageOptions}
           />
         </Collapse>

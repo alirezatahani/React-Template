@@ -52,9 +52,6 @@ export const Blank3 = ({ setSelected, state }: any) => {
                     width={state.width}
                     height={state.height}
                     onClick={() => setSelected({ type: 'image' })}
-                    style={{
-                      textAlign: state.alignMent,
-                    }}
                   />
                 )}
               </Col>
