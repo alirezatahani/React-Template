@@ -4,6 +4,8 @@ import TypographyControlPanel from './content/typographyControlPanel/TypographyC
 import ButtonControlPanel from './content/buttonControlPanel/ButtonControlPanel';
 import GalleryControlPanel from './content/galleryControlPanel/GalleryControlPanel';
 import ManagePages from '@modules/managePages/content/ManagePages';
+import { DndProvider } from 'react-dnd';
+import { HTML5Backend } from 'react-dnd-html5-backend';
 
 const ControlPanel: React.FC<any> = ({ selected, state, setState }: any) => {
   const handleChange = (evt: any) => {
@@ -22,7 +24,11 @@ const ControlPanel: React.FC<any> = ({ selected, state, setState }: any) => {
     ),
     button: <ButtonControlPanel state={state} handleChange={handleChange} />,
     gallery: <GalleryControlPanel />,
-    pages: <ManagePages />,
+    pages: (
+      <DndProvider backend={HTML5Backend}>
+        <ManagePages />
+      </DndProvider>
+    ),
   };
 
   return (

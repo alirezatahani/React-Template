@@ -1,11 +1,12 @@
 import styled from 'styled-components';
 
-export const PageItem = styled.div(({ theme }) => ({
+export const PageItemContainer = styled.div(({ theme }) => ({
   background: theme.palette.greyScale[200],
   display: 'flex',
   justifyContent: 'space-between',
   alignItems: 'center',
   padding: '8px 5px',
+  cursor: 'move',
   marginBottom: 17,
   '&:hover': {
     backgroundColor: theme.palette.primary.main,
@@ -22,7 +23,7 @@ export const PageSettingDropDown = styled.div({
   alignItems: 'center',
 });
 export const GrabIcon = styled.span(({ theme }) => ({
-  cursor: 'grab',
+  cursor: 'move',
   display: 'flex',
   alignItems: 'center',
   color: theme.palette.greyScale[200],
