@@ -11,6 +11,7 @@ import {
   TextWrapper,
 } from '@modules/ComponentsSelector/styles/SelectorScreen_styles';
 import { Typography } from '@components/typography';
+import ButtonSelector from '@modules/ComponentsSelector/ButtonSelector/content';
 
 export const SelectorScreen = memo(function Container() {
   const [selectedComponent, setSelectedComponent] = useState([]);
@@ -19,7 +20,7 @@ export const SelectorScreen = memo(function Container() {
     setSelectedComponent((selectedComponent: any) => [
       ...selectedComponent,
       item.name,
-    ]);
+    ])
   };
 
   console.log(selectedComponent, 'selectedComponent');
@@ -28,7 +29,7 @@ export const SelectorScreen = memo(function Container() {
       <Row>
         <DropCol span={9} style={{ overflow: 'hidden', clear: 'both' }}>
           <div style={{ overflow: 'hidden', clear: 'both' }}>
-            <Dustbin selectedComponent={selectedComponent} />
+            <Dustbin handleDrop={handleDropComponent} selectedComponent={selectedComponent} />
           </div>
         </DropCol>
         <DragCol span={3} style={{ overflow: 'scroll', clear: 'both' }}>

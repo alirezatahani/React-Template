@@ -2,6 +2,8 @@ import * as React from 'react';
 import type { CSSProperties } from 'react';
 import { useDrop } from 'react-dnd';
 import { Button, Typography, Input, Image } from '@components/index';
+import ButtonSelector from '@modules/ComponentsSelector/ButtonSelector/content';
+import { buttons } from '@modules/ComponentsSelector/utils/constants';
 
 const ItemTypes = {
   BOX: 'box',
@@ -15,16 +17,31 @@ const style: CSSProperties = {
 };
 type DustBinProps = {
   selectedComponent?: any;
+  handleDrop?: any;
 };
 
+// const Btn = () => {
+//   const {selectedButton} = React.useContext(buttonContext);
+//   console.log("is",selectedButton)
+//   return(
+//     <>
+//     <div>
+//     {/* <Button style={buttons[selectedButton].style}>{buttons[selectedButton].name}</Button> */}
+//     </div>
+//     </>
+//   )
+// }
+//const {selectedButton} = React.useContext(buttonContext);
+
+
 const components: any = {
-  Button: <Button>Test</Button>,
+  Button: <Button>test</Button>,
   Typography: <Typography>Test</Typography>,
   Input: <Input value="test" />,
   Image: <Image />,
 };
 
-export const Dustbin = ({ selectedComponent }: DustBinProps) => {
+export const Dustbin = ({ selectedComponent, handleDrop }: DustBinProps) => {
   const [{ canDrop, isOver }, drop] = useDrop(() => ({
     accept: ItemTypes.BOX,
     drop: () => ({ name: 'Dustbin' }),
@@ -50,8 +67,14 @@ export const Dustbin = ({ selectedComponent }: DustBinProps) => {
         data-testid="dustbin"
       >
         {selectedComponent.map((item: any) => {
-          return components[item];
-        })}
+          return (
+            // components[item]
+            (item=='Button') ? <ButtonSelector handleDrop={handleDrop}/> : components[item]
+          // return(
+          //   components[item],
+          //   (item=='Button') && <ButtonSelector/>
+          // )
+        )})}
       </div>
     </React.Fragment>
   );
