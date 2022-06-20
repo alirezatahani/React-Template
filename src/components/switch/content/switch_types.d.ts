@@ -5,7 +5,7 @@ export type SwitchProps = {
   style?: React.CSSProperties;
   onChange?: (value: boolean) => void;
   disabled?: boolean;
-  checked?: boolean;
+  checked?: boolean | number;
   size?: 'sm' | 'md';
   color?: 'primary' | 'secondary' | 'danger' | 'success' | 'warning';
 };

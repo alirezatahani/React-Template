@@ -63,9 +63,7 @@ export const ControlPanelSettingContainer = styled.div(({ theme }) => ({
 }));
 
 export const ModalContent = styled.div(({}) => ({
-  display: 'grid',
-  marginLeft: '11em',
-  padding: '8rem',
+  textAlign: 'center',
 }));
 
 export const InputFile = styled(Input)(({ theme }) => ({

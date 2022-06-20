@@ -3,8 +3,8 @@ import {
   Collapse,
   Typography,
   BtnCheckbox,
-  Modal,
   Switch,
+  Modal,
 } from '@components/index';
 import {
   ControlPanelItemContainer,
@@ -35,7 +35,7 @@ const ImageControlPanel = ({ state, setState, handleChange }: any) => {
   const [image, setImage] = React.useState(null);
   const [isShown, setIsShown] = React.useState(false);
   const [modal, setModal] = React.useState(false);
-  const [switchFlags, setSwitchFlags] = React.useState(false);
+  const [flags, setFlags] = React.useState([]);
 
   //load image
 
@@ -82,9 +82,10 @@ const ImageControlPanel = ({ state, setState, handleChange }: any) => {
   const increaseWidthValue = () => {
     setState((prevState: any) => ({
       ...prevState,
-      width: Number(prevState.width) + 1,
+      width: Number(prevState.value) + 1,
     }));
   };
+
   const decreaseWidthValue = () => {
     setState((prevState: any) => ({
       ...prevState,
@@ -104,7 +105,15 @@ const ImageControlPanel = ({ state, setState, handleChange }: any) => {
     }));
   };
 
-  console.log(state, 'width');
+  const handleClick = (label: string) => {
+    const exist = flags.find((flag) => flag === label);
+    if (exist) {
+      const filteredFlags = flags.filter((item) => item !== label);
+      return setFlags(filteredFlags);
+    } else {
+      setFlags([...flags, label]);
+    }
+  };
 
   return (
     <React.Fragment>
@@ -220,8 +229,8 @@ const ImageControlPanel = ({ state, setState, handleChange }: any) => {
           <SwitchWrapper>
             <Switch
               size="sm"
-              checked={switchFlags}
-              onChange={() => setSwitchFlags(!switchFlags)}
+              checked={flags.filter((flag) => flag === 'padding').length}
+              onChange={() => handleClick('padding')}
             />
             <SwitchLabel variant="body1">Padding</SwitchLabel>
           </SwitchWrapper>
