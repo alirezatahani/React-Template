@@ -136,7 +136,39 @@ export const SwitchWrapper = styled.div(({}) => ({
   display: 'flex',
   justifyContent: 'flex-start',
   alignItems: 'center',
+  marginBottom: '2rem',
 }));
 export const SwitchLabel = styled(Typography)(({}) => ({
   marginLeft: 8,
+}));
+
+export const PaddingContainer = styled.div(({ theme }) => ({
+  position: 'relative',
+  width: 200,
+  height: 100,
+  border: `1px dashed ${theme.palette.disabled.backgroundColor}`,
+  margin: '0px auto',
+  borderRadius: 2,
+}));
+export const BoxTop = styled.div(({}) => ({
+  position: 'absolute',
+  left: 0,
+  right: 0,
+  top: -16,
+}));
+export const BoxBottom = styled.div(({}) => ({
+  position: 'absolute',
+  left: 0,
+  right: 0,
+  bottom: -48,
+}));
+export const BoxRight = styled.div(({}) => ({
+  position: 'absolute',
+  left: -62,
+  bottom: 0,
+}));
+export const BoxLeft = styled.div(({}) => ({
+  position: 'absolute',
+  right: -62,
+  bottom: 0,
 }));

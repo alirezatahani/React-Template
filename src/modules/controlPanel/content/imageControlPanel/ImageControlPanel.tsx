@@ -28,6 +28,11 @@ import {
   HeroSpanRight,
   SwitchWrapper,
   SwitchLabel,
+  PaddingContainer,
+  BoxTop,
+  BoxBottom,
+  BoxRight,
+  BoxLeft,
 } from '@modules/controlPanel/content/imageControlPanel/imageControlPanel_styles';
 import { alignImageOptions } from '@modules/controlPanel/utils/constants';
 //end imports
@@ -232,8 +237,57 @@ const ImageControlPanel = ({ state, setState, handleChange }: any) => {
               checked={flags.filter((flag) => flag === 'padding').length}
               onChange={() => handleClick('padding')}
             />
+
             <SwitchLabel variant="body1">Padding</SwitchLabel>
           </SwitchWrapper>
+          {flags.find((flag) => flag === 'padding') ? (
+            <PaddingContainer>
+              <BoxTop>
+                <WrapperCounter>
+                  <CounterContainer>
+                    <HeroSpanLeft>+</HeroSpanLeft>
+                    <HeroResult>
+                      <FormInput />
+                    </HeroResult>
+                    <HeroSpanRight>-</HeroSpanRight>
+                  </CounterContainer>
+                </WrapperCounter>
+              </BoxTop>
+              <BoxBottom>
+                <WrapperCounter>
+                  <CounterContainer>
+                    <HeroSpanLeft>+</HeroSpanLeft>
+                    <HeroResult>
+                      <FormInput />
+                    </HeroResult>
+                    <HeroSpanRight>-</HeroSpanRight>
+                  </CounterContainer>
+                </WrapperCounter>
+              </BoxBottom>
+              <BoxRight>
+                <WrapperCounter>
+                  <CounterContainer>
+                    <HeroSpanLeft>+</HeroSpanLeft>
+                    <HeroResult>
+                      <FormInput />
+                    </HeroResult>
+                    <HeroSpanRight>-</HeroSpanRight>
+                  </CounterContainer>
+                </WrapperCounter>
+              </BoxRight>
+              <BoxLeft>
+                <WrapperCounter>
+                  <CounterContainer>
+                    <HeroSpanLeft>+</HeroSpanLeft>
+                    <HeroResult>
+                      <FormInput />
+                    </HeroResult>
+                    <HeroSpanRight>-</HeroSpanRight>
+                  </CounterContainer>
+                </WrapperCounter>
+              </BoxLeft>
+            </PaddingContainer>
+          ) : null}
         </Collapse>
       </ControlPanelSettingContainer>
     </React.Fragment>
