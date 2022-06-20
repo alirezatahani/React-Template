@@ -7,10 +7,10 @@ import Home from '../pages/Home';
 export const Design47 = () => {
   return (
     <>
-      <Home/>
+      {/* <Home/> */}
       <About/>
-      <Classes/>
-      <Events/>
+      {/* <Classes/>
+      <Events/> */}
     </>
   );
 };

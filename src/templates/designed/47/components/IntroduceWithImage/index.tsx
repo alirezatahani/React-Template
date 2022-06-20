@@ -38,7 +38,7 @@ const IntroduceWithImage = ({image1, image2, image3, title1, title2, title3, tex
                         buttonText={buttonText2}
                     />
                 </Col>
-                <Col xs={12} lg={4} style={{backgroundColor:'rgb(186, 223, 96)', padding:'30px', borderRadius:'0 40px 40px'}}>
+                <Col xs={12} lg={4} style={{backgroundColor:'rgb(186, 223, 96)', padding:'30px', borderRadius:'0 40px 40px 0'}}>
                     <IntroduceContent
                         image={image3}
                         title={title3}
