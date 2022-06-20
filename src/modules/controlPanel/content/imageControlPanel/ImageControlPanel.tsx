@@ -36,13 +36,14 @@ import {
   LockBox,
 } from '@modules/controlPanel/content/imageControlPanel/imageControlPanel_styles';
 import { alignImageOptions } from '@modules/controlPanel/utils/constants';
-import { FaLock } from 'react-icons/Fa';
+import { FaLock, FaUnlock } from 'react-icons/Fa';
 
 //end imports
 const ImageControlPanel = ({ state, setState, handleChange }: any) => {
   const [image, setImage] = React.useState(null);
-  const [isShown, setIsShown] = React.useState(false);
-  const [modal, setModal] = React.useState(false);
+  const [isShown, setIsShown] = React.useState<boolean>(false);
+  const [modal, setModal] = React.useState<boolean>(false);
+  const [lock, setLock] = React.useState<boolean>(false);
   const [flags, setFlags] = React.useState([]);
 
   //load image
@@ -289,9 +290,15 @@ const ImageControlPanel = ({ state, setState, handleChange }: any) => {
                   </CounterContainer>
                 </WrapperCounter>
               </BoxLeft>
-              <LockBox>
-                <FaLock />
-              </LockBox>
+              {!lock ? (
+                <LockBox onClick={() => setLock(true)}>
+                  <FaLock />
+                </LockBox>
+              ) : (
+                <LockBox onClick={() => setLock(false)}>
+                  <FaUnlock />
+                </LockBox>
+              )}
             </PaddingContainer>
           ) : null}
         </Collapse>
