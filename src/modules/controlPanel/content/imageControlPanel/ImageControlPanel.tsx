@@ -1,5 +1,11 @@
 import React from 'react';
-import { Collapse, Typography, BtnCheckbox, Modal } from '@components/index';
+import {
+  Collapse,
+  Typography,
+  BtnCheckbox,
+  Modal,
+  Switch,
+} from '@components/index';
 import {
   ControlPanelItemContainer,
   ControlPanelItemLabel,
@@ -20,13 +26,16 @@ import {
   FormInput,
   HeroSpanLeft,
   HeroSpanRight,
+  SwitchWrapper,
+  SwitchLabel,
 } from '@modules/controlPanel/content/imageControlPanel/imageControlPanel_styles';
 import { alignImageOptions } from '@modules/controlPanel/utils/constants';
 //end imports
-const ImageControlPanel = ({ state, handleChange, setState }: any) => {
+const ImageControlPanel = ({ state, setState, handleChange }: any) => {
   const [image, setImage] = React.useState(null);
   const [isShown, setIsShown] = React.useState(false);
   const [modal, setModal] = React.useState(false);
+  const [switchFlags, setSwitchFlags] = React.useState(false);
 
   //load image
 
@@ -71,16 +80,16 @@ const ImageControlPanel = ({ state, handleChange, setState }: any) => {
   };
 
   const increaseValue = () => {
-    setState((prevState: any) => prevState.width - 1);
+    setState((prevState: any) => Number(prevState.width) + 1);
   };
 
-  console.log(state.width, 'width');
+  console.log(state, 'width');
 
   return (
     <React.Fragment>
       <ControlPanelSettingContainer>
         <Typography variant="h5">Image</Typography>
-        <Collapse open title="Source">
+        <Collapse title="Source">
           <ControlPanelItemContainer>
             <ImageBox
               onMouseEnter={() => setIsShown(true)}
@@ -123,7 +132,7 @@ const ImageControlPanel = ({ state, handleChange, setState }: any) => {
             </Modal>
           </ControlPanelItemContainer>
         </Collapse>
-        <Collapse open title="Embed a file form a Url">
+        <Collapse title="Embed a file form a Url">
           <HeroFormInput
             name="url"
             scale="sm"
@@ -133,7 +142,7 @@ const ImageControlPanel = ({ state, handleChange, setState }: any) => {
             onChange={handleChangeUrl}
           />
         </Collapse>
-        <Collapse open title="alt text">
+        <Collapse title="alt text">
           <HeroFormInput
             name="altText"
             scale="sm"
@@ -142,7 +151,7 @@ const ImageControlPanel = ({ state, handleChange, setState }: any) => {
             onChange={handleChangeAltText}
           />
         </Collapse>
-        <Collapse open title="Image window setting">
+        <Collapse title="Image window setting">
           <WrapperLabel>
             <ControlPanelItemLabel>
               <Typography variant="body1">width</Typography>
@@ -184,6 +193,17 @@ const ImageControlPanel = ({ state, handleChange, setState }: any) => {
             onChange={handleChangeAlignMent}
             options={alignImageOptions}
           />
+        </Collapse>
+
+        <Collapse open title="Block Settings">
+          <SwitchWrapper>
+            <Switch
+              size="sm"
+              checked={switchFlags}
+              onChange={() => setSwitchFlags(!switchFlags)}
+            />
+            <SwitchLabel variant="body1">Padding</SwitchLabel>
+          </SwitchWrapper>
         </Collapse>
       </ControlPanelSettingContainer>
     </React.Fragment>

@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { Input, Button, Image } from '@components/index';
+import { Input, Button, Image, Typography } from '@components/index';
 
 export const ImageBox = styled.div(({ theme }) => ({
   width: '100%',
@@ -134,3 +134,11 @@ export const FormInput = styled(Input)({
     outline: 'none',
   },
 });
+export const SwitchWrapper = styled.div(({}) => ({
+  display: 'flex',
+  justifyContent: 'flex-start',
+  alignItems: 'center',
+}));
+export const SwitchLabel = styled(Typography)(({}) => ({
+  marginLeft: 8,
+}));
