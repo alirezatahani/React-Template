@@ -33,8 +33,11 @@ import {
   BoxBottom,
   BoxRight,
   BoxLeft,
+  LockBox,
 } from '@modules/controlPanel/content/imageControlPanel/imageControlPanel_styles';
 import { alignImageOptions } from '@modules/controlPanel/utils/constants';
+import { FaLock } from 'react-icons/Fa';
+
 //end imports
 const ImageControlPanel = ({ state, setState, handleChange }: any) => {
   const [image, setImage] = React.useState(null);
@@ -286,6 +289,9 @@ const ImageControlPanel = ({ state, setState, handleChange }: any) => {
                   </CounterContainer>
                 </WrapperCounter>
               </BoxLeft>
+              <LockBox>
+                <FaLock />
+              </LockBox>
             </PaddingContainer>
           ) : null}
         </Collapse>

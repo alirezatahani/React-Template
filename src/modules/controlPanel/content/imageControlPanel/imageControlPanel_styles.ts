@@ -148,7 +148,7 @@ export const PaddingContainer = styled.div(({ theme }) => ({
   height: 100,
   border: `1px dashed ${theme.palette.disabled.backgroundColor}`,
   margin: '0px auto',
-  borderRadius: 2,
+  borderRadius: 4,
 }));
 export const BoxTop = styled.div(({}) => ({
   position: 'absolute',
@@ -171,4 +171,9 @@ export const BoxLeft = styled.div(({}) => ({
   position: 'absolute',
   right: -62,
   bottom: 0,
+}));
+export const LockBox = styled.div(({}) => ({
+  position: 'absolute',
+  left: 93,
+  top: 40,
 }));
