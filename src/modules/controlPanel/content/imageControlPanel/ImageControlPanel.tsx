@@ -70,6 +70,12 @@ const ImageControlPanel = ({ state, handleChange, setState }: any) => {
     handleChange('alignMent', e.target.value);
   };
 
+  const increaseValue = () => {
+    setState((prevState: any) => prevState.width - 1);
+  };
+
+  console.log(state.width, 'width');
+
   return (
     <React.Fragment>
       <ControlPanelSettingContainer>
@@ -148,7 +154,7 @@ const ImageControlPanel = ({ state, handleChange, setState }: any) => {
 
           <WrapperCounter>
             <CounterContainer>
-              <HeroSpanLeft>+</HeroSpanLeft>
+              <HeroSpanLeft onClick={increaseValue}>+</HeroSpanLeft>
               <HeroResult>
                 <FormInput
                   name="width"
