@@ -35,7 +35,7 @@ type DustBinProps = {
 
 
 const components: any = {
-  Button: <Button>test</Button>,
+  Button: <ButtonSelector/>,
   Typography: <Typography>Test</Typography>,
   Input: <Input value="test" />,
   Image: <Image />,
@@ -69,7 +69,7 @@ export const Dustbin = ({ selectedComponent, handleDrop }: DustBinProps) => {
         {selectedComponent.map((item: any) => {
           return (
             // components[item]
-            (item=='Button') ? <ButtonSelector handleDrop={handleDrop}/> : components[item]
+            components[item]
           // return(
           //   components[item],
           //   (item=='Button') && <ButtonSelector/>

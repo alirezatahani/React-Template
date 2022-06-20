@@ -27,7 +27,7 @@ const ButtonSelector = ({handleDrop}: any) => {
                 {btns}
             </Row>
         </Modal>
-        <Button style={selectedButton}>ok</Button>
+        <Button style={selectedButton}>button</Button>
         </>
     )
 }
