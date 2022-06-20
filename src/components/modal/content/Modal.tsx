@@ -12,18 +12,16 @@ import { ModalProps } from './modal_types';
 
 const Modal: React.FC<ModalProps> = ({ visible, ...props }: ModalProps) => {
   return ReactDOM.createPortal(
-    <>
-      <ModalWrapper visible={visible}>
-        <ModalSection visible={visible}>
-          <ModalContainer>
-            <ModalContent>{props.children}</ModalContent>
-            <ModalClose onClick={props.onClose}>
-              <FaTimes size={18} />
-            </ModalClose>
-          </ModalContainer>
-        </ModalSection>
-      </ModalWrapper>
-    </>,
+    <ModalWrapper visible={visible}>
+      <ModalSection visible={visible}>
+        <ModalContainer>
+          <ModalContent>{props.children}</ModalContent>
+          <ModalClose onClick={props.onClose}>
+            <FaTimes size={18} />
+          </ModalClose>
+        </ModalContainer>
+      </ModalSection>
+    </ModalWrapper>,
     document.getElementById('modal')
   );
 };

@@ -2,8 +2,6 @@ import * as React from 'react';
 import type { CSSProperties } from 'react';
 import { useDrop } from 'react-dnd';
 import { Button, Typography, Input, Image } from '@components/index';
-import ButtonSelector from '@modules/ComponentsSelector/ButtonSelector/content';
-import { buttons } from '@modules/ComponentsSelector/utils/constants';
 
 const ItemTypes = {
   BOX: 'box',
@@ -17,6 +15,7 @@ const style: CSSProperties = {
 };
 type DustBinProps = {
   selectedComponent?: any;
+  selectedStyle?: any;
   handleDrop?: any;
 };
 
@@ -33,15 +32,7 @@ type DustBinProps = {
 // }
 //const {selectedButton} = React.useContext(buttonContext);
 
-
-const components: any = {
-  Button: <Button>test</Button>,
-  Typography: <Typography>Test</Typography>,
-  Input: <Input value="test" />,
-  Image: <Image />,
-};
-
-export const Dustbin = ({ selectedComponent, handleDrop }: DustBinProps) => {
+export const Dustbin = ({ selectedComponent, selectedStyle }: DustBinProps) => {
   const [{ canDrop, isOver }, drop] = useDrop(() => ({
     accept: ItemTypes.BOX,
     drop: () => ({ name: 'Dustbin' }),
@@ -59,6 +50,13 @@ export const Dustbin = ({ selectedComponent, handleDrop }: DustBinProps) => {
     backgroundColor = '#F5F5';
   }
 
+  const components: any = {
+    Button: <Button style={...selectedStyle}>test</Button>,
+    Typography: <Typography>Test</Typography>,
+    Input: <Input value="test" />,
+    Image: <Image />,
+  };
+
   return (
     <React.Fragment>
       <div
@@ -66,15 +64,7 @@ export const Dustbin = ({ selectedComponent, handleDrop }: DustBinProps) => {
         style={{ ...style, backgroundColor }}
         data-testid="dustbin"
       >
-        {selectedComponent.map((item: any) => {
-          return (
-            // components[item]
-            (item=='Button') ? <ButtonSelector handleDrop={handleDrop}/> : components[item]
-          // return(
-          //   components[item],
-          //   (item=='Button') && <ButtonSelector/>
-          // )
-        )})}
+        {components[selectedComponent]}
       </div>
     </React.Fragment>
   );
