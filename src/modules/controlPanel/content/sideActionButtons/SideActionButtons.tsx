@@ -1,8 +1,9 @@
 import { Space, Button } from '@components/index';
 import { SideButtonsContainer } from '@modules/controlPanel/styles/controlPanel.styles';
-import React from 'react';
+import { ImTree } from 'react-icons/im';
+import React, { SetStateAction } from 'react';
 
-const SideActionButtons = () => {
+const SideActionButtons = ({ setSelected }: SetStateAction<any>) => {
   return (
     <SideButtonsContainer>
       <Space spacing={10} direction="vertical" align="start">
@@ -12,8 +13,13 @@ const SideActionButtons = () => {
         <Button size="lg" color="danger" shape="rounded">
           G
         </Button>
-        <Button size="lg" color="warning" shape="rounded">
-          A
+        <Button
+          onClick={() => setSelected({ type: 'pages' })}
+          size="lg"
+          color="success"
+          shape="rounded"
+        >
+          <ImTree />
         </Button>
       </Space>
     </SideButtonsContainer>

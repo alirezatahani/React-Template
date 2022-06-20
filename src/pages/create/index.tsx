@@ -17,7 +17,7 @@ export const Create = () => {
           <ControlPanel state={state} setState={setState} selected={selected} />
         </Col>
         <Col span={1}>
-          <SideActionButtons />
+          <SideActionButtons setSelected={setSelected} />
         </Col>
       </Row>
     </Container>

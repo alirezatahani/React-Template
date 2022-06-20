@@ -10,7 +10,6 @@ import { ComponentsSelector } from '@modules/ComponentsSelector/ComponentsSelect
 import { Blank1 } from '@templates/plain/blank1';
 import { Blank2 } from '@templates/plain/blank2';
 
-
 export const routes = [
   { path: '/', element: <Home /> },
   { path: 'predesign/94', element: <Design94 /> },
@@ -22,4 +21,3 @@ export const routes = [
   { path: 'create', element: <Create /> },
   { path: 'selector', element: <ComponentsSelector /> },
 ];
-
