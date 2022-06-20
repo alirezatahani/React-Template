@@ -79,8 +79,29 @@ const ImageControlPanel = ({ state, setState, handleChange }: any) => {
     handleChange('alignMent', e.target.value);
   };
 
-  const increaseValue = () => {
-    setState((prevState: any) => Number(prevState.width) + 1);
+  const increaseWidthValue = () => {
+    setState((prevState: any) => ({
+      ...prevState,
+      width: Number(prevState.width) + 1,
+    }));
+  };
+  const decreaseWidthValue = () => {
+    setState((prevState: any) => ({
+      ...prevState,
+      width: Number(prevState.width) - 1,
+    }));
+  };
+  const increaseHeightValue = () => {
+    setState((prevState: any) => ({
+      ...prevState,
+      height: Number(prevState.height) + 1,
+    }));
+  };
+  const decreaseHeightValue = () => {
+    setState((prevState: any) => ({
+      ...prevState,
+      height: Number(prevState.height) - 1,
+    }));
   };
 
   console.log(state, 'width');
@@ -163,7 +184,7 @@ const ImageControlPanel = ({ state, setState, handleChange }: any) => {
 
           <WrapperCounter>
             <CounterContainer>
-              <HeroSpanLeft onClick={increaseValue}>+</HeroSpanLeft>
+              <HeroSpanLeft onClick={increaseWidthValue}>+</HeroSpanLeft>
               <HeroResult>
                 <FormInput
                   name="width"
@@ -171,11 +192,11 @@ const ImageControlPanel = ({ state, setState, handleChange }: any) => {
                   onChange={handleChangeWidth}
                 />
               </HeroResult>
-              <HeroSpanRight>-</HeroSpanRight>
+              <HeroSpanRight onClick={decreaseWidthValue}>-</HeroSpanRight>
             </CounterContainer>
 
             <CounterContainer>
-              <HeroSpanLeft>+</HeroSpanLeft>
+              <HeroSpanLeft onClick={increaseHeightValue}>+</HeroSpanLeft>
               <HeroResult>
                 <FormInput
                   name="height"
@@ -183,7 +204,7 @@ const ImageControlPanel = ({ state, setState, handleChange }: any) => {
                   onChange={handleChangeHeight}
                 />
               </HeroResult>
-              <HeroSpanRight>-</HeroSpanRight>
+              <HeroSpanRight onClick={decreaseHeightValue}>-</HeroSpanRight>
             </CounterContainer>
           </WrapperCounter>
 
