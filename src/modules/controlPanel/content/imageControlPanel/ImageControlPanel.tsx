@@ -18,10 +18,12 @@ import {
   WrapperCounter,
   WrapperLabel,
   FormInput,
+  HeroSpanLeft,
+  HeroSpanRight,
 } from '@modules/controlPanel/content/imageControlPanel/imageControlPanel_styles';
 import { alignImageOptions } from '@modules/controlPanel/utils/constants';
 //end imports
-const ImageControlPanel = ({ state, handleChange }: any) => {
+const ImageControlPanel = ({ state, handleChange, setState }: any) => {
   const [image, setImage] = React.useState(null);
   const [isShown, setIsShown] = React.useState(false);
   const [modal, setModal] = React.useState(false);
@@ -136,7 +138,7 @@ const ImageControlPanel = ({ state, handleChange }: any) => {
             onChange={handleChangeUrl}
           />
         </Collapse>
-        <Collapse title="alt text">
+        <Collapse open title="alt text">
           <HeroFormInput
             name="altText"
             scale="sm"
@@ -157,7 +159,9 @@ const ImageControlPanel = ({ state, handleChange }: any) => {
 
           <WrapperCounter>
             <CounterContainer>
-              {/* <HeroSpanLeft>+</HeroSpanLeft> */}
+              <HeroSpanLeft onClick={() => setState(Number(state.width) + 1)}>
+                +
+              </HeroSpanLeft>
               <HeroResult>
                 <FormInput
                   name="width"
@@ -166,11 +170,11 @@ const ImageControlPanel = ({ state, handleChange }: any) => {
                   type="number"
                 />
               </HeroResult>
-              {/* <HeroSpanRight>-</HeroSpanRight> */}
+              <HeroSpanRight>-</HeroSpanRight>
             </CounterContainer>
 
             <CounterContainer>
-              {/* <HeroSpanLeft>+</HeroSpanLeft> */}
+              <HeroSpanLeft>+</HeroSpanLeft>
               <HeroResult>
                 <FormInput
                   name="height"
@@ -179,7 +183,7 @@ const ImageControlPanel = ({ state, handleChange }: any) => {
                   onChange={handleChangeHeight}
                 />
               </HeroResult>
-              {/* <HeroSpanRight>-</HeroSpanRight> */}
+              <HeroSpanRight>-</HeroSpanRight>
             </CounterContainer>
           </WrapperCounter>
 

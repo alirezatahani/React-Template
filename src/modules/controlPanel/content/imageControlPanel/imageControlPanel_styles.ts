@@ -51,7 +51,7 @@ export const ButtonWrapper = styled.div(({}) => ({
 export const Wrapper = styled.div(({}) => ({
   display: 'flex',
   justifyContent: 'space-between',
-  alignItem: 'center',
+  alignItems: 'center',
   cursor: 'pointer',
 }));
 
@@ -86,50 +86,50 @@ export const ButtonAddFile = styled(Button)(({ theme }) => ({
 export const CounterContainer = styled.div(({}) => ({
   display: 'flex',
   justifyContent: 'center',
-  alignItem: 'center',
+  alignItems: 'center',
 }));
 
 export const HeroSpanLeft = styled.span(({}) => ({
   width: 35,
-  height: 35,
+  height: 30,
   backgroundColor: '#F5F5F5',
   display: 'flex',
   justifyContent: 'center',
   cursor: 'pointer',
-  alignItem: 'center',
+  alignItems: 'center',
   borderRadius: '4px 0px 0px 4px',
 }));
 export const HeroSpanRight = styled.span(({}) => ({
-  width: 35,
-  height: 35,
+  width: 30,
+  height: 30,
   backgroundColor: '#F5F5F5',
   display: 'flex',
   justifyContent: 'center',
   cursor: 'pointer',
-  alignItem: 'center',
+  alignItems: 'center',
   borderRadius: '0px 4px 4px 0px',
 }));
 export const HeroResult = styled.span(({}) => ({
-  width: 120,
+  width: 60,
   height: 30,
-  borderRadius: 4,
 }));
 export const WrapperLabel = styled.div(({}) => ({
   display: 'flex',
   justifyContent: 'space-around',
-  alignItem: 'center',
+  alignItems: 'center',
 }));
 
 export const WrapperCounter = styled.div(({}) => ({
   display: 'flex',
   justifyContent: 'space-around',
-  alignItem: 'center',
+  alignItems: 'center',
   marginBottom: '2rem',
 }));
 
 export const FormInput = styled(Input)({
-  borderRadius: 4,
-  border: '2px solid #F5F5F5',
+  border: '1px solid #F5F5F5',
+  height: 30,
+  borderRadius: 0,
   ' :focus': {
     outline: 'none',
   },

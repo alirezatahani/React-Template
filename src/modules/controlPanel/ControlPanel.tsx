@@ -29,7 +29,11 @@ const ControlPanel: React.FC<ControlPanelProps> = ({
       <ButtonControlPanel state={initialValue} handleChange={handleChange} />
     ),
     image: (
-      <ImageControlPanel state={initialValue} handleChange={handleChange} />
+      <ImageControlPanel
+        state={initialValue}
+        setState={setInitialValue}
+        handleChange={handleChange}
+      />
     ),
     gallery: <GalleryControlPanel />,
   };
