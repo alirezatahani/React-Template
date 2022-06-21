@@ -6,6 +6,7 @@ import {
   Switch,
   Modal,
   Counter,
+  CounterBox,
 } from '@components/index';
 import {
   ControlPanelItemContainer,
@@ -20,13 +21,8 @@ import {
   ModalContent,
   InputFile,
   ButtonAddFile,
-  CounterContainer,
-  HeroResult,
   WrapperCounter,
   WrapperLabel,
-  FormInput,
-  HeroSpanLeft,
-  HeroSpanRight,
   SwitchWrapper,
   SwitchLabel,
   PaddingContainer,
@@ -178,8 +174,6 @@ const ImageControlPanel = ({ state, setState, handleChange }: any) => {
   };
   console.log(state, 'state');
 
-  const { border } = state;
-
   return (
     <div>
       <ControlPanelSettingContainer>
@@ -256,7 +250,6 @@ const ImageControlPanel = ({ state, setState, handleChange }: any) => {
               <Typography variant="body1">Height</Typography>
             </ControlPanelItemLabel>
           </WrapperLabel>
-
           <WrapperCounter>
             <Counter
               onIncrease={increaseWidthValue}

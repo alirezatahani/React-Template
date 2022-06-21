@@ -24,3 +24,4 @@ export * from './templateCart';
 export * from './textarea';
 export * from './modal';
 export * from './counter';
+export * from './counterBox';
