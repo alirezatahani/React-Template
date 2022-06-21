@@ -5,6 +5,8 @@ import {
   BtnCheckbox,
   Switch,
   Modal,
+  Row,
+  Col,
 } from '@components/index';
 import {
   ControlPanelItemContainer,
@@ -158,7 +160,7 @@ const ImageControlPanel = ({ state, setState, handleChange }: any) => {
   };
   console.log(state, 'state');
   return (
-    <React.Fragment>
+    <div>
       <ControlPanelSettingContainer>
         <Typography variant="h5">Image</Typography>
         <Collapse title="Source">
@@ -183,6 +185,7 @@ const ImageControlPanel = ({ state, setState, handleChange }: any) => {
                 </HeroButton>
               )}
             </ImageBox>
+
             <Modal visible={modal} onClose={() => setModal(false)}>
               <ModalContent>
                 <Typography
@@ -352,9 +355,19 @@ const ImageControlPanel = ({ state, setState, handleChange }: any) => {
               )}
             </PaddingContainer>
           ) : null}
+
+          <SwitchWrapper>
+            <Switch
+              size="sm"
+              checked={flags.filter((flag) => flag === 'border').length}
+              onChange={() => handleClick('border')}
+            />
+
+            <SwitchLabel variant="body1">Border</SwitchLabel>
+          </SwitchWrapper>
         </Collapse>
       </ControlPanelSettingContainer>
-    </React.Fragment>
+    </div>
   );
 };
 

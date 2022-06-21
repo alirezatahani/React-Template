@@ -137,7 +137,6 @@ export const SwitchWrapper = styled.div(({}) => ({
   display: 'flex',
   justifyContent: 'flex-start',
   alignItems: 'center',
-  marginBottom: '2rem',
 }));
 export const SwitchLabel = styled(Typography)(({}) => ({
   marginLeft: 8,
@@ -150,6 +149,8 @@ export const PaddingContainer = styled.div(({ theme }) => ({
   border: `1px dashed ${theme.palette.disabled.backgroundColor}`,
   margin: '0px auto',
   borderRadius: 4,
+  marginBottom: '2rem',
+  marginTop: '2rem',
 }));
 export const PaddingTopStyled = styled.div(({}) => ({
   position: 'absolute',
