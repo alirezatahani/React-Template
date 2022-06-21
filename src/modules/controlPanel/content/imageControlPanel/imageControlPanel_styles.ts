@@ -150,24 +150,24 @@ export const PaddingContainer = styled.div(({ theme }) => ({
   margin: '0px auto',
   borderRadius: 4,
 }));
-export const BoxTop = styled.div(({}) => ({
+export const PaddingTopStyled = styled.div(({}) => ({
   position: 'absolute',
   left: 0,
   right: 0,
   top: -16,
 }));
-export const BoxBottom = styled.div(({}) => ({
+export const PaddingBottomStyled = styled.div(({}) => ({
   position: 'absolute',
   left: 0,
   right: 0,
   bottom: -48,
 }));
-export const BoxRight = styled.div(({}) => ({
+export const PaddingRightStyled = styled.div(({}) => ({
   position: 'absolute',
   left: -62,
   bottom: 0,
 }));
-export const BoxLeft = styled.div(({}) => ({
+export const PaddingLeftStyled = styled.div(({}) => ({
   position: 'absolute',
   right: -62,
   bottom: 0,

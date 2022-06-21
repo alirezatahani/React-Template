@@ -46,6 +46,9 @@ export const Blank3 = ({ setSelected, state }: any) => {
                     height={state.height}
                     style={{
                       paddingTop: Number(state.paddingTop),
+                      paddingBottom: Number(state.paddingBottom),
+                      paddingRight: Number(state.paddingRight),
+                      paddingLeft: Number(state.paddingLeft),
                     }}
                   />
                 ) : (

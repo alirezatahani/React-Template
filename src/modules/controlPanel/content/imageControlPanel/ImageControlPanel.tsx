@@ -29,10 +29,10 @@ import {
   SwitchWrapper,
   SwitchLabel,
   PaddingContainer,
-  BoxTop,
-  BoxBottom,
-  BoxRight,
-  BoxLeft,
+  PaddingTopStyled,
+  PaddingBottomStyled,
+  PaddingRightStyled,
+  PaddingLeftStyled,
   LockBox,
 } from '@modules/controlPanel/content/imageControlPanel/imageControlPanel_styles';
 import { alignImageOptions } from '@modules/controlPanel/utils/constants';
@@ -92,10 +92,22 @@ const ImageControlPanel = ({ state, setState, handleChange }: any) => {
     handleChange('paddingTop', e.target.value);
   };
 
+  const handleChangePaddingBottom = (
+    e: React.ChangeEvent<HTMLInputElement>
+  ) => {
+    handleChange('paddingBottom', e.target.value);
+  };
+  const handleChangePaddingRight = (e: React.ChangeEvent<HTMLInputElement>) => {
+    handleChange('paddingRight', e.target.value);
+  };
+  const handleChangePaddingLeft = (e: React.ChangeEvent<HTMLInputElement>) => {
+    handleChange('paddingLeft', e.target.value);
+  };
+
   const increaseWidthValue = () => {
     setState((prevState: any) => ({
       ...prevState,
-      width: Number(prevState.value) + 1,
+      width: Number(prevState.width) + 1,
     }));
   };
 
@@ -250,7 +262,7 @@ const ImageControlPanel = ({ state, setState, handleChange }: any) => {
           </SwitchWrapper>
           {flags.find((flag) => flag === 'padding') ? (
             <PaddingContainer>
-              <BoxTop>
+              <PaddingTopStyled>
                 <WrapperCounter>
                   <CounterContainer>
                     <HeroSpanLeft>+</HeroSpanLeft>
@@ -264,46 +276,58 @@ const ImageControlPanel = ({ state, setState, handleChange }: any) => {
                     <HeroSpanRight>-</HeroSpanRight>
                   </CounterContainer>
                 </WrapperCounter>
-              </BoxTop>
-              <BoxBottom>
+              </PaddingTopStyled>
+              <PaddingBottomStyled>
                 <WrapperCounter>
                   <CounterContainer>
                     <HeroSpanLeft>+</HeroSpanLeft>
                     <HeroResult>
-                      <FormInput />
+                      <FormInput
+                        name="paddingBottom"
+                        value={state.paddingBottom}
+                        onChange={handleChangePaddingBottom}
+                      />
                     </HeroResult>
                     <HeroSpanRight>-</HeroSpanRight>
                   </CounterContainer>
                 </WrapperCounter>
-              </BoxBottom>
-              <BoxRight>
+              </PaddingBottomStyled>
+              <PaddingRightStyled>
                 <WrapperCounter>
                   <CounterContainer>
                     <HeroSpanLeft>+</HeroSpanLeft>
                     <HeroResult>
-                      <FormInput />
+                      <FormInput
+                        name="paddingRight"
+                        value={state.paddingRight}
+                        onChange={handleChangePaddingRight}
+                      />
                     </HeroResult>
                     <HeroSpanRight>-</HeroSpanRight>
                   </CounterContainer>
                 </WrapperCounter>
-              </BoxRight>
-              <BoxLeft>
+              </PaddingRightStyled>
+              <PaddingLeftStyled>
                 <WrapperCounter>
                   <CounterContainer>
                     <HeroSpanLeft>+</HeroSpanLeft>
                     <HeroResult>
-                      <FormInput />
+                      <FormInput
+                        name="paddingLeft"
+                        value={state.paddingLeft}
+                        onChange={handleChangePaddingLeft}
+                      />
                     </HeroResult>
                     <HeroSpanRight>-</HeroSpanRight>
                   </CounterContainer>
                 </WrapperCounter>
-              </BoxLeft>
-              {!lock ? (
-                <LockBox onClick={() => setLock(true)}>
+              </PaddingLeftStyled>
+              {lock ? (
+                <LockBox onClick={() => setLock(false)}>
                   <FaLock />
                 </LockBox>
               ) : (
-                <LockBox onClick={() => setLock(false)}>
+                <LockBox onClick={() => setLock(true)}>
                   <FaUnlock />
                 </LockBox>
               )}
