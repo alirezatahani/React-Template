@@ -39,7 +39,8 @@ import {
   borderOptions,
 } from '@modules/controlPanel/utils/constants';
 import { FaLock, FaUnlock } from 'react-icons/Fa';
-import Select, { StylesConfig } from 'react-select';
+import Select from 'react-select';
+import { increaseValue, decreaseValue } from 'utils/counter';
 
 //end imports
 const ImageControlPanel = ({ state, setState, handleChange }: any) => {
@@ -114,31 +115,6 @@ const ImageControlPanel = ({ state, setState, handleChange }: any) => {
     handleChange('paddingLeft', e.target.value);
   };
 
-  const increaseWidthValue = () => {
-    setState((prevState: any) => ({
-      ...prevState,
-      width: Number(prevState.width) + 1,
-    }));
-  };
-
-  const decreaseWidthValue = () => {
-    setState((prevState: any) => ({
-      ...prevState,
-      width: Number(prevState.width) - 1,
-    }));
-  };
-  const increaseHeightValue = () => {
-    setState((prevState: any) => ({
-      ...prevState,
-      height: Number(prevState.height) + 1,
-    }));
-  };
-  const decreaseHeightValue = () => {
-    setState((prevState: any) => ({
-      ...prevState,
-      height: Number(prevState.height) - 1,
-    }));
-  };
   const increaseBorderValue = () => {
     setState((prevState: any) => ({
       ...prevState,
@@ -252,16 +228,16 @@ const ImageControlPanel = ({ state, setState, handleChange }: any) => {
           </WrapperLabel>
           <WrapperCounter>
             <Counter
-              onIncrease={increaseWidthValue}
-              onDecrease={decreaseWidthValue}
+              onIncrease={() => increaseValue(state, setState, 'width')}
+              onDecrease={() => decreaseValue(state, setState, 'width')}
               name="width"
               value={state.width}
               onChange={handleChangeWidth}
             />
 
             <Counter
-              onIncrease={increaseHeightValue}
-              onDecrease={decreaseHeightValue}
+              onIncrease={() => increaseValue(state, setState, 'height')}
+              onDecrease={() => decreaseValue(state, setState, 'height')}
               name="height"
               value={state.height}
               onChange={handleChangeHeight}
