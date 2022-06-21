@@ -13,6 +13,10 @@ export const Create = () => {
     textDecoration: ['underline'],
     fontColor: '#c3c3c3',
     textAlign: 'center',
+    paddingTop: 0,
+    paddingBottom: 0,
+    paddingRight: 0,
+    paddingLeft: 0,
   });
 
   return (

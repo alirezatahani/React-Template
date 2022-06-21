@@ -130,6 +130,23 @@ const ImageControlPanel = ({ state, setState, handleChange }: any) => {
     }));
   };
 
+  const increasePaddingValue = () => {
+    if (lock) {
+      setState((prevState: any) => ({
+        ...prevState,
+        paddingTop: Number(prevState.paddingTop) + 1,
+        paddingBottom: Number(prevState.paddingBottom) + 1,
+        paddingRight: Number(prevState.paddingRight) + 1,
+        paddingLeft: Number(prevState.paddingLeft) + 1,
+      }));
+    } else {
+      setState((prevState: any) => ({
+        ...prevState,
+        paddingTop: Number(prevState.paddingTop) + 1,
+      }));
+    }
+  };
+
   const handleClick = (label: string) => {
     const exist = flags.find((flag) => flag === label);
     if (exist) {
@@ -265,7 +282,9 @@ const ImageControlPanel = ({ state, setState, handleChange }: any) => {
               <PaddingTopStyled>
                 <WrapperCounter>
                   <CounterContainer>
-                    <HeroSpanLeft>+</HeroSpanLeft>
+                    <HeroSpanLeft onClick={() => increasePaddingValue()}>
+                      +
+                    </HeroSpanLeft>
                     <HeroResult>
                       <FormInput
                         name="paddingTop"
