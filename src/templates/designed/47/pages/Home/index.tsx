@@ -53,7 +53,7 @@ const Home = () => {
                     <Col xs={12}>
                         <IntroduceWithImage home
                         image1="https://images.unsplash.com/photo-1516627145497-ae6968895b74?ixid=MnwyMjUyNTN8MHwxfHNlYXJjaHw3fHxraWRzfGVufDB8fHx8MTYyMTg3Nzc0NQ&ixlib=rb-1.2.1&w=1920&h=1326&crop=faces&fit=crop"
-                        image2="https://images.unsplash.com/photo-1516627145497-ae6968895b74?ixid=MnwyMjUyNTN8MHwxfHNlYXJjaHw3fHxraWRzfGVufDB8fHx8MTYyMTg3Nzc0NQ&ixlib=rb-1.2.1&w=1920&h=1326&crop=faces&fit=crop"
+                        image2="https://images.unsplash.com/photo-1585775484045-0cafc65dc562?ixid=MnwyMjUyNTN8MHwxfHNlYXJjaHwxM3x8a2lkcyUyMGNyYWZ0fGVufDB8fHx8MTYyMTg3Nzc0Ng&ixlib=rb-1.2.1&w=1920&h=1279&crop=faces&fit=crop"
                         image3="https://images.unsplash.com/photo-1541692641319-981cc79ee10a?ixid=MnwyMjUyNTN8MHwxfHNlYXJjaHw0NXx8Z2FtZXN8ZW58MHx8fHwxNjE5NzMxMDQw&ixlib=rb-1.2.1&w=1920&h=1280&crop=faces&fit=crop"
                         title1="introduce your idea"
                         title2="introduce your idea"

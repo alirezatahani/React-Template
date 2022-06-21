@@ -22,7 +22,7 @@ const About = () => {
             <div style={{margin: '40px'}}>
                 <IntroduceWithImage
                 image1="https://images.unsplash.com/photo-1613186420419-868111e7ac07?ixid=MnwyMjUyNTN8MHwxfHNlYXJjaHw5fHxibGFjayUyMHdvbWFuJTIwc21pbGluZ3xlbnwwfHx8fDE2MjE4OTA3ODY&ixlib=rb-1.2.1&w=1920&h=1280&crop=faces&fit=crop"
-                image2="https://images.unsplash.com/photo-1601600416038-72c0ea043d3c?ixid=MnwyMjUyNTN8MHwxfHNlYXJjaHw3fHxtYW4lMjBwYWludGVyfGVufDB8fHx8MTYyMTg5MDc0Mg&ixlib=rb-1.2.1&w=1920&h=1280&crop=faces&fit=crop"
+                image2="https://images.unsplash.com/photo-1585775484045-0cafc65dc562?ixid=MnwyMjUyNTN8MHwxfHNlYXJjaHwxM3x8a2lkcyUyMGNyYWZ0fGVufDB8fHx8MTYyMTg3Nzc0Ng&ixlib=rb-1.2.1&w=1920&h=1279&crop=faces&fit=crop"
                 image3="https://images.unsplash.com/photo-1520207588543-1e545b20c19e?ixid=MnwyMjUyNTN8MHwxfHNlYXJjaHwxMnx8YXJ0aXN0fGVufDB8fHx8MTYyMTg5MDY4NA&ixlib=rb-1.2.1&w=1920&h=1279&crop=faces&fit=crop"
                 title1="introduce your idea"
                 title2="introduce your idea"

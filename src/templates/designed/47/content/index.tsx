@@ -7,9 +7,9 @@ import Home from '../pages/Home';
 export const Design47 = () => {
   return (
     <>
-      {/* <Home/> */}
-      <About/>
-      {/* <Classes/>
+      <Home/>
+      {/* <About/>
+      <Classes/>
       <Events/> */}
     </>
   );
