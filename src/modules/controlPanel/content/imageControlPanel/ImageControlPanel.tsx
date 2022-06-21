@@ -36,9 +36,15 @@ import {
   PaddingRightStyled,
   PaddingLeftStyled,
   LockBox,
+  BorderWrapperCounter,
+  SelectWrapper,
 } from '@modules/controlPanel/content/imageControlPanel/imageControlPanel_styles';
-import { alignImageOptions } from '@modules/controlPanel/utils/constants';
+import {
+  alignImageOptions,
+  borderOptions,
+} from '@modules/controlPanel/utils/constants';
 import { FaLock, FaUnlock } from 'react-icons/Fa';
+import Select, { StylesConfig } from 'react-select';
 
 //end imports
 const ImageControlPanel = ({ state, setState, handleChange }: any) => {
@@ -90,6 +96,13 @@ const ImageControlPanel = ({ state, setState, handleChange }: any) => {
     handleChange('alignMent', e.target.value);
   };
 
+  const handleChangeBorderStyle = (event: {
+    kind: string;
+    value: string | number;
+  }) => {
+    handleChange(event.kind, event.value);
+  };
+
   const handleChangePaddingTop = (e: React.ChangeEvent<HTMLInputElement>) => {
     handleChange('paddingTop', e.target.value);
   };
@@ -131,6 +144,12 @@ const ImageControlPanel = ({ state, setState, handleChange }: any) => {
       height: Number(prevState.height) - 1,
     }));
   };
+  const increaseBorderValue = () => {
+    setState((prevState: any) => ({
+      ...prevState,
+      border: Number(prevState.border) + 1,
+    }));
+  };
 
   const increasePaddingValue = () => {
     if (lock) {
@@ -159,6 +178,9 @@ const ImageControlPanel = ({ state, setState, handleChange }: any) => {
     }
   };
   console.log(state, 'state');
+
+  const { border } = state;
+
   return (
     <div>
       <ControlPanelSettingContainer>
@@ -365,6 +387,29 @@ const ImageControlPanel = ({ state, setState, handleChange }: any) => {
 
             <SwitchLabel variant="body1">Border</SwitchLabel>
           </SwitchWrapper>
+          {flags.find((flag) => flag === 'border') ? (
+            <BorderWrapperCounter>
+              <CounterContainer>
+                <HeroSpanLeft onClick={() => increaseBorderValue()}>
+                  +
+                </HeroSpanLeft>
+                <HeroResult>
+                  <FormInput />
+                </HeroResult>
+                <HeroSpanRight>-</HeroSpanRight>
+              </CounterContainer>
+              <SelectWrapper>
+                <Select
+                  name="border"
+                  options={borderOptions}
+                  onChange={handleChangeBorderStyle}
+                  defaultValue={borderOptions.filter(
+                    (borderOption) => borderOption.value === border
+                  )}
+                />
+              </SelectWrapper>
+            </BorderWrapperCounter>
+          ) : null}
         </Collapse>
       </ControlPanelSettingContainer>
     </div>

@@ -49,6 +49,7 @@ export const Blank3 = ({ setSelected, state }: any) => {
                       paddingBottom: Number(state.paddingBottom),
                       paddingRight: Number(state.paddingRight),
                       paddingLeft: Number(state.paddingLeft),
+                      border: state.border,
                     }}
                   />
                 ) : (

@@ -88,7 +88,7 @@ export const CounterContainer = styled.div(({}) => ({
 }));
 
 export const HeroSpanLeft = styled.span(({}) => ({
-  width: 35,
+  width: 30,
   height: 30,
   backgroundColor: '#F5F5F5',
   display: 'flex',
@@ -123,6 +123,14 @@ export const WrapperCounter = styled.div(({}) => ({
   alignItems: 'center',
   marginBottom: '2rem',
 }));
+
+export const BorderWrapperCounter = styled(WrapperCounter)({
+  display: 'flex',
+  justifyContent: 'flex-start',
+  alignItems: 'center',
+  marginBottom: '2rem',
+  marginTop: '1rem',
+});
 
 export const FormInput = styled(Input)({
   border: '1px solid #F5F5F5',
@@ -178,4 +186,7 @@ export const LockBox = styled.div(({}) => ({
   position: 'absolute',
   left: 93,
   top: 40,
+}));
+export const SelectWrapper = styled.div(({}) => ({
+  marginLeft: 14,
 }));

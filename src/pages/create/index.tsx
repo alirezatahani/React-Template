@@ -17,6 +17,7 @@ export const Create = () => {
     paddingBottom: 0,
     paddingRight: 0,
     paddingLeft: 0,
+    border: '1px solid black',
   });
 
   return (

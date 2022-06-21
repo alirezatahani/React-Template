@@ -28,6 +28,10 @@ export const fontFamilyOptions = [
   { value: 'Poppins', label: 'Poppins', kind: 'fontFamily' },
   { value: 'Arial', label: 'Arial', kind: 'fontFamily' },
 ];
+export const borderOptions = [
+  { value: '1px dashed black', label: 'dashed', kind: 'border' },
+  { value: '1px solid black', label: 'solid', kind: 'border' },
+];
 
 export const fontSizeOptions = new Array(10).fill('').map((e, i) => {
   if (i === 0) {
