@@ -5,8 +5,7 @@ import {
   BtnCheckbox,
   Switch,
   Modal,
-  Row,
-  Col,
+  Counter,
 } from '@components/index';
 import {
   ControlPanelItemContainer,
@@ -259,29 +258,21 @@ const ImageControlPanel = ({ state, setState, handleChange }: any) => {
           </WrapperLabel>
 
           <WrapperCounter>
-            <CounterContainer>
-              <HeroSpanLeft onClick={increaseWidthValue}>+</HeroSpanLeft>
-              <HeroResult>
-                <FormInput
-                  name="width"
-                  value={state.width}
-                  onChange={handleChangeWidth}
-                />
-              </HeroResult>
-              <HeroSpanRight onClick={decreaseWidthValue}>-</HeroSpanRight>
-            </CounterContainer>
+            <Counter
+              onIncrease={increaseWidthValue}
+              onDecrease={decreaseWidthValue}
+              name="width"
+              value={state.width}
+              onChange={handleChangeWidth}
+            />
 
-            <CounterContainer>
-              <HeroSpanLeft onClick={increaseHeightValue}>+</HeroSpanLeft>
-              <HeroResult>
-                <FormInput
-                  name="height"
-                  value={state.height}
-                  onChange={handleChangeHeight}
-                />
-              </HeroResult>
-              <HeroSpanRight onClick={decreaseHeightValue}>-</HeroSpanRight>
-            </CounterContainer>
+            <Counter
+              onIncrease={increaseHeightValue}
+              onDecrease={decreaseHeightValue}
+              name="height"
+              value={state.height}
+              onChange={handleChangeHeight}
+            />
           </WrapperCounter>
 
           <BtnCheckbox
@@ -306,64 +297,39 @@ const ImageControlPanel = ({ state, setState, handleChange }: any) => {
             <PaddingContainer>
               <PaddingTopStyled>
                 <WrapperCounter>
-                  <CounterContainer>
-                    <HeroSpanLeft onClick={() => increasePaddingValue()}>
-                      +
-                    </HeroSpanLeft>
-                    <HeroResult>
-                      <FormInput
-                        name="paddingTop"
-                        value={state.paddingTop}
-                        onChange={handleChangePaddingTop}
-                      />
-                    </HeroResult>
-                    <HeroSpanRight>-</HeroSpanRight>
-                  </CounterContainer>
+                  <Counter
+                    onIncrease={increasePaddingValue}
+                    name="paddingTop"
+                    value={state.paddingTop}
+                    onChange={handleChangePaddingTop}
+                  />
                 </WrapperCounter>
               </PaddingTopStyled>
               <PaddingBottomStyled>
                 <WrapperCounter>
-                  <CounterContainer>
-                    <HeroSpanLeft>+</HeroSpanLeft>
-                    <HeroResult>
-                      <FormInput
-                        name="paddingBottom"
-                        value={state.paddingBottom}
-                        onChange={handleChangePaddingBottom}
-                      />
-                    </HeroResult>
-                    <HeroSpanRight>-</HeroSpanRight>
-                  </CounterContainer>
+                  <Counter
+                    name="paddingBottom"
+                    value={state.paddingBottom}
+                    onChange={handleChangePaddingBottom}
+                  />
                 </WrapperCounter>
               </PaddingBottomStyled>
               <PaddingRightStyled>
                 <WrapperCounter>
-                  <CounterContainer>
-                    <HeroSpanLeft>+</HeroSpanLeft>
-                    <HeroResult>
-                      <FormInput
-                        name="paddingRight"
-                        value={state.paddingRight}
-                        onChange={handleChangePaddingRight}
-                      />
-                    </HeroResult>
-                    <HeroSpanRight>-</HeroSpanRight>
-                  </CounterContainer>
+                  <Counter
+                    name="paddingRight"
+                    value={state.paddingRight}
+                    onChange={handleChangePaddingRight}
+                  />
                 </WrapperCounter>
               </PaddingRightStyled>
               <PaddingLeftStyled>
                 <WrapperCounter>
-                  <CounterContainer>
-                    <HeroSpanLeft>+</HeroSpanLeft>
-                    <HeroResult>
-                      <FormInput
-                        name="paddingLeft"
-                        value={state.paddingLeft}
-                        onChange={handleChangePaddingLeft}
-                      />
-                    </HeroResult>
-                    <HeroSpanRight>-</HeroSpanRight>
-                  </CounterContainer>
+                  <Counter
+                    name="paddingLeft"
+                    value={state.paddingLeft}
+                    onChange={handleChangePaddingLeft}
+                  />
                 </WrapperCounter>
               </PaddingLeftStyled>
               {lock ? (
@@ -389,23 +355,12 @@ const ImageControlPanel = ({ state, setState, handleChange }: any) => {
           </SwitchWrapper>
           {flags.find((flag) => flag === 'border') ? (
             <BorderWrapperCounter>
-              <CounterContainer>
-                <HeroSpanLeft onClick={() => increaseBorderValue()}>
-                  +
-                </HeroSpanLeft>
-                <HeroResult>
-                  <FormInput />
-                </HeroResult>
-                <HeroSpanRight>-</HeroSpanRight>
-              </CounterContainer>
+              <Counter />
               <SelectWrapper>
                 <Select
                   name="border"
                   options={borderOptions}
                   onChange={handleChangeBorderStyle}
-                  defaultValue={borderOptions.filter(
-                    (borderOption) => borderOption.value === border
-                  )}
                 />
               </SelectWrapper>
             </BorderWrapperCounter>

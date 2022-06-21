@@ -8,14 +8,20 @@ import {
   FormInput,
 } from '../styles/Counter.styles';
 
-const Counter: React.FC<CounterProps> = ({ ...rest }: CounterProps) => {
+const Counter: React.FC<CounterProps> = ({
+  onIncrease,
+  onDecrease,
+  name,
+  value,
+  onChange,
+}: CounterProps) => {
   return (
     <CounterContainer>
-      <HeroSpanLeft>+</HeroSpanLeft>
+      <HeroSpanLeft onClick={onIncrease}>+</HeroSpanLeft>
       <HeroResult>
-        <FormInput />
+        <FormInput name={name} value={value} onChange={onChange} />
       </HeroResult>
-      <HeroSpanRight>-</HeroSpanRight>
+      <HeroSpanRight onClick={onDecrease}>-</HeroSpanRight>
     </CounterContainer>
   );
 };
