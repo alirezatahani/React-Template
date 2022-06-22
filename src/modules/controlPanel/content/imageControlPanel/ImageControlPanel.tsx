@@ -115,13 +115,6 @@ const ImageControlPanel = ({ state, setState, handleChange }: any) => {
     handleChange('paddingLeft', e.target.value);
   };
 
-  const increaseBorderValue = () => {
-    setState((prevState: any) => ({
-      ...prevState,
-      border: Number(prevState.border) + 1,
-    }));
-  };
-
   const increasePaddingValue = () => {
     if (lock) {
       setState((prevState: any) => ({
@@ -243,6 +236,7 @@ const ImageControlPanel = ({ state, setState, handleChange }: any) => {
               onChange={handleChangeHeight}
             />
           </WrapperCounter>
+          {/* <CounterBox /> */}
 
           <BtnCheckbox
             type="radio"

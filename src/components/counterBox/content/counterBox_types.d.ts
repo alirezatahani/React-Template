@@ -3,5 +3,9 @@ import React from 'react';
 export type CounterBoxProps = {
   style?: React.CSSProperties;
   shape?: 'square' | 'customShape';
-  children?: React.ReactNode;
+  onIncrease?: () => void;
+  onDecrease?: () => void;
+  onChange?: React.ChangeEventHandler;
+  name?: string;
+  value?: any;
 };
