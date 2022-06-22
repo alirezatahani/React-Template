@@ -39,7 +39,7 @@ export const Dustbin = ({ selectedComponent, selectedStyle }: DustBinProps) => {
 
   const components: any = {
     Button: <Button style={...selectedStyle}>test</Button>,
-    Typography: <Typography>Test</Typography>,
+    Typography: <Typography variant={...selectedStyle.variant}>text</Typography>,
     Input: <Input value="test" />,
     Image: <Image />,
   };

@@ -13,11 +13,12 @@ import {
 import { Typography, Modal, Button } from '@components/index';
 import { Box } from '../Box/Box';
 import { Dustbin } from '../Dustbin/Dustbin';
+import SelectorModal from '../SelectorModal/SelectorModal';
 
 export const SelectorScreen = memo(function Container() {
   const [selectedComponent, setSelectedComponent] = useState<string>('');
   const [visible, setVisible] = React.useState<boolean>(false);
-  const [selectedStyle, setSelectedStyle] = React.useState<Object>({});
+  const [selectedStyle, setSelectedStyle] = React.useState<any>({});
 
   const handleDropComponent = (item: any) => {
     setVisible(true);
@@ -26,24 +27,16 @@ export const SelectorScreen = memo(function Container() {
 
   const choosedComponent = (item: any) => {
     setSelectedStyle(item.style);
-  };
+  }
 
   return (
     <Row>
       <Modal visible={visible} onClose={() => setVisible(false)}>
-        {selectedComponent &&
-          ComponentsVariations[selectedComponent].map(
-            (componentVariation: any, index: number) => (
-              <Button
-                key={index}
-                style={componentVariation.style}
-                onClick={() => choosedComponent(componentVariation)}
-              >
-                {componentVariation.name}
-              </Button>
-            )
-          )}
-          <Button onClick={() => {setVisible(false)}}>ok</Button>
+        {selectedComponent && <SelectorModal selectedComponent={selectedComponent} choosedComponent={choosedComponent} />}
+          <br/>
+          <Row justify='center'>
+            <Button onClick={() => {setVisible(false)}} style={{padding:'20px 30px', backgroundColor:'#282A35', border:'none'}}>ok</Button>
+          </Row>
       </Modal>
       <DropCol span={9} style={{ overflow: 'hidden', clear: 'both' }}>
         <div style={{ overflow: 'hidden', clear: 'both' }}>
