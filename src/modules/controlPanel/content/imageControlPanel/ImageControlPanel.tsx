@@ -236,7 +236,12 @@ const ImageControlPanel = ({ state, setState, handleChange }: any) => {
               onChange={handleChangeHeight}
             />
           </WrapperCounter>
-          {/* <CounterBox /> */}
+
+          <CounterBox
+            name="padding"
+            value={5}
+            onChange={(value) => console.log(value)}
+          />
 
           <BtnCheckbox
             type="radio"

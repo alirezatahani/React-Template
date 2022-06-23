@@ -5,4 +5,5 @@ export const WrapperCounter = styled.div(({}) => ({
   justifyContent: 'space-around',
   alignItems: 'center',
   marginBottom: '2rem',
+  flexDirection: 'column',
 }));

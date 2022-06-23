@@ -13,8 +13,10 @@ const CounterBox: React.FC<CounterBoxProps> = ({
 }: CounterBoxProps) => {
   return (
     <WrapperCounter {...rest}>
-      <Counter {...rest} />
-      <Counter {...rest} />
+      <Counter value={value} />
+      <Counter value={value} />
+      <Counter value={value} />
+      <Counter value={value} />
     </WrapperCounter>
   );
 };
