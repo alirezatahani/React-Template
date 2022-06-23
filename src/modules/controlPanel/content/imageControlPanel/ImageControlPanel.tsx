@@ -49,6 +49,7 @@ const ImageControlPanel = ({ state, setState, handleChange }: any) => {
   const [modal, setModal] = React.useState<boolean>(false);
   const [lock, setLock] = React.useState<boolean>(false);
   const [flags, setFlags] = React.useState([]);
+  const [padding, setPadding] = React.useState([5, 5, 5, 5]);
 
   //load image
 
@@ -141,7 +142,10 @@ const ImageControlPanel = ({ state, setState, handleChange }: any) => {
       setFlags([...flags, label]);
     }
   };
-  console.log(state, 'state');
+
+  const handleChangeCounterBox = (values: number[], name: string) => {
+    setPadding(values);
+  };
 
   return (
     <div>
@@ -239,8 +243,8 @@ const ImageControlPanel = ({ state, setState, handleChange }: any) => {
 
           <CounterBox
             name="padding"
-            value={5}
-            onChange={(value) => console.log(value)}
+            values={padding}
+            onChange={handleChangeCounterBox}
           />
 
           <BtnCheckbox
