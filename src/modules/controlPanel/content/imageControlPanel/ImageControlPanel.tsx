@@ -49,7 +49,7 @@ const ImageControlPanel = ({ state, setState, handleChange }: any) => {
   const [modal, setModal] = React.useState<boolean>(false);
   const [lock, setLock] = React.useState<boolean>(false);
   const [flags, setFlags] = React.useState([]);
-  const [padding, setPadding] = React.useState([5, 5, 5, 5]);
+  const [padding, setPadding] = React.useState([0, 0, 0, 0]);
 
   //load image
 

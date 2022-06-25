@@ -2,11 +2,45 @@ import styled from 'styled-components';
 
 export const WrapperCounter = styled.div(({}) => ({
   display: 'flex',
-  alignItems: 'stretch',
-  justifyContent: 'space-between',
-  flexWrap: 'wrap',
-  flexDirection: 'row',
-  height: 120,
-  background: 'aquamarine',
+  justifyContent: 'space-around',
+  alignItems: 'center',
+  marginBottom: '2rem',
+}));
+
+export const Container = styled.div(({ theme }) => ({
   position: 'relative',
+  width: 200,
+  height: 100,
+  border: `1px dashed ${theme.palette.disabled.backgroundColor}`,
+  margin: '0px auto',
+  borderRadius: 4,
+  marginBottom: '2rem',
+  marginTop: '2rem',
+}));
+export const TopStyled = styled.div(({}) => ({
+  position: 'absolute',
+  left: 0,
+  right: 0,
+  top: -16,
+}));
+export const BottomStyled = styled.div(({}) => ({
+  position: 'absolute',
+  left: 0,
+  right: 0,
+  bottom: -48,
+}));
+export const RightStyled = styled.div(({}) => ({
+  position: 'absolute',
+  left: -62,
+  bottom: 0,
+}));
+export const LeftStyled = styled.div(({}) => ({
+  position: 'absolute',
+  right: -62,
+  bottom: 0,
+}));
+export const LockBox = styled.div(({}) => ({
+  position: 'absolute',
+  left: 93,
+  top: 40,
 }));
