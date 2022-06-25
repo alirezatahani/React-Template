@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { CounterBoxProps } from '../content/counterBox_types';
 
 export const WrapperCounter = styled.div(({}) => ({
   display: 'flex',
@@ -7,37 +8,38 @@ export const WrapperCounter = styled.div(({}) => ({
   marginBottom: '2rem',
 }));
 
-export const Container = styled.div(({ theme }) => ({
+export const Container = styled.div<CounterBoxProps>(({ theme, shape }) => ({
   position: 'relative',
   width: 200,
-  height: 100,
+  height: shape === 'square' ? 70 : 100,
   border: `1px dashed ${theme.palette.disabled.backgroundColor}`,
   margin: '0px auto',
   borderRadius: 4,
   marginBottom: '2rem',
   marginTop: '2rem',
 }));
-export const TopStyled = styled.div(({}) => ({
+export const TopStyled = styled.div<CounterBoxProps>(({ shape }) => ({
   position: 'absolute',
   left: 0,
-  right: 0,
+  right: shape === 'square' ? 200 : 0,
   top: -16,
 }));
-export const BottomStyled = styled.div(({}) => ({
+
+export const BottomStyled = styled.div<CounterBoxProps>(({ shape }) => ({
   position: 'absolute',
-  left: 0,
+  left: shape === 'square' ? 200 : 0,
   right: 0,
   bottom: -48,
 }));
-export const RightStyled = styled.div(({}) => ({
+export const RightStyled = styled.div<CounterBoxProps>(({ shape }) => ({
   position: 'absolute',
   left: -62,
-  bottom: 0,
+  bottom: shape === 'square' ? -48 : 0,
 }));
-export const LeftStyled = styled.div(({}) => ({
+export const LeftStyled = styled.div<CounterBoxProps>(({ shape }) => ({
   position: 'absolute',
   right: -62,
-  bottom: 0,
+  bottom: shape === 'square' ? 22 : 0,
 }));
 export const LockBox = styled.div(({}) => ({
   position: 'absolute',
