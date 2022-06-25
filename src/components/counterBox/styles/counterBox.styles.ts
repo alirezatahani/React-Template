@@ -8,7 +8,7 @@ export const WrapperCounter = styled.div(({}) => ({
   marginBottom: '2rem',
 }));
 
-export const Container = styled.div<CounterBoxProps>(({ theme, shape }) => ({
+export const Container = styled.div<CounterBoxProps>(({ shape, theme }) => ({
   position: 'relative',
   width: 200,
   height: shape === 'square' ? 70 : 100,

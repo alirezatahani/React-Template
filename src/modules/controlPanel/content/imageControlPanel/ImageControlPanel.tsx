@@ -143,7 +143,7 @@ const ImageControlPanel = ({ state, setState, handleChange }: any) => {
     }
   };
 
-  const handleChangeCounterBox = (values: number[], name: string) => {
+  const handleChangeCounterBox = (values: any, name: string) => {
     setPadding(values);
   };
 

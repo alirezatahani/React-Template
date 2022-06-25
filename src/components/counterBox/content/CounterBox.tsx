@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Counter from '@components/counter/content/Counter';
 import {
   WrapperCounter,
@@ -16,9 +16,10 @@ const CounterBox: React.FC<CounterBoxProps> = ({
   values,
   onChange,
   shape,
-  ...rest
 }: CounterBoxProps) => {
   const [isLocked, setIsLocked] = useState<boolean>(false);
+  const [state, setState] = useState(null);
+  const [total, setTotal] = useState({});
 
   const increaseValue = (index: number) => {
     const newValues = values.map((_value, _index: number) => {
@@ -28,7 +29,7 @@ const CounterBox: React.FC<CounterBoxProps> = ({
         return _value;
       }
     });
-
+    setTotal(newValues);
     onChange(newValues, name);
   };
   const decreaseValue = (index: number) => {
@@ -41,65 +42,37 @@ const CounterBox: React.FC<CounterBoxProps> = ({
     });
 
     onChange(newValues, name);
+    setTotal(newValues);
   };
+
+  useEffect(() => {
+    values &&
+      values.map((item, index) => {
+        if (index === 0) {
+          setState({ value: Object.values(total)[3], position: 'top' });
+        }
+      });
+  }, [values]);
+
+  console.log(state, 'state');
 
   return (
     <Container shape={shape}>
       {values &&
         values.map((value, index) => {
-          if (index === 0) {
-            return (
-              <TopStyled shape={shape}>
-                <WrapperCounter>
-                  <Counter
-                    key={index}
-                    value={value}
-                    onIncrease={() => increaseValue(index)}
-                    onDecrease={() => decreaseValue(index)}
-                  />
-                </WrapperCounter>
-              </TopStyled>
-            );
-          } else if (index === 1) {
-            return (
-              <RightStyled shape={shape}>
-                <WrapperCounter>
-                  <Counter
-                    key={index}
-                    value={value}
-                    onIncrease={() => increaseValue(index)}
-                    onDecrease={() => decreaseValue(index)}
-                  />
-                </WrapperCounter>
-              </RightStyled>
-            );
-          } else if (index === 2) {
-            return (
-              <BottomStyled shape={shape}>
-                <WrapperCounter>
-                  <Counter
-                    key={index}
-                    value={value}
-                    onIncrease={() => increaseValue(index)}
-                    onDecrease={() => decreaseValue(index)}
-                  />
-                </WrapperCounter>
-              </BottomStyled>
-            );
-          } else if (index === 3) {
-            return (
-              <LeftStyled shape={shape}>
-                <WrapperCounter>
-                  <Counter
-                    key={index}
-                    value={value}
-                    onIncrease={() => increaseValue(index)}
-                    onDecrease={() => decreaseValue(index)}
-                  />
-                </WrapperCounter>
-              </LeftStyled>
-            );
-          }
+          return (
+            <TopStyled shape={shape}>
+              <WrapperCounter>
+                <Counter
+                  key={index}
+                  value={value}
+                  onIncrease={() => increaseValue(index)}
+                  onDecrease={() => decreaseValue(index)}
+                  name={name}
+                />
+              </WrapperCounter>
+            </TopStyled>
+          );
         })}
     </Container>
   );
