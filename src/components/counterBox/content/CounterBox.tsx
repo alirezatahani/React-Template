@@ -18,7 +18,7 @@ const CounterBox: React.FC<CounterBoxProps> = ({
   shape,
 }: CounterBoxProps) => {
   const [isLocked, setIsLocked] = useState<boolean>(false);
-  const [state, setState] = useState(null);
+  const [state, setState] = useState([]);
   const [total, setTotal] = useState({});
 
   const increaseValue = (index: number) => {
@@ -46,13 +46,21 @@ const CounterBox: React.FC<CounterBoxProps> = ({
   };
 
   useEffect(() => {
-    values &&
-      values.map((item, index) => {
-        if (index === 0) {
-          setState({ value: Object.values(total)[3], position: 'top' });
-        }
-      });
-  }, [values]);
+    setState([{ value: Object.values(total)[0], position: 'top' }]);
+
+    setState((prevState) => [
+      ...prevState,
+      { value: Object.values(total)[1], position: 'right' },
+    ]);
+    setState((prevState) => [
+      ...prevState,
+      { value: Object.values(total)[2], position: 'bottom' },
+    ]);
+    setState((prevState) => [
+      ...prevState,
+      { value: Object.values(total)[3], position: 'left' },
+    ]);
+  }, [total, setState]);
 
   console.log(state, 'state');
 
@@ -61,7 +69,7 @@ const CounterBox: React.FC<CounterBoxProps> = ({
       {values &&
         values.map((value, index) => {
           return (
-            <TopStyled shape={shape}>
+            <div>
               <WrapperCounter>
                 <Counter
                   key={index}
@@ -71,7 +79,7 @@ const CounterBox: React.FC<CounterBoxProps> = ({
                   name={name}
                 />
               </WrapperCounter>
-            </TopStyled>
+            </div>
           );
         })}
     </Container>
