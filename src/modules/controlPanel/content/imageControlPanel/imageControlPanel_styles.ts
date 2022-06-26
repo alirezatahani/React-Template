@@ -60,6 +60,7 @@ export const ControlPanelSettingContainer = styled.div(({ theme }) => ({
   background: theme.palette.background.paper,
   padding: 10,
   overflow: 'scroll',
+  height: '100vh',
 }));
 
 export const ModalContent = styled.div(({}) => ({

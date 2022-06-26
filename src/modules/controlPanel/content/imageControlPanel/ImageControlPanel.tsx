@@ -403,9 +403,6 @@ const ImageControlPanel = ({ state, setState, handleChange }: any) => {
                   name="border"
                   options={borderOptions}
                   onChange={handleChangeBorderStyle}
-                  defaultValue={borderOptions.filter(
-                    (borderOption) => borderOption.value === border
-                  )}
                 />
               </SelectWrapper>
             </BorderWrapperCounter>
