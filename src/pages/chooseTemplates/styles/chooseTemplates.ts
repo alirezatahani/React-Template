@@ -7,8 +7,8 @@ export const TemplatesSection = styled.section({
   height: '100vh',
 });
 export const PageTitle = styled(Typography)({
-    textAlign:"center",
-})
+  textAlign: 'center',
+});
 export const TemlatesContainer = styled.div({
   width: '100%',
   display: 'flex',

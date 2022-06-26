@@ -18,8 +18,7 @@ export const routes = [
   { path: 'predesign/24', element: <Design24 /> },
   { path: 'blank/3', element: <Blank3 /> },
   { path: 'blank/2', element: <Blank2 /> },
+  { path: 'blank/1', element: <Blank1 /> },
   { path: 'create', element: <Create /> },
   { path: 'selector', element: <ComponentsSelector /> },
-
 ];
-

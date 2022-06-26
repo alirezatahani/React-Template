@@ -1,6 +1,5 @@
 import styled from 'styled-components';
 import { ModalWrapperProps } from '../content/modal_types';
-
 export const ModalWrapper = styled.div<ModalWrapperProps>(({visible})=>({
   display:visible?"block":"none",
   position:"fixed",

@@ -18,23 +18,34 @@ import {
 
 import Select from 'react-select';
 import { btnLinkOptions, btnSizeOptions } from './constants';
+import { ButtonControlPanelProps } from './buttonControlPanel_types';
 
-const ButtonControlPanel = ({ state, handleChange }: any) => {
+const ButtonControlPanel = ({
+  initialValue,
+  onChange,
+}: ButtonControlPanelProps) => {
   const handleChngeBtnStyle = (variant: string) => {
-    handleChange({
-      kind: 'variant',
-      value: variant,
-    });
+    onChange('btnVariant', variant);
   };
 
   const handleChangeBtnShape = (round: string) => {
-    handleChange({
-      kind: 'btnShape',
-      value: round,
-    });
+    onChange('btnShape', round);
   };
 
-  console.log(state, 'state');
+  const handleChangeBtnText = (event: {
+    target: { name: string; value: string };
+  }) => {
+    onChange(event.target.name, event.target.value);
+  };
+
+  const handleChangeCheckBox = (
+    event: { target: { name: string } },
+    values: string | string[]
+  ) => {
+    onChange(event.target.name, values);
+  };
+
+  const { btnSize, btnText } = initialValue;
 
   return (
     <ControlPanelSettingContainer>
@@ -43,10 +54,10 @@ const ButtonControlPanel = ({ state, handleChange }: any) => {
         <ControlPanelItemContainer>
           <ControlPanelItemLabel>Button Text</ControlPanelItemLabel>
           <Input
-            onChange={handleChange}
+            onChange={handleChangeBtnText}
             name="btnText"
             placeholder="Enter button text ..."
-            value={state.btnText}
+            value={btnText}
           />
         </ControlPanelItemContainer>
         <ControlPanelItemContainer>
@@ -61,7 +72,11 @@ const ButtonControlPanel = ({ state, handleChange }: any) => {
         </ControlPanelItemContainer>
         <ControlPanelItemContainer>
           <ControlPanelItemLabel>Url</ControlPanelItemLabel>
-          <Input name="btnUrl" placeholder="Enter button url ..." />
+          <Input
+            name="btnUrl"
+            onChange={handleChangeBtnText}
+            placeholder="Enter button url ..."
+          />
         </ControlPanelItemContainer>
       </Collapse>
       <Collapse open title="Button Design">
@@ -117,10 +132,11 @@ const ButtonControlPanel = ({ state, handleChange }: any) => {
             <Col span={12}>
               <ControlPanelItemLabel>Button Size</ControlPanelItemLabel>
               <BtnCheckbox
-                onChange={handleChange}
+                onChange={handleChangeCheckBox}
                 type="radio"
                 name="btnSize"
                 options={btnSizeOptions}
+                defaultValue={btnSize}
               />
             </Col>
           </Row>
