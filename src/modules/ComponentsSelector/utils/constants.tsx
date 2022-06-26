@@ -143,4 +143,87 @@ export const ComponentsVariations: { [x: string]: any[] } = {
       style: {variant:"body1"},
     },
   ],
+
+  Input:[
+    {
+      id: 1,
+      name: 'Input',
+      style: {padding:'25px 15px', fontSize:'18px', color:'rgb(120, 120, 120)', borderWidth:'3px', backgroundColor:'inherit'}
+    },
+    {
+      id: 2,
+      name: 'Input',
+      style: {padding:'25px 15px', fontSize:'18px', color:'#000', border:'2px solid #000',backgroundColor:'rgb(250, 250, 250)', boxShadow:'3px 5px 5px rgba(0,0,0,0.2)' }
+    },
+    {
+      id: 3,
+      name: 'Input',
+      style: {padding:'25px 15px', fontSize:'18px', color:'rgb(0, 153, 153)', border:'6px outset rgb(0, 153, 153)', backgroundColor:'rgb(240, 253, 253'}
+    },
+    {
+      id: 1,
+      name: 'Input',
+      style: {padding:'25px 15px', fontSize:'18px', color:'rgb(120, 120, 120)', borderWidth:'3px', backgroundColor: theme.palette['secondary'].main, borderRadius:'30px'}
+    },
+    {
+      id: 4,
+      name: 'Input',
+      style: {padding:'25px 15px', fontSize:'18px', backgroundColor:'inherit', borderBottom:'2px solid #000'}
+    },
+    {
+      id: 4,
+      name: 'Input',
+      style: {padding:'25px 15px', fontSize:'18px', backgroundColor:'inherit', borderBottom:'2px solid #000', width:'60%'}
+    },
+    {
+      id: 4,
+      name: 'Input',
+      style: {padding:'20px 15px', fontSize:'18px', backgroundColor:'inherit', borderBottom:'2px solid #000', width:'40%'}
+    },
+    // {
+    //   id: 4,
+    //   name: 'Input',
+    //   style: {padding:'25px 15px', fontSize:'18px', color:'#fff', backgroundColor:'#000', borderBottom:'3px solid #fff', boxShadow:'3px 5px 5px rgba(0,0,0,0.2)'}
+    // },
+    // {
+    //   id: 4,
+    //   name: 'Input',
+    //   style: {padding:'25px 15px', fontSize:'18px', backgroundColor:'rgb(229, 204, 255)', borderBottom:'3px solid rgb(51, 0, 51)', borderRight:'3px solid rgb(51, 0, 51)', boxShadow:'3px 5px 5px rgba(0,0,0,0.5)'}
+    // },
+    // {
+    //   id: 2,
+    //   name: 'Input',
+    //   style: {padding:'25px 15px', fontSize:'18px', color:'#000', backgroundImage: 'linear-gradient(to bottom, rgb(51, 25, 0), #fff)', border:'2px solid rgb(0, 30, 0)', boxShadow:'3px 5px 5px rgba(0,0,0,0.6)', borderRadius:'15px' }
+    // },
+    // {
+    //   id: 2,
+    //   name: 'Input',
+    //   style: {padding:'30px 25px', fontSize:'18px', color:'rgba(51, 0, 25, 0.6)', border:'2px solid rgb(51, 0, 25)', backgroundImage: 'radial-gradient(rgb(255, 204, 255) 10%, #fff)', boxShadow:'3px 5px 5px rgba(51, 0, 25, 0.6)', borderRadius:'60%' }
+    // },
+    // {
+    //   id: 2,
+    //   name: 'Input',
+    //   style: {padding:'25px 15px', fontSize:'18px', color:'#000', border:'2px solid rgb(0, 0, 51)', backgroundImage: 'linear-gradient(to bottom right, rgb(204, 204, 255), rgb(25, 0, 51))'}
+    // },
+    // {
+    //   id: 2,
+    //   name: 'Input',
+    //   style: {padding:'25px 15px', fontSize:'18px', color:'rgb(94, 70, 14)', border:'2px solid rgba(51, 0, 0, 0.6)', backgroundImage: 'linear-gradient(to right, #fff, rgb(255, 255, 154), #fff)'}
+    // },
+    // {
+    //   id: 2,
+    //   name: 'Input',
+    //   style: {padding:'25px 15px', fontSize:'18px', color:'#fff', border:'none', backgroundColor:'rgb(0, 0, 70)', boxShadow:'3px 5px 5px rgba(0,0,0,0.6)', borderRadius:'15px' }
+    // },
+    // {
+    //   id: 2,
+    //   name: 'Input',
+    //   style: {padding:'25px 15px', fontSize:'18px', color:'#fff', borderBottom:'2px solid #fff', borderRight:'2px solid #fff', backgroundColor:'rgb(60, 0, 0)', boxShadow:'3px 5px 5px rgba(0,0,0,0.5)' }
+    // },
+    {
+      id: 2,
+      name: 'Input',
+      style: {padding:'30px 25px', fontSize:'18px', color:'#fff', border:'none', backgroundImage: 'linear-gradient(to right, rgb(0, 0, 0), rgb(153, 153, 255), #000)', boxShadow:'3px 5px 5px rgba(0,0,0,0.6)', borderRadius:'50%' }
+    },
+  ],
 };

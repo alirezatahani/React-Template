@@ -25,6 +25,8 @@ export type InputProps = {
   leftAddon?: string;
   rightAddon?: string;
   onChange?: React.ChangeEventHandler;
+  onClick?: () => void;
   value?: string;
   disabled?: boolean;
+  style?: object;
 };
