@@ -8,10 +8,10 @@ export const WrapperCounter = styled.div(({}) => ({
   marginBottom: '2rem',
 }));
 
-export const Container = styled.div<CounterBoxProps>(({ shape, theme }) => ({
+export const Container = styled.div(({ theme }) => ({
   position: 'relative',
   width: 200,
-  height: shape === 'square' ? 70 : 100,
+  height: 100,
   border: `1px dashed ${theme.palette.disabled.backgroundColor}`,
   margin: '0px auto',
   borderRadius: 4,

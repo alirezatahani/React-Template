@@ -6,4 +6,6 @@ export type CounterBoxProps = {
   onChange?: (values: number[], name: string) => void;
   name: string;
   values: number[];
+  onChangeCounter?: React.ChangeEventHandler;
+
 };
