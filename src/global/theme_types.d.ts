@@ -45,7 +45,7 @@ type GeneralStyleTypes = {
 };
 
 type PaletteTypes = {
-  background: { paper: string };
+  background: { paper: string; whiteSmoke: string };
   common: { black: string; white: string; transparent: string };
   primary: PaletteColorShadesTypes;
   secondary: { main: string };

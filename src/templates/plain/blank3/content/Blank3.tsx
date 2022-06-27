@@ -27,7 +27,6 @@ export const Blank3 = ({ setSelected, state }: any) => {
   return (
     <React.Fragment>
       <Navbar />
-
       <SectionFluid>
         <MainContainer fluid>
           <Row>
