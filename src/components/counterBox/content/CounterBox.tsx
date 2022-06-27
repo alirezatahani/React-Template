@@ -13,22 +13,22 @@ const CounterBox: React.FC<CounterBoxProps> = ({
   const [isLocked, setIsLocked] = useState<boolean>(false);
   const [state, setState] = useState([]);
 
-  const increaseValue = (index: number) => {
-    const newValues = values.map((_value, _index: number) => {
-      if (index === _index) {
-        return _value + 1;
+  const increaseValue = (position: string) => {
+    const newValues = state.map((_value, _index: number) => {
+      if (position === _value.position) {
+        return _value.value + 1;
       } else {
-        return _value;
+        return _value.value;
       }
     });
     onChange(newValues, name);
   };
-  const decreaseValue = (index: number) => {
-    const newValues = values.map((_value, _index: number) => {
-      if (index === _index) {
-        return _value - 1;
+  const decreaseValue = (position: string) => {
+    const newValues = state.map((_value, _index: number) => {
+      if (position === _value.position) {
+        return _value.value - 1;
       } else {
-        return _value;
+        return _value.value;
       }
     });
 
@@ -36,7 +36,7 @@ const CounterBox: React.FC<CounterBoxProps> = ({
   };
 
   useEffect(() => {
-    setState([{ value: values[0], position: 'left' }]);
+    setState([{ value: values[0], position: 'top' }]);
 
     setState((prevState) => [
       ...prevState,
@@ -44,11 +44,11 @@ const CounterBox: React.FC<CounterBoxProps> = ({
     ]);
     setState((prevState) => [
       ...prevState,
-      { value: values[2], position: 'top' },
+      { value: values[2], position: 'bottom' },
     ]);
     setState((prevState) => [
       ...prevState,
-      { value: values[3], position: 'bottom' },
+      { value: values[3], position: 'left' },
     ]);
   }, [values]);
 
@@ -64,8 +64,8 @@ const CounterBox: React.FC<CounterBoxProps> = ({
                 <Counter
                   key={index}
                   value={item.value}
-                  onIncrease={() => increaseValue(index)}
-                  onDecrease={() => decreaseValue(index)}
+                  onIncrease={() => increaseValue(item.position)}
+                  onDecrease={() => decreaseValue(item.position)}
                   name={name}
                 />
               </WrapperCounter>
