@@ -41,8 +41,3 @@ export const LeftStyled = styled.div<CounterBoxProps>(({ shape }) => ({
   right: -62,
   bottom: shape === 'square' ? 22 : 0,
 }));
-export const LockBox = styled.div(({}) => ({
-  position: 'absolute',
-  left: 93,
-  top: 40,
-}));

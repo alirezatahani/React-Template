@@ -10,7 +10,6 @@ const CounterBox: React.FC<CounterBoxProps> = ({
   onChange,
   onChangeCounter,
 }: CounterBoxProps) => {
-  const [isLocked, setIsLocked] = useState<boolean>(false);
   const [state, setState] = useState([]);
 
   const increaseValue = (position: string) => {
