@@ -1,6 +1,7 @@
 import React from 'react';
 import { Typography } from '@components/typography';
 import { ControlPanelSettingContainer } from '@modules/controlPanel/styles/controlPanel.styles';
+import update from 'immutability-helper';
 
 import { DndProvider, useDrag } from 'react-dnd';
 import { HTML5Backend } from 'react-dnd-html5-backend';
@@ -35,37 +36,21 @@ const ManagePages = () => {
     },
   ]);
 
-  // const moveCard = React.useCallback(
-  //   (dragIndex: number, hoverIndex: number) => {
-  //     setPages((prevCards: Item[]) =>
-  //       update(prevCards, {
-  //         $splice: [
-  //           [dragIndex, 1],
-  //           [hoverIndex, 0, prevCards[dragIndex] as Item],
-  //         ],
-  //       })
-  //     );
-  //   },
-  //   []
-  // );
-  const moveCard = (dragIndex: number, hoverIndex: any) => {
-    // list of cards
-    let newcards = pages;
+  const movePages = React.useCallback(
+    (dragIndex: number, hoverIndex: number) => {
+      setPages((prevPageItems: Item[]) =>
+        update(prevPageItems, {
+          $splice: [
+            [dragIndex, 1],
+            [hoverIndex, 0, prevPageItems[dragIndex] as Item],
+          ],
+        })
+      );
+    },
+    []
+  );
 
-    // dragCard is card we are dragging
-    let dragCard = newcards[dragIndex];
-
-    // removing this dragCard from array
-    newcards.splice(dragIndex, 1);
-
-    // insert dragCard at hover position
-    newcards.splice(hoverIndex, 0, dragCard);
-
-    // update State
-    setPages(newcards);
-  };
-
-  const renderCard = React.useCallback(
+  const renderPages = React.useCallback(
     (page: { id: number; text: string }, index: number) => {
       return (
         <PageItem
@@ -73,7 +58,7 @@ const ManagePages = () => {
           index={index}
           id={page.id}
           text={page.text}
-          moveCard={moveCard}
+          movePages={movePages}
         />
       );
     },
@@ -84,7 +69,7 @@ const ManagePages = () => {
     <ControlPanelSettingContainer>
       <Typography variant="h5">Pages</Typography>
       <br />
-      {pages.map((page: Item, i) => renderCard(page, i))}
+      {pages.map((page: Item, i) => renderPages(page, i))}
     </ControlPanelSettingContainer>
   );
 };

@@ -1,26 +1,26 @@
 import styled from 'styled-components';
 import { ModalWrapperProps } from '../content/modal_types';
-export const ModalWrapper = styled.div<ModalWrapperProps>(({visible})=>({
-  display:visible?"block":"none",
-  position:"fixed",
-  top:0,
-  left:0,
-  right:0,
-  bottom:0,
+export const ModalWrapper = styled.div<ModalWrapperProps>(({ visible }) => ({
+  display: visible ? 'block' : 'none',
+  position: 'fixed',
+  top: 0,
+  left: 0,
+  right: 0,
+  bottom: 0,
   backgroundColor: 'rgba(0,0,0,0.3)',
-  zIndex:9999,
-}))
+  zIndex: 9999,
+}));
 export const ModalSection = styled.div<ModalWrapperProps>(({ visible }) => ({
   display: visible ? 'block' : 'none',
-  width:"100%",
+  width: '100%',
   position: 'fixed',
-  top:"50%",
-  left:"50%",
-  transform:"translate(-50%,-50%)",
+  top: '50%',
+  left: '50%',
+  transform: 'translate(-50%,-50%)',
   zIndex: 9999,
 }));
 export const ModalContainer = styled.div({
-  display: 'flex', 
+  display: 'flex',
   justifyContent: 'space-between',
   alignItems: 'flex-start',
   backgroundColor: '#fefefe',

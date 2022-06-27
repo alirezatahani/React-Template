@@ -1,16 +1,18 @@
 import styled from 'styled-components';
 import {
-  TextareaContainerProps,TextareaLabelProps,TextareaProps
+  TextareaContainerProps,
+  TextareaLabelProps,
+  TextareaProps,
 } from '../content/textarea_types';
 
 export const StyledTextarea = styled.textarea<TextareaProps>(
-  ({ theme, status, scale, rounded, variant ,width,height}) => ({
+  ({ theme, status, scale, rounded, variant, width, height }) => ({
     ...theme.sizes[scale],
     color: theme.palette.common.black,
     outline: 'none',
     paddingLeft: 11,
-    width: width? width:"100%",
-    height:height? height:"",
+    width: width ? width : '100%',
+    height: height ? height : '',
     transition: theme.general.transition,
     background: variant === 'filled' && theme.palette.greyScale['200'],
     border: `${
@@ -54,13 +56,15 @@ export const StyledTextarea = styled.textarea<TextareaProps>(
   })
 );
 
-export const TextareaContainer = styled.div<TextareaContainerProps>(({direction,align})=>({
-  display: 'flex',
-  flexDirection: direction==="column"? "column" :"row",
-  justifyContent: 'center',
-  alignItems: align==='center'?"center":"flex-start",
-  margin: '0 0 20px',
-}));
+export const TextareaContainer = styled.div<TextareaContainerProps>(
+  ({ direction, justifyContent, align }) => ({
+    display: 'flex',
+    flexDirection: direction === 'column' ? 'column' : 'row',
+    justifyContent: justifyContent ? justifyContent : 'center',
+    alignItems: align === 'center' ? 'center' : 'flex-start',
+    margin: '0 0 20px',
+  })
+);
 
 export const TextareaLabel = styled.span<TextareaLabelProps>({
   paddingRight: '20px',

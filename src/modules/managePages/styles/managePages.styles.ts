@@ -6,7 +6,7 @@ export const PageItemContainer = styled.div(({ theme }) => ({
   justifyContent: 'space-between',
   alignItems: 'center',
   padding: '8px 5px',
-  cursor: 'move',
+
   marginBottom: 17,
   '&:hover': {
     backgroundColor: theme.palette.primary.main,
@@ -15,6 +15,7 @@ export const PageItemContainer = styled.div(({ theme }) => ({
 }));
 export const PageTitleContainer = styled.div({
   display: 'flex',
+  cursor: 'pointer',
   columnGap: 4,
   alignItems: 'center',
 });
