@@ -3,6 +3,7 @@ import { Divider } from "@components/divider";
 import { Image } from "@components/image";
 import { Input } from "@components/input";
 import { Tabs } from "@components/tab";
+import { Textarea } from "@components/textarea";
 import { Typography } from "@components/typography";
 import { ComponentsVariations } from "@modules/ComponentsSelector/utils/constants";
 import React from "react";
@@ -15,7 +16,6 @@ const SelectorModal = ({selectedComponent, choosedComponent}: {selectedComponent
                 switch (selectedComponent){
                     case 'Button':
                      return (
-                        <>
                         <Button
                             key={index}
                             style={componentVariation.style}
@@ -23,8 +23,6 @@ const SelectorModal = ({selectedComponent, choosedComponent}: {selectedComponent
                         >
                             {componentVariation.name}
                         </Button>
-                        <Divider orientation="left">salam</Divider>
-                        </>
                     );
                     case 'Typography':
                      return (
@@ -45,6 +43,15 @@ const SelectorModal = ({selectedComponent, choosedComponent}: {selectedComponent
                             style={componentVariation.style}
                             onClick={() => choosedComponent(componentVariation)}
                             value={componentVariation.name}
+                        />
+                    );
+                    case 'Textarea':
+                    return (
+                        <Textarea
+                            key={index}
+                            name= {componentVariation.name}
+                            style={componentVariation.style}
+                            onClick={() => choosedComponent(componentVariation)}
                         />
                     );
                     default: 
