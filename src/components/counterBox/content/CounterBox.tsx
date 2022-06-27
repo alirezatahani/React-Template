@@ -1,15 +1,8 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import Counter from '@components/counter/content/Counter';
-import {
-  WrapperCounter,
-  Container,
-  TopStyled,
-  LeftStyled,
-  RightStyled,
-  BottomStyled,
-  LockBox,
-} from '../styles/counterBox.styles';
+import { WrapperCounter, Container } from '../styles/counterBox.styles';
 import { CounterBoxProps } from './counterBox_types';
+import CounterContent from './CounterContent/CounterContent';
 
 const CounterBox: React.FC<CounterBoxProps> = ({
   name,
@@ -43,7 +36,7 @@ const CounterBox: React.FC<CounterBoxProps> = ({
   };
 
   useEffect(() => {
-    setState([{ value: values[0], position: 'top' }]);
+    setState([{ value: values[0], position: 'left' }]);
 
     setState((prevState) => [
       ...prevState,
@@ -51,11 +44,11 @@ const CounterBox: React.FC<CounterBoxProps> = ({
     ]);
     setState((prevState) => [
       ...prevState,
-      { value: values[2], position: 'bottom' },
+      { value: values[2], position: 'top' },
     ]);
     setState((prevState) => [
       ...prevState,
-      { value: values[3], position: 'left' },
+      { value: values[3], position: 'bottom' },
     ]);
   }, [values]);
 
@@ -66,7 +59,7 @@ const CounterBox: React.FC<CounterBoxProps> = ({
       {state &&
         state.map((item, index) => {
           return (
-            <div>
+            <CounterContent position={item.position}>
               <WrapperCounter>
                 <Counter
                   key={index}
@@ -76,7 +69,7 @@ const CounterBox: React.FC<CounterBoxProps> = ({
                   name={name}
                 />
               </WrapperCounter>
-            </div>
+            </CounterContent>
           );
         })}
     </Container>

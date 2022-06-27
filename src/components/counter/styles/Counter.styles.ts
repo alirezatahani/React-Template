@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { CounterProps } from '../content/counter_types';
 import { Input } from '@components/input';
 
 export const CounterContainer = styled.div(({}) => ({
