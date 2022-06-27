@@ -8,6 +8,7 @@ const CounterBox: React.FC<CounterBoxProps> = ({
   name,
   values,
   onChange,
+  shape,
   onChangeCounter,
 }: CounterBoxProps) => {
   const [state, setState] = useState([]);
@@ -58,7 +59,7 @@ const CounterBox: React.FC<CounterBoxProps> = ({
       {state &&
         state.map((item, index) => {
           return (
-            <CounterContent position={item.position}>
+            <CounterContent position={item.position} shape={shape}>
               <WrapperCounter>
                 <Counter
                   key={index}

@@ -1,9 +1,13 @@
 import styled from 'styled-components';
 import { CounterContentProps } from '../counterContent_types';
-import { positionObj } from '@components/counterBox/utils/constants';
+import { positionObj,positionObjSquare } from '@components/counterBox/utils/constants';
 
-export const Main = styled.div<CounterContentProps>(({ position }) => ({
+export const DiamondShape = styled.div<CounterContentProps>(({ position }) => ({
   ...positionObj[position],
+  position: 'absolute',
+}));
+export const SquareShape = styled.div<CounterContentProps>(({ position }) => ({
+  ...positionObjSquare[position],
   position: 'absolute',
 }));
 

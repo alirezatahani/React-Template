@@ -245,6 +245,7 @@ const ImageControlPanel = ({ state, setState, handleChange }: any) => {
             name="padding"
             values={padding}
             onChange={handleChangeCounterBox}
+            shape="diamond"
           />
 
           <BtnCheckbox
