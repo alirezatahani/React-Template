@@ -19,12 +19,16 @@ const ControlPanel: React.FC<ControlPanelProps> = ({
 
   const settings: SettingType = {
     typography: (
-      <TypographyControlPanel state={state} handleChange={handleChange} />
+      <TypographyControlPanel
+        initialValue={initialValue}
+        onChange={handleChange}
+      />
     ),
-    button: <ButtonControlPanel state={state} handleChange={handleChange} />,
+    button: (
+      <ButtonControlPanel initialValue={initialValue} onChange={handleChange} />
+    ),
     gallery: <GalleryControlPanel />,
   };
-
 
   return (
     <div>
