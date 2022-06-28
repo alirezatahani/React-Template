@@ -35,7 +35,7 @@ const GalleryControlPanel = () => {
       [getLabel]: getValue,
     });
   };
-  console.log(gallery);
+
   return (
     <React.Fragment>
       <ControlPanelSettingContainer>
