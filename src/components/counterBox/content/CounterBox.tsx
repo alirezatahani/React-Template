@@ -16,21 +16,21 @@ const CounterBox: React.FC<CounterBoxProps> = ({
   const [state, setState] = useState(null);
 
   const increaseValue = (index: number) => {
-    const newValues = values.map((_value: any, _index: number) => {
+    const newValues = state.map((_value: any, _index: number) => {
       if ((index = _index)) {
-        return _value + 1;
+        return _value.value + 1;
       } else {
-        return _value;
+        return _value.value;
       }
     });
     onChange(newValues, name);
   };
   const decreaseValue = (index: number) => {
-    const newValues = values.map((_value: any, _index: number) => {
+    const newValues = state.map((_value: any, _index: number) => {
       if (index === _index) {
-        return _value - 1;
+        return _value.value - 1;
       } else {
-        return _value;
+        return _value.value;
       }
     });
 
