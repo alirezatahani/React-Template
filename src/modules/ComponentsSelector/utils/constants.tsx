@@ -15,7 +15,6 @@ export const BoxNames: BoxName[] = [
   { id: 2, name: 'Button', icon: <MdSmartButton /> },
   { id: 3, name: 'Input', icon: <FaEdit /> },
   { id: 4, name: 'Image', icon: <FaImage /> },
-  { id: 5, name: 'Textarea', icon: <FaImage /> },
 ];
 
 export const ComponentsVariations: { [x: string]: any[] } = {
@@ -149,134 +148,82 @@ export const ComponentsVariations: { [x: string]: any[] } = {
     {
       id: 1,
       name: 'Input',
-      style: {padding:'25px 15px', fontSize:'18px', color:'rgb(120, 120, 120)', borderWidth:'3px', backgroundColor:'inherit'}
+      style: {margin:'10px', padding:'25px 15px', fontSize:'18px', color:'rgb(120, 120, 120)', borderWidth:'3px', backgroundColor:'inherit'}
     },
     {
       id: 2,
       name: 'Input',
-      style: {padding:'25px 15px', fontSize:'18px', color:'#000', border:'2px solid #000',backgroundColor:'rgb(250, 250, 250)', boxShadow:'3px 5px 5px rgba(0,0,0,0.2)' }
+      style: {margin:'10px', padding:'25px 15px', fontSize:'18px', color:'#000', border:'2px solid #000',backgroundColor:'rgb(250, 250, 250)', boxShadow:'3px 5px 5px rgba(0,0,0,0.2)' }
     },
     {
       id: 3,
       name: 'Input',
-      style: {padding:'25px 15px', fontSize:'18px', color:'rgb(0, 153, 153)', border:'6px outset rgb(0, 153, 153)', backgroundColor:'rgb(240, 253, 253'}
+      style: {margin:'10px', padding:'25px 15px', fontSize:'18px', color:'rgb(0, 153, 153)', border:'6px outset rgb(0, 153, 153)', backgroundColor:'rgb(240, 253, 253'}
     },
     {
       id: 4,
       name: 'Input',
-      style: {padding:'25px 15px', fontSize:'18px', color:'rgb(120, 120, 120)', borderWidth:'3px', backgroundColor: theme.palette['secondary'].main, borderRadius:'30px'}
+      style: {margin:'10px', padding:'25px 15px', fontSize:'18px', color:'rgb(120, 120, 120)', borderWidth:'3px', backgroundColor: theme.palette['secondary'].main, borderRadius:'30px'}
     },
     {
       id: 5,
       name: 'Input',
-      style: {padding:'25px 15px', fontSize:'18px', backgroundColor:'inherit', borderBottom:'2px solid #000'}
+      style: {margin:'10px', padding:'25px 15px', fontSize:'18px', backgroundColor:'inherit', borderBottom:'2px solid #000'}
     },
-    // {
-    //   id: 6,
-    //   name: 'Input',
-    //   style: {padding:'25px 15px', fontSize:'18px', color:'#fff', backgroundColor:'#000', borderBottom:'3px solid #fff', boxShadow:'3px 5px 5px rgba(0,0,0,0.2)'}
-    // },
-    // {
-    //   id: 7,
-    //   name: 'Input',
-    //   style: {padding:'25px 15px', fontSize:'18px', backgroundColor:'rgb(229, 204, 255)', borderBottom:'3px solid rgb(51, 0, 51)', borderRight:'3px solid rgb(51, 0, 51)', boxShadow:'3px 5px 5px rgba(0,0,0,0.5)'}
-    // },
-    // {
-    //   id: 8,
-    //   name: 'Input',
-    //   style: {padding:'25px 15px', fontSize:'18px', color:'#000', backgroundImage: 'linear-gradient(to bottom, rgb(51, 25, 0), #fff)', border:'2px solid rgb(0, 30, 0)', boxShadow:'3px 5px 5px rgba(0,0,0,0.6)', borderRadius:'15px' }
-    // },
-    // {
-    //   id: 9,
-    //   name: 'Input',
-    //   style: {padding:'30px 25px', fontSize:'18px', color:'rgba(51, 0, 25, 0.6)', border:'2px solid rgb(51, 0, 25)', backgroundImage: 'radial-gradient(rgb(255, 204, 255) 10%, #fff)', boxShadow:'3px 5px 5px rgba(51, 0, 25, 0.6)', borderRadius:'60%' }
-    // },
-    // {
-    //   id: 10,
-    //   name: 'Input',
-    //   style: {padding:'25px 15px', fontSize:'18px', color:'#000', border:'2px solid rgb(0, 0, 51)', backgroundImage: 'linear-gradient(to bottom right, rgb(204, 204, 255), rgb(25, 0, 51))'}
-    // },
-    // {
-    //   id: 11,
-    //   name: 'Input',
-    //   style: {padding:'25px 15px', fontSize:'18px', color:'rgb(94, 70, 14)', border:'2px solid rgba(51, 0, 0, 0.6)', backgroundImage: 'linear-gradient(to right, #fff, rgb(255, 255, 154), #fff)'}
-    // },
-    // {
-    //   id: 12,
-    //   name: 'Input',
-    //   style: {padding:'25px 15px', fontSize:'18px', color:'#fff', border:'none', backgroundColor:'rgb(0, 0, 70)', boxShadow:'3px 5px 5px rgba(0,0,0,0.6)', borderRadius:'15px' }
-    // },
-    // {
-    //   id: 13,
-    //   name: 'Input',
-    //   style: {padding:'25px 15px', fontSize:'18px', color:'#fff', borderBottom:'2px solid #fff', borderRight:'2px solid #fff', backgroundColor:'rgb(60, 0, 0)', boxShadow:'3px 5px 5px rgba(0,0,0,0.5)' }
-    // },
+    {
+      id: 6,
+      name: 'Input',
+      style: {margin:'10px', padding:'25px 15px', fontSize:'18px', color:'#fff', backgroundColor:'#000', borderBottom:'3px solid #fff', boxShadow:'3px 5px 5px rgba(0,0,0,0.2)'}
+    },
+    {
+      id: 7,
+      name: 'Input',
+      style: {margin:'10px', padding:'25px 15px', fontSize:'18px', backgroundColor:'rgb(229, 204, 255)', borderBottom:'3px solid rgb(51, 0, 51)', borderRight:'3px solid rgb(51, 0, 51)', boxShadow:'3px 5px 5px rgba(0,0,0,0.5)'}
+    },
+    {
+      id: 8,
+      name: 'Input',
+      style: {margin:'10px', padding:'25px 15px', fontSize:'18px', color:'#000', backgroundImage: 'linear-gradient(to bottom, rgb(51, 25, 0), #fff)', border:'2px solid rgb(0, 30, 0)', boxShadow:'3px 5px 5px rgba(0,0,0,0.6)', borderRadius:'15px' }
+    },
+    {
+      id: 9,
+      name: 'Input',
+      style: {margin:'10px', padding:'30px 25px', fontSize:'18px', color:'rgba(51, 0, 25, 0.8)', border:'2px solid rgb(51, 0, 25)', backgroundImage: 'radial-gradient(rgb(255, 204, 255) 10%, #fff)', boxShadow:'3px 5px 5px rgba(51, 0, 25, 0.6)', borderRadius:'60%' }
+    },
+    {
+      id: 10,
+      name: 'Input',
+      style: {margin:'10px', padding:'25px 15px', fontSize:'18px', color:'#000', border:'2px solid rgb(0, 0, 51)', backgroundImage: 'linear-gradient(to bottom right, rgb(204, 204, 255), rgb(25, 0, 51))'}
+    },
+    {
+      id: 11,
+      name: 'Input',
+      style: {margin:'10px', padding:'25px 15px', fontSize:'18px', color:'rgb(94, 70, 14)', border:'2px solid rgba(51, 0, 0, 0.6)', backgroundImage: 'linear-gradient(to right, #fff, rgb(255, 255, 154), #fff)'}
+    },
+    {
+      id: 12,
+      name: 'Input',
+      style: {margin:'10px', padding:'25px 15px', fontSize:'18px', color:'#fff', border:'none', backgroundColor:'rgb(0, 0, 70)', boxShadow:'3px 5px 5px rgba(0,0,0,0.6)', borderRadius:'15px' }
+    },
+    {
+      id: 13,
+      name: 'Input',
+      style: {margin:'10px', padding:'25px 15px', fontSize:'18px', color:'#fff', borderBottom:'2px solid #fff', borderRight:'2px solid #fff', backgroundColor:'rgb(60, 0, 0)', boxShadow:'3px 5px 5px rgba(0,0,0,0.5)' }
+    },
     {
       id: 14,
       name: 'Input',
-      style: {padding:'30px 25px', fontSize:'18px', color:'#fff', border:'none', backgroundImage: 'linear-gradient(to right, rgb(0, 0, 0), rgb(153, 153, 255), #000)', boxShadow:'3px 5px 5px rgba(0,0,0,0.6)', borderRadius:'50%' }
+      style: {margin:'10px', padding:'30px 25px', fontSize:'18px', color:'#fff', border:'2px solid rgb(0, 0, 40)', backgroundImage: 'linear-gradient(to right, rgb(0, 0, 0), rgb(153, 153, 255), #000)', boxShadow:'3px 5px 5px rgba(0,0,0,0.6)', borderRadius:'50%' }
+    },
+    {
+      id: 15,
+      name: 'Input',
+      style: {margin:'10px', padding:'25px 15px', fontSize:'18px', color:'#fff', border:'1px solid #fff', backgroundColor:'rgb(0, 20, 0)', boxShadow:'3px 5px 5px rgba(0,0,0,0.6)', borderRadius:'15px' }
+    },
+    {
+      id: 16,
+      name: 'Input',
+      style: {margin:'10px', padding:'25px 15px', fontSize:'18px', color:'rgb(0, 0, 40)', border:'none', backgroundColor:'rgba(0, 0, 200, 0.3)', boxShadow:'3px 5px 5px rgba(0, 0, 40, 0.8)', borderRadius:'5px' }
     },
   ],
-  Textarea:[
-    {
-      id: 1,
-      name: 'Textarea',
-      style: {border: '3px solid rgba(0, 0, 0, 0.7)', backgroundColor:'rgba(200, 200, 200, 0.1)'}
-    },
-    {
-      id: 2,
-      name: 'Textarea',
-      style: {border: '2px solid rgb(170, 170, 170)'}
-    },
-    {
-      id: 3,
-      name: 'Textarea',
-      style: {border: '4px inset rgb(0, 80, 0)', borderRadius:'10px'}
-    },
-    // {
-    //   id: 4,
-    //   name: 'Textarea',
-    //   style: {border: '7px outset rgb(170, 0, 29)'}
-    // },
-    // {
-    //   id: 5,
-    //   name: 'Textarea',
-    //   style: {border: '7px inset rgb(30, 0, 170)', backgroundImage:'linear-gradient(to bottom right, rgba(0, 0, 50, 0.6),  rgba(0, 0, 140, 0.3))'}
-    // },
-        {
-      id: 6,
-      name: 'Textarea',
-      style: {border: '7px double rgb(70, 0, 0)'}
-    },
-    //         {
-    //   id: 7,
-    //   name: 'Textarea',
-    //   style: {border: '10px double rgb(230, 170, 0)'}
-    // },
-    //   {
-    //     id: 8,
-    //     name: 'Textarea',
-    //     style: {border: '1px solid rgb(230, 170, 0)', backgroundColor:'rgba(255, 255, 0, 0.2)'}
-    //   },
-    // {
-    //   id: 9,
-    //   name: 'Textarea',
-    //   style: {border: '5px double gray'}
-    // }, 
-    // {
-    //   id: 10,
-    //   name: 'Textarea',
-    //   style: {border: '3px solid rgb(0, 0, 70)', backgroundImage:'linear-gradient(to bottom, gray, #fff)', borderRadius:'20px',}
-    // }, 
-    // {
-    //   id: 11,
-    //   name: 'Textarea',
-    //   style: {border: '2px dashed rgb(60, 0, 60)', backgroundColor:'rgba(216, 0, 255, 0.05'}
-    // }, 
-    // {
-    //   id: 12,
-    //   name: 'Textarea',
-    //   style: {border: '3px dotted rgb(0, 0, 100)', backgroundColor:'rgba(0, 0, 100, 0.05'}
-    // }, 
-  ]
 };

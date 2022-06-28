@@ -29,14 +29,12 @@ export const SelectorScreen = memo(function Container() {
     setSelectedStyle(item.style);
   }
 
+  const modalBtn =  <Button onClick={() => {setVisible(false)}} style={{padding:'20px 30px', backgroundColor:'#282A35', border:'none'}}>ok</Button>
+
   return (
     <Row>
-      <Modal visible={visible} onClose={() => setVisible(false)}>
+      <Modal visible={visible} onClose={() => setVisible(false)} actions={modalBtn}>
         {selectedComponent && <SelectorModal selectedComponent={selectedComponent} choosedComponent={choosedComponent} />}
-          <br/>
-          <Row justify='center'>
-            <Button onClick={() => {setVisible(false)}} style={{padding:'20px 30px', backgroundColor:'#282A35', border:'none'}}>ok</Button>
-          </Row>
       </Modal>
       <DropCol span={9} style={{ overflow: 'hidden', clear: 'both' }}>
         <div style={{ overflow: 'hidden', clear: 'both' }}>

@@ -42,7 +42,6 @@ export const Dustbin = ({ selectedComponent, selectedStyle }: DustBinProps) => {
     Typography: <Typography variant={...selectedStyle.variant}>text</Typography>,
     Input: <Input value="test" style={...selectedStyle}/>,
     Image: <Image />,
-    Textarea: <Textarea style={...selectedStyle} />
   };
 
   return (

@@ -1,5 +1,5 @@
 import React from 'react';
-import { SizeElems } from 'src/global/theme_types';
+import { SizeElems } from '@global/theme_types';
 
 type ScreenSize = { sm: SizeElems; md: SizeElems; lg: SizeElems };
 
@@ -24,9 +24,9 @@ export type InputProps = {
   name?: string;
   leftAddon?: string;
   rightAddon?: string;
-  onChange?: React.ChangeEventHandler;
-  onClick?: () => void;
+  onChange?: React.ChangeEventHandler<HTMLInputElement>;
   value?: string;
   disabled?: boolean;
   style?: object;
+  onClick?: () => void;
 };

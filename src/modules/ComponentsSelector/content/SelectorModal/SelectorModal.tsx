@@ -45,15 +45,6 @@ const SelectorModal = ({selectedComponent, choosedComponent}: {selectedComponent
                             value={componentVariation.name}
                         />
                     );
-                    case 'Textarea':
-                    return (
-                        <Textarea
-                            key={index}
-                            name= {componentVariation.name}
-                            style={componentVariation.style}
-                            onClick={() => choosedComponent(componentVariation)}
-                        />
-                    );
                     default: 
                     return null;
                 }
