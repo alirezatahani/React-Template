@@ -52,7 +52,7 @@ const CounterBox: React.FC<CounterBoxProps> = ({
       {state &&
         state.map((item: any, index: number) => {
           return (
-            <div>
+            <CounterContent shape={shape} position={item.status}>
               <WrapperCounter>
                 <Counter
                   key={index}
@@ -62,7 +62,7 @@ const CounterBox: React.FC<CounterBoxProps> = ({
                   name={name}
                 />
               </WrapperCounter>
-            </div>
+            </CounterContent>
           );
         })}
     </Container>

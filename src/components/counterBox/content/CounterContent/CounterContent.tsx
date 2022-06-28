@@ -21,17 +21,10 @@ const CounterContent: React.FC<CounterContentProps> = ({
       ) : (
         <SquareShape position={position}>{children}</SquareShape>
       )}
-      {isLocked ? (
-        <LockBox onClick={() => setIsLocked(false)}>
-          <FaLock />
-        </LockBox>
-      ) : (
-      
-      )}
 
-<LockBox onClick={() => setIsLocked(!isLocked)}>
-          <FaUnlock />
-        </LockBox>
+      <LockBox onClick={() => setIsLocked(!isLocked)}>
+        {isLocked ? <FaLock /> : <FaUnlock />}
+      </LockBox>
     </div>
   );
 };
