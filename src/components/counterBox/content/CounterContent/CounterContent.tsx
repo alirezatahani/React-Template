@@ -26,10 +26,12 @@ const CounterContent: React.FC<CounterContentProps> = ({
           <FaLock />
         </LockBox>
       ) : (
-        <LockBox onClick={() => setIsLocked(true)}>
+      
+      )}
+
+<LockBox onClick={() => setIsLocked(!isLocked)}>
           <FaUnlock />
         </LockBox>
-      )}
     </div>
   );
 };

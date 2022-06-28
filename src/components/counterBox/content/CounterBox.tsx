@@ -11,24 +11,26 @@ const CounterBox: React.FC<CounterBoxProps> = ({
   shape,
   onChangeCounter,
 }: CounterBoxProps) => {
-  const [state, setState] = useState([]);
+  const positions = ['top', 'right', 'bottom', 'left'];
 
-  const increaseValue = (position: string) => {
-    const newValues = state.map((_value, _index: number) => {
-      if (position === _value.position) {
-        return _value.value + 1;
+  const [state, setState] = useState(null);
+
+  const increaseValue = (index: number) => {
+    const newValues = values.map((_value: any, _index: number) => {
+      if ((index = _index)) {
+        return _value + 1;
       } else {
-        return _value.value;
+        return _value;
       }
     });
     onChange(newValues, name);
   };
-  const decreaseValue = (position: string) => {
-    const newValues = state.map((_value, _index: number) => {
-      if (position === _value.position) {
-        return _value.value - 1;
+  const decreaseValue = (index: number) => {
+    const newValues = values.map((_value: any, _index: number) => {
+      if (index === _index) {
+        return _value - 1;
       } else {
-        return _value.value;
+        return _value;
       }
     });
 
@@ -36,40 +38,31 @@ const CounterBox: React.FC<CounterBoxProps> = ({
   };
 
   useEffect(() => {
-    setState([{ value: values[0], position: 'top' }]);
-
-    setState((prevState) => [
-      ...prevState,
-      { value: values[1], position: 'right' },
-    ]);
-    setState((prevState) => [
-      ...prevState,
-      { value: values[2], position: 'bottom' },
-    ]);
-    setState((prevState) => [
-      ...prevState,
-      { value: values[3], position: 'left' },
-    ]);
+    setState(
+      positions.reduce((acc: any, curr: any, index: number) => {
+        return [...acc, { value: values[index], status: curr }];
+      }, [])
+    );
   }, [values]);
 
-  console.log(state, 'this is value');
-
+  console.log(values);
+  console.log(state, 'state');
   return (
     <Container>
       {state &&
-        state.map((item, index) => {
+        state.map((item: any, index: number) => {
           return (
-            <CounterContent position={item.position} shape={shape}>
+            <div>
               <WrapperCounter>
                 <Counter
                   key={index}
                   value={item.value}
-                  onIncrease={() => increaseValue(item.position)}
-                  onDecrease={() => decreaseValue(item.position)}
+                  onIncrease={() => increaseValue(index)}
+                  onDecrease={() => decreaseValue(index)}
                   name={name}
                 />
               </WrapperCounter>
-            </CounterContent>
+            </div>
           );
         })}
     </Container>
