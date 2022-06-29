@@ -29,12 +29,12 @@ const CounterBox: React.FC<CounterBoxProps> = ({
   console.log(value, 'sss');
 
   const renderContent = (value: any) => {
-    switch (value) {
-      case value.length === 2:
+    switch (value.length) {
+      case 2:
         return <TwoContent value={value} shape="inline" />;
-      case value.length === 3:
+      case 3:
         return <ThreeContent value={value} shape="triangle" />;
-      case value.length === 4:
+      case 4:
         return <FourContent value={value} shape={shape} />;
       default:
         return null;
