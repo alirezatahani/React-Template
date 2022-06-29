@@ -3,32 +3,16 @@ import { TwoContentProps } from './twoContent_types';
 import { WrapperCounter, Container } from './TwoContent.styles';
 import Counter from '@components/counter/content/Counter';
 import CounterLogic from '../CounterLogic/CounterLogic';
+import {
+  inCreaseValue,
+  deCreaseValue,
+} from '@components/counterBox/utils/utils';
+
 const TwoContent: React.FC<TwoContentProps> = ({
   value,
   shape,
   onChange,
 }: TwoContentProps) => {
-  const inCreaseValue = (index: number) => {
-    const newValue = value.map((item: any, _index: number) => {
-      if (index == _index) {
-        return { ...item, value: item.value + 1 };
-      }
-      return item;
-    });
-
-    onChange(newValue);
-  };
-  const deCreaseValue = (index: number) => {
-    const newValue = value.map((item: any, _index: number) => {
-      if (index == _index) {
-        return { ...item, value: item.value - 1 };
-      }
-      return item;
-    });
-
-    onChange(newValue);
-  };
-
   return (
     <Container>
       {value.map((item: any, index: number) => {
@@ -37,8 +21,8 @@ const TwoContent: React.FC<TwoContentProps> = ({
             <WrapperCounter>
               <Counter
                 value={item.value}
-                onIncrease={() => inCreaseValue(index)}
-                onDecrease={() => deCreaseValue(index)}
+                onIncrease={() => inCreaseValue(index, value, onChange)}
+                onDecrease={() => deCreaseValue(index, value, onChange)}
               />
             </WrapperCounter>
           </CounterLogic>
