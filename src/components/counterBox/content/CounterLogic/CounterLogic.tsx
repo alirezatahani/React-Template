@@ -3,9 +3,11 @@ import { CounterLogicProps } from './counterLogic_types';
 import {
   DiamondShape,
   SquareShape,
-  LockBox,
+  LockBoxFourValues,
   InlineShape,
   TriangleShape,
+  TriangleLockBox,
+  InlineLockBox,
 } from './styles/CounterLogic.styles';
 import { FaLock, FaUnlock } from 'react-icons/Fa';
 
@@ -19,13 +21,41 @@ const CounterLogic: React.FC<CounterLogicProps> = ({
   const renderContent = (shape: string) => {
     switch (shape) {
       case 'inline':
-        return <InlineShape position={position}>{children}</InlineShape>;
+        return (
+          <>
+            <InlineShape position={position}>{children}</InlineShape>
+            <InlineLockBox>
+              <FaLock />
+            </InlineLockBox>
+          </>
+        );
       case 'triangle':
-        return <TriangleShape position={position}>{children}</TriangleShape>;
+        return (
+          <>
+            <TriangleShape position={position}>{children}</TriangleShape>
+            <TriangleLockBox>
+              <FaLock />
+            </TriangleLockBox>
+          </>
+        );
       case 'diamond':
-        return <DiamondShape position={position}>{children}</DiamondShape>;
+        return (
+          <>
+            <DiamondShape position={position}>{children}</DiamondShape>
+            <LockBoxFourValues>
+              <FaLock />
+            </LockBoxFourValues>
+          </>
+        );
       case 'square':
-        return <SquareShape position={position}>{children}</SquareShape>;
+        return (
+          <>
+            <SquareShape position={position}>{children}</SquareShape>
+            <LockBoxFourValues>
+              <FaLock />
+            </LockBoxFourValues>
+          </>
+        );
       default:
         return null;
     }
