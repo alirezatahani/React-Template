@@ -53,12 +53,12 @@ export const positionObjInline = {
 };
 export const positionObjTriangle = {
   left: {
-    right: -62,
+    left: -62,
     bottom: 0,
     top: 42,
   },
   right: {
-    left: -62,
+    right: -62,
     bottom: 0,
     top: 42,
   },

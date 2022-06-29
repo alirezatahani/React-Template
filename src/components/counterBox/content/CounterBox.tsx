@@ -9,32 +9,16 @@ const CounterBox: React.FC<CounterBoxProps> = ({
   shape,
   onChange,
 }: CounterBoxProps) => {
-  // const MyComponent = ({values}) => {
-  //   const renderContent = useCallback(() => {
-  //     switch(values) {
-  //       case 2:
-  //         return <p>2</p>;
-
-  //         case 3:
-  //         return <p>3</p>;
-
-  //         case 4:
-  //         return <p>4</p>;
-
-  //       default:
-  //         return null;
-
-  //     }
-  //   }, [values]);
-
   const renderContent = (value: any) => {
     switch (value.length) {
       case 2:
         return <TwoContent onChange={onChange} value={value} shape="inline" />;
       case 3:
-        return <ThreeContent value={value} shape="triangle" />;
+        return (
+          <ThreeContent onChange={onChange} value={value} shape="triangle" />
+        );
       case 4:
-        return <FourContent value={value} shape={shape} />;
+        return <FourContent onChange={onChange} value={value} shape={shape} />;
       default:
         return null;
     }

@@ -3,10 +3,15 @@ import { ThreeContentProps } from './threeContent_types';
 import { WrapperCounter, Container } from './ThreeContent.styles';
 import Counter from '@components/counter/content/Counter';
 import CounterLogic from '../CounterLogic/CounterLogic';
+import {
+  inCreaseValue,
+  deCreaseValue,
+} from '@components/counterBox/utils/utils';
 
 const ThreeContent: React.FC<ThreeContentProps> = ({
   value,
   shape,
+  onChange,
 }: ThreeContentProps) => {
   return (
     <Container>
@@ -14,7 +19,11 @@ const ThreeContent: React.FC<ThreeContentProps> = ({
         return (
           <CounterLogic key={index} shape={shape} position={item.position}>
             <WrapperCounter>
-              <Counter />
+              <Counter
+                value={item.value}
+                onIncrease={() => inCreaseValue(index, value, onChange)}
+                onDecrease={() => deCreaseValue(index, value, onChange)}
+              />
             </WrapperCounter>
           </CounterLogic>
         );

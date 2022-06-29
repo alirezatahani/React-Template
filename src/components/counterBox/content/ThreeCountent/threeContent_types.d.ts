@@ -7,4 +7,5 @@ export type ThreeContentProps = {
     position: string | 'top' | 'right ' | 'left';
   }[];
   shape: 'triangle';
+  onChange?: (value: any) => void;
 };

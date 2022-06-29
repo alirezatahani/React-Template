@@ -6,4 +6,5 @@ export type FourContentProps = {
     position: string | 'right ' | 'left' | 'top' | 'left';
   }[];
   shape: 'diamond' | 'square';
+  onChange?: (value: any) => void;
 };
