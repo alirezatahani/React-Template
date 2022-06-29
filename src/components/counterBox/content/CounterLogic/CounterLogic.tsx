@@ -23,9 +23,9 @@ const CounterLogic: React.FC<CounterLogicProps> = ({
       case 'triangle':
         return <TriangleShape position={position}>{children}</TriangleShape>;
       case 'diamond':
-        return 'coming soon';
+        return <DiamondShape position={position}>{children}</DiamondShape>;
       case 'square':
-        return 'coming soon';
+        return <SquareShape position={position}>{children}</SquareShape>;
       default:
         return null;
     }
@@ -33,16 +33,10 @@ const CounterLogic: React.FC<CounterLogicProps> = ({
 
   return (
     <div>
-      {/* {shape === 'diamond' ? (
-        <DiamondShape position={position}>{children}</DiamondShape>
-      ) : (
-        <SquareShape position={position}>{children}</SquareShape>
-      )}
-
-      <LockBox onClick={() => setIsLocked(!isLocked)}>
+      {renderContent(shape)}
+      {/* <LockBox onClick={() => setIsLocked(!isLocked)}>
         {isLocked ? <FaLock /> : <FaUnlock />}
       </LockBox> */}
-      {renderContent(shape)}
     </div>
   );
 };

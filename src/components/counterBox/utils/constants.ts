@@ -1,6 +1,6 @@
 export const positionObj = {
   bottom: {
-    left: 0,
+    left: 40,
     right: 0,
     bottom: -48,
   },

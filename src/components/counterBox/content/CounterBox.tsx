@@ -1,12 +1,12 @@
-import React, { useState, useEffect, useCallback } from 'react';
+import React from 'react';
 import { CounterBoxProps } from './counterBox_types';
 import TwoContent from './TwoContent/TwoContent';
 import ThreeContent from './ThreeCountent/ThreeContent';
 import FourContent from './FourContent/FourContent';
 
 const CounterBox: React.FC<CounterBoxProps> = ({
-  number,
   value,
+  shape,
 }: CounterBoxProps) => {
   // const MyComponent = ({values}) => {
   //   const renderContent = useCallback(() => {
@@ -26,20 +26,22 @@ const CounterBox: React.FC<CounterBoxProps> = ({
   //     }
   //   }, [values]);
 
-  const renderContent = (number: number) => {
-    switch (number) {
-      case 2:
+  console.log(value, 'sss');
+
+  const renderContent = (value: any) => {
+    switch (value) {
+      case value.length === 2:
         return <TwoContent value={value} shape="inline" />;
-      case 3:
+      case value.length === 3:
         return <ThreeContent value={value} shape="triangle" />;
-      case 4:
-        return <FourContent />;
+      case value.length === 4:
+        return <FourContent value={value} shape={shape} />;
       default:
         return null;
     }
   };
 
-  return <div>{renderContent(number)}</div>;
+  return <div>{renderContent(value)}</div>;
 };
 
 CounterBox.defaultProps = {};

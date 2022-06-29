@@ -1,38 +1,24 @@
 import React from 'react';
 import { FourContentProps } from './fourContent_types';
-import {
-  LeftStyled,
-  RightStyled,
-  Container,
-  WrapperCounter,
-  TopStyled,
-  BottomStyled,
-} from './FourContent.styles';
+import { Container, WrapperCounter } from './FourContent.styles';
 import Counter from '@components/counter/content/Counter';
+import CounterLogic from '../CounterLogic/CounterLogic';
 
-const FourContent: React.FC<FourContentProps> = ({}: FourContentProps) => {
+const FourContent: React.FC<FourContentProps> = ({
+  value,
+  shape,
+}: FourContentProps) => {
   return (
     <Container>
-      <TopStyled>
-        <WrapperCounter>
-          <Counter />
-        </WrapperCounter>
-      </TopStyled>
-      <RightStyled>
-        <WrapperCounter>
-          <Counter />
-        </WrapperCounter>
-      </RightStyled>
-      <BottomStyled>
-        <WrapperCounter>
-          <Counter />
-        </WrapperCounter>
-      </BottomStyled>
-      <LeftStyled>
-        <WrapperCounter>
-          <Counter />
-        </WrapperCounter>
-      </LeftStyled>
+      {value.map((item: any, index: number) => {
+        return (
+          <CounterLogic key={index} shape={shape} position={item.position}>
+            <WrapperCounter>
+              <Counter />
+            </WrapperCounter>
+          </CounterLogic>
+        );
+      })}
     </Container>
   );
 };

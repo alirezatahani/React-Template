@@ -247,8 +247,8 @@ const ImageControlPanel = ({ state, setState, handleChange }: any) => {
 
           <CounterBox
             onChange={handleChangeCounterBox}
-            number={3}
             value={values}
+            shape="diamond"
           />
 
           <BtnCheckbox
