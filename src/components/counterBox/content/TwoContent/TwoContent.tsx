@@ -2,29 +2,29 @@ import React from 'react';
 import { TwoContentProps } from './twoContent_types';
 import {
   WrapperCounter,
-  MainRelative,
-  MainAbsolute,
-  Item,
+  RightStyled,
+  LeftStyled,
+  Container,
 } from './TwoContent.styles';
 import Counter from '@components/counter/content/Counter';
 
-const TwoContent: React.FC<TwoContentProps> = ({ value }: TwoContentProps) => {
-  console.log(value, 'values');
+const TwoContent: React.FC<TwoContentProps> = ({
+  ...rest
+}: TwoContentProps) => {
   return (
-    <MainRelative>
-      <MainAbsolute>
+    <Container>
+      <RightStyled>
         <WrapperCounter>
-          {value &&
-            Object.values(value).map((item: any, index: number) => {
-              return (
-                <Item>
-                  <Counter key={index} value={item} />
-                </Item>
-              );
-            })}
+          <Counter />
         </WrapperCounter>
-      </MainAbsolute>
-    </MainRelative>
+      </RightStyled>
+
+      <LeftStyled>
+        <WrapperCounter>
+          <Counter />
+        </WrapperCounter>
+      </LeftStyled>
+    </Container>
   );
 };
 

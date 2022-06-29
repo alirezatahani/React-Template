@@ -4,10 +4,7 @@ import TwoContent from './TwoContent/TwoContent';
 import ThreeContent from './ThreeCountent/ThreeContent';
 import FourContent from './FourContent/FourContent';
 
-const CounterBox: React.FC<CounterBoxProps> = ({
-  name,
-  values,
-}: CounterBoxProps) => {
+const CounterBox: React.FC<CounterBoxProps> = ({ values }: CounterBoxProps) => {
   // const MyComponent = ({values}) => {
   //   const renderContent = useCallback(() => {
   //     switch(values) {
@@ -29,7 +26,7 @@ const CounterBox: React.FC<CounterBoxProps> = ({
   const renderContent = (values: number) => {
     switch (values) {
       case 2:
-        return <TwoContent value={{ left: 0, right: 0 }} />;
+        return <TwoContent />;
       case 3:
         return <ThreeContent />;
       case 4:

@@ -240,7 +240,7 @@ const ImageControlPanel = ({ state, setState, handleChange }: any) => {
             />
           </WrapperCounter>
 
-          <CounterBox values={3} />
+          <CounterBox values={2} />
 
           <BtnCheckbox
             type="radio"
