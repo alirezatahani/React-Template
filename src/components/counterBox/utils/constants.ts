@@ -37,3 +37,31 @@ export const positionObjSquare = {
     top: 84,
   },
 };
+export const positionObjInline = {
+  left: {
+    right: -62,
+    bottom: 0,
+    top: -16,
+  },
+  right: {
+    left: -62,
+    bottom: 0,
+    top: -16,
+  },
+  top: {},
+  bottom: {},
+};
+export const positionObjTriangle = {
+  left: {
+    right: -62,
+    bottom: 0,
+    top: 42,
+  },
+  right: {
+    left: -62,
+    bottom: 0,
+    top: 42,
+  },
+  top: { left: 28, right: 0, top: -16 },
+  bottom: {},
+};

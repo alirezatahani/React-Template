@@ -1,6 +1,10 @@
 import React from 'react';
+
 export type ThreeContentProps = {
   style?: React.CSSProperties;
-  value?: any;
-  shape?: 'triangle' | 'default';
+  value: {
+    value: number;
+    position: string | 'top' | 'right ' | 'left';
+  }[];
+  shape: 'triangle';
 };

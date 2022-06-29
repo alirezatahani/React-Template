@@ -1,34 +1,24 @@
 import React from 'react';
 import { ThreeContentProps } from './threeContent_types';
-import {
-  WrapperCounter,
-  TopStyled,
-  RightStyled,
-  LeftStyled,
-  Container,
-} from './ThreeContent.styles';
+import { WrapperCounter, Container } from './ThreeContent.styles';
 import Counter from '@components/counter/content/Counter';
+import CounterLogic from '../CounterContent/CounterLogic';
 
-const ThreeContent: React.FC<ThreeContentProps> = ({}: ThreeContentProps) => {
+const ThreeContent: React.FC<ThreeContentProps> = ({
+  value,
+  shape,
+}: ThreeContentProps) => {
   return (
     <Container>
-      <TopStyled>
-        <WrapperCounter>
-          <Counter />
-        </WrapperCounter>
-      </TopStyled>
-
-      <RightStyled>
-        <WrapperCounter>
-          <Counter />
-        </WrapperCounter>
-      </RightStyled>
-
-      <LeftStyled>
-        <WrapperCounter>
-          <Counter />
-        </WrapperCounter>
-      </LeftStyled>
+      {value.map((item: any, index: number) => {
+        return (
+          <CounterLogic key={index} shape={shape} position={item.position}>
+            <WrapperCounter>
+              <Counter />
+            </WrapperCounter>
+          </CounterLogic>
+        );
+      })}
     </Container>
   );
 };

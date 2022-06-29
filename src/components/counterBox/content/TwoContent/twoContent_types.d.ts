@@ -1,5 +1,9 @@
 import React from 'react';
 export type TwoContentProps = {
   style?: React.CSSProperties;
-  value?: any;
+  value: {
+    value: number;
+    position: string | 'right ' | 'left';
+  }[];
+  shape: 'inline';
 };

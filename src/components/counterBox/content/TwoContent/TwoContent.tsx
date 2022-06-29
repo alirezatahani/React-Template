@@ -7,21 +7,24 @@ import {
   Container,
 } from './TwoContent.styles';
 import Counter from '@components/counter/content/Counter';
+import CounterLogic from '../CounterContent/CounterLogic';
 
-const TwoContent: React.FC<TwoContentProps> = ({}: TwoContentProps) => {
+const TwoContent: React.FC<TwoContentProps> = ({
+  value,
+  shape,
+}: TwoContentProps) => {
+  console.log(value);
   return (
     <Container>
-      <RightStyled>
-        <WrapperCounter>
-          <Counter />
-        </WrapperCounter>
-      </RightStyled>
-
-      <LeftStyled>
-        <WrapperCounter>
-          <Counter />
-        </WrapperCounter>
-      </LeftStyled>
+      {value.map((item: any, index: number) => {
+        return (
+          <CounterLogic key={index} shape={shape} position={item.position}>
+            <WrapperCounter>
+              <Counter />
+            </WrapperCounter>
+          </CounterLogic>
+        );
+      })}
     </Container>
   );
 };
