@@ -53,6 +53,7 @@ const ImageControlPanel = ({ state, setState, handleChange }: any) => {
     { value: 0, position: 'right' },
     { value: 0, position: 'left' },
     { value: 0, position: 'top' },
+    { value: 0, position: 'bottom' },
   ]);
 
   //load image
