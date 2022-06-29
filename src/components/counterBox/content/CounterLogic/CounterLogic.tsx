@@ -24,8 +24,8 @@ const CounterLogic: React.FC<CounterLogicProps> = ({
         return (
           <>
             <InlineShape position={position}>{children}</InlineShape>
-            <InlineLockBox>
-              <FaLock />
+            <InlineLockBox onClick={() => setIsLocked(!isLocked)}>
+              {isLocked ? <FaLock /> : <FaUnlock />}
             </InlineLockBox>
           </>
         );
@@ -33,8 +33,8 @@ const CounterLogic: React.FC<CounterLogicProps> = ({
         return (
           <>
             <TriangleShape position={position}>{children}</TriangleShape>
-            <TriangleLockBox>
-              <FaLock />
+            <TriangleLockBox onClick={() => setIsLocked(!isLocked)}>
+              {isLocked ? <FaLock /> : <FaUnlock />}
             </TriangleLockBox>
           </>
         );
@@ -42,8 +42,8 @@ const CounterLogic: React.FC<CounterLogicProps> = ({
         return (
           <>
             <DiamondShape position={position}>{children}</DiamondShape>
-            <LockBoxFourValues>
-              <FaLock />
+            <LockBoxFourValues onClick={() => setIsLocked(!isLocked)}>
+              {isLocked ? <FaLock /> : <FaUnlock />}
             </LockBoxFourValues>
           </>
         );
@@ -51,8 +51,8 @@ const CounterLogic: React.FC<CounterLogicProps> = ({
         return (
           <>
             <SquareShape position={position}>{children}</SquareShape>
-            <LockBoxFourValues>
-              <FaLock />
+            <LockBoxFourValues onClick={() => setIsLocked(!isLocked)}>
+              {isLocked ? <FaLock /> : <FaUnlock />}
             </LockBoxFourValues>
           </>
         );
@@ -61,14 +61,7 @@ const CounterLogic: React.FC<CounterLogicProps> = ({
     }
   };
 
-  return (
-    <div>
-      {renderContent(shape)}
-      {/* <LockBox onClick={() => setIsLocked(!isLocked)}>
-        {isLocked ? <FaLock /> : <FaUnlock />}
-      </LockBox> */}
-    </div>
-  );
+  return <div>{renderContent(shape)}</div>;
 };
 
 CounterLogic.defaultProps = {};

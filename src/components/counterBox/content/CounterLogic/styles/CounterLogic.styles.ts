@@ -27,15 +27,18 @@ export const TriangleShape = styled.div<CounterLogicProps>(({ position }) => ({
 export const LockBoxFourValues = styled.div(({}) => ({
   position: 'absolute',
   left: 93,
+  cursor: 'pointer',
   top: 40,
 }));
 export const TriangleLockBox = styled.div(({}) => ({
   position: 'absolute',
   left: 82,
+  cursor: 'pointer',
   top: 26,
 }));
 export const InlineLockBox = styled.div(({}) => ({
   position: 'absolute',
   left: 82,
   top: -12,
+  cursor: 'pointer',
 }));

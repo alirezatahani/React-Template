@@ -26,8 +26,6 @@ const CounterBox: React.FC<CounterBoxProps> = ({
   //     }
   //   }, [values]);
 
-  console.log(value, 'sss');
-
   const renderContent = (value: any) => {
     switch (value.length) {
       case 2:
