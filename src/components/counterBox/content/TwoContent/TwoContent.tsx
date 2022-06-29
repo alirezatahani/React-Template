@@ -18,6 +18,16 @@ const TwoContent: React.FC<TwoContentProps> = ({
 
     onChange(newValue);
   };
+  const deCreaseValue = (index: number) => {
+    const newValue = value.map((item: any, _index: number) => {
+      if (index == _index) {
+        return { ...item, value: item.value - 1 };
+      }
+      return item;
+    });
+
+    onChange(newValue);
+  };
 
   return (
     <Container>
@@ -28,6 +38,7 @@ const TwoContent: React.FC<TwoContentProps> = ({
               <Counter
                 value={item.value}
                 onIncrease={() => inCreaseValue(index)}
+                onDecrease={() => deCreaseValue(index)}
               />
             </WrapperCounter>
           </CounterLogic>
