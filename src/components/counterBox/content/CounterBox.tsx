@@ -7,6 +7,7 @@ import FourContent from './FourContent/FourContent';
 const CounterBox: React.FC<CounterBoxProps> = ({
   value,
   shape,
+  onChange,
 }: CounterBoxProps) => {
   // const MyComponent = ({values}) => {
   //   const renderContent = useCallback(() => {
@@ -29,7 +30,7 @@ const CounterBox: React.FC<CounterBoxProps> = ({
   const renderContent = (value: any) => {
     switch (value.length) {
       case 2:
-        return <TwoContent value={value} shape="inline" />;
+        return <TwoContent onChange={onChange} value={value} shape="inline" />;
       case 3:
         return <ThreeContent value={value} shape="triangle" />;
       case 4:

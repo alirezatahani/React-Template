@@ -149,7 +149,7 @@ const ImageControlPanel = ({ state, setState, handleChange }: any) => {
   const handleChangeCounterBox = (values: any) => {
     setValues(values);
   };
-
+  console.log(values, 'test');
   return (
     <div>
       <ControlPanelSettingContainer>

@@ -6,4 +6,5 @@ export type TwoContentProps = {
     position: string | 'right ' | 'left';
   }[];
   shape: 'inline';
+  onChange?: (value: any) => void;
 };

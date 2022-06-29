@@ -6,15 +6,29 @@ import CounterLogic from '../CounterLogic/CounterLogic';
 const TwoContent: React.FC<TwoContentProps> = ({
   value,
   shape,
+  onChange,
 }: TwoContentProps) => {
-  console.log(value);
+  const inCreaseValue = (index: number) => {
+    const newValue = value.map((item: any, _index: number) => {
+      if (index == _index) {
+        return { ...item, value: item.value + 1 };
+      }
+      return item;
+    });
+
+    onChange(newValue);
+  };
+
   return (
     <Container>
       {value.map((item: any, index: number) => {
         return (
           <CounterLogic key={index} shape={shape} position={item.position}>
             <WrapperCounter>
-              <Counter />
+              <Counter
+                value={item.value}
+                onIncrease={() => inCreaseValue(index)}
+              />
             </WrapperCounter>
           </CounterLogic>
         );
