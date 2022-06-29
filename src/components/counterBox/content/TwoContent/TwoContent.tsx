@@ -7,8 +7,7 @@ import {
   Container,
 } from './TwoContent.styles';
 import Counter from '@components/counter/content/Counter';
-import CounterLogic from '../CounterContent/CounterLogic';
-
+import CounterLogic from '../CounterLogic/CounterLogic';
 const TwoContent: React.FC<TwoContentProps> = ({
   value,
   shape,

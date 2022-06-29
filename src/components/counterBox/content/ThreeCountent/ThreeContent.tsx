@@ -2,7 +2,7 @@ import React from 'react';
 import { ThreeContentProps } from './threeContent_types';
 import { WrapperCounter, Container } from './ThreeContent.styles';
 import Counter from '@components/counter/content/Counter';
-import CounterLogic from '../CounterContent/CounterLogic';
+import CounterLogic from '../CounterLogic/CounterLogic';
 
 const ThreeContent: React.FC<ThreeContentProps> = ({
   value,
