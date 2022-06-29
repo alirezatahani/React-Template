@@ -23,6 +23,7 @@ import { CardMedia } from '@components/card/content/cardMedia/index';
 import { CardContent } from '@components/card/content/cardContent/index';
 
 export const Blank3 = ({ setSelected, state }: any) => {
+  console.log(state, 'wow!');
   return (
     <React.Fragment>
       <Navbar />
@@ -49,7 +50,6 @@ export const Blank3 = ({ setSelected, state }: any) => {
                       paddingBottom: Number(state.paddingBottom),
                       paddingRight: Number(state.paddingRight),
                       paddingLeft: Number(state.paddingLeft),
-                      border: state.border,
                     }}
                   />
                 ) : (

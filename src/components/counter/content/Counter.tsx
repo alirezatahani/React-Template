@@ -14,6 +14,7 @@ const Counter: React.FC<CounterProps> = ({
   name,
   value,
   onChange,
+  onChangeMain,
 }: CounterProps) => {
   return (
     <CounterContainer>

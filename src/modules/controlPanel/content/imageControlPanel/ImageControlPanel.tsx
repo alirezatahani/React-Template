@@ -25,12 +25,6 @@ import {
   WrapperLabel,
   SwitchWrapper,
   SwitchLabel,
-  PaddingContainer,
-  PaddingTopStyled,
-  PaddingBottomStyled,
-  PaddingRightStyled,
-  PaddingLeftStyled,
-  LockBox,
   BorderWrapperCounter,
   SelectWrapper,
 } from '@modules/controlPanel/content/imageControlPanel/imageControlPanel_styles';
@@ -38,7 +32,6 @@ import {
   alignImageOptions,
   borderOptions,
 } from '@modules/controlPanel/utils/constants';
-import { FaLock, FaUnlock } from 'react-icons/Fa';
 import Select from 'react-select';
 import { increaseValue, decreaseValue } from 'utils/counter';
 
@@ -47,11 +40,10 @@ const ImageControlPanel = ({ state, setState, handleChange }: any) => {
   const [image, setImage] = React.useState(null);
   const [isShown, setIsShown] = React.useState<boolean>(false);
   const [modal, setModal] = React.useState<boolean>(false);
-  const [lock, setLock] = React.useState<boolean>(false);
   const [flags, setFlags] = React.useState([]);
   const [values, setValues] = React.useState([
-    { value: 0, position: 'right' },
-    { value: 0, position: 'left' },
+    { value: 0, position: 'right', name: 'paddingRight' },
+    { value: 0, position: 'left', name: 'paddingLeft' },
   ]);
 
   //load image
@@ -119,23 +111,6 @@ const ImageControlPanel = ({ state, setState, handleChange }: any) => {
     handleChange('paddingLeft', e.target.value);
   };
 
-  const increasePaddingValue = () => {
-    if (lock) {
-      setState((prevState: any) => ({
-        ...prevState,
-        paddingTop: Number(prevState.paddingTop) + 1,
-        paddingBottom: Number(prevState.paddingBottom) + 1,
-        paddingRight: Number(prevState.paddingRight) + 1,
-        paddingLeft: Number(prevState.paddingLeft) + 1,
-      }));
-    } else {
-      setState((prevState: any) => ({
-        ...prevState,
-        paddingTop: Number(prevState.paddingTop) + 1,
-      }));
-    }
-  };
-
   const handleClick = (label: string) => {
     const exist = flags.find((flag) => flag === label);
     if (exist) {
@@ -148,6 +123,11 @@ const ImageControlPanel = ({ state, setState, handleChange }: any) => {
 
   const handleChangeCounterBox = (values: any) => {
     setValues(values);
+  };
+  const handleChangePadding = () => {
+    values.map((item) => {
+      handleChange(item.name, item.value);
+    });
   };
 
   console.log(values, 'test');
@@ -265,9 +245,11 @@ const ImageControlPanel = ({ state, setState, handleChange }: any) => {
           </SwitchWrapper>
           {flags.find((flag) => flag === 'padding') ? (
             <CounterBox
-              onChange={handleChangeCounterBox}
+              onChange={handleChangePadding}
               value={values}
               shape="diamond"
+              name="padding"
+              onChangeMain={handleChangeCounterBox}
             />
           ) : null}
 

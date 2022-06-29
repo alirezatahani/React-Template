@@ -7,4 +7,7 @@ export type TwoContentProps = {
   }[];
   shape: 'inline';
   onChange?: (value: any) => void;
+  onChangeMain?: (value: any) => void;
+
+  name?: string;
 };

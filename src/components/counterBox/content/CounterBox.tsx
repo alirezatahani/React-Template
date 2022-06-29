@@ -8,13 +8,21 @@ const CounterBox: React.FC<CounterBoxProps> = ({
   value,
   shape,
   onChange,
+  name,
+  onChangeMain,
 }: CounterBoxProps) => {
   const renderContent = useCallback(
     (value: any) => {
       switch (value.length) {
         case 2:
           return (
-            <TwoContent onChange={onChange} value={value} shape="inline" />
+            <TwoContent
+              onChange={onChange}
+              value={value}
+              shape="inline"
+              name={name}
+              onChangeMain={onChangeMain}
+            />
           );
         case 3:
           return (
