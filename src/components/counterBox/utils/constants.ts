@@ -39,12 +39,12 @@ export const positionObjSquare = {
 };
 export const positionObjInline = {
   left: {
-    right: -62,
+    left: -62,
     bottom: 0,
     top: -16,
   },
   right: {
-    left: -62,
+    right: -62,
     bottom: 0,
     top: -16,
   },

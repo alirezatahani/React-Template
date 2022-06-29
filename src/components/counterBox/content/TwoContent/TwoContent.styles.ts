@@ -17,21 +17,3 @@ export const Container = styled.div(({ theme }) => ({
   marginBottom: '2rem',
   marginTop: '2rem',
 }));
-
-export const RightStyled = styled.div(({}) => ({
-  position: 'absolute',
-  left: -62,
-  bottom: 0,
-  top: -16,
-}));
-export const LeftStyled = styled.div(({}) => ({
-  position: 'absolute',
-  right: -62,
-  bottom: 0,
-  top: -16,
-}));
-export const LockBox = styled.div(({}) => ({
-  position: 'absolute',
-  left: 93,
-  top: 40,
-}));
