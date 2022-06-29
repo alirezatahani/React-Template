@@ -12,6 +12,7 @@ const ThreeContent: React.FC<ThreeContentProps> = ({
   value,
   shape,
   onChange,
+  onChangeMain,
 }: ThreeContentProps) => {
   return (
     <Container>
@@ -21,8 +22,9 @@ const ThreeContent: React.FC<ThreeContentProps> = ({
             <WrapperCounter>
               <Counter
                 value={item.value}
-                onIncrease={() => inCreaseValue(index, value, onChange)}
-                onDecrease={() => deCreaseValue(index, value, onChange)}
+                onIncrease={() => inCreaseValue(index, value, onChangeMain)}
+                onDecrease={() => deCreaseValue(index, value, onChangeMain)}
+                onChange={onChange}
               />
             </WrapperCounter>
           </CounterLogic>

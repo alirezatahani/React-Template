@@ -26,11 +26,21 @@ const CounterBox: React.FC<CounterBoxProps> = ({
           );
         case 3:
           return (
-            <ThreeContent onChange={onChange} value={value} shape="triangle" />
+            <ThreeContent
+              onChange={onChange}
+              value={value}
+              shape="triangle"
+              onChangeMain={onChangeMain}
+            />
           );
         case 4:
           return (
-            <FourContent onChange={onChange} value={value} shape={shape} />
+            <FourContent
+              onChange={onChange}
+              value={value}
+              shape={shape}
+              onChangeMain={onChangeMain}
+            />
           );
         default:
           return null;

@@ -8,4 +8,5 @@ export type ThreeContentProps = {
   }[];
   shape: 'triangle';
   onChange?: (value: any) => void;
+  onChangeMain?: (value: any) => void;
 };

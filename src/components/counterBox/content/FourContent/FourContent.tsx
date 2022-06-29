@@ -12,6 +12,7 @@ const FourContent: React.FC<FourContentProps> = ({
   value,
   shape,
   onChange,
+  onChangeMain,
 }: FourContentProps) => {
   return (
     <Container>
@@ -21,8 +22,9 @@ const FourContent: React.FC<FourContentProps> = ({
             <WrapperCounter>
               <Counter
                 value={item.value}
-                onIncrease={() => inCreaseValue(index, value, onChange)}
-                onDecrease={() => deCreaseValue(index, value, onChange)}
+                onIncrease={() => inCreaseValue(index, value, onChangeMain)}
+                onDecrease={() => deCreaseValue(index, value, onChangeMain)}
+                onChange={onChange}
               />
             </WrapperCounter>
           </CounterLogic>
