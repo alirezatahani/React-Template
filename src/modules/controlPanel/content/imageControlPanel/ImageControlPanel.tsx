@@ -151,7 +151,6 @@ const ImageControlPanel = ({ state, setState, handleChange }: any) => {
   const handleChangeCounterBox = (values: any) => {
     setValues(values);
   };
-  console.log(values, 'test');
   return (
     <div>
       <ControlPanelSettingContainer>
@@ -246,12 +245,6 @@ const ImageControlPanel = ({ state, setState, handleChange }: any) => {
             />
           </WrapperCounter>
 
-          <CounterBox
-            onChange={handleChangeCounterBox}
-            value={values}
-            shape="diamond"
-          />
-
           <BtnCheckbox
             type="radio"
             name="alignMent"
@@ -271,54 +264,11 @@ const ImageControlPanel = ({ state, setState, handleChange }: any) => {
             <SwitchLabel variant="body1">Padding</SwitchLabel>
           </SwitchWrapper>
           {flags.find((flag) => flag === 'padding') ? (
-            <PaddingContainer>
-              <PaddingTopStyled>
-                <WrapperCounter>
-                  <Counter
-                    onIncrease={increasePaddingValue}
-                    name="paddingTop"
-                    value={state.paddingTop}
-                    onChange={handleChangePaddingTop}
-                  />
-                </WrapperCounter>
-              </PaddingTopStyled>
-              <PaddingBottomStyled>
-                <WrapperCounter>
-                  <Counter
-                    name="paddingBottom"
-                    value={state.paddingBottom}
-                    onChange={handleChangePaddingBottom}
-                  />
-                </WrapperCounter>
-              </PaddingBottomStyled>
-              <PaddingRightStyled>
-                <WrapperCounter>
-                  <Counter
-                    name="paddingRight"
-                    value={state.paddingRight}
-                    onChange={handleChangePaddingRight}
-                  />
-                </WrapperCounter>
-              </PaddingRightStyled>
-              <PaddingLeftStyled>
-                <WrapperCounter>
-                  <Counter
-                    name="paddingLeft"
-                    value={state.paddingLeft}
-                    onChange={handleChangePaddingLeft}
-                  />
-                </WrapperCounter>
-              </PaddingLeftStyled>
-              {lock ? (
-                <LockBox onClick={() => setLock(false)}>
-                  <FaLock />
-                </LockBox>
-              ) : (
-                <LockBox onClick={() => setLock(true)}>
-                  <FaUnlock />
-                </LockBox>
-              )}
-            </PaddingContainer>
+            <CounterBox
+              onChange={handleChangeCounterBox}
+              value={values}
+              shape="diamond"
+            />
           ) : null}
 
           <SwitchWrapper>
