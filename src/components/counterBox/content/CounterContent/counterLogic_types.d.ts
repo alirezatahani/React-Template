@@ -1,4 +1,4 @@
-export type CounterContentProps = {
+export type CounterLogicProps = {
   position: 'top' | 'right' | 'bottom' | 'left';
   children?: React.ReactNode;
   shape?: 'square' | 'diamond';

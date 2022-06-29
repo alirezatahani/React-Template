@@ -8,9 +8,7 @@ import {
 } from './TwoContent.styles';
 import Counter from '@components/counter/content/Counter';
 
-const TwoContent: React.FC<TwoContentProps> = ({
-  ...rest
-}: TwoContentProps) => {
+const TwoContent: React.FC<TwoContentProps> = ({}: TwoContentProps) => {
   return (
     <Container>
       <RightStyled>

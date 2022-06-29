@@ -1,17 +1,17 @@
 import React, { useState } from 'react';
-import { CounterContentProps } from './counterContent_types';
+import { CounterLogicProps } from './counterLogic_types';
 import {
   DiamondShape,
   SquareShape,
   LockBox,
-} from './styles/CounterContent.styles';
+} from './styles/CounterLogic.styles';
 import { FaLock, FaUnlock } from 'react-icons/Fa';
 
-const CounterContent: React.FC<CounterContentProps> = ({
+const CounterLogic: React.FC<CounterLogicProps> = ({
   position,
   children,
   shape,
-}: CounterContentProps) => {
+}: CounterLogicProps) => {
   const [isLocked, setIsLocked] = useState<boolean>(false);
 
   return (
@@ -29,5 +29,5 @@ const CounterContent: React.FC<CounterContentProps> = ({
   );
 };
 
-CounterContent.defaultProps = {};
-export default CounterContent;
+CounterLogic.defaultProps = {};
+export default CounterLogic;

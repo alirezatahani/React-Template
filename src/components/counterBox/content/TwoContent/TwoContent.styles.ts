@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import { ThreeContentProps } from './threeContent_types';
 
 export const WrapperCounter = styled.div(({}) => ({
   display: 'flex',

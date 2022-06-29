@@ -49,6 +49,7 @@ const ImageControlPanel = ({ state, setState, handleChange }: any) => {
   const [modal, setModal] = React.useState<boolean>(false);
   const [lock, setLock] = React.useState<boolean>(false);
   const [flags, setFlags] = React.useState([]);
+  
 
   //load image
 
