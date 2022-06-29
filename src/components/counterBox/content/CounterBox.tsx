@@ -2,6 +2,7 @@ import React, { useState, useEffect, useCallback } from 'react';
 import { CounterBoxProps } from './counterBox_types';
 import TwoContent from './TwoContent/TwoContent';
 import ThreeContent from './ThreeCountent/ThreeContent';
+import FourContent from './FourContent/FourContent';
 
 const CounterBox: React.FC<CounterBoxProps> = ({
   name,
@@ -32,7 +33,7 @@ const CounterBox: React.FC<CounterBoxProps> = ({
       case 3:
         return <ThreeContent />;
       case 4:
-        return 'coming soon';
+        return <FourContent />;
       default:
         return null;
     }
