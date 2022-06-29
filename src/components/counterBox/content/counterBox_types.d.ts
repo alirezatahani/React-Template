@@ -3,9 +3,7 @@ import React from 'react';
 export type CounterBoxProps = {
   style?: React.CSSProperties;
   shape?: 'square' | 'diamond';
-  onChange?: (values: number[], name: string) => void;
-  name: string;
-  values: number[];
+  name?: string;
+  values: 2 | 3 | 4;
   onChangeCounter?: React.ChangeEventHandler;
-
 };

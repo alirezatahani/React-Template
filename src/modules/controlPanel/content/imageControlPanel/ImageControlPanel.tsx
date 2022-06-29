@@ -49,7 +49,6 @@ const ImageControlPanel = ({ state, setState, handleChange }: any) => {
   const [modal, setModal] = React.useState<boolean>(false);
   const [lock, setLock] = React.useState<boolean>(false);
   const [flags, setFlags] = React.useState([]);
-  const [padding, setPadding] = React.useState([0, 0, 0, 0]);
 
   //load image
 
@@ -143,9 +142,9 @@ const ImageControlPanel = ({ state, setState, handleChange }: any) => {
     }
   };
 
-  const handleChangeCounterBox = (values: any, name: string) => {
-    setPadding(values);
-  };
+  // const handleChangeCounterBox = (values: any, name: string) => {
+  //   // setPadding(values);
+  // };
 
   return (
     <div>
@@ -241,12 +240,7 @@ const ImageControlPanel = ({ state, setState, handleChange }: any) => {
             />
           </WrapperCounter>
 
-          <CounterBox
-            name="padding"
-            values={padding}
-            onChange={handleChangeCounterBox}
-            shape="diamond"
-          />
+          <CounterBox name="padding" values={3} />
 
           <BtnCheckbox
             type="radio"
