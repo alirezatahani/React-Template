@@ -52,8 +52,6 @@ const ImageControlPanel = ({ state, setState, handleChange }: any) => {
   const [values, setValues] = React.useState([
     { value: 0, position: 'right' },
     { value: 0, position: 'left' },
-    { value: 0, position: 'top' },
-    { value: 0, position: 'bottom' },
   ]);
 
   //load image
@@ -151,6 +149,8 @@ const ImageControlPanel = ({ state, setState, handleChange }: any) => {
   const handleChangeCounterBox = (values: any) => {
     setValues(values);
   };
+
+  console.log(values, 'test');
   return (
     <div>
       <ControlPanelSettingContainer>
