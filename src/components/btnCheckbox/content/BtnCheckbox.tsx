@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { ChangeEventHandler, useState } from 'react';
 import {
   CustomCheckbox,
   BtnCheckboxContainer,
@@ -16,13 +16,15 @@ const BtnCheckbox: React.FC<BtnCheckboxPropsType> = ({
   type,
   ...props
 }: BtnCheckboxPropsType) => {
-  const [values, setValues] = useState<string | string[] | any>(defaultValue);
+  const [values, setValues] = useState<
+    string | number | string[] | number[] | any
+  >(defaultValue);
 
-  const handleChange = (event: any) => {
-    if (type === 'checkbox') {
+  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    if (type === 'checkbox' && Array.isArray(values)) {
       if (values.includes(event.target.value)) {
         const newValues = values.filter(
-          (value: any) => value !== event.target.value
+          (value: string) => value !== event.target.value
         );
         onChange(event, newValues);
         setValues(newValues);
@@ -39,6 +41,7 @@ const BtnCheckbox: React.FC<BtnCheckboxPropsType> = ({
   return (
     <BtnCheckboxContainer>
       {options.map((option: BtnCheckboxOptionType, index: number) => {
+        console.log(option);
         const inititalValue: boolean =
           type === 'checkbox'
             ? //@ts-ignore

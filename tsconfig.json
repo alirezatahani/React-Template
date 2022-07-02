@@ -21,7 +21,8 @@
       "@templates/*": ["templates/*"],
       "@pages/*": ["pages/*"],
       "@modules/*": ["modules/*"],
-      "@utils/*": ["utils/*"]
+      "@utils/*": ["utils/*"],
+      "@global/*": ["global/*"]
     }
   },
   "include": ["**/*.ts", "**/*.tsx"],

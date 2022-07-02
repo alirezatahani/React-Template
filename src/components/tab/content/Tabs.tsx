@@ -69,7 +69,7 @@ export const Tabs: React.FC<TabsProps> = ({ ...props }) => {
             <BottomBorder></BottomBorder>
           </BottomBorderContainer>
         </TabsHead>
-        <TabContentContainer align={props.align}>
+        <TabContentContainer>
           {renderActiveTabContent()}
         </TabContentContainer>
       </TabSection>

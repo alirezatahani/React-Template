@@ -4,9 +4,12 @@ export type BtnCheckboxPropsType = {
   icon?: string | React.ReactNode;
   label?: string;
   name?: string;
-  options: BtnCheckboxOptionType[];
+  options: BtnCheckboxOptionType[] | any;
   type?: string;
-  onChange?: (event: any, values: string | string[]) => void;
+  onChange?: (
+    event: React.ChangeEvent<HTMLInputElement>,
+    values: string | string[] | number | number[]
+  ) => void;
   value?: BtnCheckboxOptionType;
   defaultValue?: string | string[] | number[];
   checked?: boolean;
