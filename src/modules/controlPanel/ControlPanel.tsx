@@ -26,7 +26,7 @@ const ControlPanel: React.FC<ControlPanelProps> = ({
       />
     ),
     button: (
-      <ButtonControlPanel state={initialValue} handleChange={handleChange} />
+      <ButtonControlPanel initialValue={initialValue} onChange={handleChange} />
     ),
     image: (
       <ImageControlPanel

@@ -1,6 +1,8 @@
+import React from 'react';
+
 export type ColorPickerPropsType = {
   value?: string;
   id?: string;
   name?: string;
-  onChange?: (event: any, values: string | string[]) => void;
+  onChange?: React.ChangeEventHandler<HTMLInputElement>;
 };

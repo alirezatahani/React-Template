@@ -12,6 +12,7 @@ import {
 } from 'react-icons/bi';
 import { TbLetterT, TbArrowBarToRight, TbArrowBarToLeft } from 'react-icons/tb';
 import { MdFormatClear } from 'react-icons/md';
+// import { MdFormatClear } from 'react-icons/md';
 
 export const fontTypeOptions = [
   { value: 'h1', label: 'Heading 1', kind: 'fontType' },
@@ -39,13 +40,6 @@ export const fontSizeOptions = new Array(10).fill('').map((e, i) => {
   }
   return { value: i * 8, label: `${i * 8}`, kind: 'fontSize' };
 });
-
-export const displayOptions = [
-  { value: 'masonry', label: 'Masonry', kind: 'displayStyle' },
-  { value: 'grid', label: 'Grid', kind: 'displayStyle' },
-  { value: 'slideshow', label: 'Slideshow', kind: 'displayStyle' },
-];
-
 export const fontDecorationOptions = [
   {
     value: 'initial',
@@ -54,7 +48,7 @@ export const fontDecorationOptions = [
   },
   {
     value: 'line-through',
-    label: <MdFormatClear />,
+    label: <TbLetterT />,
     name: 'line-through',
   },
   {
@@ -68,7 +62,6 @@ export const fontDecorationOptions = [
     name: 'italic',
   },
 ];
-
 export const alignOptions = [
   {
     value: 'left',
@@ -111,4 +104,10 @@ export const alignImageOptions = [
     name: 'alignRight',
     kind: 'alignMent',
   },
+];
+
+export const displayOptions = [
+  { value: 'masonry', label: 'Masonry', kind: 'displayStyle' },
+  { value: 'grid', label: 'Grid', kind: 'displayStyle' },
+  { value: 'slideshow', label: 'Slideshow', kind: 'displayStyle' },
 ];

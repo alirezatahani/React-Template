@@ -22,4 +22,3 @@ export const routes = [
   { path: 'create', element: <Create /> },
   { path: 'selector', element: <ComponentsSelector /> },
 ];
-

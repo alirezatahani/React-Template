@@ -1,6 +1,5 @@
 import styled from 'styled-components';
 import {
-  TabPaneContainerProps,
   TabPaneProps,
   TabsProps,
 } from '../content/tab_types';
@@ -26,13 +25,11 @@ export const TabPane = styled.div<TabPaneProps>(({ active, disable }) => ({
   fontWeight: 600,
   fontSize: '17px',
 }));
-export const TabContentContainer = styled.div<TabPaneContainerProps>(
-  ({ align }) => ({
+export const TabContentContainer = styled.div(
+  {
     width: '100%',
-    display: 'flex',
     padding: '2rem',
-    justifyContent: align,
-  })
+  }
 );
 export const BottomBorderContainer = styled.div({
   width: '100%',
