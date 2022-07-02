@@ -85,6 +85,9 @@ const ImageControlPanel = ({ state, setState, handleChange }: any) => {
   const handleChangeImageOpacity = (e: React.ChangeEvent<HTMLInputElement>) => {
     handleChange('imageOpacity', e.target.value);
   };
+  const handleChangeShadowX = (e: React.ChangeEvent<HTMLInputElement>) => {
+    handleChange('positionX', e.target.value);
+  };
   const handleChangeWidth = (e: React.ChangeEvent<HTMLInputElement>) => {
     handleChange('width', e.target.value);
   };
@@ -360,7 +363,11 @@ const ImageControlPanel = ({ state, setState, handleChange }: any) => {
               <ControlPanelItemLabel>
                 <Typography variant="body1">Position X</Typography>
               </ControlPanelItemLabel>
-              <Slider />{' '}
+              <Slider
+                name="positionX"
+                value={boxShadow.positionX}
+                onChange={handleChangeShadowX}
+              />{' '}
               <ControlPanelItemLabel>
                 <Typography variant="body1">Position Y</Typography>
               </ControlPanelItemLabel>

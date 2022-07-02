@@ -50,6 +50,12 @@ export const Blank3 = ({ setSelected, state }: any) => {
                       paddingLeft: Number(state.paddingLeft),
                       border: state.border,
                       opacity: `${state.imageOpacity}%`,
+                      boxShadow: `${
+                        (state.boxShadow.PositionX,
+                        state.boxShadow.PositionY,
+                        state.boxShadow.spread,
+                        state.boxShadow.blur)
+                      }`,
                     }}
                   />
                 ) : (
