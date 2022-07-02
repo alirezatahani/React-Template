@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { CounterLogicProps } from './counterLogic_types';
 import {
   DiamondShape,
@@ -17,7 +17,6 @@ const CounterLogic: React.FC<CounterLogicProps> = ({
   shape,
   isLocked,
   onChangeLock,
-  ...rest
 }: CounterLogicProps) => {
   const toggle = () => {
     onChangeLock(!isLocked);
