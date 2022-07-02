@@ -47,7 +47,7 @@ const ImageControlPanel = ({ state, setState, handleChange }: any) => {
   const [shadowFlag, setShadowFlag] = React.useState<boolean>(false);
   const [paddingFlag, setPaddingFlag] = React.useState<boolean>(false);
 
-  const { fontColor } = state;
+  const { bgImageColor } = state;
   const handleChangeInputElement = (event: {
     target: { name: string; value: string };
   }) => {
@@ -151,8 +151,6 @@ const ImageControlPanel = ({ state, setState, handleChange }: any) => {
       }));
     }
   };
-
-  console.log(state, 'state');
 
   return (
     <div>
@@ -307,10 +305,10 @@ const ImageControlPanel = ({ state, setState, handleChange }: any) => {
                 <Typography variant="body1">Color</Typography>
               </ControlPanelItemLabel>
               <ColorPicker
-                value={fontColor}
+                value={bgImageColor}
                 onChange={handleChangeInputElement}
-                id="fontColor"
-                name="fontColor"
+                id="bgImageColor"
+                name="bgImageColor"
               />
             </Col>
           </Row>

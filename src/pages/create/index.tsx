@@ -12,6 +12,7 @@ export const Create = () => {
     fontSize: 12,
     textDecoration: ['underline'],
     fontColor: '#c3c3c3',
+    bgImageColor: '#F5F5F5',
     textAlign: 'center',
     btnText: 'Some text',
     btnSize: 'md',
