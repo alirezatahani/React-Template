@@ -9,6 +9,8 @@ const CounterBox: React.FC<CounterBoxProps> = ({
   shape,
   onChange,
   onChangeMain,
+  onChangeLock,
+  isLocked,
 }: CounterBoxProps) => {
   const renderContent = useCallback(
     (value: any) => {
@@ -20,6 +22,8 @@ const CounterBox: React.FC<CounterBoxProps> = ({
               value={value}
               shape="inline"
               onChangeMain={onChangeMain}
+              isLocked={isLocked}
+              onChangeLock={onChangeLock}
             />
           );
         case 3:
@@ -29,6 +33,8 @@ const CounterBox: React.FC<CounterBoxProps> = ({
               value={value}
               shape="triangle"
               onChangeMain={onChangeMain}
+              isLocked={isLocked}
+              onChangeLock={onChangeLock}
             />
           );
         case 4:
@@ -38,6 +44,8 @@ const CounterBox: React.FC<CounterBoxProps> = ({
               value={value}
               shape={shape}
               onChangeMain={onChangeMain}
+              isLocked={isLocked}
+              onChangeLock={onChangeLock}
             />
           );
         default:

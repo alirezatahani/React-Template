@@ -8,6 +8,7 @@ export type TwoContentProps = {
   shape: 'inline';
   onChange?: (value: any) => void;
   onChangeMain?: (value: any) => void;
-
+  isLocked?: boolean;
+  onChangeLock?: (value: boolean) => void;
   name?: string;
 };

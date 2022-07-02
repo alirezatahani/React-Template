@@ -8,4 +8,6 @@ export type FourContentProps = {
   shape: 'diamond' | 'square';
   onChange?: (value: any) => void;
   onChangeMain?: (value: any) => void;
+  isLocked?: boolean;
+  onChangeLock?: (value: boolean) => void;
 };

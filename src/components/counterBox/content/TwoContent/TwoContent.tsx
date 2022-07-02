@@ -13,12 +13,20 @@ const TwoContent: React.FC<TwoContentProps> = ({
   shape,
   onChange,
   onChangeMain,
+  isLocked,
+  onChangeLock,
 }: TwoContentProps) => {
   return (
     <Container>
       {value.map((item: any, index: number) => {
         return (
-          <CounterLogic key={index} shape={shape} position={item.position}>
+          <CounterLogic
+            key={index}
+            shape={shape}
+            position={item.position}
+            isLocked={isLocked}
+            onChangeLock={onChangeLock}
+          >
             <WrapperCounter>
               <Counter
                 value={item.value}

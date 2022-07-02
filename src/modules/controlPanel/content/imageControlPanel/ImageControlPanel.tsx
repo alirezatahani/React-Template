@@ -41,11 +41,13 @@ const ImageControlPanel = ({ state, setState, handleChange }: any) => {
   const [isShown, setIsShown] = React.useState<boolean>(false);
   const [modal, setModal] = React.useState<boolean>(false);
   const [flags, setFlags] = React.useState([]);
+  const [isLocked, setIsLocked] = React.useState<boolean>(false);
   const [values, setValues] = React.useState([
     { value: 0, position: 'right', name: 'paddingRight' },
     { value: 0, position: 'left', name: 'paddingLeft' },
   ]);
 
+  console.log(values);
   //load image
 
   const convert2base64 = (file: any) => {
@@ -108,10 +110,8 @@ const ImageControlPanel = ({ state, setState, handleChange }: any) => {
   const handleChangeCounterBox = (values: any) => {
     setValues(values);
   };
-  const handleChangePadding = (e: any) => {
-    values.map((item) => {
-      handleChange(item.name, e.target.value);
-    });
+  const handleChangePadding = () => {
+    values.map((item) => handleChange(item.name, item.value));
   };
 
   return (
@@ -232,6 +232,8 @@ const ImageControlPanel = ({ state, setState, handleChange }: any) => {
               value={values}
               shape="diamond"
               onChangeMain={handleChangeCounterBox}
+              isLocked={isLocked}
+              onChangeLock={() => setIsLocked(!isLocked)}
             />
           ) : null}
 
@@ -244,6 +246,7 @@ const ImageControlPanel = ({ state, setState, handleChange }: any) => {
 
             <SwitchLabel variant="body1">Border</SwitchLabel>
           </SwitchWrapper>
+
           {flags.find((flag) => flag === 'border') ? (
             <BorderWrapperCounter>
               <Counter />

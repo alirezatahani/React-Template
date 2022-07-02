@@ -1,7 +1,7 @@
 export const inCreaseValue = (
   index: number,
   value: any,
-  onChange: (value: any) => void
+  onChange: (value: any, name?: string) => void
 ) => {
   const newValue = value.map((item: any, _index: number) => {
     if (index == _index) {
@@ -15,7 +15,7 @@ export const inCreaseValue = (
 export const deCreaseValue = (
   index: number,
   value: any,
-  onChange: (value: any) => void
+  onChange: (value: any, name?: string) => void
 ) => {
   const newValue = value.map((item: any, _index: number) => {
     if (index == _index) {

@@ -12,7 +12,7 @@ import {
 } from 'react-icons/bi';
 import { TbLetterT, TbArrowBarToRight, TbArrowBarToLeft } from 'react-icons/tb';
 import { MdFormatClear } from 'react-icons/md';
- // import { MdFormatClear } from 'react-icons/md';
+// import { MdFormatClear } from 'react-icons/md';
 
 export const fontTypeOptions = [
   { value: 'h1', label: 'Heading 1', kind: 'fontType' },
@@ -104,11 +104,10 @@ export const alignImageOptions = [
     name: 'alignRight',
     kind: 'alignMent',
   },
-
-
 ];
 
 export const displayOptions = [
   { value: 'masonry', label: 'Masonry', kind: 'displayStyle' },
   { value: 'grid', label: 'Grid', kind: 'displayStyle' },
   { value: 'slideshow', label: 'Slideshow', kind: 'displayStyle' },
+];
