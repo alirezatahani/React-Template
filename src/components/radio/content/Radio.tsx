@@ -1,6 +1,3 @@
-import { BtnCheckbox } from "@components/btnCheckbox";
-import { Label } from "@components/btnCheckbox/styles/btnCheckbox.styles";
-import { Input } from "@components/input";
 import React from "react";
 import { FormLabel, RadioContainer, RadioLabel } from "../styles/radio.styles";
 import { RadioTypes } from "./radio_types";
