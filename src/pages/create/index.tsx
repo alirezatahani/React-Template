@@ -17,6 +17,7 @@ export const Create = () => {
     btnText: 'Some text',
     btnSize: 'md',
     imageOpacity: '100',
+    boxShadow: '0px',
   });
 
   return (

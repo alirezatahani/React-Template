@@ -46,7 +46,7 @@ const ImageControlPanel = ({ state, setState, handleChange }: any) => {
   const [shadowFlag, setShadowFlag] = React.useState<boolean>(false);
   const [paddingFlag, setPaddingFlag] = React.useState<boolean>(false);
 
-  const { bgImageColor, imageOpacity } = state;
+  const { bgImageColor, imageOpacity, boxShadow } = state;
 
   const handleChangeInputElement = (event: {
     target: { name: string; value: string };
@@ -344,14 +344,37 @@ const ImageControlPanel = ({ state, setState, handleChange }: any) => {
             />
             <SwitchLabel variant="body1">Radius</SwitchLabel>
           </SwitchWrapper>
-          <SwitchWrapper>
-            <Switch
-              checked={shadowFlag}
-              onChange={() => setShadowFlag(!shadowFlag)}
-              size="sm"
-            />
-            <SwitchLabel variant="body1">Shadow</SwitchLabel>
-          </SwitchWrapper>
+          <MarginBottom>
+            <SwitchWrapper>
+              <Switch
+                checked={shadowFlag}
+                onChange={() => setShadowFlag(!shadowFlag)}
+                size="sm"
+              />
+              <SwitchLabel variant="body1">Shadow</SwitchLabel>
+            </SwitchWrapper>
+          </MarginBottom>
+
+          {shadowFlag ? (
+            <>
+              <ControlPanelItemLabel>
+                <Typography variant="body1">Position X</Typography>
+              </ControlPanelItemLabel>
+              <Slider />{' '}
+              <ControlPanelItemLabel>
+                <Typography variant="body1">Position Y</Typography>
+              </ControlPanelItemLabel>
+              <Slider />{' '}
+              <ControlPanelItemLabel>
+                <Typography variant="body1">Spread</Typography>
+              </ControlPanelItemLabel>
+              <Slider />{' '}
+              <ControlPanelItemLabel>
+                <Typography variant="body1">Blur</Typography>
+              </ControlPanelItemLabel>
+              <Slider />
+            </>
+          ) : null}
         </Collapse>
       </ControlPanelSettingContainer>
     </div>
