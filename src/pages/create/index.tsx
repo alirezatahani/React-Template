@@ -17,12 +17,11 @@ export const Create = () => {
     btnText: 'Some text',
     btnSize: 'md',
     imageOpacity: '100',
-    boxShadow: {
-      PositionX: '0px',
-      PositionY: '0px',
-      spread: '0px',
-      blur: '0px',
-    },
+    PositionX: '0',
+    PositionY: '0',
+    spread: '0',
+    blur: '0',
+    shadowColor: '#F5F5F5',
   });
 
   return (

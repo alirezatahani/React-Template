@@ -46,9 +46,15 @@ const ImageControlPanel = ({ state, setState, handleChange }: any) => {
   const [shadowFlag, setShadowFlag] = React.useState<boolean>(false);
   const [paddingFlag, setPaddingFlag] = React.useState<boolean>(false);
 
-  const { bgImageColor, imageOpacity, boxShadow } = state;
+  const { bgImageColor, imageOpacity, PositionX, shadowColor } = state;
 
   const handleChangeInputElement = (event: {
+    target: { name: string; value: string };
+  }) => {
+    handleChange(event.target.name, event.target.value);
+  };
+
+  const handleChangeShadowColor = (event: {
     target: { name: string; value: string };
   }) => {
     handleChange(event.target.name, event.target.value);
@@ -86,7 +92,7 @@ const ImageControlPanel = ({ state, setState, handleChange }: any) => {
     handleChange('imageOpacity', e.target.value);
   };
   const handleChangeShadowX = (e: React.ChangeEvent<HTMLInputElement>) => {
-    handleChange('positionX', e.target.value);
+    handleChange('PositionX', e.target.value);
   };
   const handleChangeWidth = (e: React.ChangeEvent<HTMLInputElement>) => {
     handleChange('width', e.target.value);
@@ -364,8 +370,8 @@ const ImageControlPanel = ({ state, setState, handleChange }: any) => {
                 <Typography variant="body1">Position X</Typography>
               </ControlPanelItemLabel>
               <Slider
-                name="positionX"
-                value={boxShadow.positionX}
+                name="PositionX"
+                value={PositionX}
                 onChange={handleChangeShadowX}
               />{' '}
               <ControlPanelItemLabel>
@@ -380,6 +386,19 @@ const ImageControlPanel = ({ state, setState, handleChange }: any) => {
                 <Typography variant="body1">Blur</Typography>
               </ControlPanelItemLabel>
               <Slider />
+              <Row>
+                <Col span={4}>
+                  <ControlPanelItemLabel>
+                    <Typography variant="body1">shadowColor</Typography>
+                  </ControlPanelItemLabel>
+                  <ColorPicker
+                    value={shadowColor}
+                    onChange={handleChangeShadowColor}
+                    id="shadowColor"
+                    name="shadowColor"
+                  />
+                </Col>
+              </Row>
             </>
           ) : null}
         </Collapse>
