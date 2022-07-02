@@ -44,7 +44,6 @@ const ImageControlPanel = ({ state, setState, handleChange }: any) => {
   const [values, setValues] = React.useState([
     { value: 0, position: 'right', name: 'paddingRight' },
     { value: 0, position: 'left', name: 'paddingLeft' },
-    { value: 0, position: 'top', name: 'paddingTop' },
   ]);
 
   //load image
@@ -96,22 +95,6 @@ const ImageControlPanel = ({ state, setState, handleChange }: any) => {
     handleChange(event.kind, event.value);
   };
 
-  const handleChangePaddingTop = (e: React.ChangeEvent<HTMLInputElement>) => {
-    handleChange('paddingTop', e.target.value);
-  };
-
-  const handleChangePaddingBottom = (
-    e: React.ChangeEvent<HTMLInputElement>
-  ) => {
-    handleChange('paddingBottom', e.target.value);
-  };
-  const handleChangePaddingRight = (e: React.ChangeEvent<HTMLInputElement>) => {
-    handleChange('paddingRight', e.target.value);
-  };
-  const handleChangePaddingLeft = (e: React.ChangeEvent<HTMLInputElement>) => {
-    handleChange('paddingLeft', e.target.value);
-  };
-
   const handleClick = (label: string) => {
     const exist = flags.find((flag) => flag === label);
     if (exist) {
@@ -125,13 +108,12 @@ const ImageControlPanel = ({ state, setState, handleChange }: any) => {
   const handleChangeCounterBox = (values: any) => {
     setValues(values);
   };
-  const handleChangePadding = () => {
+  const handleChangePadding = (e: any) => {
     values.map((item) => {
-      handleChange(item.name, item.value);
+      handleChange(item.name, e.target.value);
     });
   };
 
-  console.log(values, 'test');
   return (
     <div>
       <ControlPanelSettingContainer>
@@ -249,7 +231,6 @@ const ImageControlPanel = ({ state, setState, handleChange }: any) => {
               onChange={handleChangePadding}
               value={values}
               shape="diamond"
-              name="padding"
               onChangeMain={handleChangeCounterBox}
             />
           ) : null}

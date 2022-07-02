@@ -5,7 +5,6 @@ export type CounterProps = {
   onIncrease?: () => void;
   onDecrease?: () => void;
   onChange?: React.ChangeEventHandler;
-  onChangeMain?: (value: any) => void;
   name?: string;
   value?: any;
 };

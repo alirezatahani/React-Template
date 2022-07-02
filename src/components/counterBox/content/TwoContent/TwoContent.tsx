@@ -12,7 +12,6 @@ const TwoContent: React.FC<TwoContentProps> = ({
   value,
   shape,
   onChange,
-  name,
   onChangeMain,
 }: TwoContentProps) => {
   return (
@@ -23,14 +22,10 @@ const TwoContent: React.FC<TwoContentProps> = ({
             <WrapperCounter>
               <Counter
                 value={item.value}
-                onIncrease={() =>
-                  inCreaseValue(index, value, onChangeMain)
-                }
-                onDecrease={() =>
-                  deCreaseValue(index, value, onChangeMain)
-                }
+                onIncrease={() => inCreaseValue(index, value, onChangeMain)}
+                onDecrease={() => deCreaseValue(index, value, onChangeMain)}
                 onChange={onChange}
-                name={name}
+                name={item.name}
               />
             </WrapperCounter>
           </CounterLogic>

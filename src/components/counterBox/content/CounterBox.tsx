@@ -8,7 +8,6 @@ const CounterBox: React.FC<CounterBoxProps> = ({
   value,
   shape,
   onChange,
-  name,
   onChangeMain,
 }: CounterBoxProps) => {
   const renderContent = useCallback(
@@ -20,7 +19,6 @@ const CounterBox: React.FC<CounterBoxProps> = ({
               onChange={onChange}
               value={value}
               shape="inline"
-              name={name}
               onChangeMain={onChangeMain}
             />
           );
