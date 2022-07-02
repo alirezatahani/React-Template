@@ -24,3 +24,4 @@ export * from './textarea';
 export * from './modal';
 export * from './uploadArea';
 export * from './iconBox';
+export * from './slider';

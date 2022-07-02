@@ -52,7 +52,7 @@ export const TypographyContainer = styled.div<StyledTypographyProps>(
     },
 
     '> *': {
-      ...theme.typography[disabled ? 'typographyDisabled' : null],
+      ...theme.typography[disabled ? ('typographyDisabled' as string) : null],
     },
   })
 );

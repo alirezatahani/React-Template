@@ -6,23 +6,33 @@ import GalleryControlPanel from './content/galleryControlPanel/GalleryControlPan
 import ManagePages from '@modules/managePages/content/ManagePages';
 import { DndProvider } from 'react-dnd';
 import { HTML5Backend } from 'react-dnd-html5-backend';
+import { ControlPanelProps, SettingType } from './controlPanel_types';
 
-const ControlPanel: React.FC<any> = ({ selected, state, setState }: any) => {
-  const handleChange = (evt: any) => {
-    const getLabel = evt.kind ? evt.kind : evt.target.name;
-    const getValue = evt.value ? evt.value : evt.target.value;
 
-    setState({
-      ...state,
-      [getLabel]: getValue,
+
+const ControlPanel: React.FC<ControlPanelProps> = ({
+  selected,
+  initialValue,
+  setInitialValue,
+}: ControlPanelProps) => {
+  const handleChange = (name: string, value: string | number) => {
+    setInitialValue({
+      ...initialValue,
+      [name]: value,
+
     });
   };
 
-  const settings: any = {
+  const settings: SettingType = {
     typography: (
-      <TypographyControlPanel state={state} handleChange={handleChange} />
+      <TypographyControlPanel
+        initialValue={initialValue}
+        onChange={handleChange}
+      />
     ),
-    button: <ButtonControlPanel state={state} handleChange={handleChange} />,
+    button: (
+      <ButtonControlPanel initialValue={initialValue} onChange={handleChange} />
+    ),
     gallery: <GalleryControlPanel />,
     pages: (
       <DndProvider backend={HTML5Backend}>

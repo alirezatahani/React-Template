@@ -45,7 +45,7 @@ type GeneralStyleTypes = {
 };
 
 type PaletteTypes = {
-  background: { paper: string };
+  background: { paper: string; whiteSmoke: string };
   common: { black: string; white: string; transparent: string };
   primary: PaletteColorShadesTypes;
   secondary: { main: string };
@@ -84,7 +84,8 @@ type TypographyTypes = {
   h5: TypographyElement;
   subtitle1: TypographyElement;
   subtitle2: TypographyElement;
-  typographyDisabled: { color: string; cursor: string };
+  typographyDisabled: React.CSSProperties;
+  [key: string]: any;
 };
 
 type TypographyElement = {

@@ -15,28 +15,63 @@ import {
   ControlPanelSettingContainer,
 } from '../../styles/controlPanel.styles';
 import {
-  fontTypeOptions,
   fontSizeOptions,
   fontDecorationOptions,
   alignOptions,
   fontFamilyOptions,
-  fontStyleOptions,
+  fontTypeOptions,
 } from '../../utils/constants';
 import { useTheme } from 'styled-components';
 import Select, { StylesConfig } from 'react-select';
+import {
+  FontTypeOptionDataType,
+  TypographyControlPanelProps,
+} from './typographyControlPanel_types';
 
-const TypographyControlPanel = ({ state, handleChange }: any) => {
+const TypographyControlPanel: React.FC<TypographyControlPanelProps> = ({
+  initialValue,
+  onChange,
+}: TypographyControlPanelProps) => {
   const theme = useTheme();
 
-  const colourStyles: StylesConfig = {
-    option: (styles, { data }: any) => {
+  const fontTypesStyles: StylesConfig = {
+    option: (styles, data: FontTypeOptionDataType) => {
       return {
         ...styles,
-        //@ts-ignore
-        ...theme.typography[data.value],
+        ...theme.typography[data.value as string],
       };
     },
   };
+
+  const handleChangeSelect = (event: {
+    kind: string;
+    value: string | number;
+  }) => {
+    onChange(event.kind, event.value);
+  };
+
+  const handleChangeCheckBox = (
+    event: { target: { name: string } },
+    values: string | string[]
+  ) => {
+    onChange(event.target.name, values);
+  };
+
+  //for simple input fields other than checkboxes and selects
+  const handleChangeInputElement = (event: {
+    target: { name: string; value: string };
+  }) => {
+    onChange(event.target.name, event.target.value);
+  };
+
+  const {
+    fontType,
+    fontFamily,
+    fontSize,
+    textDecoration,
+    fontColor,
+    textAlign,
+  } = initialValue;
 
   return (
     <ControlPanelSettingContainer>
@@ -46,43 +81,50 @@ const TypographyControlPanel = ({ state, handleChange }: any) => {
           <ControlPanelItemLabel>Type</ControlPanelItemLabel>
           <Select
             name="fontType"
-            onChange={handleChange}
+            onChange={handleChangeSelect}
+            defaultValue={fontTypeOptions.filter(
+              (fontTypeOption) => fontTypeOption.value === fontType
+            )}
             options={fontTypeOptions}
-            styles={colourStyles}
+            styles={fontTypesStyles}
           />
         </ControlPanelItemContainer>
         <ControlPanelItemContainer>
           <Row>
-            <Col span={6}>
+            <Col span={12}>
               <ControlPanelItemLabel>Font Family</ControlPanelItemLabel>
               <Select
                 name="fontFamily"
-                onChange={handleChange}
+                onChange={handleChangeSelect}
+                defaultValue={fontFamilyOptions.filter(
+                  (fontFamilyOption) => fontFamilyOption.value === fontFamily
+                )}
                 options={fontFamilyOptions}
               />
             </Col>
-            <Col span={6}></Col>
           </Row>
         </ControlPanelItemContainer>
         <ControlPanelItemContainer>
           <Row>
             <Col span={6}>
               <ControlPanelItemLabel>Font Size</ControlPanelItemLabel>
-              <Select onChange={handleChange} options={fontSizeOptions} />
+              <Select
+                name="fontSize"
+                defaultValue={fontSizeOptions.filter(
+                  (fontSizeOption) => fontSizeOption.value === fontSize
+                )}
+                onChange={handleChangeSelect}
+                options={fontSizeOptions}
+              />
             </Col>
             <Col span={6}>
               <ControlPanelItemLabel>Font Decoration</ControlPanelItemLabel>
               <BtnCheckbox
                 type="checkbox"
                 name="textDecoration"
-                onChange={handleChange}
+                onChange={handleChangeCheckBox}
+                defaultValue={textDecoration}
                 options={fontDecorationOptions}
-              />
-              <BtnCheckbox
-                type="checkbox"
-                name="fontStyle"
-                onChange={handleChange}
-                options={fontStyleOptions}
               />
             </Col>
           </Row>
@@ -92,8 +134,8 @@ const TypographyControlPanel = ({ state, handleChange }: any) => {
             <Col span={4}>
               <ControlPanelItemLabel>Font color</ControlPanelItemLabel>
               <ColorPicker
-                value={state.fontColor}
-                onChange={handleChange}
+                value={fontColor}
+                onChange={handleChangeInputElement}
                 id="fontColor"
                 name="fontColor"
               />
@@ -103,7 +145,8 @@ const TypographyControlPanel = ({ state, handleChange }: any) => {
               <BtnCheckbox
                 type="radio"
                 name="textAlign"
-                onChange={handleChange}
+                defaultValue={textAlign}
+                onChange={handleChangeCheckBox}
                 options={alignOptions}
               />
             </Col>
