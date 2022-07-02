@@ -61,6 +61,7 @@ export const Blank3 = ({ setSelected, state }: any) => {
                     onClick={() => setSelected({ type: 'image' })}
                     style={{
                       paddingTop: state.paddingTop,
+                      opacity: `${state.imageOpacity}%`,
                     }}
                   />
                 )}
