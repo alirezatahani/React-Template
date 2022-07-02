@@ -10,5 +10,4 @@ export const RadioLabel = styled.label({
 
 export const FormLabel = styled.label({
     fontWeight: 'bold',
-    padding: '20px 0',
 })

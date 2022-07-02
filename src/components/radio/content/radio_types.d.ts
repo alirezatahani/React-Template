@@ -2,8 +2,8 @@ import { CSSProperties } from "styled-components";
 
 
 export type RadioTypes = {
-    items: any;
+    items: string[];
     name: string;
-    lable?: string;
+    label?: string;
     style?: CSSProperties;
 };
