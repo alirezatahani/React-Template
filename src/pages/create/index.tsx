@@ -16,6 +16,7 @@ export const Create = () => {
     textAlign: 'center',
     btnText: 'Some text',
     btnSize: 'md',
+    imageOpacity: '100',
   });
 
   return (

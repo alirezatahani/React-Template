@@ -41,13 +41,13 @@ const ImageControlPanel = ({ state, setState, handleChange }: any) => {
   const [image, setImage] = React.useState(null);
   const [isShown, setIsShown] = React.useState<boolean>(false);
   const [modal, setModal] = React.useState<boolean>(false);
-  const [lock, setLock] = React.useState<boolean>(false);
   const [borderFlag, setBorderFlag] = React.useState<boolean>(false);
   const [radiusFlag, setRadiusFlag] = React.useState<boolean>(false);
   const [shadowFlag, setShadowFlag] = React.useState<boolean>(false);
   const [paddingFlag, setPaddingFlag] = React.useState<boolean>(false);
 
-  const { bgImageColor } = state;
+  const { bgImageColor, imageOpacity } = state;
+
   const handleChangeInputElement = (event: {
     target: { name: string; value: string };
   }) => {
@@ -81,6 +81,9 @@ const ImageControlPanel = ({ state, setState, handleChange }: any) => {
   };
   const handleChangeAltText = (e: React.ChangeEvent<HTMLInputElement>) => {
     handleChange('altText', e.target.value);
+  };
+  const handleChangeImageOpacity = (e: React.ChangeEvent<HTMLInputElement>) => {
+    handleChange('imageOpacity', e.target.value);
   };
   const handleChangeWidth = (e: React.ChangeEvent<HTMLInputElement>) => {
     handleChange('width', e.target.value);
@@ -135,22 +138,22 @@ const ImageControlPanel = ({ state, setState, handleChange }: any) => {
     }));
   };
 
-  const increasePaddingValue = () => {
-    if (lock) {
-      setState((prevState: any) => ({
-        ...prevState,
-        paddingTop: Number(prevState.paddingTop) + 1,
-        paddingBottom: Number(prevState.paddingBottom) + 1,
-        paddingRight: Number(prevState.paddingRight) + 1,
-        paddingLeft: Number(prevState.paddingLeft) + 1,
-      }));
-    } else {
-      setState((prevState: any) => ({
-        ...prevState,
-        paddingTop: Number(prevState.paddingTop) + 1,
-      }));
-    }
-  };
+  // const increasePaddingValue = () => {
+  //   if (lock) {
+  //     setState((prevState: any) => ({
+  //       ...prevState,
+  //       paddingTop: Number(prevState.paddingTop) + 1,
+  //       paddingBottom: Number(prevState.paddingBottom) + 1,
+  //       paddingRight: Number(prevState.paddingRight) + 1,
+  //       paddingLeft: Number(prevState.paddingLeft) + 1,
+  //     }));
+  //   } else {
+  //     setState((prevState: any) => ({
+  //       ...prevState,
+  //       paddingTop: Number(prevState.paddingTop) + 1,
+  //     }));
+  //   }
+  // };
 
   return (
     <div>
@@ -233,7 +236,11 @@ const ImageControlPanel = ({ state, setState, handleChange }: any) => {
             <ControlPanelItemLabel>
               <Typography variant="body1">Opacity</Typography>
             </ControlPanelItemLabel>
-            <Slider />
+            <Slider
+              name="imageOpacity"
+              value={imageOpacity}
+              onChange={handleChangeImageOpacity}
+            />
           </MarginBottom>
 
           <WrapperCounter>
