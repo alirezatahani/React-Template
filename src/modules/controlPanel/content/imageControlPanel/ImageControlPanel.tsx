@@ -5,6 +5,8 @@ import {
   BtnCheckbox,
   Switch,
   Modal,
+  Slider,
+  ColorPicker,
   Row,
   Col,
 } from '@components/index';
@@ -30,21 +32,9 @@ import {
   HeroSpanRight,
   SwitchWrapper,
   SwitchLabel,
-  PaddingContainer,
-  PaddingTopStyled,
-  PaddingBottomStyled,
-  PaddingRightStyled,
-  PaddingLeftStyled,
-  LockBox,
-  BorderWrapperCounter,
-  SelectWrapper,
+  MarginBottom,
 } from '@modules/controlPanel/content/imageControlPanel/imageControlPanel_styles';
-import {
-  alignImageOptions,
-  borderOptions,
-} from '@modules/controlPanel/utils/constants';
-import { FaLock, FaUnlock } from 'react-icons/Fa';
-import Select, { StylesConfig } from 'react-select';
+import { alignImageOptions } from '@modules/controlPanel/utils/constants';
 
 //end imports
 const ImageControlPanel = ({ state, setState, handleChange }: any) => {
@@ -52,7 +42,17 @@ const ImageControlPanel = ({ state, setState, handleChange }: any) => {
   const [isShown, setIsShown] = React.useState<boolean>(false);
   const [modal, setModal] = React.useState<boolean>(false);
   const [lock, setLock] = React.useState<boolean>(false);
-  const [flags, setFlags] = React.useState([]);
+  const [borderFlag, setBorderFlag] = React.useState<boolean>(false);
+  const [radiusFlag, setRadiusFlag] = React.useState<boolean>(false);
+  const [shadowFlag, setShadowFlag] = React.useState<boolean>(false);
+  const [paddingFlag, setPaddingFlag] = React.useState<boolean>(false);
+
+  const { fontColor } = state;
+  const handleChangeInputElement = (event: {
+    target: { name: string; value: string };
+  }) => {
+    handleChange(event.target.name, event.target.value);
+  };
 
   //load image
 
@@ -101,22 +101,6 @@ const ImageControlPanel = ({ state, setState, handleChange }: any) => {
     value: string | number;
   }) => {
     handleChange(event.kind, event.value);
-  };
-
-  const handleChangePaddingTop = (e: React.ChangeEvent<HTMLInputElement>) => {
-    handleChange('paddingTop', e.target.value);
-  };
-
-  const handleChangePaddingBottom = (
-    e: React.ChangeEvent<HTMLInputElement>
-  ) => {
-    handleChange('paddingBottom', e.target.value);
-  };
-  const handleChangePaddingRight = (e: React.ChangeEvent<HTMLInputElement>) => {
-    handleChange('paddingRight', e.target.value);
-  };
-  const handleChangePaddingLeft = (e: React.ChangeEvent<HTMLInputElement>) => {
-    handleChange('paddingLeft', e.target.value);
   };
 
   const increaseWidthValue = () => {
@@ -168,18 +152,7 @@ const ImageControlPanel = ({ state, setState, handleChange }: any) => {
     }
   };
 
-  const handleClick = (label: string) => {
-    const exist = flags.find((flag) => flag === label);
-    if (exist) {
-      const filteredFlags = flags.filter((item) => item !== label);
-      return setFlags(filteredFlags);
-    } else {
-      setFlags([...flags, label]);
-    }
-  };
   console.log(state, 'state');
-
-  const { border } = state;
 
   return (
     <div>
@@ -258,6 +231,13 @@ const ImageControlPanel = ({ state, setState, handleChange }: any) => {
             </ControlPanelItemLabel>
           </WrapperLabel>
 
+          <MarginBottom>
+            <ControlPanelItemLabel>
+              <Typography variant="body1">Opacity</Typography>
+            </ControlPanelItemLabel>
+            <Slider />
+          </MarginBottom>
+
           <WrapperCounter>
             <CounterContainer>
               <HeroSpanLeft onClick={increaseWidthValue}>+</HeroSpanLeft>
@@ -283,130 +263,90 @@ const ImageControlPanel = ({ state, setState, handleChange }: any) => {
               <HeroSpanRight onClick={decreaseHeightValue}>-</HeroSpanRight>
             </CounterContainer>
           </WrapperCounter>
+          <MarginBottom>
+            <BtnCheckbox
+              type="radio"
+              name="alignMent"
+              onChange={handleChangeAlignMent}
+              options={alignImageOptions}
+            />
+          </MarginBottom>
 
-          <BtnCheckbox
-            type="radio"
-            name="alignMent"
-            onChange={handleChangeAlignMent}
-            options={alignImageOptions}
-          />
+          <Collapse title="advance settings">
+            <SwitchWrapper>
+              <Switch
+                checked={borderFlag}
+                onChange={() => setBorderFlag(!borderFlag)}
+                size="sm"
+              />
+              <SwitchLabel variant="body1">Border</SwitchLabel>
+            </SwitchWrapper>
+            <SwitchWrapper>
+              <Switch
+                checked={radiusFlag}
+                onChange={() => setRadiusFlag(!radiusFlag)}
+                size="sm"
+              />
+              <SwitchLabel variant="body1">Radius</SwitchLabel>
+            </SwitchWrapper>
+            <SwitchWrapper>
+              <Switch
+                checked={shadowFlag}
+                onChange={() => setShadowFlag(!shadowFlag)}
+                size="sm"
+              />
+              <SwitchLabel variant="body1">Shadow</SwitchLabel>
+            </SwitchWrapper>
+          </Collapse>
         </Collapse>
 
         <Collapse open title="Block Settings">
+          <Row>
+            <Col span={4}>
+              <ControlPanelItemLabel>
+                <Typography variant="body1">Color</Typography>
+              </ControlPanelItemLabel>
+              <ColorPicker
+                value={fontColor}
+                onChange={handleChangeInputElement}
+                id="fontColor"
+                name="fontColor"
+              />
+            </Col>
+          </Row>
+
           <SwitchWrapper>
             <Switch
+              checked={paddingFlag}
+              onChange={() => setPaddingFlag(!paddingFlag)}
               size="sm"
-              checked={flags.filter((flag) => flag === 'padding').length}
-              onChange={() => handleClick('padding')}
             />
-
             <SwitchLabel variant="body1">Padding</SwitchLabel>
           </SwitchWrapper>
-          {flags.find((flag) => flag === 'padding') ? (
-            <PaddingContainer>
-              <PaddingTopStyled>
-                <WrapperCounter>
-                  <CounterContainer>
-                    <HeroSpanLeft onClick={() => increasePaddingValue()}>
-                      +
-                    </HeroSpanLeft>
-                    <HeroResult>
-                      <FormInput
-                        name="paddingTop"
-                        value={state.paddingTop}
-                        onChange={handleChangePaddingTop}
-                      />
-                    </HeroResult>
-                    <HeroSpanRight>-</HeroSpanRight>
-                  </CounterContainer>
-                </WrapperCounter>
-              </PaddingTopStyled>
-              <PaddingBottomStyled>
-                <WrapperCounter>
-                  <CounterContainer>
-                    <HeroSpanLeft>+</HeroSpanLeft>
-                    <HeroResult>
-                      <FormInput
-                        name="paddingBottom"
-                        value={state.paddingBottom}
-                        onChange={handleChangePaddingBottom}
-                      />
-                    </HeroResult>
-                    <HeroSpanRight>-</HeroSpanRight>
-                  </CounterContainer>
-                </WrapperCounter>
-              </PaddingBottomStyled>
-              <PaddingRightStyled>
-                <WrapperCounter>
-                  <CounterContainer>
-                    <HeroSpanLeft>+</HeroSpanLeft>
-                    <HeroResult>
-                      <FormInput
-                        name="paddingRight"
-                        value={state.paddingRight}
-                        onChange={handleChangePaddingRight}
-                      />
-                    </HeroResult>
-                    <HeroSpanRight>-</HeroSpanRight>
-                  </CounterContainer>
-                </WrapperCounter>
-              </PaddingRightStyled>
-              <PaddingLeftStyled>
-                <WrapperCounter>
-                  <CounterContainer>
-                    <HeroSpanLeft>+</HeroSpanLeft>
-                    <HeroResult>
-                      <FormInput
-                        name="paddingLeft"
-                        value={state.paddingLeft}
-                        onChange={handleChangePaddingLeft}
-                      />
-                    </HeroResult>
-                    <HeroSpanRight>-</HeroSpanRight>
-                  </CounterContainer>
-                </WrapperCounter>
-              </PaddingLeftStyled>
-              {lock ? (
-                <LockBox onClick={() => setLock(false)}>
-                  <FaLock />
-                </LockBox>
-              ) : (
-                <LockBox onClick={() => setLock(true)}>
-                  <FaUnlock />
-                </LockBox>
-              )}
-            </PaddingContainer>
-          ) : null}
-
           <SwitchWrapper>
             <Switch
+              checked={borderFlag}
+              onChange={() => setBorderFlag(!borderFlag)}
               size="sm"
-              checked={flags.filter((flag) => flag === 'border').length}
-              onChange={() => handleClick('border')}
             />
-
             <SwitchLabel variant="body1">Border</SwitchLabel>
           </SwitchWrapper>
-          {flags.find((flag) => flag === 'border') ? (
-            <BorderWrapperCounter>
-              <CounterContainer>
-                <HeroSpanLeft onClick={() => increaseBorderValue()}>
-                  +
-                </HeroSpanLeft>
-                <HeroResult>
-                  <FormInput />
-                </HeroResult>
-                <HeroSpanRight>-</HeroSpanRight>
-              </CounterContainer>
-              <SelectWrapper>
-                <Select
-                  name="border"
-                  options={borderOptions}
-                  onChange={handleChangeBorderStyle}
-                />
-              </SelectWrapper>
-            </BorderWrapperCounter>
-          ) : null}
+          <SwitchWrapper>
+            <Switch
+              checked={radiusFlag}
+              onChange={() => setRadiusFlag(!radiusFlag)}
+              size="sm"
+            />
+            <SwitchLabel variant="body1">Radius</SwitchLabel>
+          </SwitchWrapper>
+          <SwitchWrapper>
+            <Switch
+              checked={shadowFlag}
+              onChange={() => setShadowFlag(!shadowFlag)}
+              size="sm"
+            />
+            <SwitchLabel variant="body1">Shadow</SwitchLabel>
+          </SwitchWrapper>
         </Collapse>
       </ControlPanelSettingContainer>
     </div>
