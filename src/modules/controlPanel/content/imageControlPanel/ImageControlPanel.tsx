@@ -45,9 +45,9 @@ const ImageControlPanel = ({ state, setState, handleChange }: any) => {
   const [values, setValues] = React.useState([
     { value: 0, position: 'right', name: 'paddingRight' },
     { value: 0, position: 'left', name: 'paddingLeft' },
+    { value: 0, position: 'top', name: 'paddingTop' },
   ]);
 
-  console.log(values);
   //load image
 
   const convert2base64 = (file: any) => {
