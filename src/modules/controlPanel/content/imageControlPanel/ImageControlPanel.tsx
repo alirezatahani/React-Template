@@ -35,6 +35,7 @@ import {
   MarginBottom,
 } from '@modules/controlPanel/content/imageControlPanel/imageControlPanel_styles';
 import { alignImageOptions } from '@modules/controlPanel/utils/constants';
+import Select, { StylesConfig } from 'react-select';
 
 //end imports
 const ImageControlPanel = ({ state, setState, handleChange }: any) => {
@@ -312,6 +313,22 @@ const ImageControlPanel = ({ state, setState, handleChange }: any) => {
               />
               <SwitchLabel variant="body1">Border</SwitchLabel>
             </SwitchWrapper>
+            {borderFlag ? (
+              <>
+                <ControlPanelItemContainer>
+                  <Row>
+                    <Col span={6}>
+                      <ControlPanelItemLabel>Size</ControlPanelItemLabel>
+                    </Col>
+                    <Col span={6}>
+                      <ControlPanelItemLabel>Style</ControlPanelItemLabel>
+                      <Select name="borderStyle" />
+                    </Col>
+                  </Row>
+                </ControlPanelItemContainer>
+              </>
+            ) : null}
+
             <SwitchWrapper>
               <Switch
                 checked={radiusFlag}
