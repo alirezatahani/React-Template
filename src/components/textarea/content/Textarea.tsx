@@ -11,8 +11,15 @@ import { TextareaProps } from './textarea_types';
 const Textarea: React.FC<TextareaProps> = ({ ...props }: TextareaProps) => {
   return (
     <>
-      <TextareaContainer direction={props.direction} align={props.align}>
-        <TextareaLabel htmlFor={props.name}>{props.label}</TextareaLabel>
+      <TextareaContainer
+        justifyContent={props.justifyContent}
+        direction={props.direction}
+        align={props.align}
+      >
+        {props.label && (
+          <TextareaLabel htmlFor={props.name}>{props.label}</TextareaLabel>
+        )}
+
         <StyledTextarea {...props} id={props.name} />
       </TextareaContainer>
     </>

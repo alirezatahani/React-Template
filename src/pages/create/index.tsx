@@ -31,7 +31,7 @@ export const Create = () => {
           />
         </Col>
         <Col span={1}>
-          <SideActionButtons />
+          <SideActionButtons setSelected={setSelected} />
         </Col>
       </Row>
     </Container>

@@ -12,7 +12,7 @@ export const TabsContainer = styled.div<TabsProps>(({ align }) => ({
   width: '100%',
   display: 'flex',
   justifyContent:
-  align === 'center' ? 'center' : align === 'end' ? 'flex-end' : 'flex-start',
+    align === 'center' ? 'center' : align === 'end' ? 'flex-end' : 'flex-start',
   alignItems: 'center',
   gap: '2rem',
 }));
@@ -25,12 +25,14 @@ export const TabPane = styled.div<TabPaneProps>(({ active, disable }) => ({
   fontWeight: 600,
   fontSize: '17px',
 }));
+
 export const TabContentContainer = styled.div(
   {
     width: '100%',
     padding: '2rem',
   }
 );
+
 export const BottomBorderContainer = styled.div({
   width: '100%',
   height: 0,
@@ -48,6 +50,6 @@ export const BottomBorder = styled.div({
   outline: '1px solid #ccc',
 });
 export const TabsHead = styled.div({
-  width:"100%",
+  width: '100%',
   position: 'relative',
 });

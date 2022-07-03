@@ -1,5 +1,16 @@
 import styled from 'styled-components';
 import { ModalWrapperProps } from '../content/modal_types';
+
+export const ModalWrapper = styled.div<ModalWrapperProps>(({ visible }) => ({
+  display: visible ? 'block' : 'none',
+  position: 'fixed',
+  top: 0,
+  left: 0,
+  right: 0,
+  bottom: 0,
+  backgroundColor: 'rgba(0,0,0,0.3)',
+  zIndex: 9999,
+}));
 export const ModalWrapper = styled.div<ModalWrapperProps>(({visible,theme})=>({
   display:visible?"block":"none",
   position:"fixed",
@@ -13,9 +24,9 @@ export const ModalWrapper = styled.div<ModalWrapperProps>(({visible,theme})=>({
 export const ModalSection = styled.div<ModalWrapperProps>(({ visible }) => ({
   display: visible ? 'block' : 'none',
   position: 'fixed',
-  top:"50%",
-  left:"50%",
-  transform:"translate(-50%,-50%)",
+  top: '50%',
+  left: '50%',
+  transform: 'translate(-50%,-50%)',
   zIndex: 9999,
 }));
 export const ModalContainer = styled.div(({theme})=>({
