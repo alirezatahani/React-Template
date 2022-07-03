@@ -320,14 +320,66 @@ const ImageControlPanel = ({ state, setState, handleChange }: any) => {
               />
               <SwitchLabel variant="body1">Radius</SwitchLabel>
             </SwitchWrapper>
-            <SwitchWrapper>
-              <Switch
-                checked={shadowFlag}
-                onChange={() => setShadowFlag(!shadowFlag)}
-                size="sm"
-              />
-              <SwitchLabel variant="body1">Shadow</SwitchLabel>
-            </SwitchWrapper>
+            <MarginBottom>
+              <SwitchWrapper>
+                <Switch
+                  checked={shadowFlag}
+                  onChange={() => setShadowFlag(!shadowFlag)}
+                  size="sm"
+                />
+                <SwitchLabel variant="body1">Shadow</SwitchLabel>
+              </SwitchWrapper>
+            </MarginBottom>
+
+            {shadowFlag ? (
+              <>
+                <ControlPanelItemLabel>
+                  <Typography variant="body1">Position X</Typography>
+                </ControlPanelItemLabel>
+                <Slider
+                  name="PositionX"
+                  value={PositionX}
+                  onChange={handleChangeShadowX}
+                />{' '}
+                <ControlPanelItemLabel>
+                  <Typography variant="body1">Position Y</Typography>
+                </ControlPanelItemLabel>
+                <Slider
+                  name="PositionY"
+                  value={PositionY}
+                  onChange={handleChangeShadowY}
+                />{' '}
+                <ControlPanelItemLabel>
+                  <Typography variant="body1">Spread</Typography>
+                </ControlPanelItemLabel>
+                <Slider
+                  name="spread"
+                  value={spread}
+                  onChange={handleChangeShadowSpread}
+                />{' '}
+                <ControlPanelItemLabel>
+                  <Typography variant="body1">Blur</Typography>
+                </ControlPanelItemLabel>
+                <Slider
+                  name="blur"
+                  value={blur}
+                  onChange={handleChangeShadowBlur}
+                />
+                <Row>
+                  <Col span={4}>
+                    <ControlPanelItemLabel>
+                      <Typography variant="body1">shadowColor</Typography>
+                    </ControlPanelItemLabel>
+                    <ColorPicker
+                      value={shadowColor}
+                      onChange={handleChangeShadowColor}
+                      id="shadowColor"
+                      name="shadowColor"
+                    />
+                  </Col>
+                </Row>
+              </>
+            ) : null}
           </Collapse>
         </Collapse>
 
