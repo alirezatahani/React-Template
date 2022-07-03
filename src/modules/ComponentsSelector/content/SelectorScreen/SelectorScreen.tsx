@@ -3,7 +3,6 @@ import { Row } from '@components/grid';
 import {
   BoxNames,
   BoxName,
-  ComponentsVariations,
 } from '@modules/ComponentsSelector/utils/constants';
 import {
   DragCol,
@@ -29,8 +28,8 @@ export const SelectorScreen = memo(function Container() {
     setSelectedStyle(item.style);
   }
 
-  const modalBtn =  <Button onClick={() => {setVisible(false)}} style={{padding:'20px 30px', backgroundColor:'#282A35', border:'none'}}>ok</Button>
-
+  const modalBtn = <Button onClick={() => {setVisible(false)}} style={{padding:'20px 30px', backgroundColor:'#282A35', border:'none'}}>ok</Button>
+  
   return (
     <Row>
       <Modal visible={visible} onClose={() => setVisible(false)} actions={modalBtn}>

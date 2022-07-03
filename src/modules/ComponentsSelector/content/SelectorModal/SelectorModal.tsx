@@ -1,8 +1,5 @@
 import { Button } from "@components/button";
-import { Divider } from "@components/divider";
-import { Image } from "@components/image";
 import { Input } from "@components/input";
-import { Tabs } from "@components/tab";
 import { Textarea } from "@components/textarea";
 import { Typography } from "@components/typography";
 import { ComponentsVariations } from "@modules/ComponentsSelector/utils/constants";
