@@ -1,3 +1,5 @@
+import { CSSProperties } from "styled-components";
+
 export type TextareaLabelProps = {
     htmlFor: string;
   };
@@ -23,5 +25,7 @@ export type TextareaLabelProps = {
     disabled?: boolean;
     direction?:string;
     align?:string;
+    style?: CSSProperties;
+    onClick?: () => void;
   };
   

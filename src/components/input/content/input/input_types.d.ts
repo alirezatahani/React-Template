@@ -27,4 +27,6 @@ export type InputProps = {
   onChange?: React.ChangeEventHandler<HTMLInputElement>;
   value?: string;
   disabled?: boolean;
+  style?: object;
+  onClick?: () => void;
 };

@@ -1,9 +1,13 @@
+import React from "react";
+
 export type DividerProps = {
   children?: React.ReactNode;
   middle?: boolean;
   color?: string;
+  style?: React.CSSProperties;
   align?: 'center' | 'left' | 'right';
   orientation?: 'center' | 'left' | 'right';
+  onClick?: () => void;
 };
 
 export type TextOrientationType = {
