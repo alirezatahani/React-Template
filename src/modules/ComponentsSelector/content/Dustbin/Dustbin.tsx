@@ -15,16 +15,11 @@ const style: CSSProperties = {
 };
 type DustBinProps = {
   selectedComponent?: any;
+  selectedStyle?: any;
+  handleDrop?: any;
 };
 
-const components: any = {
-  Button: <Button>Test</Button>,
-  Typography: <Typography>Test</Typography>,
-  Input: <Input value="test" />,
-  Image: <Image />,
-};
-
-export const Dustbin = ({ selectedComponent }: DustBinProps) => {
+export const Dustbin = ({ selectedComponent, selectedStyle }: DustBinProps) => {
   const [{ canDrop, isOver }, drop] = useDrop(() => ({
     accept: ItemTypes.BOX,
     drop: () => ({ name: 'Dustbin' }),
@@ -42,6 +37,13 @@ export const Dustbin = ({ selectedComponent }: DustBinProps) => {
     backgroundColor = '#F5F5';
   }
 
+  const components: any = {
+    Button: <Button style={...selectedStyle}>test</Button>,
+    Typography: <Typography variant={...selectedStyle.variant}>text</Typography>,
+    Input: <Input value="test" />,
+    Image: <Image />,
+  };
+
   return (
     <React.Fragment>
       <div
@@ -49,9 +51,7 @@ export const Dustbin = ({ selectedComponent }: DustBinProps) => {
         style={{ ...style, backgroundColor }}
         data-testid="dustbin"
       >
-        {selectedComponent.map((item: any) => {
-          return components[item];
-        })}
+        {components[selectedComponent]}
       </div>
     </React.Fragment>
   );
