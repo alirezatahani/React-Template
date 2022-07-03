@@ -1,7 +1,8 @@
-import { Typography } from '@components/typography';
 import React from 'react';
+import { Typography } from '@components/typography';
 import { IconBoxContainer } from '../styles/iconBox.styles';
 import { IconBoxProps } from './iconBox_types';
+
 const IconBox = ({ icon, title, isActive }: IconBoxProps) => {
   return (
     <IconBoxContainer isActive={isActive}>
