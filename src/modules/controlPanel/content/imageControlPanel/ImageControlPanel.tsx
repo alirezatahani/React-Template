@@ -46,7 +46,15 @@ const ImageControlPanel = ({ state, setState, handleChange }: any) => {
   const [shadowFlag, setShadowFlag] = React.useState<boolean>(false);
   const [paddingFlag, setPaddingFlag] = React.useState<boolean>(false);
 
-  const { bgImageColor, imageOpacity, PositionX, shadowColor } = state;
+  const {
+    bgImageColor,
+    imageOpacity,
+    PositionX,
+    shadowColor,
+    PositionY,
+    spread,
+    blur,
+  } = state;
 
   const handleChangeInputElement = (event: {
     target: { name: string; value: string };
@@ -93,6 +101,15 @@ const ImageControlPanel = ({ state, setState, handleChange }: any) => {
   };
   const handleChangeShadowX = (e: React.ChangeEvent<HTMLInputElement>) => {
     handleChange('PositionX', e.target.value);
+  };
+  const handleChangeShadowY = (e: React.ChangeEvent<HTMLInputElement>) => {
+    handleChange('PositionY', e.target.value);
+  };
+  const handleChangeShadowSpread = (e: React.ChangeEvent<HTMLInputElement>) => {
+    handleChange('spread', e.target.value);
+  };
+  const handleChangeShadowBlur = (e: React.ChangeEvent<HTMLInputElement>) => {
+    handleChange('blur', e.target.value);
   };
   const handleChangeWidth = (e: React.ChangeEvent<HTMLInputElement>) => {
     handleChange('width', e.target.value);
@@ -377,15 +394,27 @@ const ImageControlPanel = ({ state, setState, handleChange }: any) => {
               <ControlPanelItemLabel>
                 <Typography variant="body1">Position Y</Typography>
               </ControlPanelItemLabel>
-              <Slider />{' '}
+              <Slider
+                name="PositionY"
+                value={PositionY}
+                onChange={handleChangeShadowY}
+              />{' '}
               <ControlPanelItemLabel>
                 <Typography variant="body1">Spread</Typography>
               </ControlPanelItemLabel>
-              <Slider />{' '}
+              <Slider
+                name="spread"
+                value={spread}
+                onChange={handleChangeShadowSpread}
+              />{' '}
               <ControlPanelItemLabel>
                 <Typography variant="body1">Blur</Typography>
               </ControlPanelItemLabel>
-              <Slider />
+              <Slider
+                name="blur"
+                value={blur}
+                onChange={handleChangeShadowBlur}
+              />
               <Row>
                 <Col span={4}>
                   <ControlPanelItemLabel>
