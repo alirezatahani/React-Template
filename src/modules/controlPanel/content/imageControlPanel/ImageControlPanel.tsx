@@ -9,6 +9,8 @@ import {
   ColorPicker,
   Row,
   Col,
+  Counter,
+  CounterBox,
 } from '@components/index';
 import {
   ControlPanelItemContainer,
@@ -23,19 +25,20 @@ import {
   ModalContent,
   InputFile,
   ButtonAddFile,
-  CounterContainer,
-  HeroResult,
   WrapperCounter,
   WrapperLabel,
-  FormInput,
-  HeroSpanLeft,
-  HeroSpanRight,
   SwitchWrapper,
   SwitchLabel,
+  BorderWrapperCounter,
+  SelectWrapper,
   MarginBottom,
 } from '@modules/controlPanel/content/imageControlPanel/imageControlPanel_styles';
-import { alignImageOptions } from '@modules/controlPanel/utils/constants';
-import Select, { StylesConfig } from 'react-select';
+import {
+  alignImageOptions,
+  borderOptions,
+} from '@modules/controlPanel/utils/constants';
+import Select from 'react-select';
+import { increaseValue, decreaseValue } from 'utils/counter';
 
 //end imports
 const ImageControlPanel = ({ state, setState, handleChange }: any) => {
@@ -68,6 +71,13 @@ const ImageControlPanel = ({ state, setState, handleChange }: any) => {
   }) => {
     handleChange(event.target.name, event.target.value);
   };
+  const [flags, setFlags] = React.useState([]);
+  const [isLocked, setIsLocked] = React.useState<boolean>(false);
+  const [values, setValues] = React.useState([
+    { value: 0, position: 'right', name: 'paddingRight' },
+    { value: 0, position: 'left', name: 'paddingLeft' },
+    { value: 0, position: 'top', name: 'paddingTop' },
+  ]);
 
   //load image
 
@@ -181,6 +191,22 @@ const ImageControlPanel = ({ state, setState, handleChange }: any) => {
   //     }));
   //   }
   // };
+  const handleClick = (label: string) => {
+    const exist = flags.find((flag) => flag === label);
+    if (exist) {
+      const filteredFlags = flags.filter((item) => item !== label);
+      return setFlags(filteredFlags);
+    } else {
+      setFlags([...flags, label]);
+    }
+  };
+
+  const handleChangeCounterBox = (values: any) => {
+    setValues(values);
+  };
+  const handleChangePadding = () => {
+    values.map((item) => handleChange(item.name, item.value));
+  };
 
   return (
     <div>
@@ -258,42 +284,22 @@ const ImageControlPanel = ({ state, setState, handleChange }: any) => {
               <Typography variant="body1">Height</Typography>
             </ControlPanelItemLabel>
           </WrapperLabel>
-
-          <MarginBottom>
-            <ControlPanelItemLabel>
-              <Typography variant="body1">Opacity</Typography>
-            </ControlPanelItemLabel>
-            <Slider
-              name="imageOpacity"
-              value={imageOpacity}
-              onChange={handleChangeImageOpacity}
-            />
-          </MarginBottom>
-
           <WrapperCounter>
-            <CounterContainer>
-              <HeroSpanLeft onClick={increaseWidthValue}>+</HeroSpanLeft>
-              <HeroResult>
-                <FormInput
-                  name="width"
-                  value={state.width}
-                  onChange={handleChangeWidth}
-                />
-              </HeroResult>
-              <HeroSpanRight onClick={decreaseWidthValue}>-</HeroSpanRight>
-            </CounterContainer>
+            <Counter
+              onIncrease={() => increaseValue(state, setState, 'width')}
+              onDecrease={() => decreaseValue(state, setState, 'width')}
+              name="width"
+              value={state.width}
+              onChange={handleChangeWidth}
+            />
 
-            <CounterContainer>
-              <HeroSpanLeft onClick={increaseHeightValue}>+</HeroSpanLeft>
-              <HeroResult>
-                <FormInput
-                  name="height"
-                  value={state.height}
-                  onChange={handleChangeHeight}
-                />
-              </HeroResult>
-              <HeroSpanRight onClick={decreaseHeightValue}>-</HeroSpanRight>
-            </CounterContainer>
+            <Counter
+              onIncrease={() => increaseValue(state, setState, 'height')}
+              onDecrease={() => decreaseValue(state, setState, 'height')}
+              name="height"
+              value={state.height}
+              onChange={handleChangeHeight}
+            />
           </WrapperCounter>
           <MarginBottom>
             <BtnCheckbox

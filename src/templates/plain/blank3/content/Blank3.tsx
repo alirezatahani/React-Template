@@ -23,7 +23,6 @@ import { CardMedia } from '@components/card/content/cardMedia/index';
 import { CardContent } from '@components/card/content/cardContent/index';
 
 export const Blank3 = ({ setSelected, state }: any) => {
-  console.log(state, 'log');
   return (
     <React.Fragment>
       <Navbar />
