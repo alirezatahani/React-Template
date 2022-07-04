@@ -1,4 +1,3 @@
-import { Tag } from '@components/tag';
 import React from 'react';
 import { Link } from 'react-router-dom';
 
@@ -12,7 +11,6 @@ export const Home = () => {
       <Link to="blank/3">Blank3</Link>
       <Link to="blank/2">Blank2</Link>
       <Link to="create">Create</Link>
-      <Tag><p>new tag</p></Tag>
     </div>
   );
 };
