@@ -28,29 +28,44 @@ export const Blank3 = ({ setSelected, state }: any) => {
       <Navbar />
       <SectionFluid>
         <MainContainer fluid>
-          <Row>
-            <Col xs={12}>
-              <Image
-                src="https://us-wbe-img.gr-cdn.com/template/website-id-d46691d1-c4bb-4a59-a194-9012099062fd/22eae2c7-8a18-451c-b077-0cc4841f434a.png"
-                onClick={() => setSelected({ type: 'gallery' })}
-              />
-            </Col>
-          </Row>
-          <Row>
-            <Col xs={12}>
-              <Typography
-                onClick={() => setSelected({ type: 'typography' })}
-                variant={state.fontType}
-                textAlign={state.textAlign}
+          <MainContainer>
+            <Row>
+              <Col
+                xs={12}
                 style={{
-                  textDecoration: state.textDecoration,
-                  color: state.fontColor,
+                  justifyContent: state.alignMent,
+                  display: 'flex',
                 }}
               >
-                Introduce your idea
-              </Typography>
-            </Col>
-          </Row>
+                {!state.file ? (
+                  <Image
+                    src="https://us-wbe-img.gr-cdn.com/template/website-id-d46691d1-c4bb-4a59-a194-9012099062fd/22eae2c7-8a18-451c-b077-0cc4841f434a.png"
+                    onClick={() => setSelected({ type: 'image' })}
+                    width={state.width}
+                    height={state.height}
+                    style={{
+                      paddingTop: Number(state.paddingTop),
+                      paddingBottom: Number(state.paddingBottom),
+                      paddingRight: Number(state.paddingRight),
+                      paddingLeft: Number(state.paddingLeft),
+                    }}
+                  />
+                ) : (
+                  <Image
+                    src={state.file}
+                    alt={state.altText}
+                    width={state.width}
+                    height={state.height}
+                    onClick={() => setSelected({ type: 'image' })}
+                    style={{
+                      paddingTop: state.paddingTop,
+                    }}
+                  />
+                )}
+              </Col>
+            </Row>
+          </MainContainer>
+
           <Row>
             <Col xs={12}>
               <Typography

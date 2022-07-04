@@ -21,6 +21,7 @@
       "@templates/*": ["templates/*"],
       "@pages/*": ["pages/*"],
       "@modules/*": ["modules/*"],
+      "@utils/*": ["utils/*"],
       "@global/*": ["global/*"]
     }
   },

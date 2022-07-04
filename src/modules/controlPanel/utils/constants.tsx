@@ -5,11 +5,13 @@ import {
   BiFont,
   BiAlignLeft,
   BiAlignMiddle,
+  BiHorizontalCenter,
   BiAlignRight,
   BiAlignJustify,
   BiUnderline,
 } from 'react-icons/bi';
-import { TbLetterT } from 'react-icons/tb';
+import { TbLetterT, TbArrowBarToRight, TbArrowBarToLeft } from 'react-icons/tb';
+import { MdFormatClear } from 'react-icons/md';
 // import { MdFormatClear } from 'react-icons/md';
 
 export const fontTypeOptions = [
@@ -27,6 +29,11 @@ export const fontFamilyOptions = [
   { value: 'Poppins', label: 'Poppins', kind: 'fontFamily' },
   { value: 'Arial', label: 'Arial', kind: 'fontFamily' },
 ];
+export const borderOptions = [
+  { value: '1px dashed black', label: 'dashed', kind: 'border' },
+  { value: '1px solid black', label: 'solid', kind: 'border' },
+];
+
 export const fontSizeOptions = new Array(10).fill('').map((e, i) => {
   if (i === 0) {
     return { value: i + 4, label: `${i + 4}`, kind: 'fontSize' };
@@ -75,6 +82,27 @@ export const alignOptions = [
     value: 'justify',
     label: <BiAlignJustify />,
     name: 'textJustify',
+  },
+];
+
+export const alignImageOptions = [
+  {
+    value: 'flex-start',
+    label: <TbArrowBarToLeft />,
+    name: 'alignLeft',
+    kind: 'alignMent',
+  },
+  {
+    value: 'center',
+    label: <BiHorizontalCenter />,
+    name: 'alignCenter',
+    kind: 'alignMent',
+  },
+  {
+    value: 'flex-end',
+    label: <TbArrowBarToRight />,
+    name: 'alignRight',
+    kind: 'alignMent',
   },
 ];
 
