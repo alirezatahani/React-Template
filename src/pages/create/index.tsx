@@ -22,6 +22,8 @@ export const Create = () => {
     spread: '0',
     blur: '0',
     shadowColor: '#F5F5F5',
+    borderColor: '#F5F5F5',
+    borderSize: '0',
     width: 800,
   });
 

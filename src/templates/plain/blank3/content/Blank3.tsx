@@ -44,13 +44,9 @@ export const Blank3 = ({ setSelected, state }: any) => {
                     width={state.width}
                     height={state.height}
                     style={{
-                      paddingTop: Number(state.paddingTop),
-                      paddingBottom: Number(state.paddingBottom),
-                      paddingRight: Number(state.paddingRight),
-                      paddingLeft: Number(state.paddingLeft),
-                      border: state.border,
                       opacity: `${state.imageOpacity}%`,
                       boxShadow: `${state.PositionX}px ${state.PositionY}px ${state.spread}px ${state.blur}px ${state.shadowColor}`,
+                      border: `${state.borderSize}px solid ${state.borderColor}`,
                     }}
                   />
                 ) : (
@@ -61,8 +57,9 @@ export const Blank3 = ({ setSelected, state }: any) => {
                     height={state.height}
                     onClick={() => setSelected({ type: 'image' })}
                     style={{
-                      paddingTop: state.paddingTop,
                       opacity: `${state.imageOpacity}%`,
+                      boxShadow: `${state.PositionX}px ${state.PositionY}px ${state.spread}px ${state.blur}px ${state.shadowColor}`,
+                      border: `${state.borderSize}px solid ${state.borderColor}`,
                     }}
                   />
                 )}

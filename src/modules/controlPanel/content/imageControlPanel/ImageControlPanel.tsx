@@ -73,6 +73,8 @@ const ImageControlPanel = ({ state, setState, handleChange }: any) => {
     PositionY,
     spread,
     blur,
+    borderColor,
+    borderSize,
   } = state;
 
   const handleChangeInputElement = (event: {
@@ -82,6 +84,11 @@ const ImageControlPanel = ({ state, setState, handleChange }: any) => {
   };
 
   const handleChangeShadowColor = (event: {
+    target: { name: string; value: string };
+  }) => {
+    handleChange(event.target.name, event.target.value);
+  };
+  const handleChangeBorderColor = (event: {
     target: { name: string; value: string };
   }) => {
     handleChange(event.target.name, event.target.value);
@@ -129,6 +136,9 @@ const ImageControlPanel = ({ state, setState, handleChange }: any) => {
   };
   const handleChangeShadowBlur = (e: React.ChangeEvent<HTMLInputElement>) => {
     handleChange('blur', e.target.value);
+  };
+  const handleChangeBorderSize = (e: React.ChangeEvent<HTMLInputElement>) => {
+    handleChange('borderSize', e.target.value);
   };
 
   const handleChangeUrl = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -270,11 +280,26 @@ const ImageControlPanel = ({ state, setState, handleChange }: any) => {
                   <Row>
                     <Col span={6}>
                       <ControlPanelItemLabel>Size</ControlPanelItemLabel>
-                      <Counter />
+                      <Counter
+                        value={borderSize}
+                        name="borderSize"
+                        onChange={handleChangeBorderSize}
+                      />
                     </Col>
                     <Col span={6}>
                       <ControlPanelItemLabel>Style</ControlPanelItemLabel>
                       <Select name="borderStyle" />
+                    </Col>
+                  </Row>
+                  <Row>
+                    <Col span={4}>
+                      <ControlPanelItemLabel>Color</ControlPanelItemLabel>
+                      <ColorPicker
+                        value={borderColor}
+                        onChange={handleChangeBorderColor}
+                        id="borderColor"
+                        name="borderColor"
+                      />
                     </Col>
                   </Row>
                 </ControlPanelItemContainer>
