@@ -12,7 +12,10 @@ export const Tags = styled.div({
     border: '1px solid gray',
     padding: '1px 3px',
     fontSize: '13px',
-    margin:'0 10px'
+    margin:'0 10px',
+    backgroundColor: 'rgb(245, 245, 245)',
+    borderRadius: '3px',
+    color: 'rgb(50, 50, 50)'
 })
 
 export const NewTag = styled.div({
@@ -39,5 +42,5 @@ export const NewTagInput = styled.input({
 
 export const NewTagText = styled.span({
     fontSize:'13px',
-    paddingRight:'2px',
+    paddingRight:'4px',
 })

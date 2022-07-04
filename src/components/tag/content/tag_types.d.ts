@@ -1,5 +1,7 @@
-import React from "react"
+import { CSSProperties } from "styled-components"
 
 export type TagProps = {
-    children?: React.ReactNode;
+    style?: CSSProperties;
+    defaultTags?: string[];
+    onClick?: () => void;
 }

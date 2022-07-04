@@ -20,7 +20,9 @@
       "@assets/*": ["public/static/images/*"],
       "@templates/*": ["templates/*"],
       "@pages/*": ["pages/*"],
-      "@modules/*": ["modules/*"]
+      "@modules/*": ["modules/*"],
+      "@utils/*": ["utils/*"],
+      "@global/*": ["global/*"]
     }
   },
   "include": ["**/*.ts", "**/*.tsx"],
