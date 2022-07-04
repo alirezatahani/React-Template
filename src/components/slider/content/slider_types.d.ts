@@ -6,4 +6,5 @@ export type SliderProps = {
   max?: number;
   value?: any;
   onChange?: (value: any) => void;
+  name?: string;
 };

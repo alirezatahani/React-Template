@@ -5,8 +5,12 @@ import {
   BtnCheckbox,
   Switch,
   Modal,
-  Counter,
+  Slider,
+  ColorPicker,
+  Row,
+  Col,
   CounterBox,
+  Counter,
 } from '@components/index';
 import {
   ControlPanelItemContainer,
@@ -21,32 +25,69 @@ import {
   ModalContent,
   InputFile,
   ButtonAddFile,
-  WrapperCounter,
   WrapperLabel,
   SwitchWrapper,
   SwitchLabel,
-  BorderWrapperCounter,
-  SelectWrapper,
+  MarginBottom,
 } from '@modules/controlPanel/content/imageControlPanel/imageControlPanel_styles';
-import {
-  alignImageOptions,
-  borderOptions,
-} from '@modules/controlPanel/utils/constants';
+import { alignImageOptions } from '@modules/controlPanel/utils/constants';
+import { increaseValue, decreaseValue } from '@utils/counter';
 import Select from 'react-select';
-import { increaseValue, decreaseValue } from 'utils/counter';
-
 //end imports
+
 const ImageControlPanel = ({ state, setState, handleChange }: any) => {
   const [image, setImage] = React.useState(null);
   const [isShown, setIsShown] = React.useState<boolean>(false);
   const [modal, setModal] = React.useState<boolean>(false);
-  const [flags, setFlags] = React.useState([]);
-  const [isLocked, setIsLocked] = React.useState<boolean>(false);
-  const [values, setValues] = React.useState([
-    { value: 0, position: 'right', name: 'paddingRight' },
-    { value: 0, position: 'left', name: 'paddingLeft' },
-    { value: 0, position: 'top', name: 'paddingTop' },
+  const [borderFlag, setBorderFlag] = React.useState<boolean>(false);
+  const [radiusFlag, setRadiusFlag] = React.useState<boolean>(false);
+  const [shadowFlag, setShadowFlag] = React.useState<boolean>(false);
+  const [paddingFlag, setPaddingFlag] = React.useState<boolean>(false);
+  const [imageSizeValues, setImageSizeValues] = React.useState([
+    { value: 0, position: 'right', name: 'width' },
+    { value: 0, position: 'left', name: 'height' },
   ]);
+  const [borderRadiusValues, setBorderRadiusValues] = React.useState([
+    { value: 0, position: 'top', name: 'RadiusTop' },
+    { value: 0, position: 'right', name: 'RadiusRight' },
+    { value: 0, position: 'bottom', name: 'RadiusBottom' },
+    { value: 0, position: 'left', name: 'RadiusLeft' },
+  ]);
+  const [paddingValues, setPaddingValues] = React.useState([
+    { value: 0, position: 'top', name: 'paddingTop' },
+    { value: 0, position: 'right', name: 'paddingRight' },
+    { value: 0, position: 'bottom', name: 'paddingBottom' },
+    { value: 0, position: 'left', name: 'paddingLeft' },
+  ]);
+
+  const {
+    bgImageColor,
+    imageOpacity,
+    PositionX,
+    shadowColor,
+    PositionY,
+    spread,
+    blur,
+    borderColor,
+    borderSize,
+  } = state;
+
+  const handleChangeInputElement = (event: {
+    target: { name: string; value: string };
+  }) => {
+    handleChange(event.target.name, event.target.value);
+  };
+
+  const handleChangeShadowColor = (event: {
+    target: { name: string; value: string };
+  }) => {
+    handleChange(event.target.name, event.target.value);
+  };
+  const handleChangeBorderColor = (event: {
+    target: { name: string; value: string };
+  }) => {
+    handleChange(event.target.name, event.target.value);
+  };
 
   //load image
 
@@ -76,13 +117,25 @@ const ImageControlPanel = ({ state, setState, handleChange }: any) => {
   const handleChangeAltText = (e: React.ChangeEvent<HTMLInputElement>) => {
     handleChange('altText', e.target.value);
   };
-  const handleChangeWidth = (e: React.ChangeEvent<HTMLInputElement>) => {
-    handleChange('width', e.target.value);
+  const handleChangeImageOpacity = (e: React.ChangeEvent<HTMLInputElement>) => {
+    handleChange('imageOpacity', e.target.value);
+  };
+  const handleChangeShadowX = (e: React.ChangeEvent<HTMLInputElement>) => {
+    handleChange('PositionX', e.target.value);
+  };
+  const handleChangeShadowY = (e: React.ChangeEvent<HTMLInputElement>) => {
+    handleChange('PositionY', e.target.value);
+  };
+  const handleChangeShadowSpread = (e: React.ChangeEvent<HTMLInputElement>) => {
+    handleChange('spread', e.target.value);
+  };
+  const handleChangeShadowBlur = (e: React.ChangeEvent<HTMLInputElement>) => {
+    handleChange('blur', e.target.value);
+  };
+  const handleChangeBorderSize = (e: React.ChangeEvent<HTMLInputElement>) => {
+    handleChange('borderSize', e.target.value);
   };
 
-  const handleChangeHeight = (e: React.ChangeEvent<HTMLInputElement>) => {
-    handleChange('height', e.target.value);
-  };
   const handleChangeUrl = (e: React.ChangeEvent<HTMLInputElement>) => {
     handleChange('Url', e.target.value);
   };
@@ -90,28 +143,14 @@ const ImageControlPanel = ({ state, setState, handleChange }: any) => {
     handleChange('alignMent', e.target.value);
   };
 
-  const handleChangeBorderStyle = (event: {
-    kind: string;
-    value: string | number;
-  }) => {
-    handleChange(event.kind, event.value);
+  const handleChangeImageSizes = (values: any) => {
+    setImageSizeValues(values);
   };
-
-  const handleClick = (label: string) => {
-    const exist = flags.find((flag) => flag === label);
-    if (exist) {
-      const filteredFlags = flags.filter((item) => item !== label);
-      return setFlags(filteredFlags);
-    } else {
-      setFlags([...flags, label]);
-    }
+  const handleChangeBorderRadius = (values: any) => {
+    setBorderRadiusValues(values);
   };
-
-  const handleChangeCounterBox = (values: any) => {
-    setValues(values);
-  };
-  const handleChangePadding = () => {
-    values.map((item) => handleChange(item.name, item.value));
+  const handleChangePadding = (values: any) => {
+    setPaddingValues(values);
   };
 
   return (
@@ -162,6 +201,7 @@ const ImageControlPanel = ({ state, setState, handleChange }: any) => {
             </Modal>
           </ControlPanelItemContainer>
         </Collapse>
+
         <Collapse title="Embed a file form a Url">
           <HeroFormInput
             name="url"
@@ -172,6 +212,7 @@ const ImageControlPanel = ({ state, setState, handleChange }: any) => {
             onChange={handleChangeUrl}
           />
         </Collapse>
+
         <Collapse title="alt text">
           <HeroFormInput
             name="altText"
@@ -181,6 +222,7 @@ const ImageControlPanel = ({ state, setState, handleChange }: any) => {
             onChange={handleChangeAltText}
           />
         </Collapse>
+
         <Collapse title="Image window setting">
           <WrapperLabel>
             <ControlPanelItemLabel>
@@ -190,74 +232,311 @@ const ImageControlPanel = ({ state, setState, handleChange }: any) => {
               <Typography variant="body1">Height</Typography>
             </ControlPanelItemLabel>
           </WrapperLabel>
-          <WrapperCounter>
-            <Counter
-              onIncrease={() => increaseValue(state, setState, 'width')}
-              onDecrease={() => decreaseValue(state, setState, 'width')}
-              name="width"
-              value={state.width}
-              onChange={handleChangeWidth}
-            />
-
-            <Counter
-              onIncrease={() => increaseValue(state, setState, 'height')}
-              onDecrease={() => decreaseValue(state, setState, 'height')}
-              name="height"
-              value={state.height}
-              onChange={handleChangeHeight}
-            />
-          </WrapperCounter>
-
-          <BtnCheckbox
-            type="radio"
-            name="alignMent"
-            onChange={handleChangeAlignMent}
-            options={alignImageOptions}
+          <CounterBox
+            value={imageSizeValues}
+            onChangeMain={handleChangeImageSizes}
           />
+          <MarginBottom>
+            <ControlPanelItemLabel>
+              <Typography variant="body1">Opacity</Typography>
+            </ControlPanelItemLabel>
+            <Slider
+              name="imageOpacity"
+              value={imageOpacity}
+              onChange={handleChangeImageOpacity}
+            />
+          </MarginBottom>
+          <Row>
+            <Col span={6}>
+              <MarginBottom>
+                <ControlPanelItemLabel>
+                  <Typography variant="body1">Alignment</Typography>
+                </ControlPanelItemLabel>
+                <BtnCheckbox
+                  type="radio"
+                  name="alignMent"
+                  onChange={handleChangeAlignMent}
+                  options={alignImageOptions}
+                />
+              </MarginBottom>
+            </Col>
+          </Row>
+
+          <Collapse title="advance settings">
+            <SwitchWrapper>
+              <Switch
+                checked={borderFlag}
+                onChange={() => setBorderFlag(!borderFlag)}
+                size="sm"
+              />
+              <SwitchLabel variant="body1">Border</SwitchLabel>
+            </SwitchWrapper>
+            {borderFlag ? (
+              <>
+                <ControlPanelItemContainer>
+                  <Row>
+                    <Col span={6}>
+                      <ControlPanelItemLabel>Size</ControlPanelItemLabel>
+                      <Counter
+                        value={borderSize}
+                        name="borderSize"
+                        onChange={handleChangeBorderSize}
+                        onDecrease={() =>
+                          decreaseValue(state, setState, 'borderSize')
+                        }
+                        onIncrease={() =>
+                          increaseValue(state, setState, 'borderSize')
+                        }
+                      />
+                    </Col>
+                    <Col span={6}>
+                      <ControlPanelItemLabel>Style</ControlPanelItemLabel>
+                      <Select name="borderStyle" />
+                    </Col>
+                  </Row>
+                  <Row>
+                    <Col span={4}>
+                      <ControlPanelItemLabel>Color</ControlPanelItemLabel>
+                      <ColorPicker
+                        value={borderColor}
+                        onChange={handleChangeBorderColor}
+                        id="borderColor"
+                        name="borderColor"
+                      />
+                    </Col>
+                  </Row>
+                </ControlPanelItemContainer>
+              </>
+            ) : null}
+
+            <SwitchWrapper>
+              <Switch
+                checked={radiusFlag}
+                onChange={() => setRadiusFlag(!radiusFlag)}
+                size="sm"
+              />
+              <SwitchLabel variant="body1">Radius</SwitchLabel>
+            </SwitchWrapper>
+            {radiusFlag ? (
+              <CounterBox
+                value={borderRadiusValues}
+                onChangeMain={handleChangeBorderRadius}
+                shape="diamond"
+              />
+            ) : null}
+            <MarginBottom>
+              <SwitchWrapper>
+                <Switch
+                  checked={shadowFlag}
+                  onChange={() => setShadowFlag(!shadowFlag)}
+                  size="sm"
+                />
+                <SwitchLabel variant="body1">Shadow</SwitchLabel>
+              </SwitchWrapper>
+            </MarginBottom>
+
+            {shadowFlag ? (
+              <>
+                <ControlPanelItemLabel>
+                  <Typography variant="body1">Position X</Typography>
+                </ControlPanelItemLabel>
+                <Slider
+                  name="PositionX"
+                  value={PositionX}
+                  onChange={handleChangeShadowX}
+                />{' '}
+                <ControlPanelItemLabel>
+                  <Typography variant="body1">Position Y</Typography>
+                </ControlPanelItemLabel>
+                <Slider
+                  name="PositionY"
+                  value={PositionY}
+                  onChange={handleChangeShadowY}
+                />{' '}
+                <ControlPanelItemLabel>
+                  <Typography variant="body1">Spread</Typography>
+                </ControlPanelItemLabel>
+                <Slider
+                  name="spread"
+                  value={spread}
+                  onChange={handleChangeShadowSpread}
+                />{' '}
+                <ControlPanelItemLabel>
+                  <Typography variant="body1">Blur</Typography>
+                </ControlPanelItemLabel>
+                <Slider
+                  name="blur"
+                  value={blur}
+                  onChange={handleChangeShadowBlur}
+                />
+                <Row>
+                  <Col span={4}>
+                    <ControlPanelItemLabel>
+                      <Typography variant="body1">shadowColor</Typography>
+                    </ControlPanelItemLabel>
+                    <ColorPicker
+                      value={shadowColor}
+                      onChange={handleChangeShadowColor}
+                      id="shadowColor"
+                      name="shadowColor"
+                    />
+                  </Col>
+                </Row>
+              </>
+            ) : null}
+          </Collapse>
         </Collapse>
 
         <Collapse open title="Block Settings">
+          <Row>
+            <Col span={4}>
+              <ControlPanelItemLabel>
+                <Typography variant="body1">Color</Typography>
+              </ControlPanelItemLabel>
+              <ColorPicker
+                value={bgImageColor}
+                onChange={handleChangeInputElement}
+                id="bgImageColor"
+                name="bgImageColor"
+              />
+            </Col>
+          </Row>
+
           <SwitchWrapper>
             <Switch
+              checked={paddingFlag}
+              onChange={() => setPaddingFlag(!paddingFlag)}
               size="sm"
-              checked={flags.filter((flag) => flag === 'padding').length}
-              onChange={() => handleClick('padding')}
             />
-
             <SwitchLabel variant="body1">Padding</SwitchLabel>
           </SwitchWrapper>
-          {flags.find((flag) => flag === 'padding') ? (
+
+          {paddingFlag ? (
             <CounterBox
-              onChange={handleChangePadding}
-              value={values}
-              shape="diamond"
-              onChangeMain={handleChangeCounterBox}
-              isLocked={isLocked}
-              onChangeLock={() => setIsLocked(!isLocked)}
+              value={paddingValues}
+              onChangeMain={handleChangePadding}
+              shape="square"
             />
           ) : null}
-
           <SwitchWrapper>
             <Switch
+              checked={borderFlag}
+              onChange={() => setBorderFlag(!borderFlag)}
               size="sm"
-              checked={flags.filter((flag) => flag === 'border').length}
-              onChange={() => handleClick('border')}
             />
-
             <SwitchLabel variant="body1">Border</SwitchLabel>
           </SwitchWrapper>
+          {borderFlag ? (
+            <>
+              <ControlPanelItemContainer>
+                <Row>
+                  <Col span={6}>
+                    <ControlPanelItemLabel>Size</ControlPanelItemLabel>
+                    <Counter
+                      value={borderSize}
+                      name="borderSize"
+                      onChange={handleChangeBorderSize}
+                      onDecrease={() =>
+                        decreaseValue(state, setState, 'borderSize')
+                      }
+                      onIncrease={() =>
+                        increaseValue(state, setState, 'borderSize')
+                      }
+                    />
+                  </Col>
+                  <Col span={6}>
+                    <ControlPanelItemLabel>Style</ControlPanelItemLabel>
+                    <Select name="borderStyle" />
+                  </Col>
+                </Row>
+                <Row>
+                  <Col span={4}>
+                    <ControlPanelItemLabel>Color</ControlPanelItemLabel>
+                    <ColorPicker
+                      value={borderColor}
+                      onChange={handleChangeBorderColor}
+                      id="borderColor"
+                      name="borderColor"
+                    />
+                  </Col>
+                </Row>
+              </ControlPanelItemContainer>
+            </>
+          ) : null}
+          <SwitchWrapper>
+            <Switch
+              checked={radiusFlag}
+              onChange={() => setRadiusFlag(!radiusFlag)}
+              size="sm"
+            />
+            <SwitchLabel variant="body1">Radius</SwitchLabel>
+          </SwitchWrapper>
+          {radiusFlag ? (
+            <CounterBox
+              value={borderRadiusValues}
+              onChangeMain={handleChangeBorderRadius}
+              shape="diamond"
+            />
+          ) : null}
+          <MarginBottom>
+            <SwitchWrapper>
+              <Switch
+                checked={shadowFlag}
+                onChange={() => setShadowFlag(!shadowFlag)}
+                size="sm"
+              />
+              <SwitchLabel variant="body1">Shadow</SwitchLabel>
+            </SwitchWrapper>
+          </MarginBottom>
 
-          {flags.find((flag) => flag === 'border') ? (
-            <BorderWrapperCounter>
-              <Counter />
-              <SelectWrapper>
-                <Select
-                  name="border"
-                  options={borderOptions}
-                  onChange={handleChangeBorderStyle}
-                />
-              </SelectWrapper>
-            </BorderWrapperCounter>
+          {shadowFlag ? (
+            <>
+              <ControlPanelItemLabel>
+                <Typography variant="body1">Position X</Typography>
+              </ControlPanelItemLabel>
+              <Slider
+                name="PositionX"
+                value={PositionX}
+                onChange={handleChangeShadowX}
+              />{' '}
+              <ControlPanelItemLabel>
+                <Typography variant="body1">Position Y</Typography>
+              </ControlPanelItemLabel>
+              <Slider
+                name="PositionY"
+                value={PositionY}
+                onChange={handleChangeShadowY}
+              />{' '}
+              <ControlPanelItemLabel>
+                <Typography variant="body1">Spread</Typography>
+              </ControlPanelItemLabel>
+              <Slider
+                name="spread"
+                value={spread}
+                onChange={handleChangeShadowSpread}
+              />{' '}
+              <ControlPanelItemLabel>
+                <Typography variant="body1">Blur</Typography>
+              </ControlPanelItemLabel>
+              <Slider
+                name="blur"
+                value={blur}
+                onChange={handleChangeShadowBlur}
+              />
+              <Row>
+                <Col span={4}>
+                  <ControlPanelItemLabel>
+                    <Typography variant="body1">shadowColor</Typography>
+                  </ControlPanelItemLabel>
+                  <ColorPicker
+                    value={shadowColor}
+                    onChange={handleChangeShadowColor}
+                    id="shadowColor"
+                    name="shadowColor"
+                  />
+                </Col>
+              </Row>
+            </>
           ) : null}
         </Collapse>
       </ControlPanelSettingContainer>

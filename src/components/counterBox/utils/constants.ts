@@ -20,7 +20,7 @@ export const positionObj = {
 
 export const positionObjSquare = {
   bottom: {
-    left: 200,
+    left: 140,
     right: 0,
     bottom: -48,
   },

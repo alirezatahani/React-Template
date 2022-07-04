@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { Input, Button, Image, Typography } from '@components/index';
+import { Input, Button, Image, Typography, Collapse } from '@components/index';
 
 export const ImageBox = styled.div(({ theme }) => ({
   width: '100%',
@@ -151,43 +151,9 @@ export const SwitchLabel = styled(Typography)(({}) => ({
   marginLeft: 8,
 }));
 
-export const PaddingContainer = styled.div(({ theme }) => ({
-  position: 'relative',
-  width: 200,
-  height: 100,
-  border: `1px dashed ${theme.palette.disabled.backgroundColor}`,
-  margin: '0px auto',
-  borderRadius: 4,
-  marginBottom: '2rem',
-  marginTop: '2rem',
-}));
-export const PaddingTopStyled = styled.div(({}) => ({
-  position: 'absolute',
-  left: 0,
-  right: 0,
-  top: -16,
-}));
-export const PaddingBottomStyled = styled.div(({}) => ({
-  position: 'absolute',
-  left: 0,
-  right: 0,
-  bottom: -48,
-}));
-export const PaddingRightStyled = styled.div(({}) => ({
-  position: 'absolute',
-  left: -62,
-  bottom: 0,
-}));
-export const PaddingLeftStyled = styled.div(({}) => ({
-  position: 'absolute',
-  right: -62,
-  bottom: 0,
-}));
-export const LockBox = styled.div(({}) => ({
-  position: 'absolute',
-  left: 93,
-  top: 40,
-}));
 export const SelectWrapper = styled.div(({}) => ({
   marginLeft: 14,
+}));
+export const MarginBottom = styled.div(({}) => ({
+  marginBottom: '2rem',
 }));
