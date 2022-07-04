@@ -25,18 +25,13 @@ import {
   ModalContent,
   InputFile,
   ButtonAddFile,
-  WrapperCounter,
   WrapperLabel,
   SwitchWrapper,
   SwitchLabel,
-  BorderWrapperCounter,
-  SelectWrapper,
   MarginBottom,
 } from '@modules/controlPanel/content/imageControlPanel/imageControlPanel_styles';
-import {
-  alignImageOptions,
-  borderOptions,
-} from '@modules/controlPanel/utils/constants';
+import { alignImageOptions } from '@modules/controlPanel/utils/constants';
+import { increaseValue, decreaseValue } from '@utils/counter';
 import Select from 'react-select';
 
 //end imports
@@ -284,6 +279,12 @@ const ImageControlPanel = ({ state, setState, handleChange }: any) => {
                         value={borderSize}
                         name="borderSize"
                         onChange={handleChangeBorderSize}
+                        onDecrease={() =>
+                          decreaseValue(state, setState, 'borderSize')
+                        }
+                        onIncrease={() =>
+                          increaseValue(state, setState, 'borderSize')
+                        }
                       />
                     </Col>
                     <Col span={6}>
