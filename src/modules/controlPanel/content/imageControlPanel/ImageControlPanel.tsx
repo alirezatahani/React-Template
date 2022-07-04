@@ -72,7 +72,6 @@ const ImageControlPanel = ({ state, setState, handleChange }: any) => {
     handleChange(event.target.name, event.target.value);
   };
   const [flags, setFlags] = React.useState([]);
-  const [isLocked, setIsLocked] = React.useState<boolean>(false);
   const [values, setValues] = React.useState([
     { value: 0, position: 'right', name: 'paddingRight' },
     { value: 0, position: 'left', name: 'paddingLeft' },
@@ -134,71 +133,6 @@ const ImageControlPanel = ({ state, setState, handleChange }: any) => {
   };
   const handleChangeAlignMent = (e: React.ChangeEvent<HTMLInputElement>) => {
     handleChange('alignMent', e.target.value);
-  };
-
-  const handleChangeBorderStyle = (event: {
-    kind: string;
-    value: string | number;
-  }) => {
-    handleChange(event.kind, event.value);
-  };
-
-  const increaseWidthValue = () => {
-    setState((prevState: any) => ({
-      ...prevState,
-      width: Number(prevState.width) + 1,
-    }));
-  };
-
-  const decreaseWidthValue = () => {
-    setState((prevState: any) => ({
-      ...prevState,
-      width: Number(prevState.width) - 1,
-    }));
-  };
-  const increaseHeightValue = () => {
-    setState((prevState: any) => ({
-      ...prevState,
-      height: Number(prevState.height) + 1,
-    }));
-  };
-  const decreaseHeightValue = () => {
-    setState((prevState: any) => ({
-      ...prevState,
-      height: Number(prevState.height) - 1,
-    }));
-  };
-  const increaseBorderValue = () => {
-    setState((prevState: any) => ({
-      ...prevState,
-      border: Number(prevState.border) + 1,
-    }));
-  };
-
-  // const increasePaddingValue = () => {
-  //   if (lock) {
-  //     setState((prevState: any) => ({
-  //       ...prevState,
-  //       paddingTop: Number(prevState.paddingTop) + 1,
-  //       paddingBottom: Number(prevState.paddingBottom) + 1,
-  //       paddingRight: Number(prevState.paddingRight) + 1,
-  //       paddingLeft: Number(prevState.paddingLeft) + 1,
-  //     }));
-  //   } else {
-  //     setState((prevState: any) => ({
-  //       ...prevState,
-  //       paddingTop: Number(prevState.paddingTop) + 1,
-  //     }));
-  //   }
-  // };
-  const handleClick = (label: string) => {
-    const exist = flags.find((flag) => flag === label);
-    if (exist) {
-      const filteredFlags = flags.filter((item) => item !== label);
-      return setFlags(filteredFlags);
-    } else {
-      setFlags([...flags, label]);
-    }
   };
 
   const handleChangeCounterBox = (values: any) => {
@@ -301,6 +235,17 @@ const ImageControlPanel = ({ state, setState, handleChange }: any) => {
               onChange={handleChangeHeight}
             />
           </WrapperCounter>
+          <MarginBottom>
+            <ControlPanelItemLabel>
+              <Typography variant="body1">Opacity</Typography>
+            </ControlPanelItemLabel>
+            <Slider
+              name="imageOpacity"
+              value={imageOpacity}
+              onChange={handleChangeImageOpacity}
+            />
+          </MarginBottom>
+
           <MarginBottom>
             <BtnCheckbox
               type="radio"
