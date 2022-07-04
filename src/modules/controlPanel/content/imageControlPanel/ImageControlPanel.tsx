@@ -33,8 +33,8 @@ import {
 import { alignImageOptions } from '@modules/controlPanel/utils/constants';
 import { increaseValue, decreaseValue } from '@utils/counter';
 import Select from 'react-select';
-
 //end imports
+
 const ImageControlPanel = ({ state, setState, handleChange }: any) => {
   const [image, setImage] = React.useState(null);
   const [isShown, setIsShown] = React.useState<boolean>(false);
@@ -201,6 +201,7 @@ const ImageControlPanel = ({ state, setState, handleChange }: any) => {
             </Modal>
           </ControlPanelItemContainer>
         </Collapse>
+
         <Collapse title="Embed a file form a Url">
           <HeroFormInput
             name="url"
@@ -211,6 +212,7 @@ const ImageControlPanel = ({ state, setState, handleChange }: any) => {
             onChange={handleChangeUrl}
           />
         </Collapse>
+
         <Collapse title="alt text">
           <HeroFormInput
             name="altText"
@@ -220,7 +222,7 @@ const ImageControlPanel = ({ state, setState, handleChange }: any) => {
             onChange={handleChangeAltText}
           />
         </Collapse>
-        {/* section */}
+
         <Collapse title="Image window setting">
           <WrapperLabel>
             <ControlPanelItemLabel>
@@ -424,7 +426,43 @@ const ImageControlPanel = ({ state, setState, handleChange }: any) => {
             />
             <SwitchLabel variant="body1">Border</SwitchLabel>
           </SwitchWrapper>
-
+          {borderFlag ? (
+            <>
+              <ControlPanelItemContainer>
+                <Row>
+                  <Col span={6}>
+                    <ControlPanelItemLabel>Size</ControlPanelItemLabel>
+                    <Counter
+                      value={borderSize}
+                      name="borderSize"
+                      onChange={handleChangeBorderSize}
+                      onDecrease={() =>
+                        decreaseValue(state, setState, 'borderSize')
+                      }
+                      onIncrease={() =>
+                        increaseValue(state, setState, 'borderSize')
+                      }
+                    />
+                  </Col>
+                  <Col span={6}>
+                    <ControlPanelItemLabel>Style</ControlPanelItemLabel>
+                    <Select name="borderStyle" />
+                  </Col>
+                </Row>
+                <Row>
+                  <Col span={4}>
+                    <ControlPanelItemLabel>Color</ControlPanelItemLabel>
+                    <ColorPicker
+                      value={borderColor}
+                      onChange={handleChangeBorderColor}
+                      id="borderColor"
+                      name="borderColor"
+                    />
+                  </Col>
+                </Row>
+              </ControlPanelItemContainer>
+            </>
+          ) : null}
           <SwitchWrapper>
             <Switch
               checked={radiusFlag}

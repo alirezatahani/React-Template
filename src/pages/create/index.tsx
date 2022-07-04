@@ -24,7 +24,7 @@ export const Create = () => {
     shadowColor: '#F5F5F5',
     borderColor: '#F5F5F5',
     borderSize: '0',
-    width: 800,
+    width: '99%',
   });
 
   return (
