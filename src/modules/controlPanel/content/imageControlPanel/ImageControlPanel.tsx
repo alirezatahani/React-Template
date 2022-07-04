@@ -86,8 +86,6 @@ const ImageControlPanel = ({ state, setState, handleChange }: any) => {
     handleChange(event.target.name, event.target.value);
   };
 
-  console.log(paddingValues, 's');
-
   //load image
 
   const convert2base64 = (file: any) => {
@@ -283,6 +281,13 @@ const ImageControlPanel = ({ state, setState, handleChange }: any) => {
               />
               <SwitchLabel variant="body1">Radius</SwitchLabel>
             </SwitchWrapper>
+            {radiusFlag ? (
+              <CounterBox
+                value={borderRadiusValues}
+                onChangeMain={handleChangeBorderRadius}
+                shape="diamond"
+              />
+            ) : null}
             <MarginBottom>
               <SwitchWrapper>
                 <Switch
@@ -370,7 +375,6 @@ const ImageControlPanel = ({ state, setState, handleChange }: any) => {
             <SwitchLabel variant="body1">Padding</SwitchLabel>
           </SwitchWrapper>
 
-          {/* working thereeeeeeeeeeeeeee */}
           {paddingFlag ? (
             <CounterBox
               value={paddingValues}
@@ -394,6 +398,13 @@ const ImageControlPanel = ({ state, setState, handleChange }: any) => {
             />
             <SwitchLabel variant="body1">Radius</SwitchLabel>
           </SwitchWrapper>
+          {radiusFlag ? (
+            <CounterBox
+              value={borderRadiusValues}
+              onChangeMain={handleChangeBorderRadius}
+              shape="diamond"
+            />
+          ) : null}
           <MarginBottom>
             <SwitchWrapper>
               <Switch
