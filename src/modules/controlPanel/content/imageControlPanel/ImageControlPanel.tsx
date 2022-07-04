@@ -9,7 +9,6 @@ import {
   ColorPicker,
   Row,
   Col,
-  Counter,
   CounterBox,
 } from '@components/index';
 import {
@@ -38,7 +37,6 @@ import {
   borderOptions,
 } from '@modules/controlPanel/utils/constants';
 import Select from 'react-select';
-import { increaseValue, decreaseValue } from 'utils/counter';
 
 //end imports
 const ImageControlPanel = ({ state, setState, handleChange }: any) => {
@@ -49,6 +47,22 @@ const ImageControlPanel = ({ state, setState, handleChange }: any) => {
   const [radiusFlag, setRadiusFlag] = React.useState<boolean>(false);
   const [shadowFlag, setShadowFlag] = React.useState<boolean>(false);
   const [paddingFlag, setPaddingFlag] = React.useState<boolean>(false);
+  const [imageSizeValues, setImageSizeValues] = React.useState([
+    { value: 0, position: 'right', name: 'width' },
+    { value: 0, position: 'left', name: 'height' },
+  ]);
+  const [borderRadiusValues, setBorderRadiusValues] = React.useState([
+    { value: 0, position: 'top', name: 'RadiusTop' },
+    { value: 0, position: 'right', name: 'RadiusRight' },
+    { value: 0, position: 'bottom', name: 'RadiusBottom' },
+    { value: 0, position: 'left', name: 'RadiusLeft' },
+  ]);
+  const [paddingValues, setPaddingValues] = React.useState([
+    { value: 0, position: 'top', name: 'paddingTop' },
+    { value: 0, position: 'right', name: 'paddingRight' },
+    { value: 0, position: 'bottom', name: 'paddingBottom' },
+    { value: 0, position: 'left', name: 'paddingLeft' },
+  ]);
 
   const {
     bgImageColor,
@@ -71,11 +85,8 @@ const ImageControlPanel = ({ state, setState, handleChange }: any) => {
   }) => {
     handleChange(event.target.name, event.target.value);
   };
-  const [flags, setFlags] = React.useState([]);
-  const [imageSizeValues, setImageSizeValues] = React.useState([
-    { value: 0, position: 'right', name: 'width' },
-    { value: 0, position: 'left', name: 'height' },
-  ]);
+
+  console.log(paddingValues, 's');
 
   //load image
 
@@ -130,6 +141,12 @@ const ImageControlPanel = ({ state, setState, handleChange }: any) => {
 
   const handleChangeImageSizes = (values: any) => {
     setImageSizeValues(values);
+  };
+  const handleChangeBorderRadius = (values: any) => {
+    setBorderRadiusValues(values);
+  };
+  const handleChangePadding = (values: any) => {
+    setPaddingValues(values);
   };
 
   return (
@@ -352,6 +369,15 @@ const ImageControlPanel = ({ state, setState, handleChange }: any) => {
             />
             <SwitchLabel variant="body1">Padding</SwitchLabel>
           </SwitchWrapper>
+
+          {/* working thereeeeeeeeeeeeeee */}
+          {paddingFlag ? (
+            <CounterBox
+              value={paddingValues}
+              onChangeMain={handleChangePadding}
+              shape="square"
+            />
+          ) : null}
           <SwitchWrapper>
             <Switch
               checked={borderFlag}
