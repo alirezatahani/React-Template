@@ -72,10 +72,9 @@ const ImageControlPanel = ({ state, setState, handleChange }: any) => {
     handleChange(event.target.name, event.target.value);
   };
   const [flags, setFlags] = React.useState([]);
-  const [values, setValues] = React.useState([
-    { value: 0, position: 'right', name: 'paddingRight' },
-    { value: 0, position: 'left', name: 'paddingLeft' },
-    { value: 0, position: 'top', name: 'paddingTop' },
+  const [imageSizeValues, setImageSizeValues] = React.useState([
+    { value: 0, position: 'right', name: 'width' },
+    { value: 0, position: 'left', name: 'height' },
   ]);
 
   //load image
@@ -121,13 +120,7 @@ const ImageControlPanel = ({ state, setState, handleChange }: any) => {
   const handleChangeShadowBlur = (e: React.ChangeEvent<HTMLInputElement>) => {
     handleChange('blur', e.target.value);
   };
-  const handleChangeWidth = (e: React.ChangeEvent<HTMLInputElement>) => {
-    handleChange('width', e.target.value);
-  };
 
-  const handleChangeHeight = (e: React.ChangeEvent<HTMLInputElement>) => {
-    handleChange('height', e.target.value);
-  };
   const handleChangeUrl = (e: React.ChangeEvent<HTMLInputElement>) => {
     handleChange('Url', e.target.value);
   };
@@ -135,11 +128,8 @@ const ImageControlPanel = ({ state, setState, handleChange }: any) => {
     handleChange('alignMent', e.target.value);
   };
 
-  const handleChangeCounterBox = (values: any) => {
-    setValues(values);
-  };
-  const handleChangePadding = () => {
-    values.map((item) => handleChange(item.name, item.value));
+  const handleChangeImageSizes = (values: any) => {
+    setImageSizeValues(values);
   };
 
   return (
@@ -209,6 +199,7 @@ const ImageControlPanel = ({ state, setState, handleChange }: any) => {
             onChange={handleChangeAltText}
           />
         </Collapse>
+        {/* section */}
         <Collapse title="Image window setting">
           <WrapperLabel>
             <ControlPanelItemLabel>
@@ -218,23 +209,10 @@ const ImageControlPanel = ({ state, setState, handleChange }: any) => {
               <Typography variant="body1">Height</Typography>
             </ControlPanelItemLabel>
           </WrapperLabel>
-          <WrapperCounter>
-            <Counter
-              onIncrease={() => increaseValue(state, setState, 'width')}
-              onDecrease={() => decreaseValue(state, setState, 'width')}
-              name="width"
-              value={state.width}
-              onChange={handleChangeWidth}
-            />
-
-            <Counter
-              onIncrease={() => increaseValue(state, setState, 'height')}
-              onDecrease={() => decreaseValue(state, setState, 'height')}
-              name="height"
-              value={state.height}
-              onChange={handleChangeHeight}
-            />
-          </WrapperCounter>
+          <CounterBox
+            value={imageSizeValues}
+            onChangeMain={handleChangeImageSizes}
+          />
           <MarginBottom>
             <ControlPanelItemLabel>
               <Typography variant="body1">Opacity</Typography>
