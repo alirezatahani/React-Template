@@ -10,6 +10,7 @@ import {
   Row,
   Col,
   CounterBox,
+  Counter,
 } from '@components/index';
 import {
   ControlPanelItemContainer,
@@ -238,15 +239,21 @@ const ImageControlPanel = ({ state, setState, handleChange }: any) => {
               onChange={handleChangeImageOpacity}
             />
           </MarginBottom>
-
-          <MarginBottom>
-            <BtnCheckbox
-              type="radio"
-              name="alignMent"
-              onChange={handleChangeAlignMent}
-              options={alignImageOptions}
-            />
-          </MarginBottom>
+          <Row>
+            <Col span={6}>
+              <MarginBottom>
+                <ControlPanelItemLabel>
+                  <Typography variant="body1">Alignment</Typography>
+                </ControlPanelItemLabel>
+                <BtnCheckbox
+                  type="radio"
+                  name="alignMent"
+                  onChange={handleChangeAlignMent}
+                  options={alignImageOptions}
+                />
+              </MarginBottom>
+            </Col>
+          </Row>
 
           <Collapse title="advance settings">
             <SwitchWrapper>
@@ -263,6 +270,7 @@ const ImageControlPanel = ({ state, setState, handleChange }: any) => {
                   <Row>
                     <Col span={6}>
                       <ControlPanelItemLabel>Size</ControlPanelItemLabel>
+                      <Counter />
                     </Col>
                     <Col span={6}>
                       <ControlPanelItemLabel>Style</ControlPanelItemLabel>
@@ -390,6 +398,7 @@ const ImageControlPanel = ({ state, setState, handleChange }: any) => {
             />
             <SwitchLabel variant="body1">Border</SwitchLabel>
           </SwitchWrapper>
+
           <SwitchWrapper>
             <Switch
               checked={radiusFlag}
