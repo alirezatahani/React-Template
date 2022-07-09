@@ -20,7 +20,7 @@ export const Tags = styled.div<TagProps>(({fontSize}) => ({
 }))
 
 export const NewTag = styled.div<TagProps>(({fontSize}) => ({
-    fontSize: fontSize? sizes[fontSize] : '16px',
+    fontSize: fontSize? sizes[fontSize] : '13px',
     border:'1px dashed rgb(150, 150,150)',
     display:'inline-flex',
     verticalAlign:'middle',
@@ -38,7 +38,7 @@ export const CloseIcon = styled(BiX)({
 })
 
 export const NewTagInput = styled.input<TagProps>(({fontSize}) => ({
-    fontSize: fontSize? sizes[fontSize] : '16px',
+    fontSize: fontSize? sizes[fontSize] : '13px',
     width:'80px',
     margin: '0 10px',
 }))
