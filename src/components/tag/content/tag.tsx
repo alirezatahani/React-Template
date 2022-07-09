@@ -3,7 +3,7 @@ import { CloseIcon, NewTag, NewTagInput, NewTagText, PlussIcon, TagContainer, Ta
 import { TagProps } from "./tag_types";
 
 const Tag: React.FC<TagProps> = ({style, ...props}: TagProps) => {
-    const [tags, setTags] = useState<string[]>(props.defaultTags);
+    const [tags, setTags] = useState<string[]>(props.defaultTags || []);
     const [inputValue, setInputValue] = useState<string>('');
     const [inputVisible, setInputVisible] = useState<boolean>(false);
     const inputRef = useRef(null);
@@ -33,20 +33,20 @@ const Tag: React.FC<TagProps> = ({style, ...props}: TagProps) => {
         }
     };
 
-    const newTag = <NewTag onClick={() => setInputVisible(true)}><PlussIcon/><NewTagText>new tag</NewTagText></NewTag>
+    const newTag = <NewTag {...props} onClick={() => setInputVisible(true)}><PlussIcon/><NewTagText>new tag</NewTagText></NewTag>
 
     return (
         <TagContainer>
             {tags.map((tag: string, index: number) => {
                 return (
-                    <Tags key={index} style={style}>
+                    <Tags key={index} {...props} fontSize={props.fontSize} style={style}>
                         <div>{tag}</div>
-                        <CloseIcon onClick={() => CloseTag(tag)}/>
+                        {props.closable && <CloseIcon onClick={() => CloseTag(tag)}/>}
                     </Tags>
                 )
             })}
             {inputVisible &&
-                <NewTagInput type={'text'} ref={inputRef} onChange={handleInputaChange} onBlur={handleInputaConfirm}></NewTagInput>
+                <NewTagInput type={'text'} ref={inputRef} onChange={handleInputaChange} onBlur={handleInputaConfirm} {...props}></NewTagInput>
             }
             {!inputVisible && newTag}
         </TagContainer>

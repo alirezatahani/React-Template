@@ -2,29 +2,31 @@ import styled from "styled-components";
 import { GoPlusSmall } from 'react-icons/go';
 import { BiX } from 'react-icons/bi';
 import { Row } from "@components/grid";
+import { TagProps } from "../content/tag_types";
+import { sizes } from "../utils/constants";
 
 export const TagContainer = styled(Row)({
     margin: '10px',
 })
 
-export const Tags = styled.div({
+export const Tags = styled.div<TagProps>(({fontSize}) => ({
     display: 'flex',
     border: '1px solid gray',
     padding: '1px 3px',
-    fontSize: '13px',
+    fontSize: fontSize? sizes[fontSize] : '13px',
     margin:'0 10px',
-    backgroundColor: 'rgb(245, 245, 245)',
     borderRadius: '3px',
     color: 'rgb(50, 50, 50)'
-})
+}))
 
-export const NewTag = styled.div({
+export const NewTag = styled.div<TagProps>(({fontSize}) => ({
+    fontSize: fontSize? sizes[fontSize] : '16px',
     border:'1px dashed rgb(150, 150,150)',
     display:'inline-flex',
     verticalAlign:'middle',
     color: 'rgb(60, 60,60)',
     margin: '0 10px',
-})
+}))
 
 export const PlussIcon = styled(GoPlusSmall)({
     fontSize:'20px',
@@ -35,12 +37,12 @@ export const CloseIcon = styled(BiX)({
     paddingLeft: '4px',
 })
 
-export const NewTagInput = styled.input({
+export const NewTagInput = styled.input<TagProps>(({fontSize}) => ({
+    fontSize: fontSize? sizes[fontSize] : '16px',
     width:'80px',
     margin: '0 10px',
-})
+}))
 
-export const NewTagText = styled.span({
-    fontSize:'13px',
+export const NewTagText = styled.span<TagProps>(({
     paddingRight:'4px',
-})
+}))
