@@ -9,7 +9,7 @@ import {
   TriangleLockBox,
   InlineLockBox,
 } from './styles/CounterLogic.styles';
-import { FaLock, FaUnlock } from 'react-icons/Fa';
+import { FaLock, FaUnlock } from 'react-icons/fa';
 
 const CounterLogic: React.FC<CounterLogicProps> = ({
   position,

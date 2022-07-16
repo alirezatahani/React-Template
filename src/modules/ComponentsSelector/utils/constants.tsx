@@ -1,5 +1,3 @@
-import { Typography } from '@components/typography';
-import { theme } from 'global/Global';
 import React from 'react';
 import { FaAlignLeft, FaImage, FaEdit } from 'react-icons/fa';
 import { MdSmartButton } from 'react-icons/Md';
